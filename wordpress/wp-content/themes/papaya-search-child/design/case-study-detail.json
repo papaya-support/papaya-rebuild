@@ -1,0 +1,2074 @@
+{
+  "name": "Case Study Detail",
+  "slug": "case-study-detail",
+  "width": 1280,
+  "height": 4033,
+  "background": "rgba(251,251,251,1)",
+  "footerY": 3354,
+  "backgrounds": [
+    {
+      "from": 0,
+      "to": 134,
+      "color": "rgba(0,62,63,1)"
+    },
+    {
+      "from": 3354,
+      "to": 4033,
+      "color": "rgba(0,62,63,1)"
+    }
+  ],
+  "texts": [
+    {
+      "key": "shared_d8766ad7f130",
+      "text": "Services",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        486,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 8,
+          "x": -51.7457389831543
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 434.2542610168457,
+      "y": 64.724609375,
+      "width": 99.2,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Services"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_784807ef809c",
+      "text": "Case Studies",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        637,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 12,
+          "x": -77.55966186523438
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 559.4403381347656,
+      "y": 64.724609375,
+      "width": 148.8,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Case Studies"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_b087478731cd",
+      "text": "About",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        774,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 5,
+          "x": -37.10653305053711
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 736.8934669494629,
+      "y": 64.724609375,
+      "width": 62.0,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "About"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_ce82718c1959",
+      "text": "Free Tools",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        899,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 10,
+          "x": -65.16051483154297
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 833.839485168457,
+      "y": 64.724609375,
+      "width": 124.0,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Free Tools"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_f65766b74e2d",
+      "text": "Get Started",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        1083,
+        83
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 20,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 11,
+          "weight": 700,
+          "size": 20,
+          "color": "#003e3f",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 11,
+          "x": -74.19389343261719
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 1008.8061065673828,
+      "y": 65.724609375,
+      "width": 136.4,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Group 77",
+        "Get Started"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_dac02921ffd6",
+      "text": "Home > Case Studies",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        238
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(231,96,37,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#e76025",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 19,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 138,
+      "y": 222.4521484375,
+      "width": 212.04,
+      "height": 19.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Category and Date"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_afcd2640f663",
+      "text": "DEUTZ Case Study: How A Unified Digital Strategy Improved Lead Generation",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        263
+      ],
+      "font": {
+        "family": "Rubik",
+        "weight": 500,
+        "size": 68,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 85.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 18,
+          "weight": 700,
+          "size": 68,
+          "color": "#003e3f",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 18,
+          "to": 73,
+          "weight": 500,
+          "size": 68,
+          "color": "#003e3f",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 64,
+          "from": 0,
+          "to": 24,
+          "x": 0,
+          "style": {
+            "font": {
+              "postscriptName": "Rubik-Bold",
+              "family": "Rubik",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "y": 145,
+          "from": 24,
+          "to": 49,
+          "x": 0
+        },
+        {
+          "y": 226,
+          "from": 49,
+          "to": 73,
+          "x": 0
+        }
+      ],
+      "baseline": 0.8425,
+      "frame": {
+        "type": "autoHeight",
+        "width": 1004
+      },
+      "x": 138,
+      "y": 269.71,
+      "width": 1004,
+      "height": 232.89,
+      "ancestors": [
+        "",
+        "",
+        "Blog Content",
+        "DEUTZ Case Study: How A Unified Digital Strategy Improved Lead Generation"
+      ],
+      "tag": "h1"
+    },
+    {
+      "key": "case_study_detail_7ad346f8413b",
+      "text": "DEUTZ, a global leader in diesel engine manufacturing, partnered with Papaya Search to transform its digital presence. With a comprehensive strategy that integrated SEO, SEM, and Google Business Profile (GBP) optimization, DEUTZ achieved:",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1007
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 487,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 101,
+          "x": 0
+        },
+        {
+          "y": 43,
+          "from": 101,
+          "to": 203,
+          "x": 0
+        },
+        {
+          "y": 67,
+          "from": 203,
+          "to": 238,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 1004,
+        "height": 76
+      },
+      "x": 138,
+      "y": 1008.724609375,
+      "width": 1004,
+      "height": 69.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_edf925d1bf1f",
+      "text": "Significant growth \nin qualified search traffic and visibility for engine-specific content \n",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1197
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 20,
+          "weight": 700,
+          "size": 20,
+          "color": "#e76025",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 20,
+          "to": 92,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 19,
+          "x": 72.37926483154297,
+          "style": {
+            "font": {
+              "postscriptName": "Inter-Bold",
+              "family": "Inter",
+              "style": "Bold"
+            },
+            "fill": {
+              "type": "solid",
+              "color": {
+                "mode": "RGB",
+                "value": {
+                  "r": 231,
+                  "g": 96,
+                  "b": 37
+                }
+              }
+            }
+          }
+        },
+        {
+          "y": 43,
+          "from": 20,
+          "to": 52,
+          "x": 23.405548095703125
+        },
+        {
+          "y": 67,
+          "from": 52,
+          "to": 83,
+          "x": 30.333816528320312
+        },
+        {
+          "y": 91,
+          "from": 83,
+          "to": 91,
+          "x": 125.60013961791992
+        },
+        {
+          "x": 162.5,
+          "y": 115,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 325
+      },
+      "x": 161.40554809570312,
+      "y": 1198.724609375,
+      "width": 325,
+      "height": 117.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Significant growth \nin qualified search traffic and visibility for engine-specific content \n"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_269299b792ce",
+      "text": "Thousands of New Leads\ngenerated through highly targeted ad campaigns and conversion-focused pages\n",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        478,
+        1197
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 23,
+          "weight": 700,
+          "size": 20,
+          "color": "#e76025",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 23,
+          "to": 95,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 22,
+          "x": 39.44957733154297,
+          "style": {
+            "font": {
+              "postscriptName": "Inter-Bold",
+              "family": "Inter",
+              "style": "Bold"
+            },
+            "fill": {
+              "type": "solid",
+              "color": {
+                "mode": "RGB",
+                "value": {
+                  "r": 231,
+                  "g": 96,
+                  "b": 37
+                }
+              }
+            }
+          }
+        },
+        {
+          "y": 43,
+          "from": 23,
+          "to": 48,
+          "x": 41.51988220214844
+        },
+        {
+          "y": 67,
+          "from": 48,
+          "to": 74,
+          "x": 31.725860595703125
+        },
+        {
+          "y": 91,
+          "from": 74,
+          "to": 98,
+          "x": 34.836647033691406
+        },
+        {
+          "x": 162.5,
+          "y": 115,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 325
+      },
+      "x": 509.7258605957031,
+      "y": 1198.724609375,
+      "width": 325,
+      "height": 117.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Thousands of New Leads\ngenerated through highly targeted ad campaigns and conversion-focused pages\n"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_9a239a17b643",
+      "text": "High Engagement\nacross local listings, driving calls, direction requests, and site visits from nearby buyers ",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        818,
+        1197
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 16,
+          "weight": 700,
+          "size": 20,
+          "color": "#e76025",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 16,
+          "to": 92,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 15,
+          "x": 75.44034576416016,
+          "style": {
+            "font": {
+              "postscriptName": "Inter-Bold",
+              "family": "Inter",
+              "style": "Bold"
+            },
+            "fill": {
+              "type": "solid",
+              "color": {
+                "mode": "RGB",
+                "value": {
+                  "r": 231,
+                  "g": 96,
+                  "b": 37
+                }
+              }
+            }
+          }
+        },
+        {
+          "y": 43,
+          "from": 16,
+          "to": 54,
+          "x": 3.49432373046875
+        },
+        {
+          "y": 67,
+          "from": 54,
+          "to": 90,
+          "x": 4.8544158935546875
+        },
+        {
+          "y": 91,
+          "from": 90,
+          "to": 109,
+          "x": 69.13706970214844
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 325
+      },
+      "x": 821.4943237304688,
+      "y": 1198.724609375,
+      "width": 325,
+      "height": 93.275390625,
+      "ancestors": [
+        "",
+        "",
+        "High Engagement\nacross local listings, driving calls, direction requests, and site visits from nearby buyers "
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_0e4af60dbfa0",
+      "text": "This full-funnel approach converted digital traffic into meaningful leads and measurable revenue.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1359
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 154,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 97,
+          "x": 39.36859130859375
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 1004,
+        "height": 37
+      },
+      "x": 177.36859130859375,
+      "y": 1360.724609375,
+      "width": 1004,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_7e19b95f2be4",
+      "text": "“",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        640,
+        1568
+      ],
+      "font": {
+        "family": "Rubik",
+        "weight": 700,
+        "size": 68,
+        "color": "rgba(112,137,107,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 85.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 1,
+          "weight": 700,
+          "size": 68,
+          "color": "#70896b",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 1,
+          "x": -16.65999984741211
+        }
+      ],
+      "baseline": 0.8425,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 623.3400001525879,
+      "y": 1510.71,
+      "width": 42.16,
+      "height": 70.89,
+      "ancestors": [
+        "",
+        "",
+        "“"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "case_study_detail_3f5be18822e8",
+      "text": "Our work with Papaya Search proved essential in transforming product interest into a reliable source of revenue for DEUTZ.”",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        215,
+        1568
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 221,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 85,
+          "x": 19.6519775390625
+        },
+        {
+          "y": 43,
+          "from": 85,
+          "to": 123,
+          "x": 243.3025665283203
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 850
+      },
+      "x": 234.6519775390625,
+      "y": 1569.724609375,
+      "width": 850,
+      "height": 45.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Our work with Papaya Search proved essential in transforming product interest into a reliable source of revenue for DEUTZ.”"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_74dd8a1b256d",
+      "text": "– Jeff Wolfe\nMarketing Director, DEUTZ America",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        215,
+        1633
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 400,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 13,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": true,
+          "underline": false
+        },
+        {
+          "from": 13,
+          "to": 46,
+          "weight": 400,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 12,
+          "x": 356.8039779663086,
+          "style": {
+            "font": {
+              "postscriptName": "Inter-Medium",
+              "family": "Inter",
+              "style": "Medium"
+            }
+          }
+        },
+        {
+          "y": 43,
+          "from": 13,
+          "to": 46,
+          "x": 257.5142059326172
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 850
+      },
+      "x": 472.5142059326172,
+      "y": 1634.724609375,
+      "width": 850,
+      "height": 45.275390625,
+      "ancestors": [
+        "",
+        "",
+        "– Jeff Wolfe\nMarketing Director, DEUTZ America"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_e27663e17aca",
+      "text": "The Challenge",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1799
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 32,
+        "color": "rgba(112,137,107,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 40.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 37,
+          "weight": 700,
+          "size": 32,
+          "color": "#70896b",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 31,
+          "from": 0,
+          "to": 13,
+          "x": 388.8295440673828
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 1004
+      },
+      "x": 526.8295440673828,
+      "y": 1802.359375,
+      "width": 1004,
+      "height": 34.040625,
+      "ancestors": [
+        "",
+        "",
+        "The Challenge"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "case_study_detail_1dcedfb52114",
+      "text": "Despite a well-established brand and extensive distribution footprint, DEUTZ faced serious digital visibility issues:\n\n• Low organic visibility that allowed seasonal\n   attractions, like corn mazes, to outrank DEUTZ\n   Support in local search results.\n\n• Underperforming location pages that failed to\n   connect users to regional Power Centers.\n\n• Inefficient paid search campaigns with high CPCs and\n   low conversion rates.\n\n• A lack of inbound opportunities to support the sales\n   team and generate leads.\n\n• A lackluster digital marketing agency that provided\n   extensive reports with no strategy.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        611,
+        1897
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 975,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 47,
+          "x": 0
+        },
+        {
+          "y": 43,
+          "from": 47,
+          "to": 99,
+          "x": 0
+        },
+        {
+          "y": 67,
+          "from": 99,
+          "to": 117,
+          "x": 0
+        },
+        {
+          "y": 91,
+          "from": 118,
+          "to": 118,
+          "x": 0
+        },
+        {
+          "y": 115,
+          "from": 119,
+          "to": 165,
+          "x": 0
+        },
+        {
+          "y": 139,
+          "from": 166,
+          "to": 215,
+          "x": 0
+        },
+        {
+          "y": 163,
+          "from": 216,
+          "to": 251,
+          "x": 0
+        },
+        {
+          "y": 187,
+          "from": 252,
+          "to": 252,
+          "x": 0
+        },
+        {
+          "y": 211,
+          "from": 253,
+          "to": 300,
+          "x": 0
+        },
+        {
+          "y": 235,
+          "from": 301,
+          "to": 344,
+          "x": 0
+        },
+        {
+          "y": 259,
+          "from": 345,
+          "to": 345,
+          "x": 0
+        },
+        {
+          "y": 283,
+          "from": 346,
+          "to": 400,
+          "x": 0
+        },
+        {
+          "y": 307,
+          "from": 401,
+          "to": 425,
+          "x": 0
+        },
+        {
+          "y": 331,
+          "from": 426,
+          "to": 426,
+          "x": 0
+        },
+        {
+          "y": 355,
+          "from": 427,
+          "to": 481,
+          "x": 0
+        },
+        {
+          "y": 379,
+          "from": 482,
+          "to": 509,
+          "x": 0
+        },
+        {
+          "y": 403,
+          "from": 510,
+          "to": 510,
+          "x": 0
+        },
+        {
+          "y": 427,
+          "from": 511,
+          "to": 564,
+          "x": 0
+        },
+        {
+          "y": 451,
+          "from": 565,
+          "to": 603,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 531,
+        "height": 464
+      },
+      "x": 611,
+      "y": 1898.724609375,
+      "width": 531,
+      "height": 453.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "case_study_detail_28224860229f",
+      "text": "Jeff knew that legacy methods—like cold sales visits—were no longer enough. It was time to build a modern search experience that brought customers to DEUTZ online, 24/7.\n\nDEUTZ had already worked with a digital agency—but the partnership fell short. Traffic stagnated, leads were minimal, and there was little strategic follow-through. Jeff needed a partner who would take ownership and deliver results.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        2408
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 154,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 99,
+          "x": 25.757110595703125
+        },
+        {
+          "y": 43,
+          "from": 99,
+          "to": 169,
+          "x": 150.0894775390625
+        },
+        {
+          "y": 67,
+          "from": 170,
+          "to": 170,
+          "x": 502
+        },
+        {
+          "y": 91,
+          "from": 171,
+          "to": 275,
+          "x": 4.79473876953125
+        },
+        {
+          "y": 115,
+          "from": 275,
+          "to": 373,
+          "x": 36.786956787109375
+        },
+        {
+          "y": 139,
+          "from": 373,
+          "to": 403,
+          "x": 358.875
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 1004,
+        "height": 150
+      },
+      "x": 142.79473876953125,
+      "y": 2409.724609375,
+      "width": 1004,
+      "height": 141.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_78f8d1b3d0a8",
+      "text": "Navigation",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        564,
+        3500
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 26,
+        "color": "rgba(191,216,185,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 32.5,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 12,
+          "weight": 700,
+          "size": 26,
+          "color": "#bfd8b9",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 10,
+          "x": -81.68394470214844
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 482.31605529785156,
+      "y": 3477.5419921875,
+      "width": 161.2,
+      "height": 27.6580078125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Navigation"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_63ce494a885e",
+      "text": "Services",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        758.5,
+        3500.0
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 26,
+        "color": "rgba(191,216,185,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 32.5,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 12,
+          "weight": 700,
+          "size": 26,
+          "color": "#bfd8b9",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 8,
+          "x": -64.36293029785156
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 694.1370697021484,
+      "y": 3477.5419921875,
+      "width": 128.96,
+      "height": 27.6580078125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Services"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_4937e4e54c2c",
+      "text": "Contact",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        1004,
+        3500
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 26,
+        "color": "rgba(191,216,185,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 32.5,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 12,
+          "weight": 700,
+          "size": 26,
+          "color": "#bfd8b9",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 7,
+          "x": -64.76918029785156
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 939.2308197021484,
+      "y": 3477.5419921875,
+      "width": 112.84,
+      "height": 27.6580078125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Contact"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_819c8f0b4b41",
+      "text": "Home\n\nServices\n\nCase Studies\n\nAbout\n\nFree Tools\n\nBlog",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        482.5,
+        3581.0
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 4,
+          "x": 0
+        },
+        {
+          "y": 21,
+          "from": 5,
+          "to": 5,
+          "x": 0
+        },
+        {
+          "y": 42,
+          "from": 6,
+          "to": 14,
+          "x": 0
+        },
+        {
+          "y": 63,
+          "from": 15,
+          "to": 15,
+          "x": 0
+        },
+        {
+          "y": 84,
+          "from": 16,
+          "to": 28,
+          "x": 0
+        },
+        {
+          "y": 105,
+          "from": 29,
+          "to": 29,
+          "x": 0
+        },
+        {
+          "y": 126,
+          "from": 30,
+          "to": 35,
+          "x": 0
+        },
+        {
+          "y": 147,
+          "from": 36,
+          "to": 36,
+          "x": 0
+        },
+        {
+          "y": 168,
+          "from": 37,
+          "to": 47,
+          "x": 0
+        },
+        {
+          "y": 189,
+          "from": 48,
+          "to": 48,
+          "x": 0
+        },
+        {
+          "y": 210,
+          "from": 49,
+          "to": 53,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 482.5,
+      "y": 3565.4521484375,
+      "width": 133.92,
+      "height": 229.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Home\n\nServices\n\nCase Studies\n\nAbout\n\nFree Tools\n\nBlog"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_5f04f2b25bf0",
+      "text": "AI SEO\n\nSEO\n\nSEO for SaaS\n\nAtlanta SEO\n\nAtlanta SEM\n\nPPC\n\n\n\n",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        692.5,
+        3581.0
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 6,
+          "x": 0
+        },
+        {
+          "y": 21,
+          "from": 7,
+          "to": 7,
+          "x": 0
+        },
+        {
+          "y": 42,
+          "from": 8,
+          "to": 11,
+          "x": 0
+        },
+        {
+          "y": 63,
+          "from": 12,
+          "to": 12,
+          "x": 0
+        },
+        {
+          "y": 84,
+          "from": 13,
+          "to": 25,
+          "x": 0
+        },
+        {
+          "y": 105,
+          "from": 26,
+          "to": 26,
+          "x": 0
+        },
+        {
+          "y": 126,
+          "from": 27,
+          "to": 38,
+          "x": 0
+        },
+        {
+          "y": 147,
+          "from": 39,
+          "to": 39,
+          "x": 0
+        },
+        {
+          "y": 168,
+          "from": 40,
+          "to": 51,
+          "x": 0
+        },
+        {
+          "y": 189,
+          "from": 52,
+          "to": 52,
+          "x": 0
+        },
+        {
+          "y": 210,
+          "from": 53,
+          "to": 56,
+          "x": 0
+        },
+        {
+          "y": 231,
+          "from": 57,
+          "to": 57,
+          "x": 0
+        },
+        {
+          "y": 252,
+          "from": 58,
+          "to": 58,
+          "x": 0
+        },
+        {
+          "y": 273,
+          "from": 59,
+          "to": 59,
+          "x": 0
+        },
+        {
+          "x": 0,
+          "y": 294,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 692.5,
+      "y": 3565.4521484375,
+      "width": 133.92,
+      "height": 313.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "AI SEO\n\nSEO\n\nSEO for SaaS\n\nAtlanta SEO\n\nAtlanta SEM\n\nPPC\n\n\n\n"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_ed5745efb63b",
+      "text": "404-425-9775\n\n675 Ponce De Leon Ave NE\nSuite NE223\nAtlanta, GA 30308\n\nContact Us",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        938,
+        3581
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 12,
+          "x": 0
+        },
+        {
+          "y": 21,
+          "from": 13,
+          "to": 13,
+          "x": 0
+        },
+        {
+          "y": 42,
+          "from": 14,
+          "to": 38,
+          "x": 0
+        },
+        {
+          "y": 63,
+          "from": 39,
+          "to": 50,
+          "x": 0
+        },
+        {
+          "y": 84,
+          "from": 51,
+          "to": 68,
+          "x": 0
+        },
+        {
+          "y": 105,
+          "from": 69,
+          "to": 69,
+          "x": 0
+        },
+        {
+          "y": 126,
+          "from": 70,
+          "to": 80,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 938,
+      "y": 3565.4521484375,
+      "width": 267.84,
+      "height": 145.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "404-425-9775\n\n675 Ponce De Leon Ave NE\nSuite NE223\nAtlanta, GA 30308\n\nContact Us"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_7b3ca0dbb8c9",
+      "text": "Schedule A Call",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        243,
+        3762
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 17,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 0.85,
+        "align": "center",
+        "lineHeight": 21.25,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 11,
+          "weight": 700,
+          "size": 17,
+          "color": "#003e3f",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 15,
+          "x": -84.45124053955078
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 158.54875946044922,
+      "y": 3747.31591796875,
+      "width": 158.1,
+      "height": 18.08408203125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Group 61",
+        "Schedule A Call"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_a8e4f9f45c81",
+      "text": "Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        321,
+        3945
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 16,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 20.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 89,
+          "weight": 500,
+          "size": 16,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 89,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 321,
+      "y": 3931.1796875,
+      "width": 882.88,
+      "height": 17.0203125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers"
+      ],
+      "tag": "p"
+    }
+  ],
+  "images": [
+    {
+      "key": "case_study_detail_image_cf7d13020e",
+      "asset": "df292e83c9c5368e3616147b1df1019d.png",
+      "scope": "page",
+      "label": "Placement Area [ASSET:hero][SIZE:Default][STATE:DEFAULT]",
+      "x": 138.0,
+      "y": 557.9999847412109,
+      "width": 1004,
+      "height": 397
+    },
+    {
+      "key": "case_study_detail_image_4d97ed1303",
+      "asset": "35cc479761601be986b3f8891766eec2.png",
+      "scope": "page",
+      "label": "Placement Area [ASSET:small][SIZE:Default][STATE:DEFAULT]",
+      "x": 138.00014328956604,
+      "y": 1896.9999815821648,
+      "width": 434,
+      "height": 447
+    },
+    {
+      "key": "case_study_detail_image_26a15581be",
+      "asset": "d404083a816a4ba0b1f136b902b7f787.jpg",
+      "scope": "page",
+      "label": "deutz-organic-keywords-trend",
+      "x": 138,
+      "y": 2605,
+      "width": 1010,
+      "height": 372
+    }
+  ]
+}

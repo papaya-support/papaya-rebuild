@@ -1,0 +1,24 @@
+# Local configuration and generated artifacts
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.zip
+__pycache__/
+node_modules/
+/deliverables/
+/verification/
+/design-source/
+
+# Pressable manages WordPress, plugins, uploads and the Astra parent theme.
+# Version only the custom child theme from the complete local installation.
+/wordpress/*
+!/wordpress/wp-content/
+/wordpress/wp-content/*
+!/wordpress/wp-content/themes/
+/wordpress/wp-content/themes/*
+!/wordpress/wp-content/themes/papaya-search-child/

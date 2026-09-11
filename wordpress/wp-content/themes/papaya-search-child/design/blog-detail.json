@@ -1,0 +1,2198 @@
+{
+  "name": "Blog Detail",
+  "slug": "blog-detail",
+  "width": 1280,
+  "height": 4033,
+  "background": "rgba(251,251,251,1)",
+  "footerY": 3354,
+  "backgrounds": [
+    {
+      "from": 0,
+      "to": 134,
+      "color": "rgba(0,62,63,1)"
+    },
+    {
+      "from": 3354,
+      "to": 4033,
+      "color": "rgba(0,62,63,1)"
+    }
+  ],
+  "texts": [
+    {
+      "key": "shared_d8766ad7f130",
+      "text": "Services",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        486,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 8,
+          "x": -51.7457389831543
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 434.2542610168457,
+      "y": 64.724609375,
+      "width": 99.2,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Services"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_784807ef809c",
+      "text": "Case Studies",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        637,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 12,
+          "x": -77.55966186523438
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 559.4403381347656,
+      "y": 64.724609375,
+      "width": 148.8,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Case Studies"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_b087478731cd",
+      "text": "About",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        774,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 5,
+          "x": -37.10653305053711
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 736.8934669494629,
+      "y": 64.724609375,
+      "width": 62.0,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "About"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_ce82718c1959",
+      "text": "Free Tools",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        899,
+        82
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 20,
+          "color": "#fbf2e6",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 10,
+          "x": -65.16051483154297
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 833.839485168457,
+      "y": 64.724609375,
+      "width": 124.0,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Free Tools"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_f65766b74e2d",
+      "text": "Get Started",
+      "scope": "header",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        1083,
+        83
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 20,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 1.0,
+        "align": "center",
+        "lineHeight": 25.0,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 11,
+          "weight": 700,
+          "size": 20,
+          "color": "#003e3f",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 11,
+          "x": -74.19389343261719
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 1008.8061065673828,
+      "y": 65.724609375,
+      "width": 136.4,
+      "height": 21.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Nav",
+        "Group 77",
+        "Get Started"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_9c13381244a8",
+      "text": "Home > Papaya Search > Blog > SEO",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        238
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(231,96,37,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#e76025",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 33,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 138,
+      "y": 222.4521484375,
+      "width": 368.28,
+      "height": 19.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Category and Date"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_8c780093d5a1",
+      "text": "How to Optimize Your Restaurant Homepage for Local SEO Success",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        263
+      ],
+      "font": {
+        "family": "Rubik",
+        "weight": 700,
+        "size": 68,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 85.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 62,
+          "weight": 700,
+          "size": 68,
+          "color": "#003e3f",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 64,
+          "from": 0,
+          "to": 21,
+          "x": 0
+        },
+        {
+          "y": 145,
+          "from": 21,
+          "to": 45,
+          "x": 0
+        },
+        {
+          "y": 226,
+          "from": 45,
+          "to": 62,
+          "x": 0
+        }
+      ],
+      "baseline": 0.8425,
+      "frame": {
+        "type": "autoHeight",
+        "width": 1004
+      },
+      "x": 138,
+      "y": 269.71,
+      "width": 1004,
+      "height": 232.89,
+      "ancestors": [
+        "",
+        "",
+        "Blog Content",
+        "How to Optimize Your Restaurant Homepage for Local SEO Success"
+      ],
+      "tag": "h1"
+    },
+    {
+      "key": "blog_detail_3ec80043fb9f",
+      "text": "Your restaurant’s homepage isn’t just a digital front door; it’s often the first impression you make with a hungry customer searching nearby. And when it comes to showing up in Google’s Map Pack or driving more online reservations, local SEO is one of the smartest tools in your marketing kit.\n\nThis guide walks you through the most critical (and often overlooked) ways to optimize your restaurant homepage so you’re showing up when and where it matters most: right in your neighborhood.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1007
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 487,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 108,
+          "x": 0
+        },
+        {
+          "y": 43,
+          "from": 108,
+          "to": 206,
+          "x": 0
+        },
+        {
+          "y": 67,
+          "from": 206,
+          "to": 293,
+          "x": 0
+        },
+        {
+          "y": 91,
+          "from": 294,
+          "to": 294,
+          "x": 0
+        },
+        {
+          "y": 115,
+          "from": 295,
+          "to": 398,
+          "x": 0
+        },
+        {
+          "y": 139,
+          "from": 398,
+          "to": 487,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 1004,
+        "height": 155
+      },
+      "x": 138,
+      "y": 1008.724609375,
+      "width": 1004,
+      "height": 141.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_15daca854069",
+      "text": "Why Local SEO Matters for Restaurants",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1185
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 32,
+        "color": "rgba(112,137,107,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 40.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 37,
+          "weight": 700,
+          "size": 32,
+          "color": "#70896b",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 31,
+          "from": 0,
+          "to": 37,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 1004
+      },
+      "x": 138,
+      "y": 1188.359375,
+      "width": 1004,
+      "height": 34.040625,
+      "ancestors": [
+        "",
+        "",
+        "Why Local SEO Matters for Restaurants"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "blog_detail_4fac5cef0a97",
+      "text": "When someone searches for “brunch near me” or “Italian food in [Your City],” Google is trying to serve them a result that’s relevant, close by, and well-reviewed. That’s the core of local SEO. It’s not just about your website, it’s about sending Google clear, consistent signals that your restaurant is a great match for local diners.\n\nAnd the homepage? It’s one of the most important places to do that.\nThis guide walks you through the most critical (and often overlooked) ways to optimize your restaurant homepage so you’re showing up when and where it matters most: right in your neighborhood.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1245
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 596,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 103,
+          "x": 0
+        },
+        {
+          "y": 43,
+          "from": 103,
+          "to": 213,
+          "x": 0
+        },
+        {
+          "y": 67,
+          "from": 213,
+          "to": 321,
+          "x": 0
+        },
+        {
+          "y": 91,
+          "from": 321,
+          "to": 334,
+          "x": 0
+        },
+        {
+          "y": 115,
+          "from": 335,
+          "to": 335,
+          "x": 0
+        },
+        {
+          "y": 139,
+          "from": 336,
+          "to": 403,
+          "x": 0
+        },
+        {
+          "y": 163,
+          "from": 404,
+          "to": 507,
+          "x": 0
+        },
+        {
+          "y": 187,
+          "from": 507,
+          "to": 596,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 1004,
+        "height": 206
+      },
+      "x": 138,
+      "y": 1246.724609375,
+      "width": 1004,
+      "height": 189.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_8c8e30bb3e63",
+      "text": "How to Get Your Restaurant in the Google Map Pack",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1468
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 32,
+        "color": "rgba(112,137,107,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 40.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 37,
+          "weight": 700,
+          "size": 32,
+          "color": "#70896b",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 31,
+          "from": 0,
+          "to": 49,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 1004
+      },
+      "x": 138,
+      "y": 1471.359375,
+      "width": 1004,
+      "height": 34.040625,
+      "ancestors": [
+        "",
+        "",
+        "How to Get Your Restaurant in the Google Map Pack"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "blog_detail_16e7a84007ce",
+      "text": "Appearing in the Google Map Pack (the top three local results under the map) is one of the most valuable positions your restaurant can earn. Here’s how to improve your chances:\n\n• Claim and fully optimize your Google Business Profile\n   Add detailed categories (e.g., “Mediterranean Restaurant”), photos, hours, and service options.\n\n• Ensure your website and GBP have consistent NAP info\n   Keep your name, address, and phone number identical everywhere.\n\n• Add location-specific content to your homepage\n   Use neighborhood names, landmarks, and local phrases in your copy and headers.\n\n• Collect and respond to reviews\n   More (and better) reviews signal quality and activity to Google.\n\n• Embed a Google Map on your homepage\n   It reinforces your location for both users and search engines.\n\n• Build local citations and links\n   Directory listings, press mentions, and backlinks from nearby businesses matter.\n",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        1529
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 178,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 178,
+          "to": 234,
+          "weight": 700,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 234,
+          "to": 336,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 336,
+          "to": 389,
+          "weight": 700,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 389,
+          "to": 459,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 459,
+          "to": 506,
+          "weight": 700,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 506,
+          "to": 693,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 693,
+          "to": 729,
+          "weight": 700,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 729,
+          "to": 797,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 797,
+          "to": 830,
+          "weight": 700,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 830,
+          "to": 914,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 105,
+          "x": 0
+        },
+        {
+          "y": 43,
+          "from": 105,
+          "to": 176,
+          "x": 0
+        },
+        {
+          "y": 67,
+          "from": 177,
+          "to": 177,
+          "x": 0
+        },
+        {
+          "y": 91,
+          "from": 178,
+          "to": 233,
+          "x": 0,
+          "style": {
+            "font": {
+              "postscriptName": "Inter-Bold",
+              "family": "Inter",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "y": 115,
+          "from": 234,
+          "to": 332,
+          "x": 0
+        },
+        {
+          "y": 139,
+          "from": 333,
+          "to": 333,
+          "x": 0
+        },
+        {
+          "y": 163,
+          "from": 334,
+          "to": 388,
+          "x": 0
+        },
+        {
+          "y": 187,
+          "from": 389,
+          "to": 455,
+          "x": 0
+        },
+        {
+          "y": 211,
+          "from": 456,
+          "to": 456,
+          "x": 0
+        },
+        {
+          "y": 235,
+          "from": 457,
+          "to": 505,
+          "x": 0
+        },
+        {
+          "y": 259,
+          "from": 506,
+          "to": 587,
+          "x": 0
+        },
+        {
+          "y": 283,
+          "from": 588,
+          "to": 588,
+          "x": 0
+        },
+        {
+          "y": 307,
+          "from": 589,
+          "to": 621,
+          "x": 0
+        },
+        {
+          "y": 331,
+          "from": 622,
+          "to": 689,
+          "x": 0
+        },
+        {
+          "y": 355,
+          "from": 690,
+          "to": 690,
+          "x": 0
+        },
+        {
+          "y": 379,
+          "from": 691,
+          "to": 728,
+          "x": 0
+        },
+        {
+          "y": 403,
+          "from": 729,
+          "to": 794,
+          "x": 0
+        },
+        {
+          "y": 427,
+          "from": 795,
+          "to": 795,
+          "x": 0
+        },
+        {
+          "y": 451,
+          "from": 796,
+          "to": 829,
+          "x": 0
+        },
+        {
+          "y": 475,
+          "from": 830,
+          "to": 913,
+          "x": 0
+        },
+        {
+          "x": 0,
+          "y": 499,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "area",
+        "width": 1004,
+        "height": 504
+      },
+      "x": 138,
+      "y": 1530.724609375,
+      "width": 1004,
+      "height": 501.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Blog text [TAG:P]"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_44d1e412731f",
+      "text": "Pro tip: \nGoogle values proximity, relevance, and prominence. Your homepage and GBP should work hand-in-hand to reflect all three.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        195,
+        2093
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 10,
+          "weight": 700,
+          "size": 28,
+          "color": "#de8d6d",
+          "uppercase": false,
+          "underline": false
+        },
+        {
+          "from": 10,
+          "to": 130,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 27,
+          "from": 0,
+          "to": 9,
+          "x": 0,
+          "style": {
+            "font": {
+              "postscriptName": "Inter-Bold",
+              "family": "Inter",
+              "style": "Bold",
+              "size": 28
+            },
+            "fill": {
+              "type": "solid",
+              "color": {
+                "mode": "RGB",
+                "value": {
+                  "r": 222,
+                  "g": 141,
+                  "b": 109
+                }
+              }
+            }
+          }
+        },
+        {
+          "y": 53,
+          "from": 10,
+          "to": 96,
+          "x": 0
+        },
+        {
+          "y": 77,
+          "from": 96,
+          "to": 130,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 897
+      },
+      "x": 195,
+      "y": 2102.724609375,
+      "width": 897,
+      "height": 71.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Pro tip: \nGoogle values proximity, relevance, and prominence. Your homepage and GBP should work hand-in-hand to reflect all three."
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_2c021570ce1c",
+      "text": "What Google Looks for in Local Rankings",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        2268
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 32,
+        "color": "rgba(112,137,107,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 40.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 37,
+          "weight": 700,
+          "size": 32,
+          "color": "#70896b",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 31,
+          "from": 0,
+          "to": 39,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 1004
+      },
+      "x": 138,
+      "y": 2271.359375,
+      "width": 1004,
+      "height": 34.040625,
+      "ancestors": [
+        "",
+        "",
+        "What Google Looks for in Local Rankings"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "blog_detail_bcb4f48e1767",
+      "text": "Local SEO is built on three key pillars:\n\nRelevance: How well your content matches the searcher’s intent\nDistance: How close you are to the searcher’s location\nProminence: How well-known and trusted your restaurant is, online and off\n\nOptimizing your homepage helps with all three.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        2352
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 20,
+        "color": "rgba(0,0,0,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 25.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 281,
+          "weight": 500,
+          "size": 20,
+          "color": "#000000",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 19,
+          "from": 0,
+          "to": 40,
+          "x": 0
+        },
+        {
+          "y": 43,
+          "from": 41,
+          "to": 41,
+          "x": 0
+        },
+        {
+          "y": 67,
+          "from": 42,
+          "to": 87,
+          "x": 0
+        },
+        {
+          "y": 91,
+          "from": 87,
+          "to": 104,
+          "x": 0
+        },
+        {
+          "y": 115,
+          "from": 105,
+          "to": 151,
+          "x": 0
+        },
+        {
+          "y": 139,
+          "from": 151,
+          "to": 159,
+          "x": 0
+        },
+        {
+          "y": 163,
+          "from": 160,
+          "to": 204,
+          "x": 0
+        },
+        {
+          "y": 187,
+          "from": 204,
+          "to": 233,
+          "x": 0
+        },
+        {
+          "y": 211,
+          "from": 234,
+          "to": 234,
+          "x": 0
+        },
+        {
+          "y": 235,
+          "from": 235,
+          "to": 281,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "autoHeight",
+        "width": 494
+      },
+      "x": 138,
+      "y": 2353.724609375,
+      "width": 494,
+      "height": 237.275390625,
+      "ancestors": [
+        "",
+        "",
+        "Local SEO is built on three key pillars:\n\nRelevance: How well your content matches the searcher’s intent\nDistance: How close you are to the searcher’s location\nProminence: How well-known and trusted your restaurant is, online and off\n\nOptimizing your homep"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "blog_detail_1624e4d9861e",
+      "text": "Related Posts",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138,
+        2807
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 32,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 40.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 13,
+          "weight": 700,
+          "size": 32,
+          "color": "#003e3f",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 13,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 138,
+      "y": 2779.359375,
+      "width": 257.92,
+      "height": 34.040625,
+      "ancestors": [
+        "",
+        "",
+        "Related Posts"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "blog_detail_4d181476ee16",
+      "text": "Lorem ipsum dolor sit amet, consectetur.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        138.0,
+        3166.999969482422
+      ],
+      "font": {
+        "family": "Noto Sans",
+        "weight": 700,
+        "size": 24,
+        "color": "rgba(61,61,61,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 34,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 700,
+          "size": 24,
+          "color": "#3d3d3d",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 26,
+          "from": 0,
+          "to": 22,
+          "x": 0
+        }
+      ],
+      "baseline": 0.888,
+      "frame": {
+        "type": "area",
+        "width": 279,
+        "height": 62
+      },
+      "x": 138.0,
+      "y": 3171.687969482422,
+      "width": 279,
+      "height": 26.112000000000002,
+      "ancestors": [
+        "",
+        "",
+        "Post",
+        "Post Title [TAG:H5]"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "blog_detail_8c5ed5ef437b",
+      "text": "Lorem ipsum dolor sit amet, consectetur.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        479.99993896484375,
+        3165.999969482422
+      ],
+      "font": {
+        "family": "Noto Sans",
+        "weight": 700,
+        "size": 24,
+        "color": "rgba(61,61,61,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 34,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 700,
+          "size": 24,
+          "color": "#3d3d3d",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 26,
+          "from": 0,
+          "to": 22,
+          "x": 0
+        }
+      ],
+      "baseline": 0.888,
+      "frame": {
+        "type": "area",
+        "width": 279,
+        "height": 62
+      },
+      "x": 479.99993896484375,
+      "y": 3170.687969482422,
+      "width": 279,
+      "height": 26.112000000000002,
+      "ancestors": [
+        "",
+        "",
+        "Post",
+        "Post Title [TAG:H5]"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "blog_detail_1fab6576ba8d",
+      "text": "Lorem ipsum dolor sit amet, consectetur.",
+      "scope": "page",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        821.9998779296875,
+        3165.999969482422
+      ],
+      "font": {
+        "family": "Noto Sans",
+        "weight": 700,
+        "size": 24,
+        "color": "rgba(61,61,61,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 34,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 700,
+          "size": 24,
+          "color": "#3d3d3d",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 26,
+          "from": 0,
+          "to": 22,
+          "x": 0
+        }
+      ],
+      "baseline": 0.888,
+      "frame": {
+        "type": "area",
+        "width": 279,
+        "height": 62
+      },
+      "x": 821.9998779296875,
+      "y": 3170.687969482422,
+      "width": 279,
+      "height": 26.112000000000002,
+      "ancestors": [
+        "",
+        "",
+        "Post",
+        "Post Title [TAG:H5]"
+      ],
+      "tag": "h2"
+    },
+    {
+      "key": "shared_78f8d1b3d0a8",
+      "text": "Navigation",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        564,
+        3500
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 26,
+        "color": "rgba(191,216,185,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 32.5,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 12,
+          "weight": 700,
+          "size": 26,
+          "color": "#bfd8b9",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 10,
+          "x": -81.68394470214844
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 482.31605529785156,
+      "y": 3477.5419921875,
+      "width": 161.2,
+      "height": 27.6580078125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Navigation"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_63ce494a885e",
+      "text": "Services",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        758.5,
+        3500.0
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 26,
+        "color": "rgba(191,216,185,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 32.5,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 12,
+          "weight": 700,
+          "size": 26,
+          "color": "#bfd8b9",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 8,
+          "x": -64.36293029785156
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 694.1370697021484,
+      "y": 3477.5419921875,
+      "width": 128.96,
+      "height": 27.6580078125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Services"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_4937e4e54c2c",
+      "text": "Contact",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        1004,
+        3500
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 26,
+        "color": "rgba(191,216,185,1)",
+        "spacing": 0.0,
+        "align": "center",
+        "lineHeight": 32.5,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 12,
+          "weight": 700,
+          "size": 26,
+          "color": "#bfd8b9",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 7,
+          "x": -64.76918029785156
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 939.2308197021484,
+      "y": 3477.5419921875,
+      "width": 112.84,
+      "height": 27.6580078125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Contact"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_819c8f0b4b41",
+      "text": "Home\n\nServices\n\nCase Studies\n\nAbout\n\nFree Tools\n\nBlog",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        482.5,
+        3581.0
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 4,
+          "x": 0
+        },
+        {
+          "y": 21,
+          "from": 5,
+          "to": 5,
+          "x": 0
+        },
+        {
+          "y": 42,
+          "from": 6,
+          "to": 14,
+          "x": 0
+        },
+        {
+          "y": 63,
+          "from": 15,
+          "to": 15,
+          "x": 0
+        },
+        {
+          "y": 84,
+          "from": 16,
+          "to": 28,
+          "x": 0
+        },
+        {
+          "y": 105,
+          "from": 29,
+          "to": 29,
+          "x": 0
+        },
+        {
+          "y": 126,
+          "from": 30,
+          "to": 35,
+          "x": 0
+        },
+        {
+          "y": 147,
+          "from": 36,
+          "to": 36,
+          "x": 0
+        },
+        {
+          "y": 168,
+          "from": 37,
+          "to": 47,
+          "x": 0
+        },
+        {
+          "y": 189,
+          "from": 48,
+          "to": 48,
+          "x": 0
+        },
+        {
+          "y": 210,
+          "from": 49,
+          "to": 53,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 482.5,
+      "y": 3565.4521484375,
+      "width": 133.92,
+      "height": 229.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Home\n\nServices\n\nCase Studies\n\nAbout\n\nFree Tools\n\nBlog"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_5f04f2b25bf0",
+      "text": "AI SEO\n\nSEO\n\nSEO for SaaS\n\nAtlanta SEO\n\nAtlanta SEM\n\nPPC\n\n\n\n",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        692.5,
+        3581.0
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 6,
+          "x": 0
+        },
+        {
+          "y": 21,
+          "from": 7,
+          "to": 7,
+          "x": 0
+        },
+        {
+          "y": 42,
+          "from": 8,
+          "to": 11,
+          "x": 0
+        },
+        {
+          "y": 63,
+          "from": 12,
+          "to": 12,
+          "x": 0
+        },
+        {
+          "y": 84,
+          "from": 13,
+          "to": 25,
+          "x": 0
+        },
+        {
+          "y": 105,
+          "from": 26,
+          "to": 26,
+          "x": 0
+        },
+        {
+          "y": 126,
+          "from": 27,
+          "to": 38,
+          "x": 0
+        },
+        {
+          "y": 147,
+          "from": 39,
+          "to": 39,
+          "x": 0
+        },
+        {
+          "y": 168,
+          "from": 40,
+          "to": 51,
+          "x": 0
+        },
+        {
+          "y": 189,
+          "from": 52,
+          "to": 52,
+          "x": 0
+        },
+        {
+          "y": 210,
+          "from": 53,
+          "to": 56,
+          "x": 0
+        },
+        {
+          "y": 231,
+          "from": 57,
+          "to": 57,
+          "x": 0
+        },
+        {
+          "y": 252,
+          "from": 58,
+          "to": 58,
+          "x": 0
+        },
+        {
+          "y": 273,
+          "from": 59,
+          "to": 59,
+          "x": 0
+        },
+        {
+          "x": 0,
+          "y": 294,
+          "from": 0,
+          "to": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 692.5,
+      "y": 3565.4521484375,
+      "width": 133.92,
+      "height": 313.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "AI SEO\n\nSEO\n\nSEO for SaaS\n\nAtlanta SEO\n\nAtlanta SEM\n\nPPC\n\n\n\n"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_ed5745efb63b",
+      "text": "404-425-9775\n\n675 Ponce De Leon Ave NE\nSuite NE223\nAtlanta, GA 30308\n\nContact Us",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        938,
+        3581
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 18,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 22.5,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 0,
+          "weight": 500,
+          "size": 18,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 12,
+          "x": 0
+        },
+        {
+          "y": 21,
+          "from": 13,
+          "to": 13,
+          "x": 0
+        },
+        {
+          "y": 42,
+          "from": 14,
+          "to": 38,
+          "x": 0
+        },
+        {
+          "y": 63,
+          "from": 39,
+          "to": 50,
+          "x": 0
+        },
+        {
+          "y": 84,
+          "from": 51,
+          "to": 68,
+          "x": 0
+        },
+        {
+          "y": 105,
+          "from": 69,
+          "to": 69,
+          "x": 0
+        },
+        {
+          "y": 126,
+          "from": 70,
+          "to": 80,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 938,
+      "y": 3565.4521484375,
+      "width": 267.84,
+      "height": 145.1478515625,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "404-425-9775\n\n675 Ponce De Leon Ave NE\nSuite NE223\nAtlanta, GA 30308\n\nContact Us"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_7b3ca0dbb8c9",
+      "text": "Schedule A Call",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        243,
+        3762
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 700,
+        "size": 17,
+        "color": "rgba(0,62,63,1)",
+        "spacing": 0.85,
+        "align": "center",
+        "lineHeight": 21.25,
+        "uppercase": true
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 11,
+          "weight": 700,
+          "size": 17,
+          "color": "#003e3f",
+          "uppercase": true,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 15,
+          "x": -84.45124053955078
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 158.54875946044922,
+      "y": 3747.31591796875,
+      "width": 158.1,
+      "height": 18.08408203125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Group 61",
+        "Schedule A Call"
+      ],
+      "tag": "p"
+    },
+    {
+      "key": "shared_a8e4f9f45c81",
+      "text": "Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers",
+      "scope": "footer",
+      "matrix": [
+        1,
+        0,
+        0,
+        1,
+        321,
+        3945
+      ],
+      "font": {
+        "family": "Inter",
+        "weight": 500,
+        "size": 16,
+        "color": "rgba(251,242,230,1)",
+        "spacing": 0.0,
+        "align": "left",
+        "lineHeight": 20.0,
+        "uppercase": false
+      },
+      "runs": [
+        {
+          "from": 0,
+          "to": 89,
+          "weight": 500,
+          "size": 16,
+          "color": "#fbf2e6",
+          "uppercase": false,
+          "underline": false
+        }
+      ],
+      "lines": [
+        {
+          "y": 0,
+          "from": 0,
+          "to": 89,
+          "x": 0
+        }
+      ],
+      "baseline": 0.86376953125,
+      "frame": {
+        "type": "positioned"
+      },
+      "x": 321,
+      "y": 3931.1796875,
+      "width": 882.88,
+      "height": 17.0203125,
+      "ancestors": [
+        "",
+        "",
+        "Footer",
+        "Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers"
+      ],
+      "tag": "p"
+    }
+  ],
+  "images": [
+    {
+      "key": "blog_detail_image_33017e3b40",
+      "asset": "df292e83c9c5368e3616147b1df1019d.png",
+      "scope": "page",
+      "label": "Placement Area [ASSET:hero][SIZE:Default][STATE:DEFAULT]",
+      "x": 138.0,
+      "y": 557.9999847412109,
+      "width": 1004,
+      "height": 397
+    },
+    {
+      "key": "blog_detail_image_82ae55901c",
+      "asset": "9146d1b75f5dfc52941983be1b4c254b.png",
+      "scope": "page",
+      "label": "three-local-seo-ranking-factors-explained",
+      "x": 788,
+      "y": 2352,
+      "width": 285,
+      "height": 285
+    },
+    {
+      "key": "blog_detail_image_e66cb91b30",
+      "asset": "35cc479761601be986b3f8891766eec2.png",
+      "scope": "page",
+      "label": "Placement Area [ASSET:small][SIZE:Default][STATE:DEFAULT]",
+      "x": 479.9999190568924,
+      "y": 2865.0000518262386,
+      "width": 320,
+      "height": 276
+    },
+    {
+      "key": "blog_detail_image_e850bb0d10",
+      "asset": "35cc479761601be986b3f8891766eec2.png",
+      "scope": "page",
+      "label": "Placement Area [ASSET:small][SIZE:Default][STATE:DEFAULT]",
+      "x": 137.99998009204865,
+      "y": 2865.0000518262386,
+      "width": 320,
+      "height": 276
+    },
+    {
+      "key": "blog_detail_image_e6018f7e64",
+      "asset": "35cc479761601be986b3f8891766eec2.png",
+      "scope": "page",
+      "label": "Placement Area [ASSET:small][SIZE:Default][STATE:DEFAULT]",
+      "x": 822.0001021623611,
+      "y": 2865.0000518262386,
+      "width": 320,
+      "height": 276
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "wordpress": "7.1",
+  "astra": "4.13.11",
+  "acf": "6.8.10",
+  "child_theme": "1.0.6",
+  "source_xd_sha256": "6876479a250ca49e51f48f1265ff5962d7650bb675de3e31ce16f6caddb4064f",
+  "pages": [
+    {
+      "name": "Blog Detail",
+      "slug": "blog-detail",
+      "width": 1280,
+      "height": 4033,
+      "footerY": 3354
+    },
+    {
+      "name": "Case Study",
+      "slug": "case-studies",
+      "width": 1280,
+      "height": 2892,
+      "footerY": 2221
+    },
+    {
+      "name": "Blog",
+      "slug": "blog",
+      "width": 1280,
+      "height": 3406,
+      "footerY": 2731
+    },
+    {
+      "name": "Home",
+      "slug": "home",
+      "width": 1280,
+      "height": 5787,
+      "footerY": 5116
+    },
+    {
+      "name": "Case Study Detail",
+      "slug": "case-study-detail",
+      "width": 1280,
+      "height": 4033,
+      "footerY": 3354
+    },
+    {
+      "name": "About",
+      "slug": "about",
+      "width": 1280,
+      "height": 5941,
+      "footerY": 5269
+    },
+    {
+      "name": "Services-Landing",
+      "slug": "services",
+      "width": 1280,
+      "height": 3203,
+      "footerY": 2526
+    },
+    {
+      "name": "Services-Individual",
+      "slug": "search-engine-marketing",
+      "width": 1280,
+      "height": 5979,
+      "footerY": 5305
+    }
+  ]
+}
