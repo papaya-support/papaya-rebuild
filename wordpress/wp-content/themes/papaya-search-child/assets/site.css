@@ -523,7 +523,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   & .ps-menu-list { flex-direction: row; gap: 7px; flex-wrap: wrap; }
   & a { display: flex; align-items: center; justify-content: center; width: 23px; height: 23px; border-radius: 50%; background: var(--papaya-cream); color: var(--papaya-orange); font-size: 0; font-weight: 700; }
   & a::before { content: '↗'; font-size: 12px; }
-  & .social-facebook a::before { content: '\f304'; font-family: PapayaIcons; }
+  & .social-facebook a::before { content: '\f305'; font-family: PapayaIcons; }
   & .social-twitter a::before { content: '\f301'; font-family: PapayaIcons; }
   & .social-linkedin a::before { content: '\f18d'; font-family: PapayaIcons; }
 }
