@@ -214,10 +214,10 @@ button {
     }
   }
   .mobile-band {
-    padding:26px 22px;
+    padding:24px 22px;
   }
   .mobile-column+.mobile-column {
-    margin-top:38px;
+    margin-top:24px;
   }
   .mobile-text {
     position:static;
@@ -260,7 +260,7 @@ button {
     margin-bottom:26px;
   }
   .mobile-footer {
-    padding:40px 24px;
+    padding:32px 24px;
     background:var(--papaya-teal);
     color:var(--papaya-cream);
     &> a img {
@@ -382,12 +382,6 @@ button {
     transform:scale(.9);
   }
 }
-#search-engine-optimization {
-  top:995px;
-}
-#website-analytics,#wordpress-maintenance {
-  top:1490px;
-}
 img:is([sizes=auto i],[sizes^="auto," i]) {
   contain-intrinsic-size:3000px 1500px;
 }
@@ -422,7 +416,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
     z-index: 5;
     left: 466.5px;
     width: 711.5px;
-    min-height: 355px;
+    min-height: 310px;
     grid-template-columns: 210px 245.5px 256px;
     background: var(--papaya-teal);
     box-shadow: 0 0 0 2px var(--papaya-teal);
@@ -455,8 +449,8 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
 .ps-footer-columns {
   display: grid;
   & .ps-footer-heading {
-    margin: 0 0 30px;
-    padding: 0 0 40px;
+    margin: 0 0 22px;
+    padding: 0 0 24px;
     border-bottom: 2px solid #ff9029;
     color: var(--papaya-green);
     font-family: Inter, sans-serif;
@@ -466,17 +460,24 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
     text-align: left;
     text-transform: uppercase;
   }
+  & .ps-menu-list { gap: 16px; }
   & .ps-menu-footer_contact {
     & a { line-height: 21px; }
-    & .ps-menu-list { gap: 21px; }
+    & .ps-menu-list { gap: 18px; }
   }
-  & .ps-menu-footer_social { margin-top: 30px; }
+  & .ps-menu-footer_social { margin-top: 22px; & .ps-menu-list { gap: 7px; } }
 }
 @media (max-width: 767px) {
   .mobile-footer .ps-footer-columns {
-    gap: 32px;
-    margin-bottom: 32px;
+    gap: 24px;
+    margin-bottom: 24px;
     & .ps-footer-heading { font-size: 22px; padding-bottom: 16px; margin-bottom: 20px; }
     & .ps-menu { margin-bottom: 0; }
   }
+}
+
+@media (max-width: 767px) {
+  .mobile-column > :last-child { margin-bottom: 0; }
+  .mobile-column > :first-child { margin-top: 0; }
+  .mobile-footer > :last-child { margin-bottom: 0; }
 }

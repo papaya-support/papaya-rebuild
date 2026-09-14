@@ -81,6 +81,26 @@ function ps_render_footer_columns($design, $mobile=false) {
     }
     echo '</div>';
 }
+/** Crop only the empty spacing bands, keeping artwork at its original scale. */
+function ps_compact_artwork($svg, $design) {
+    $spacing=json_decode(file_get_contents(__DIR__.'/spacing.json'),true);
+    $cuts=$spacing[$design['slug']]??[];
+    if(!$cuts) {return $svg;}
+    $height=$design['height']-array_sum(array_map(fn($cut)=>$cut[1]-$cut[0],$cuts));
+    $art=preg_replace('/^<svg[^>]*>|<\/svg>$/','',$svg);
+    $id='ps-artwork-'.$design['slug'];
+    $result='<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="'.$height.'" viewBox="0 0 1280 '.$height.'" aria-hidden="true"><defs><g id="'.esc_attr($id).'">'.$art.'</g></defs>';
+    $source=0;$target=0;
+    foreach(array_merge($cuts,[[$design['height'],$design['height']]]) as [$from,$to]) {
+        $segment=$from-$source;
+        if($segment>0) {
+            $result.='<svg x="0" y="'.$target.'" width="1280" height="'.$segment.'" viewBox="0 '.$source.' 1280 '.$segment.'" overflow="hidden"><use href="#'.esc_attr($id).'"/></svg>';
+            $target+=$segment;
+        }
+        $source=$to;
+    }
+    return $result.'</svg>';
+}
 function ps_render_page($slug) {
     $design=ps_design($slug); if (!$design) {return;}
     $svg=file_get_contents(__DIR__.'/../design/'.$slug.'.svg');
@@ -93,7 +113,7 @@ function ps_render_page($slug) {
     foreach ($design['images'] as $im) {$svg=str_replace('{{'.$im['key'].'}}',esc_url(ps_image_url($im)),$svg);}
     echo '<div class="xd-viewport" data-page="'.esc_attr($slug).'"><div class="xd-stage" data-height="'.$design['height'].'">';
     // SVG contains only the original decorative geometry. Text remains selectable HTML, read from ACF.
-    echo '<div class="xd-artwork">'.$svg.'</div>';
+    echo '<div class="xd-artwork">'.ps_compact_artwork($svg,$design).'</div>';
     echo '<header class="xd-region" aria-label="Site header"><a class="brand-hit" href="'.esc_url(home_url('/')).'" aria-label="Papaya Search home"></a>';
     ps_render_menu('primary');
     echo '</header><main id="main-content" class="xd-region" tabindex="-1">';

@@ -5,6 +5,7 @@ import json, re
 from pathlib import Path
 root=Path(__file__).resolve().parent.parent
 theme=root/'wordpress/wp-content/themes/papaya-search-child'
+spacing=json.loads((theme/'inc/spacing.json').read_text())
 rules=[]
 page_rules={}
 def rule(selector, properties):
@@ -37,15 +38,22 @@ for path in sorted((theme/'design').glob('*.json')):
     slug=d['slug']; desktop=f'.xd-viewport[data-page="{slug}"]'; mobile=f'.mobile-site[data-page="{slug}"]'
     page_rules={}
     rules.append('\n/* '+slug+' */')
-    rule(desktop,'--page-height:'+num(d['height'])+';--page-bg:'+d['background'])
-    rule(desktop+' .xd-stage','height:'+px(d['height'])+';background:'+d['background'])
-    rule(desktop+' .ps-footer-columns','top:'+px(d['footerY']+123.542))
+    cuts=spacing.get(slug,[])
+    def compact_y(y): return y-sum(max(0,min(y,b)-a) for a,b in cuts if y>a)
+    def compact_matrix(t):
+        m=list(t['matrix']);m[5]-=t['y']-compact_y(t['y']);return m
+    rule(desktop,'--page-height:'+num(compact_y(d['height']))+';--page-bg:'+d['background'])
+    rule(desktop+' .xd-stage','height:'+px(compact_y(d['height']))+';background:'+d['background'])
+    rule(desktop+' .ps-footer-columns','top:'+px(compact_y(d['footerY']+123.542)))
+    if slug=='services':
+        for anchor,y in [('search-engine-optimization',995),('website-analytics',1490),('wordpress-maintenance',1490)]:
+            rule(desktop+' #'+anchor,'top:'+px(compact_y(y)))
     for t in d['texts']:
         f=t['font']; field=f'[data-field="{t["key"]}"]'; sel=desktop+' '+field; msel=mobile+' '+field
         css='--text-anchor:'+f['align']+';font-family:'+f['family']+';font-weight:'+num(f['weight'])+';font-size:'+px(f['size'])+';color:'+f['color']+';letter-spacing:'+px(f['spacing'])
         if f['uppercase']: css+=';text-transform:uppercase'
         rule(sel+','+msel,css)
-        rule(sel,'transform:matrix('+','.join(map(num,t['matrix']))+')')
+        rule(sel,'transform:matrix('+','.join(map(num,compact_matrix(t)))+')')
         for i,r in enumerate(t['runs']):
             css='font-weight:'+num(r['weight'])+';color:'+r['color']
             if r['uppercase']: css+=';text-transform:uppercase'
@@ -56,7 +64,7 @@ for path in sorted((theme/'design').glob('*.json')):
         frame=t['frame'];width=frame.get('width',max(100,t['width']));x=-width/2 if frame['type']=='positioned' and f['align']=='center' else 0
         rule(sel+' .xd-edited','left:'+px(x)+';top:'+px(t['lines'][0]['y']-f['size']*t['baseline'])+';width:'+px(width)+';text-align:'+f['align']+';line-height:'+px(f['lineHeight']))
         if slug=='search-engine-marketing' and 4100<t['y']<4750 and '?' in t['text']:
-            rule(desktop+' #answer-'+t['key'],'left:648px;top:'+px(t['y']+t['height']+12)+';width:505px')
+            rule(desktop+' #answer-'+t['key'],'left:648px;top:'+px(compact_y(t['y']+t['height']+12))+';width:505px')
     for start,end,columns in bands[slug]:
         mid=(start+min(end,d['footerY']))/2;bg=d['background']
         for band in d.get('backgrounds',[]):
@@ -71,7 +79,9 @@ for path in sorted((theme/'design').glob('*.json')):
             images=[im for im in d['images'] if abs(im['x']-t['x'])<20 and t['y']-400<im['y']<t['y']]
             for i,slot in enumerate(titles):
                 delta='translate('+px(slot['x']-t['x'])+','+px(slot['y']-t['y'])+')'
-                for e in fields:rule(desktop+f' [data-field="{e["key"]}"][data-slot="{i}"]','transform:'+delta+' matrix('+','.join(map(num,e['matrix']))+')')
+                for e in fields:
+                    text_delta='translate('+px(slot['x']-t['x'])+','+px(compact_y(slot['y'])-compact_y(t['y']))+')'
+                    rule(desktop+f' [data-field="{e["key"]}"][data-slot="{i}"]','transform:'+text_delta+' matrix('+','.join(map(num,compact_matrix(e)))+')')
                 for im in images:rule(desktop+f' [data-image="{im["key"]}"][data-slot="{i}"]','transform:'+delta)
     rules.extend(emit_nested(page_rules))
 fonts=(theme/'assets/fonts/fonts.css').read_text().replace("url('","url('fonts/").replace('url("','url("fonts/')

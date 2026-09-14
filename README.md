@@ -111,10 +111,12 @@ The contact menu contains the phone, address/map link, and Contact Us. Social de
 
 ## Editable ACF field groups
 
-From version 1.0.9, the eight page groups and one shared footer group are stored as ACF field-group and field posts in the WordPress database. They appear under **ACF → Field Groups** and can be edited there. The child theme no longer calls `acf_add_local_field_group` or loads overriding local JSON definitions.
+From version 1.0.10, the eight page groups and one shared footer group are stored as ACF field-group and field posts in the WordPress database. They appear under **ACF → Field Groups** and can be edited there. The child theme no longer calls `acf_add_local_field_group` or loads overriding local JSON definitions.
 
 After deploying this update, open the WordPress dashboard as an administrator once. A one-time importer creates missing groups from `acf-import/field-groups.json`. Existing groups, saved content, and field keys/names are preserved. Later ACF edits are not reset by a refresh or deployment. The Papaya Setup importer also installs missing groups on a fresh site before importing content.
 
 Alternatively, use **ACF → Tools → Import Field Groups** and select the bundled `acf-import/field-groups.json`. Do not reimport over customized groups unless you intend to replace their definitions. Keep field names and keys unchanged to retain template connections. Page content remains editable under Pages; native menus remain under Appearance → Menus.
 
 Use ACF's export tools to back up subsequent field-definition changes or migrate them to another site. Those dashboard changes live in the database and are not automatically committed to Git. `tools/build-acf-import.py` only builds the initial distributable import file; it is not used to define frontend fields at runtime.
+
+Spacing: `inc/spacing.json` in the child theme defines empty XD bands to remove. The artwork and generated text coordinates share this map, preserving image and font proportions. Update it with `python3 tools/build-css.py` and verify with `node tools/audit-spacing.mjs`. Shared footer and mobile spacing is in `tools/styles/base.css`.
