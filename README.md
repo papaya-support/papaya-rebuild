@@ -69,3 +69,9 @@ The preview opens at `http://127.0.0.1:9477/` and uses WordPress Playground/SQLi
 The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 360 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
 
 The ACF field-group JSON is a schema installer, not a page-content source. It is only needed to create missing groups on a fresh site. Existing installations use the database groups and skip the installer; do not reimport over customized groups. A database migration that already includes the ACF groups also removes the need for an import on the destination.
+
+## ACF editor order and rich text (2.1.0)
+
+Open the dashboard once after deployment to apply the one-time field update. Fields follow each page’s PHP sections from top to bottom; images/alt text, buttons/URLs, FAQ questions/answers and card metadata stay together. All 222 original textarea fields become WYSIWYG editors. Field names, keys, IDs and saved values stay intact. Later dashboard changes are not reset.
+
+Descriptions support paragraphs, lists, links and emphasis. Headings and button labels support inline emphasis without invalid paragraph nesting. Editor text alignment is rendered with CSS classes. The migration updates the existing ACF database posts and does not register code-only groups or require a manual reimport. Its original field definitions are retained in a non-autoloaded WordPress option for recovery.

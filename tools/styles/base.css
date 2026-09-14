@@ -192,3 +192,11 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 .section-search-engine-marketing-faqs [data-image] { aspect-ratio: 439 / 593; object-fit: cover; }
 .section-about-audience-strategy [data-image] { aspect-ratio: 503 / 420; object-fit: cover; }
 .section-about-partnership [data-image] { aspect-ratio: 439 / 390; object-fit: cover; }
+
+/* Formatting supported by the ACF rich-text editors, without inline styles. */
+.rich-align-left { text-align: left; }
+.rich-align-center { text-align: center; }
+.rich-align-right { text-align: right; }
+.rich-align-justify { text-align: justify; }
+.rich-underline { text-decoration: underline; }
+.rich-strike { text-decoration: line-through; }

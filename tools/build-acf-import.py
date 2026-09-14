@@ -63,3 +63,7 @@ shared['booking']=field('ps_booking_url','Default Page Button and Footer Call UR
 groups.append(dict(key='group_ps_shared',title='Site Content — Footer and Default Links',fields=list(shared.values()),location=[[dict(param='post_type',operator='==',value='ps_site_content')]],active=True,description='Navigation menus are managed under Appearance → Menus.'))
 (theme/'acf-import/field-groups.json').write_text(json.dumps(groups,indent=2,ensure_ascii=False)+'\n')
 print('Created',len(groups),'editable ACF groups with',sum(len(g['fields']) for g in groups),'fields')
+
+# Apply the current section order and rich-text editor types to fresh-site schemas.
+import runpy
+runpy.run_path(str(root/"tools/order-acf-fields.py"))

@@ -39,3 +39,43 @@ add_filter('acf/json/save_paths',function($paths,$post){
 add_filter('acf/json/load_paths',function($paths){
     return array_values(array_filter($paths,fn($path)=>untrailingslashit($path)!==get_stylesheet_directory().'/acf-json'));
 });
+
+/** Update existing database fields once; never reset later editor customizations. */
+function ps_upgrade_acf_editors() {
+    if(get_option('ps_acf_editor_order_v2')) {return true;}
+    if(!function_exists('acf_update_field')) {return new WP_Error('acf_missing','Activate Advanced Custom Fields first.');}
+    if(!did_action('acf/init')) {acf_init();}
+    $orders=require __DIR__.'/acf-editor-order.php';
+    $labels=require __DIR__.'/acf-editor-labels.php';
+    $backup=[];$updates=[];
+    foreach($orders as $group_key=>$names) {
+        $group=acf_get_field_group($group_key);
+        if(!$group || empty($group['ID'])) {return new WP_Error('acf_group_missing','Missing ACF group: '.$group_key);}
+        $fields=acf_get_fields($group) ?: [];
+        $by_name=[];
+        foreach($fields as $field) {$by_name[$field['name']]=$field;}
+        // Keep custom fields that were added through the dashboard, after known page fields.
+        $names=array_values(array_unique(array_merge($names,array_keys($by_name))));
+        foreach($names as $position=>$name) {
+            if(!isset($by_name[$name])) {continue;}
+            $field=$by_name[$name];$backup[$field['key']]=$field;
+            $field['menu_order']=$position;
+            if(isset($labels[$name]) && $field['label']===$labels[$name]['old']) {$field['label']=$labels[$name]['new'];}
+            if($field['type']==='textarea') {
+                $field['type']='wysiwyg';$field['tabs']='all';$field['toolbar']='full';$field['media_upload']=0;$field['delay']=1;
+                unset($field['rows'],$field['new_lines'],$field['maxlength']);
+                $field['instructions']='Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.';
+            }
+            $updates[]=$field;
+        }
+    }
+    add_option('ps_acf_editor_upgrade_backup_v2',$backup,'',false);
+    foreach($updates as $field) {if(!acf_update_field(wp_slash($field))) {return new WP_Error('acf_field_update_failed','Could not update '.$field['name']);}}
+    update_option('ps_acf_editor_order_v2',1,false);
+    return true;
+}
+add_action('admin_init',function(){
+    if(!current_user_can('manage_options')) {return;}
+    $result=ps_upgrade_acf_editors();
+    if(is_wp_error($result)) {add_action('admin_notices',function() use($result){echo '<div class="notice notice-error"><p>'.esc_html($result->get_error_message()).'</p></div>';});}
+},6);

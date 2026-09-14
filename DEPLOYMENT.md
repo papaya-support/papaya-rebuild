@@ -49,3 +49,5 @@ Visit the dashboard as an administrator after deploying version 2.0.0 to install
 ## HTML template rebuild (2.0.0)
 
 All eight existing template filenames and ACF keys are retained. Deploy the child-theme update; do not reimport content or reset menus. Page layouts now use PHP section templates and responsive HTML/CSS. The obsolete SVG renderer and full-page SVG files have been removed. The new theme does not load them even if an older copy remains on the server. Clear the site cache after deployment and review desktop and mobile pages. No database migration is needed for existing content.
+
+For version 2.1.0, visit WordPress admin once after deployment. The child theme reorders the existing ACF fields and converts textareas to WYSIWYG editors without changing saved page content. No manual field-group import is needed.

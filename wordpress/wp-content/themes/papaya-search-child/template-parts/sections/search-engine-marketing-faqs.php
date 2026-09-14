@@ -9,37 +9,37 @@
 </div>
 <div class="split-media">
 <details class="faq-item">
-<summary data-field="search_engine_marketing_e4c9a55704b0"><?php echo esc_html(ps_field_value('search_engine_marketing_e4c9a55704b0')); ?>
+<summary data-field="search_engine_marketing_e4c9a55704b0"><?php echo ps_inline_content('search_engine_marketing_e4c9a55704b0'); ?>
 </summary>
 <div class="faq-answer"><?php ps_faq_answer('search_engine_marketing_e4c9a55704b0'); ?>
 </div>
 </details>
 <details class="faq-item">
-<summary data-field="search_engine_marketing_1a8f0aa708c3"><?php echo esc_html(ps_field_value('search_engine_marketing_1a8f0aa708c3')); ?>
+<summary data-field="search_engine_marketing_1a8f0aa708c3"><?php echo ps_inline_content('search_engine_marketing_1a8f0aa708c3'); ?>
 </summary>
 <div class="faq-answer"><?php ps_faq_answer('search_engine_marketing_1a8f0aa708c3'); ?>
 </div>
 </details>
 <details class="faq-item">
-<summary data-field="search_engine_marketing_bb38e3397bbb"><?php echo esc_html(ps_field_value('search_engine_marketing_bb38e3397bbb')); ?>
+<summary data-field="search_engine_marketing_bb38e3397bbb"><?php echo ps_inline_content('search_engine_marketing_bb38e3397bbb'); ?>
 </summary>
 <div class="faq-answer"><?php ps_faq_answer('search_engine_marketing_bb38e3397bbb'); ?>
 </div>
 </details>
 <details class="faq-item">
-<summary data-field="search_engine_marketing_12d045c16ab7"><?php echo esc_html(ps_field_value('search_engine_marketing_12d045c16ab7')); ?>
+<summary data-field="search_engine_marketing_12d045c16ab7"><?php echo ps_inline_content('search_engine_marketing_12d045c16ab7'); ?>
 </summary>
 <div class="faq-answer"><?php ps_faq_answer('search_engine_marketing_12d045c16ab7'); ?>
 </div>
 </details>
 <details class="faq-item">
-<summary data-field="search_engine_marketing_49292f5e4eed"><?php echo esc_html(ps_field_value('search_engine_marketing_49292f5e4eed')); ?>
+<summary data-field="search_engine_marketing_49292f5e4eed"><?php echo ps_inline_content('search_engine_marketing_49292f5e4eed'); ?>
 </summary>
 <div class="faq-answer"><?php ps_faq_answer('search_engine_marketing_49292f5e4eed'); ?>
 </div>
 </details>
 <details class="faq-item">
-<summary data-field="search_engine_marketing_6e5798b9f4ea"><?php echo esc_html(ps_field_value('search_engine_marketing_6e5798b9f4ea')); ?>
+<summary data-field="search_engine_marketing_6e5798b9f4ea"><?php echo ps_inline_content('search_engine_marketing_6e5798b9f4ea'); ?>
 </summary>
 <div class="faq-answer"><?php ps_faq_answer('search_engine_marketing_6e5798b9f4ea'); ?>
 </div>
