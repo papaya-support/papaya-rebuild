@@ -43,7 +43,7 @@ for path in sorted((theme/'design').glob('*.json')):
     def compact_matrix(t):
         m=list(t['matrix']);m[5]-=t['y']-compact_y(t['y']);return m
     rule(desktop,'--page-height:'+num(compact_y(d['height']))+';--page-bg:'+d['background'])
-    rule(desktop+' .xd-stage','height:'+px(compact_y(d['height']))+';background:'+d['background'])
+    rule(desktop+' .xd-stage','height:'+px(compact_y(d['height']))+';background:linear-gradient(to bottom,'+d['background']+' 0 '+px(compact_y(d['footerY']))+',var(--papaya-teal) '+px(compact_y(d['footerY']))+' 100%)')
     rule(desktop+' .ps-footer-columns','top:'+px(compact_y(d['footerY']+123.542)))
     if slug=='services':
         for anchor,y in [('search-engine-optimization',995),('website-analytics',1490),('wordpress-maintenance',1490)]:

@@ -586,7 +586,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:5071px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 4539px,var(--papaya-teal) 4539px 100%);
   }
   & .ps-footer-columns {
     top:4618.542px;
@@ -2818,7 +2818,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:3693px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 3154px,var(--papaya-teal) 3154px 100%);
   }
   & .ps-footer-columns {
     top:3233.542px;
@@ -4092,7 +4092,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:2906px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 2371px,var(--papaya-teal) 2371px 100%);
   }
   & .ps-footer-columns {
     top:2450.542px;
@@ -6387,7 +6387,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:2547px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 2016px,var(--papaya-teal) 2016px 100%);
   }
   & .ps-footer-columns {
     top:2095.542px;
@@ -7787,7 +7787,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:3398px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 2859px,var(--papaya-teal) 2859px 100%);
   }
   & .ps-footer-columns {
     top:2938.542px;
@@ -8988,7 +8988,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(255,255,255,1);
   & .xd-stage {
     height:5287px;
-    background:rgba(255,255,255,1);
+    background:linear-gradient(to bottom,rgba(255,255,255,1) 0 4756px,var(--papaya-teal) 4756px 100%);
   }
   & .ps-footer-columns {
     top:4835.542px;
@@ -11274,7 +11274,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:5069px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 4535px,var(--papaya-teal) 4535px 100%);
   }
   & .ps-footer-columns {
     top:4614.542px;
@@ -13298,7 +13298,7 @@ img:is([sizes=auto i],[sizes^="auto," i]) {
   --page-bg:rgba(251,251,251,1);
   & .xd-stage {
     height:2748px;
-    background:rgba(251,251,251,1);
+    background:linear-gradient(to bottom,rgba(251,251,251,1) 0 2211px,var(--papaya-teal) 2211px 100%);
   }
   & .ps-footer-columns {
     top:2290.542px;
