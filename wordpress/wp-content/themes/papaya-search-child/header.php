@@ -10,3 +10,5 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#main-content">Skip to content</a>
+
+<?php get_template_part('template-parts/layout/site-header'); ?>

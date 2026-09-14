@@ -3,7 +3,7 @@
 defined('ABSPATH') || exit;
 require_once __DIR__ . '/inc/content.php';
 require_once __DIR__ . '/inc/fields.php';
-require_once __DIR__ . '/inc/render.php';
+require_once __DIR__ . '/inc/template-tags.php';
 require_once __DIR__ . '/inc/menus.php';
 require_once __DIR__ . '/inc/setup.php';
 add_action('after_setup_theme', function () {
@@ -13,7 +13,7 @@ add_action('after_setup_theme', function () {
     register_nav_menus(ps_menu_locations());
 }, 20);
 add_action('wp_enqueue_scripts', function () {
-    // The custom templates use the XD's exact typography and spacing. Astra remains the parent.
+    // Semantic PHP templates use a single responsive stylesheet. Astra remains the parent.
     wp_dequeue_style('astra-theme-css');
     if (is_page_template() && str_starts_with(get_page_template_slug(), 'page-templates/')) {
         remove_action('wp_footer', 'wp_enqueue_global_styles', 1);

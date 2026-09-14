@@ -32,7 +32,7 @@ The importer seeds the bundled defaults. Current local dashboard edits need a se
 
 ## Ongoing updates
 
-Edit PHP or JavaScript directly in the child theme. For CSS, edit `tools/styles/base.css` or the design data and run:
+Edit PHP or JavaScript directly in the child theme. For CSS, edit `tools/styles/base.css` and run:
 
 ```sh
 python3 tools/build-css.py
@@ -44,4 +44,8 @@ Changes made to theme files through the production Theme File Editor can be over
 
 ## ACF field groups after deployment
 
-Visit the dashboard as an administrator after deploying version 1.0.10 to install the nine editable ACF database groups. Manage their definitions under ACF → Field Groups afterward. The shipped import does not override subsequent edits. Existing values and field keys are preserved. Export later group changes through ACF → Tools when migrating them between environments.
+Visit the dashboard as an administrator after deploying version 2.0.0 to install the nine editable ACF database groups. Manage their definitions under ACF → Field Groups afterward. The shipped import does not override subsequent edits. Existing values and field keys are preserved. Export later group changes through ACF → Tools when migrating them between environments.
+
+## HTML template rebuild (2.0.0)
+
+All eight existing template filenames and ACF keys are retained. Deploy the child-theme update; do not reimport content or reset menus. Page layouts now use PHP section templates and responsive HTML/CSS. The obsolete SVG renderer and full-page SVG files have been removed. The new theme does not load them even if an older copy remains on the server. Clear the site cache after deployment and review desktop and mobile pages. No database migration is needed for existing content.

@@ -2,14 +2,13 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1920,height:1080}});
-if(process.argv.includes('--inspect')) { await page.goto('http://127.0.0.1:9477/',{waitUntil:'networkidle'});const result=await page.evaluate(()=>({text:getComputedStyle(document.querySelector('.xd-line')).transform,button:getComputedStyle(document.querySelector('[data-ui-button]')).transform}));if(!result.text.includes('0.9')||!result.button.includes('0.9'))throw new Error(JSON.stringify(result));await page.screenshot({path:'verification/home-smaller-type.png'});console.log(result);await browser.close();process.exit(); }
 const designs=JSON.parse(fs.readFileSync('wordpress/wp-content/themes/papaya-search-child/design/pages.json'));
 const results=[];
 async function check(slug,width){
  await page.setViewportSize({width,height:1080});
  await page.goto(`http://127.0.0.1:9477/${slug==='home'?'':slug+'/'}`,{waitUntil:'networkidle'});
  const result=await page.evaluate(()=>{
-  const v=document.querySelector('.xd-viewport'),s=document.querySelector('.xd-stage');
+  const v=document.querySelector('main'),s=document.querySelector('.site-footer');
   return {width:innerWidth,viewportWidth:v.getBoundingClientRect().width,stageLeft:s.getBoundingClientRect().left,stageRight:s.getBoundingClientRect().right,overflow:document.documentElement.scrollWidth>innerWidth,mobile:matchMedia('(max-width:767px)').matches};
  });
  if(result.overflow||(!result.mobile&&(Math.abs(result.stageLeft)>1||Math.abs(result.stageRight-width)>1)))throw new Error(JSON.stringify({slug,...result}));

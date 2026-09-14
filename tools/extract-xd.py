@@ -1,10 +1,10 @@
-"""Compile the supplied XD artboards into editable text and original SVG geometry.
+"""Extract original XD content for installation and offline design reference.
 XD is input data only; plugin metadata and invisible layers are never executed.
 """
 import json, pathlib, copy, html, re, shutil, struct, collections
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 SRC=ROOT/'design-source'; THEME=ROOT/'wordpress/wp-content/themes/papaya-search-child'
-for d in ['design','assets/images','inc','page-templates','acf-json']: (THEME/d).mkdir(parents=True,exist_ok=True)
+for d in ['design','assets/images']: (THEME/d).mkdir(parents=True,exist_ok=True)
 r=json.loads((SRC/'resources/graphics/graphicContent.agc').read_text()); sources={}
 def index(n):
  if isinstance(n,dict):
@@ -128,7 +128,8 @@ for bid,b in r['artboards'].items():
  # Order editable content by visual reading order instead of XD layer order.
  texts.sort(key=lambda t:(round(t['y']/12),t['x']))
  svg=f'<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="{b["height"]}" viewBox="0 0 1280 {b["height"]}" aria-hidden="true"><defs>'+''.join(defs)+'</defs>'+''.join(graphics)+'</svg>'
- (THEME/'design'/f'{slug}.svg').write_text(svg)
+ (ROOT/'design-source/reference-artboards').mkdir(parents=True,exist_ok=True)
+ (ROOT/'design-source/reference-artboards'/f'{slug}.svg').write_text(svg)
  if slug=='search-engine-marketing':
   (THEME/'assets/brand.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 43 291 61"><defs>'+''.join(defs)+'</defs>'+''.join(header_graphics)+'</svg>')
   (THEME/'assets/favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 45 38 48"><defs>'+''.join(defs)+'</defs>'+''.join(header_graphics)+'</svg>')

@@ -1,32 +1,32 @@
 (() => {
- 'use strict';
- document.querySelector('.menu-toggle')?.addEventListener('click',e=>{const b=e.currentTarget;const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));document.getElementById('mobile-navigation').hidden=!open;});
- document.querySelectorAll('.faq-question').forEach(b=>b.addEventListener('click',()=>{
-  const open=b.getAttribute('aria-expanded')!=='true';
-  document.querySelectorAll('.faq-question').forEach(other=>{other.setAttribute('aria-expanded','false');document.getElementById(other.getAttribute('aria-controls')).hidden=true;});
-  b.setAttribute('aria-expanded',String(open));document.getElementById(b.getAttribute('aria-controls')).hidden=!open;
- }));
- document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.faq-question[aria-expanded=true]').forEach(b=>b.click());const m=document.querySelector('.menu-toggle[aria-expanded=true]');if(m)m.click();}});
- document.querySelector('.skip-link')?.addEventListener('click',e=>{if(matchMedia('(max-width:767px)').matches){e.currentTarget.href='#mobile-main';document.getElementById('mobile-main')?.setAttribute('tabindex','-1');}});
-})();
-(() => {
- const source=document.getElementById('papaya-blog-cards');if(!source)return;
- const cards=JSON.parse(source.textContent), status=document.querySelector('.blog-status');
- const stage=document.querySelector('.xd-stage');
- const nodesFor=card=>[...card.fields.flatMap(key=>[...stage.querySelectorAll(`[data-field="${key}"]`)]),...stage.querySelectorAll(`[data-image="${card.image}"]`)];
- document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
-  const category=button.dataset.filter;let count=0;
-  document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===category)));
-  cards.forEach(card=>{
-   const visible=category==='View All'||card.category===category;
-   nodesFor(card).forEach(n=>{n.classList.toggle('is-filtered-out',!visible);if(visible)n.dataset.slot=String(count);});
-   card.fields.forEach(key=>document.querySelectorAll(`.mobile-text[data-field="${key}"]`).forEach(n=>{const parent=n.closest('.mobile-column');if(parent)parent.hidden=!visible;}));
-   if(visible)count++;
+  'use strict';
+  const toggle = document.querySelector('.menu-toggle');
+  const navigation = document.getElementById('primary-navigation');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    navigation.classList.toggle('is-open', open);
   });
-  status.textContent=count?`${count} posts in ${category}.`:`No posts in ${category} yet.`;
-  status.classList.add('is-visible');
- }));
- document.querySelectorAll('[data-view-more]').forEach(button=>button.addEventListener('click',()=>{
-  status.textContent='You’re viewing all available posts.';status.classList.add('is-visible');
- }));
+  document.querySelectorAll('.faq-item').forEach(item => item.addEventListener('toggle', () => {
+    if (item.open) document.querySelectorAll('.faq-item').forEach(other => { if (other !== item) other.open = false; });
+  }));
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    document.querySelectorAll('.faq-item[open]').forEach(item => { item.open = false; });
+    if (toggle?.getAttribute('aria-expanded') === 'true') toggle.click();
+  });
+  const filters = [...document.querySelectorAll('[data-filter]')];
+  const cards = [...document.querySelectorAll('.post-card[data-category]')];
+  const status = document.querySelector('.blog-status');
+  filters.forEach((button, index) => button.addEventListener('click', () => {
+    const category = button.dataset.filter;
+    filters.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    cards.forEach(card => { card.hidden = index !== 0 && card.dataset.category !== category; });
+    const count = cards.filter(card => !card.hidden).length;
+    if (status) status.textContent = count ? `${count} posts in ${category}.` : `No posts in ${category} yet.`;
+  }));
+  document.querySelector('[data-view-more]')?.addEventListener('click', () => {
+    if (status) status.textContent = 'You’re viewing all available posts.';
+  });
 })();

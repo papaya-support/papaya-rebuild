@@ -1,0 +1,26 @@
+import {chromium} from 'playwright';
+import fs from 'node:fs';
+const theme='wordpress/wp-content/themes/papaya-search-child';
+const pages=JSON.parse(fs.readFileSync(`${theme}/design/pages.json`));
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1280,height:900}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const results=[];
+for(const width of [1280,390]){
+ await page.setViewportSize({width,height:900});
+ for(const d of pages){
+  await page.goto('http://127.0.0.1:9477/'+(d.slug==='home'?'':d.slug+'/'),{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);
+  const design=JSON.parse(fs.readFileSync(`${theme}/design/${d.slug}.json`));
+  const expected=design.texts.filter(t=>t.scope==='page').map(t=>t.key).concat(design.images.map(i=>i.key));
+  const state=await page.evaluate(expected=>({h1:document.querySelectorAll('main h1').length,svg:document.querySelectorAll('main svg,footer svg').length,inline:document.querySelectorAll('[style]').length,overflow:document.documentElement.scrollWidth>innerWidth,missingFields:expected.filter(k=>!document.querySelector(`[data-field="${k}"],[data-image="${k}"]`)),missingImages:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.src),height:document.body.scrollHeight}),expected);
+  if(state.h1!==1||state.svg||state.inline||state.overflow||state.missingFields.length||state.missingImages.length)throw Error(JSON.stringify({slug:d.slug,width,...state}));
+  await page.evaluate(async()=>{ for(const img of document.images) {img.loading='eager';} await Promise.all([...document.images].map(img=>img.decode().catch(()=>{}))); });
+  const failed=await page.locator('img').evaluateAll(images=>images.filter(i=>!i.naturalWidth).map(i=>i.src));if(failed.length)throw Error(JSON.stringify(failed));
+  await page.screenshot({path:`verification/native-${d.slug}-${width}.png`,fullPage:true});results.push({slug:d.slug,width,...state});
+ }
+}
+await page.goto('http://127.0.0.1:9477/search-engine-marketing/',{waitUntil:'networkidle'});
+await page.locator('.faq-item summary').first().click();if(!await page.locator('.faq-item').first().evaluate(e=>e.open))throw Error('FAQ failed');await page.keyboard.press('Escape');
+await page.locator('.menu-toggle').click();if(!await page.locator('#primary-navigation').isVisible())throw Error('Mobile navigation failed');await page.keyboard.press('Escape');
+await page.goto('http://127.0.0.1:9477/blog/',{waitUntil:'networkidle'});await page.locator('[data-filter="SEM"]').click();if(await page.locator('.post-card:visible').count())throw Error('SEM filter failed');await page.locator('[data-filter]').first().click();if(await page.locator('.post-card:visible').count()!==9)throw Error('Blog cards failed');await page.locator('[data-view-more]').click();
+if(errors.length)throw Error(errors.join('\n'));
+fs.writeFileSync('verification/native-checks.json',JSON.stringify({pages:results,errors,faq:true,filters:true,mobileNavigation:true},null,2));console.log('Verified eight semantic HTML pages at desktop and mobile sizes; all ACF fields and images present, no SVG layouts, inline styles, overflow, or JS errors.');await browser.close();

@@ -13,7 +13,7 @@ function ps_install_menus() {
     foreach ($design['texts'] as $t) {
         $value=str_replace(["\r\n","\r"],"\n",(string)ps_value($t['key'],$t['text'],$t['scope']));
         if ($t['scope']==='header') {
-            $url=ps_value($t['key'].'_url','',$t['scope']) ?: (preg_match('/Get Started/i',$t['text']) ? ps_link_default($t,'home') : ps_link_for_label($t['text']));
+            $url=ps_value($t['key'].'_url','',$t['scope']) ?: (preg_match('/Get Started/i',$t['text']) ? ps_booking_url() : ps_link_for_label($t['text']));
             $sets['primary'][]=['title'=>$value,'url'=>$url,'classes'=>preg_match('/Get Started/i',$t['text'])?'menu-cta':''];
         }
         $location=['shared_819c8f0b4b41'=>'footer_navigation','shared_5f04f2b25bf0'=>'footer_services'][$t['key']]??'';
