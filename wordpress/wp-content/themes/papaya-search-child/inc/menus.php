@@ -9,7 +9,7 @@ function ps_menu_field($t) {
 /** One-time migration. Preserve existing menu assignments and all legacy ACF data. */
 function ps_install_menus() {
     if (get_option('ps_menus_migrated') || !get_option('ps_design_imported')) { return; }
-    $design=ps_design('home'); $sets=array_fill_keys(array_keys(ps_menu_locations()), []);
+    $design=ps_initial_content('home'); $sets=array_fill_keys(array_keys(ps_menu_locations()), []);
     foreach ($design['texts'] as $t) {
         $value=str_replace(["\r\n","\r"],"\n",(string)ps_value($t['key'],$t['text'],$t['scope']));
         if ($t['scope']==='header') {

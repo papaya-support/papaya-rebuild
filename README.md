@@ -19,9 +19,9 @@ Inside `wordpress/wp-content/themes/papaya-search-child/`:
 - `inc/setup.php`: preserves existing content when importing initial pages, media, and menus.
 - `assets/site.css`: one bundled stylesheet with native CSS nesting.
 - `assets/site.js`: mobile navigation, accessible FAQ interactions, and blog filtering.
-- `design/*.json`: original extraction data used by the initial content importer, not by page rendering.
+- `inc/initial-content.php`: one-time PHP seed for pages, original text, images, and menu setup. No initial-content JSON is loaded.
 
-Original SVG artboards are archived outside the theme in the untracked `design-source/reference-artboards/` folder for design reference only.
+Original artboards and extracted reference data are archived outside the theme in the untracked `design-source/` folder. They are not loaded by WordPress.
 
 ## Editing content
 
@@ -67,3 +67,5 @@ python3 tools/package.py
 The preview opens at `http://127.0.0.1:9477/` and uses WordPress Playground/SQLite for local testing. The deployable installation uses MySQL/MariaDB. Its local database is recreated on preview restart, so migrate dashboard edits separately when needed.
 
 The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 360 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
+
+The ACF field-group JSON is a schema installer, not a page-content source. It is only needed to create missing groups on a fresh site. Existing installations use the database groups and skip the installer; do not reimport over customized groups. A database migration that already includes the ACF groups also removes the need for an import on the destination.

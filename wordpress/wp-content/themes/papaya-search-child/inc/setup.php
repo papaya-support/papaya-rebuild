@@ -23,7 +23,7 @@ function ps_import_design_content() {
             $ids[$slug]=$id;
             update_post_meta($id,'_wp_page_template','page-templates/'.$slug.'.php');
         }
-        $design=ps_design($slug);
+        $design=ps_initial_content($slug);
         foreach($design['texts'] as $t) {
             if (ps_menu_field($t)) {continue;}
             $target=$t['scope']==='page'?$id:$shared_id;

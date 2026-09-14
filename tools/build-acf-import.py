@@ -28,7 +28,7 @@ def link_field(t,slug):
  text=t['text'].strip()
  return bool(re.match(r'^(Get Started|Schedule|Take the first)',text,re.I) or text in ['Case Studies','Careers','Read More','Learn More'] or (text.startswith('Lorem ipsum') and t['font']['weight']>=700))
 for slug,name in names.items():
- d=json.loads((theme/'design'/f'{slug}.json').read_text());texts=[t for t in d['texts'] if t['scope']=='page'];fs=[]
+ d=json.loads((root/'design-source/reference-data'/f'{slug}.json').read_text());texts=[t for t in d['texts'] if t['scope']=='page'];fs=[]
  if slug in labels:
   page_labels=labels[slug].split('|');assert len(page_labels)==len(texts),(slug,len(page_labels),len(texts))
  else:

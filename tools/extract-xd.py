@@ -4,7 +4,8 @@ XD is input data only; plugin metadata and invisible layers are never executed.
 import json, pathlib, copy, html, re, shutil, struct, collections
 ROOT=pathlib.Path(__file__).resolve().parent.parent
 SRC=ROOT/'design-source'; THEME=ROOT/'wordpress/wp-content/themes/papaya-search-child'
-for d in ['design','assets/images']: (THEME/d).mkdir(parents=True,exist_ok=True)
+(SRC/'reference-data').mkdir(parents=True,exist_ok=True)
+for d in ['assets/images']: (THEME/d).mkdir(parents=True,exist_ok=True)
 r=json.loads((SRC/'resources/graphics/graphicContent.agc').read_text()); sources={}
 def index(n):
  if isinstance(n,dict):
@@ -134,5 +135,5 @@ for bid,b in r['artboards'].items():
   (THEME/'assets/brand.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 43 291 61"><defs>'+''.join(defs)+'</defs>'+''.join(header_graphics)+'</svg>')
   (THEME/'assets/favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 45 38 48"><defs>'+''.join(defs)+'</defs>'+''.join(header_graphics)+'</svg>')
  out={'name':b['name'],'slug':slug,'width':1280,'height':b['height'],'background':bg,'footerY':foot[0],'backgrounds':backgrounds,'texts':texts,'images':images}
- (THEME/'design'/f'{slug}.json').write_text(json.dumps(out,ensure_ascii=False,indent=2));pages.append({k:out[k] for k in ['name','slug','width','height','footerY']});report.append(f'{slug}: {len(texts)} text fields, {len(images)} image fields')
-(THEME/'design/pages.json').write_text(json.dumps(pages,indent=2));print('\n'.join(report));print('Unresolved symbols:',len(unresolved));assert not unresolved
+ (SRC/'reference-data'/f'{slug}.json').write_text(json.dumps(out,ensure_ascii=False,indent=2));pages.append({k:out[k] for k in ['name','slug','width','height','footerY']});report.append(f'{slug}: {len(texts)} text fields, {len(images)} image fields')
+(SRC/'reference-data/pages.json').write_text(json.dumps(pages,indent=2));print('\n'.join(report));print('Unresolved symbols:',len(unresolved));assert not unresolved

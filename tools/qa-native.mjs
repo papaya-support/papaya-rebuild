@@ -1,7 +1,8 @@
+import pageFixtures from './page-fixtures.mjs';
 import {chromium} from 'playwright';
 import fs from 'node:fs';
 const theme='wordpress/wp-content/themes/papaya-search-child';
-const pages=JSON.parse(fs.readFileSync(`${theme}/design/pages.json`));
+const pages=pageFixtures;
 const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1280,height:900}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
 const results=[];
@@ -9,8 +10,7 @@ for(const width of [1280,390]){
  await page.setViewportSize({width,height:900});
  for(const d of pages){
   await page.goto('http://127.0.0.1:9477/'+(d.slug==='home'?'':d.slug+'/'),{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);
-  const design=JSON.parse(fs.readFileSync(`${theme}/design/${d.slug}.json`));
-  const expected=design.texts.filter(t=>t.scope==='page').map(t=>t.key).concat(design.images.map(i=>i.key));
+  const expected=d.expected;
   const state=await page.evaluate(expected=>({h1:document.querySelectorAll('main h1').length,svg:document.querySelectorAll('main svg,footer svg').length,inline:document.querySelectorAll('[style]').length,overflow:document.documentElement.scrollWidth>innerWidth,missingFields:expected.filter(k=>!document.querySelector(`[data-field="${k}"],[data-image="${k}"]`)),missingImages:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.src),height:document.body.scrollHeight}),expected);
   if(state.h1!==1||state.svg||state.inline||state.overflow||state.missingFields.length||state.missingImages.length)throw Error(JSON.stringify({slug:d.slug,width,...state}));
   await page.evaluate(async()=>{ for(const img of document.images) {img.loading='eager';} await Promise.all([...document.images].map(img=>img.decode().catch(()=>{}))); });

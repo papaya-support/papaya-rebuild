@@ -1,3 +1,4 @@
+import pageFixtures from './page-fixtures.mjs';
 import {chromium} from 'playwright';import fs from 'node:fs';
 const adminUser=process.env.PAPAYA_WP_USER, adminPassword=process.env.PAPAYA_WP_PASSWORD;
 if(!adminUser||!adminPassword)throw new Error('Set PAPAYA_WP_USER and PAPAYA_WP_PASSWORD for the local test account.');
@@ -8,7 +9,7 @@ const selected=menus.find(m=>m.label.includes('Footer Navigation'));await admin.
 let original;
 async function save(label){const item=admin.locator('#menu-to-edit > li').first();if(!await item.locator('input[name^="menu-item-title"]').isVisible())await item.locator('.item-edit').click();const input=item.locator('input[name^="menu-item-title"]');if(original===undefined)original=await input.inputValue();await input.fill(label);await Promise.all([admin.waitForNavigation(),admin.locator('#save_menu_footer').click()]);}
 try{await save('Home menu check');await page.goto('http://127.0.0.1:9477/',{waitUntil:'networkidle'});for(const width of [1920,390]){await page.setViewportSize({width,height:1080});if(await page.locator('#desktop-footer_navigation > li').first().innerText()!=='Home menu check')throw Error('Menu edit did not propagate');}}finally{if(original!==undefined)await save(original);}
-const pages=JSON.parse(fs.readFileSync('wordpress/wp-content/themes/papaya-search-child/design/pages.json'));const results=[];
+const pages=pageFixtures;const results=[];
 for(const d of pages){await page.goto('http://127.0.0.1:9477/'+(d.slug==='home'?'':d.slug+'/'),{waitUntil:'networkidle'});const result=await page.evaluate(()=>({menus:[...document.querySelectorAll('.ps-menu')].map(n=>({label:n.getAttribute('aria-label'),links:n.querySelectorAll('a').length})),inline:document.querySelectorAll('[style],style').length,acfNav:document.querySelectorAll('[data-field="shared_819c8f0b4b41"]').length}));if(result.menus.length!==5||result.menus.some(m=>!m.links)||result.inline||result.acfNav)throw Error(JSON.stringify(result));results.push({slug:d.slug,...result});}
 await page.goto('http://127.0.0.1:9477/',{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:'verification/native-menu-header.png'});await page.evaluate(()=>scrollTo({top:document.body.scrollHeight,behavior:'instant'}));await page.screenshot({path:'verification/native-menu-footer.png'});
 fs.writeFileSync('verification/menu-checks.json',JSON.stringify({menus,editPropagatesToDesktopAndMobile:true,restored:true,errors,pages:results},null,2));console.log('Five menus verified on eight pages; dashboard edit appeared on desktop and mobile and was restored.');await browser.close();if(errors.length)process.exit(1);

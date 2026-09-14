@@ -1,14 +1,12 @@
 <?php
 defined('ABSPATH') || exit;
-function ps_pages() {
+function ps_initial_content($slug=null) {
     static $pages;
-    return $pages ?? ($pages = json_decode(file_get_contents(__DIR__ . '/../design/pages.json'), true));
+    $pages ??= require __DIR__.'/initial-content.php';
+    return $slug===null ? $pages : ($pages[$slug]??null);
 }
-function ps_design($slug) {
-    static $cache = [];
-    $allowed = array_column(ps_pages(), 'slug');
-    if (!in_array($slug, $allowed, true)) { return null; }
-    return $cache[$slug] ?? ($cache[$slug] = json_decode(file_get_contents(__DIR__ . '/../design/' . $slug . '.json'), true));
+function ps_pages() {
+    return array_values(array_map(fn($page)=>['name'=>$page['name'],'slug'=>$page['slug']],ps_initial_content()));
 }
 function ps_shared_id() { return (int) get_option('ps_shared_content_id'); }
 function ps_value($key, $default = '', $scope = 'page', $post_id = null) {

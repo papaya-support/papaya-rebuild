@@ -1,8 +1,9 @@
+import pageFixtures from './page-fixtures.mjs';
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1920,height:1080}});
-const designs=JSON.parse(fs.readFileSync('wordpress/wp-content/themes/papaya-search-child/design/pages.json'));
+const designs=pageFixtures;
 const results=[];
 async function check(slug,width){
  await page.setViewportSize({width,height:1080});
