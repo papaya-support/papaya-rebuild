@@ -86,6 +86,10 @@ function ps_render_page($slug) {
     $svg=file_get_contents(__DIR__.'/../design/'.$slug.'.svg');
     // The header button is now real menu markup with a CSS background.
     $svg=preg_replace('/<g data-ui-button="true"><g transform="matrix\(1 0 0 1 988 46\)"[^>]*><rect[^>]*\/><\/g><\/g>/', '', $svg);
+    // Footer column dividers are rendered in CSS; remove the original XD strokes.
+    $svg=preg_replace_callback('/<g transform="matrix\(1 0 0 1 ([\d.]+) ([\d.]+)\)"[^>]*><line [^>]*\/><\/g>/', function($match) use ($design) {
+        return abs((float)$match[2]-($design['footerY']+184.5))<0.01 ? '' : $match[0];
+    }, $svg);
     foreach ($design['images'] as $im) {$svg=str_replace('{{'.$im['key'].'}}',esc_url(ps_image_url($im)),$svg);}
     echo '<div class="xd-viewport" data-page="'.esc_attr($slug).'"><div class="xd-stage" data-height="'.$design['height'].'">';
     // SVG contains only the original decorative geometry. Text remains selectable HTML, read from ACF.
