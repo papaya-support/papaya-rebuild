@@ -25,7 +25,7 @@ Original artboards and extracted reference data are archived outside the theme i
 
 ## Editing content
 
-Use **Pages → Edit** for page text, images, alt text, link destinations, FAQ answers, and blog-card categories. All existing field names and keys are retained, so existing content survives the template rebuild.
+Use **Pages → Edit** for page text, images, link destinations, FAQ answers, and blog-card categories. All existing field names and keys are retained, so existing content survives the template rebuild.
 
 The nine groups appear in **ACF → Field Groups** and are editable there. On a new installation, the theme creates missing groups once; later group edits are not overwritten. ACF Free is sufficient. Keep field names and keys unchanged when editing definitions. Database changes are not automatically committed to Git.
 
@@ -66,7 +66,7 @@ python3 tools/package.py
 
 The preview opens at `http://127.0.0.1:9477/` and uses WordPress Playground/SQLite for local testing. The deployable installation uses MySQL/MariaDB. Its local database is recreated on preview restart, so migrate dashboard edits separately when needed.
 
-The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 360 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
+The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 318 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
 
 The ACF field-group JSON is a schema installer, not a page-content source. It is only needed to create missing groups on a fresh site. Existing installations use the database groups and skip the installer; do not reimport over customized groups. A database migration that already includes the ACF groups also removes the need for an import on the destination.
 
@@ -75,3 +75,7 @@ The ACF field-group JSON is a schema installer, not a page-content source. It is
 Open the dashboard once after deployment to apply the one-time field update. Fields follow each page’s PHP sections from top to bottom; images/alt text, buttons/URLs, FAQ questions/answers and card metadata stay together. All 222 original textarea fields become WYSIWYG editors. Field names, keys, IDs and saved values stay intact. Later dashboard changes are not reset.
 
 Descriptions support paragraphs, lists, links and emphasis. Headings and button labels support inline emphasis without invalid paragraph nesting. Editor text alignment is rendered with CSS classes. The migration updates the existing ACF database posts and does not register code-only groups or require a manual reimport. Its original field definitions are retained in a non-autoloaded WordPress option for recovery.
+
+## Media Library alt text (2.1.1)
+
+Image alt text is managed under **Media → Library → Alt Text**. The 42 separate page alt-text fields have been removed. The theme reads the selected attachment’s alt text directly, so Media Library edits apply wherever that image appears. An empty library alt stays empty. After deployment, open WordPress admin once to remove the old field definitions; existing page metadata is preserved but no longer used.

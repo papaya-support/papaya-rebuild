@@ -55,7 +55,6 @@ for slug,name in names.items():
  for i,im in enumerate(d['images']):
   label=image_labels[slug][i] if slug in image_labels else ('Hero — Image' if slug=='blog' and i==0 else f'Card {i if slug=="blog" else i+1} — Image')
   fs.append(field(im['key'],label,'image',return_format='id',preview_size='medium',library='all',instructions='Choose a replacement image. The original design asset is used when empty.'))
-  fs.append(field(im['key']+'_alt',label.replace('Image','Image Alternative Text') if 'Image' in label else label+' — Alternative Text','text'))
  groups.append(dict(key='group_ps_'+slug,title=name+' — Page Content',fields=fs,location=[[dict(param='page_template',operator='==',value='page-templates/'+slug+'.php')]],position='normal',style='default',active=True,description='Editable page fields. Keep field names and keys unchanged to preserve template connections.'))
  for t in d['texts']:
   if t['key'] in shared_labels:shared[t['key']]=field(t['key'],shared_labels[t['key']],rows=2,new_lines='')

@@ -74,13 +74,14 @@ function ps_image($key,$class='',$eager=false) {
     $default=ps_default_content($key);
     $value=ps_value($key,'',$default['scope']??'page');
     if(is_array($value)) {$value=$value['ID']??($value['url']??'');}
-    $alt=ps_value($key.'_alt','',$default['scope']??'page');
+    $attachment_id=is_numeric($value) ? (int)$value : (is_string($value) && preg_match('#^https?://#',$value) ? attachment_url_to_postid($value) : 0);
+    if(!$value && !empty($default['asset'])) {$attachment_id=(int)get_option('ps_asset_'.md5($default['asset']));}
+    $alt=$attachment_id ? get_post_meta($attachment_id,'_wp_attachment_image_alt',true) : '';
     $attributes=['class'=>$class,'data-image'=>$key,'alt'=>$alt,'loading'=>$eager?'eager':'lazy','decoding'=>'async'];
     if($eager) {$attributes['fetchpriority']='high';}
-    $source=is_numeric($value) && $value ? wp_get_attachment_image_src((int)$value,'full') : false;
+    $source=$attachment_id ? wp_get_attachment_image_src($attachment_id,'full') : false;
     if($source) {
         $url=$source[0];$attributes['width']=$source[1];$attributes['height']=$source[2];
-        if(!$alt) {$attributes['alt']=get_post_meta((int)$value,'_wp_attachment_image_alt',true);}
     } else {
         $url=is_string($value)&&preg_match('#^https?://#',$value) ? $value : ps_asset($default['asset']??'');
     }

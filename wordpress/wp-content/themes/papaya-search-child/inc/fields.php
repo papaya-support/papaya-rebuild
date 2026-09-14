@@ -79,3 +79,28 @@ add_action('admin_init',function(){
     $result=ps_upgrade_acf_editors();
     if(is_wp_error($result)) {add_action('admin_notices',function() use($result){echo '<div class="notice notice-error"><p>'.esc_html($result->get_error_message()).'</p></div>';});}
 },6);
+
+/** Remove the former per-page alt editors; Media Library metadata is authoritative. */
+function ps_remove_acf_image_alt_fields() {
+    if(get_option('ps_media_library_alt_v1')) {return true;}
+    if(!function_exists('acf_delete_field')) {return new WP_Error('acf_missing','Activate Advanced Custom Fields first.');}
+    $fields=[];
+    foreach(ps_initial_content() as $page) {
+        foreach($page['images'] as $image) {
+            $field=acf_get_field('field_'.$image['key'].'_alt');
+            if($field && !empty($field['ID'])) {$fields[$field['key']]=$field;}
+        }
+    }
+    add_option('ps_removed_image_alt_definitions_v1',$fields,'',false);
+    foreach($fields as $field) {
+        if(!acf_delete_field($field['ID'])) {return new WP_Error('acf_alt_removal_failed','Could not remove '.$field['label']);}
+    }
+    // Old page metadata is left untouched, but is no longer read or exposed as a field.
+    update_option('ps_media_library_alt_v1',1,false);
+    return true;
+}
+add_action('admin_init',function(){
+    if(!current_user_can('manage_options')) {return;}
+    $result=ps_remove_acf_image_alt_fields();
+    if(is_wp_error($result)) {add_action('admin_notices',function() use($result){echo '<div class="notice notice-error"><p>'.esc_html($result->get_error_message()).'</p></div>';});}
+},7);

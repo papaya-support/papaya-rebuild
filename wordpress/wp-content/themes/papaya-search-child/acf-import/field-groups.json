@@ -15,19 +15,12 @@
         "menu_order": 0
       },
       {
-        "key": "field_home_image_4b5fa21323_alt",
-        "name": "home_image_4b5fa21323_alt",
-        "label": "Hero — Background Image Alternative Text",
-        "type": "text",
-        "menu_order": 1
-      },
-      {
         "key": "field_home_1d791eb121c5",
         "name": "home_1d791eb121c5",
         "label": "Hero — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 2,
+        "menu_order": 1,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -39,7 +32,7 @@
         "label": "Introduction — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 3,
+        "menu_order": 2,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -54,14 +47,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 4
-      },
-      {
-        "key": "field_home_image_d86e7be569_alt",
-        "name": "home_image_d86e7be569_alt",
-        "label": "Search Strategy — Image Alternative Text",
-        "type": "text",
-        "menu_order": 5
+        "menu_order": 3
       },
       {
         "key": "field_home_2263b6f88209",
@@ -69,7 +55,7 @@
         "label": "Search Strategy — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 6,
+        "menu_order": 4,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -81,7 +67,7 @@
         "label": "Search Strategy — Benefits",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -93,7 +79,7 @@
         "label": "Search Strategy — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 8,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -105,7 +91,7 @@
         "label": "Search Strategy — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 9
+        "menu_order": 7
       },
       {
         "key": "field_home_473db858b064",
@@ -113,7 +99,7 @@
         "label": "Services — Section Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 10,
+        "menu_order": 8,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -125,7 +111,7 @@
         "label": "SEO Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 11,
+        "menu_order": 9,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -137,7 +123,7 @@
         "label": "SEO Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -149,7 +135,7 @@
         "label": "SEO Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 13,
+        "menu_order": 11,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -161,7 +147,7 @@
         "label": "SEO Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 14
+        "menu_order": 12
       },
       {
         "key": "field_home_3416c7bfdc6a",
@@ -169,7 +155,7 @@
         "label": "PPC Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 15,
+        "menu_order": 13,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -181,7 +167,7 @@
         "label": "PPC Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 16,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -193,7 +179,7 @@
         "label": "PPC Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 17,
+        "menu_order": 15,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -205,7 +191,7 @@
         "label": "PPC Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 18
+        "menu_order": 16
       },
       {
         "key": "field_home_ef6e013268e4",
@@ -213,7 +199,7 @@
         "label": "Analytics Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 19,
+        "menu_order": 17,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -225,7 +211,7 @@
         "label": "Analytics Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 20,
+        "menu_order": 18,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -237,7 +223,7 @@
         "label": "Analytics Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 21,
+        "menu_order": 19,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -249,7 +235,7 @@
         "label": "Analytics Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 22
+        "menu_order": 20
       },
       {
         "key": "field_home_9e841ae19a6e",
@@ -257,7 +243,7 @@
         "label": "AI SEO Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 23,
+        "menu_order": 21,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -269,7 +255,7 @@
         "label": "AI SEO Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 24,
+        "menu_order": 22,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -281,7 +267,7 @@
         "label": "AI SEO Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 25,
+        "menu_order": 23,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -293,7 +279,7 @@
         "label": "AI SEO Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 26
+        "menu_order": 24
       },
       {
         "key": "field_home_685fc698bd13",
@@ -301,7 +287,7 @@
         "label": "Search Trends — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 27,
+        "menu_order": 25,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -313,7 +299,7 @@
         "label": "Search Trends — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 28,
+        "menu_order": 26,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -328,14 +314,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 29
-      },
-      {
-        "key": "field_home_image_d3f8f036db_alt",
-        "name": "home_image_d3f8f036db_alt",
-        "label": "Search Trends — Image Alternative Text",
-        "type": "text",
-        "menu_order": 30
+        "menu_order": 27
       },
       {
         "key": "field_home_image_9c76895b7c",
@@ -346,14 +325,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 31
-      },
-      {
-        "key": "field_home_image_9c76895b7c_alt",
-        "name": "home_image_9c76895b7c_alt",
-        "label": "Future-proof Strategy — Image Alternative Text",
-        "type": "text",
-        "menu_order": 32
+        "menu_order": 28
       },
       {
         "key": "field_home_c03395a13124",
@@ -361,7 +333,7 @@
         "label": "Future-proof Strategy — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 33,
+        "menu_order": 29,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -373,7 +345,7 @@
         "label": "Future-proof Strategy — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 34,
+        "menu_order": 30,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -385,7 +357,7 @@
         "label": "Future-proof Strategy — Call to Action Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 35,
+        "menu_order": 31,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -397,7 +369,7 @@
         "label": "Future-proof Strategy — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 36,
+        "menu_order": 32,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -409,7 +381,7 @@
         "label": "Future-proof Strategy — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 37
+        "menu_order": 33
       },
       {
         "key": "field_home_c71150b00266",
@@ -417,7 +389,7 @@
         "label": "Testimonial — Quote Mark",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 38,
+        "menu_order": 34,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -429,7 +401,7 @@
         "label": "Testimonial — Quote",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 39,
+        "menu_order": 35,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -441,7 +413,7 @@
         "label": "Testimonial — Attribution",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 40,
+        "menu_order": 36,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -453,7 +425,7 @@
         "label": "Experience — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 41,
+        "menu_order": 37,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -465,7 +437,7 @@
         "label": "Experience — Years Statistic",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 42,
+        "menu_order": 38,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -477,7 +449,7 @@
         "label": "Experience — Statistic Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 43,
+        "menu_order": 39,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -489,7 +461,7 @@
         "label": "Business Growth — Years Statistic",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 44,
+        "menu_order": 40,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -501,7 +473,7 @@
         "label": "Business Growth — Statistic Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 45,
+        "menu_order": 41,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -513,7 +485,7 @@
         "label": "Client Count — Statistic",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 46,
+        "menu_order": 42,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -525,7 +497,7 @@
         "label": "Client Count — Statistic Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 47,
+        "menu_order": 43,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -537,7 +509,7 @@
         "label": "Results — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 48,
+        "menu_order": 44,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -549,7 +521,7 @@
         "label": "Results — Link Introduction",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 49,
+        "menu_order": 45,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -561,7 +533,7 @@
         "label": "Results — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 50,
+        "menu_order": 46,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -573,7 +545,7 @@
         "label": "Results — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 51
+        "menu_order": 47
       },
       {
         "key": "field_home_09fe6c6170dc",
@@ -581,7 +553,7 @@
         "label": "Closing Call to Action — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 52,
+        "menu_order": 48,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -593,7 +565,7 @@
         "label": "Closing Call to Action — Benefits",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 53,
+        "menu_order": 49,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -605,7 +577,7 @@
         "label": "Closing Call to Action — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 54,
+        "menu_order": 50,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -617,7 +589,7 @@
         "label": "Closing Call to Action — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 55
+        "menu_order": 51
       },
       {
         "key": "field_home_image_0aad8a4a0f",
@@ -628,14 +600,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 56
-      },
-      {
-        "key": "field_home_image_0aad8a4a0f_alt",
-        "name": "home_image_0aad8a4a0f_alt",
-        "label": "Closing Call to Action — Image Alternative Text",
-        "type": "text",
-        "menu_order": 57
+        "menu_order": 52
       }
     ],
     "location": [
@@ -668,19 +633,12 @@
         "menu_order": 0
       },
       {
-        "key": "field_about_image_8a6938ebd6_alt",
-        "name": "about_image_8a6938ebd6_alt",
-        "label": "Hero — Image Alternative Text",
-        "type": "text",
-        "menu_order": 1
-      },
-      {
         "key": "field_about_f1bcbe1f32e9",
         "name": "about_f1bcbe1f32e9",
         "label": "Hero — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 2,
+        "menu_order": 1,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -692,7 +650,7 @@
         "label": "Introduction — Team Overview",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 3,
+        "menu_order": 2,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -704,7 +662,7 @@
         "label": "Introduction — Team Mission",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 4,
+        "menu_order": 3,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -716,7 +674,7 @@
         "label": "Audience Strategy — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 5,
+        "menu_order": 4,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -728,7 +686,7 @@
         "label": "Audience Strategy — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 6,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -743,14 +701,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 7
-      },
-      {
-        "key": "field_about_image_fabff0a2d1_alt",
-        "name": "about_image_fabff0a2d1_alt",
-        "label": "Audience Strategy — Image Alternative Text",
-        "type": "text",
-        "menu_order": 8
+        "menu_order": 6
       },
       {
         "key": "field_about_3fed862d01f7",
@@ -758,7 +709,7 @@
         "label": "Partnership — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 9,
+        "menu_order": 7,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -773,14 +724,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 10
-      },
-      {
-        "key": "field_about_image_3f841022dd_alt",
-        "name": "about_image_3f841022dd_alt",
-        "label": "Partnership — Image Alternative Text",
-        "type": "text",
-        "menu_order": 11
+        "menu_order": 8
       },
       {
         "key": "field_about_95d816dc41a8",
@@ -788,7 +732,7 @@
         "label": "Partnership — Approach",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 9,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -800,7 +744,7 @@
         "label": "Partnership — Collaboration",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 13,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -812,7 +756,7 @@
         "label": "Process — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 14,
+        "menu_order": 11,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -824,7 +768,7 @@
         "label": "Process — Introduction",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 15,
+        "menu_order": 12,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -836,7 +780,7 @@
         "label": "Process Step 1 — Number",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 16,
+        "menu_order": 13,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -848,7 +792,7 @@
         "label": "Process Step 1 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 17,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -860,7 +804,7 @@
         "label": "Process Step 1 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 18
+        "menu_order": 15
       },
       {
         "key": "field_about_15ecab530a58",
@@ -868,7 +812,7 @@
         "label": "Process Step 1 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 19,
+        "menu_order": 16,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -880,7 +824,7 @@
         "label": "Process Step 2 — Number",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 20,
+        "menu_order": 17,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -892,7 +836,7 @@
         "label": "Process Step 2 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 21,
+        "menu_order": 18,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -904,7 +848,7 @@
         "label": "Process Step 2 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 22,
+        "menu_order": 19,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -916,7 +860,7 @@
         "label": "Process Step 3 — Number",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 23,
+        "menu_order": 20,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -928,7 +872,7 @@
         "label": "Process Step 3 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 24,
+        "menu_order": 21,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -940,7 +884,7 @@
         "label": "Process Step 3 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 25,
+        "menu_order": 22,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -952,7 +896,7 @@
         "label": "Process Step 4 — Number",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 26,
+        "menu_order": 23,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -964,7 +908,7 @@
         "label": "Process Step 4 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 27,
+        "menu_order": 24,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -976,7 +920,7 @@
         "label": "Process Step 4 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 28,
+        "menu_order": 25,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -988,7 +932,7 @@
         "label": "Process — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 29,
+        "menu_order": 26,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1000,7 +944,7 @@
         "label": "Process — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 30
+        "menu_order": 27
       },
       {
         "key": "field_about_5182134bb65f",
@@ -1008,7 +952,7 @@
         "label": "Team — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 31,
+        "menu_order": 28,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1020,7 +964,7 @@
         "label": "Team Member 1 — Name",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 32,
+        "menu_order": 29,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1032,7 +976,7 @@
         "label": "Team Member 1 — Job Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 33,
+        "menu_order": 30,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1044,7 +988,7 @@
         "label": "Team Member 1 — Biography",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 34,
+        "menu_order": 31,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1056,7 +1000,7 @@
         "label": "Team Member 1 — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 35,
+        "menu_order": 32,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1068,7 +1012,7 @@
         "label": "Team Member 1 — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 36
+        "menu_order": 33
       },
       {
         "key": "field_about_e90a86ecb353",
@@ -1076,7 +1020,7 @@
         "label": "Team Member 2 — Name",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 37,
+        "menu_order": 34,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1088,7 +1032,7 @@
         "label": "Team Member 2 — Job Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 38,
+        "menu_order": 35,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1100,7 +1044,7 @@
         "label": "Team Member 2 — Biography",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 39,
+        "menu_order": 36,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1112,7 +1056,7 @@
         "label": "Team Member 2 — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 40,
+        "menu_order": 37,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1124,7 +1068,7 @@
         "label": "Team Member 2 — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 41
+        "menu_order": 38
       },
       {
         "key": "field_about_7db8407b1d3f",
@@ -1132,7 +1076,7 @@
         "label": "Careers — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 42,
+        "menu_order": 39,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1144,7 +1088,7 @@
         "label": "Careers — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 43,
+        "menu_order": 40,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1156,7 +1100,7 @@
         "label": "Careers — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 44,
+        "menu_order": 41,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1168,7 +1112,7 @@
         "label": "Careers — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 45
+        "menu_order": 42
       },
       {
         "key": "field_about_cc11b96d229a",
@@ -1176,7 +1120,7 @@
         "label": "Brand Story — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 46,
+        "menu_order": 43,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1188,7 +1132,7 @@
         "label": "Brand Story — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 47,
+        "menu_order": 44,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1200,7 +1144,7 @@
         "label": "Closing Call to Action — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 48,
+        "menu_order": 45,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1212,7 +1156,7 @@
         "label": "Closing Call to Action — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 49,
+        "menu_order": 46,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1224,7 +1168,7 @@
         "label": "Closing Call to Action — Description — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 50
+        "menu_order": 47
       },
       {
         "key": "field_about_718abc37e0eb",
@@ -1232,7 +1176,7 @@
         "label": "Closing Call to Action — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 51,
+        "menu_order": 48,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1244,7 +1188,7 @@
         "label": "Closing Call to Action — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 52
+        "menu_order": 49
       }
     ],
     "location": [
@@ -1277,19 +1221,12 @@
         "menu_order": 0
       },
       {
-        "key": "field_services_image_95cc8a2f1e_alt",
-        "name": "services_image_95cc8a2f1e_alt",
-        "label": "Hero — Image Alternative Text",
-        "type": "text",
-        "menu_order": 1
-      },
-      {
         "key": "field_services_1d102d9577a4",
         "name": "services_1d102d9577a4",
         "label": "Hero — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 2,
+        "menu_order": 1,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1301,7 +1238,7 @@
         "label": "Introduction — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 3,
+        "menu_order": 2,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1313,7 +1250,7 @@
         "label": "Introduction — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 4,
+        "menu_order": 3,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1325,7 +1262,7 @@
         "label": "SEO Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 5,
+        "menu_order": 4,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1337,7 +1274,7 @@
         "label": "SEO Service — Subtitle",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 6,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1349,7 +1286,7 @@
         "label": "SEO Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1361,7 +1298,7 @@
         "label": "SEO Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 8,
+        "menu_order": 7,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1373,7 +1310,7 @@
         "label": "SEO Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 9
+        "menu_order": 8
       },
       {
         "key": "field_services_b8a1a172da9c",
@@ -1381,7 +1318,7 @@
         "label": "SEM Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 10,
+        "menu_order": 9,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1393,7 +1330,7 @@
         "label": "SEM Service — Subtitle",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 11,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1405,7 +1342,7 @@
         "label": "SEM Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 11,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1417,7 +1354,7 @@
         "label": "SEM Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 13,
+        "menu_order": 12,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1429,7 +1366,7 @@
         "label": "SEM Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 14
+        "menu_order": 13
       },
       {
         "key": "field_services_879ad37c29e0",
@@ -1437,7 +1374,7 @@
         "label": "Analytics Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 15,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1449,7 +1386,7 @@
         "label": "Analytics Service — Subtitle",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 16,
+        "menu_order": 15,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1461,7 +1398,7 @@
         "label": "Analytics Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 17,
+        "menu_order": 16,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1473,7 +1410,7 @@
         "label": "Analytics Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 18,
+        "menu_order": 17,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1485,7 +1422,7 @@
         "label": "Analytics Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 19
+        "menu_order": 18
       },
       {
         "key": "field_services_e0dbcb08a264",
@@ -1493,7 +1430,7 @@
         "label": "WordPress Service — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 20,
+        "menu_order": 19,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1505,7 +1442,7 @@
         "label": "WordPress Service — Subtitle",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 21,
+        "menu_order": 20,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1517,7 +1454,7 @@
         "label": "WordPress Service — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 22,
+        "menu_order": 21,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1529,7 +1466,7 @@
         "label": "WordPress Service — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 23,
+        "menu_order": 22,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1541,7 +1478,7 @@
         "label": "WordPress Service — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 24
+        "menu_order": 23
       },
       {
         "key": "field_services_94024e830fa2",
@@ -1549,7 +1486,7 @@
         "label": "Closing Call to Action — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 25,
+        "menu_order": 24,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1561,7 +1498,7 @@
         "label": "Benefit 1 — Text",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 26,
+        "menu_order": 25,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1573,7 +1510,7 @@
         "label": "Benefit 2 — Text",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 27,
+        "menu_order": 26,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1585,7 +1522,7 @@
         "label": "Benefit 3 — Text",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 28,
+        "menu_order": 27,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1597,7 +1534,7 @@
         "label": "Closing Call to Action — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 29,
+        "menu_order": 28,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1609,7 +1546,7 @@
         "label": "Closing Call to Action — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 30
+        "menu_order": 29
       }
     ],
     "location": [
@@ -1642,19 +1579,12 @@
         "menu_order": 0
       },
       {
-        "key": "field_search_engine_marketing_image_96ff85c5d5_alt",
-        "name": "search_engine_marketing_image_96ff85c5d5_alt",
-        "label": "Hero — Image Alternative Text",
-        "type": "text",
-        "menu_order": 1
-      },
-      {
         "key": "field_search_engine_marketing_f6246eab32c5",
         "name": "search_engine_marketing_f6246eab32c5",
         "label": "Hero — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 2,
+        "menu_order": 1,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1666,7 +1596,7 @@
         "label": "Introduction — Subtitle",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 3,
+        "menu_order": 2,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1678,7 +1608,7 @@
         "label": "Introduction — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 4,
+        "menu_order": 3,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1693,14 +1623,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 5
-      },
-      {
-        "key": "field_search_engine_marketing_image_2e8b60cfe5_alt",
-        "name": "search_engine_marketing_image_2e8b60cfe5_alt",
-        "label": "Visibility — Image Alternative Text",
-        "type": "text",
-        "menu_order": 6
+        "menu_order": 4
       },
       {
         "key": "field_search_engine_marketing_2a5d5198d572",
@@ -1708,7 +1631,7 @@
         "label": "Visibility — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1720,7 +1643,7 @@
         "label": "Visibility — Benefits",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 8,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1732,7 +1655,7 @@
         "label": "PPC Services — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 9,
+        "menu_order": 7,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1747,14 +1670,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 10
-      },
-      {
-        "key": "field_search_engine_marketing_image_de24625b12_alt",
-        "name": "search_engine_marketing_image_de24625b12_alt",
-        "label": "PPC Services — Image Alternative Text",
-        "type": "text",
-        "menu_order": 11
+        "menu_order": 8
       },
       {
         "key": "field_search_engine_marketing_8f270f2a2afd",
@@ -1762,7 +1678,7 @@
         "label": "SEM Benefits — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 9,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1774,7 +1690,7 @@
         "label": "SEM Benefits — Introduction",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 13,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1786,7 +1702,7 @@
         "label": "Benefit 1 — Statistic",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 14,
+        "menu_order": 11,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1798,7 +1714,7 @@
         "label": "Benefit 1 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 15,
+        "menu_order": 12,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1810,7 +1726,7 @@
         "label": "Benefit 2 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 16,
+        "menu_order": 13,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1822,7 +1738,7 @@
         "label": "Benefit 2 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 17,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1834,7 +1750,7 @@
         "label": "Benefit 3 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 18,
+        "menu_order": 15,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1846,7 +1762,7 @@
         "label": "Benefit 3 — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 19,
+        "menu_order": 16,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1858,7 +1774,7 @@
         "label": "SEM Benefits — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 20,
+        "menu_order": 17,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1870,7 +1786,7 @@
         "label": "SEM Benefits — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 21
+        "menu_order": 18
       },
       {
         "key": "field_search_engine_marketing_5da4f91cb7c5",
@@ -1878,7 +1794,7 @@
         "label": "Google Ads — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 22,
+        "menu_order": 19,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1890,7 +1806,7 @@
         "label": "Google Ads — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 23,
+        "menu_order": 20,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1905,14 +1821,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 24
-      },
-      {
-        "key": "field_search_engine_marketing_image_f953878ff0_alt",
-        "name": "search_engine_marketing_image_f953878ff0_alt",
-        "label": "Google Ads — Certification Image Alternative Text",
-        "type": "text",
-        "menu_order": 25
+        "menu_order": 21
       },
       {
         "key": "field_search_engine_marketing_c14dc679be7b",
@@ -1920,7 +1829,7 @@
         "label": "Google Ads — Partner Credentials",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 26,
+        "menu_order": 22,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1935,14 +1844,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 27
-      },
-      {
-        "key": "field_search_engine_marketing_image_843cfc6b8d_alt",
-        "name": "search_engine_marketing_image_843cfc6b8d_alt",
-        "label": "Microsoft Advertising — Certification Image Alternative Text",
-        "type": "text",
-        "menu_order": 28
+        "menu_order": 23
       },
       {
         "key": "field_search_engine_marketing_9b5edf4fcb86",
@@ -1950,7 +1852,7 @@
         "label": "Microsoft Advertising — Partner Credentials",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 29,
+        "menu_order": 24,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1962,7 +1864,7 @@
         "label": "Microsoft Advertising — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 30,
+        "menu_order": 25,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1974,7 +1876,7 @@
         "label": "Microsoft Advertising — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 31,
+        "menu_order": 26,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -1986,7 +1888,7 @@
         "label": "FAQs — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 32,
+        "menu_order": 27,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2001,14 +1903,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 33
-      },
-      {
-        "key": "field_search_engine_marketing_image_ba13013ff2_alt",
-        "name": "search_engine_marketing_image_ba13013ff2_alt",
-        "label": "FAQs — Image Alternative Text",
-        "type": "text",
-        "menu_order": 34
+        "menu_order": 28
       },
       {
         "key": "field_search_engine_marketing_e4c9a55704b0",
@@ -2016,7 +1911,7 @@
         "label": "FAQ 1 — Question",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 35,
+        "menu_order": 29,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2027,7 +1922,7 @@
         "name": "search_engine_marketing_e4c9a55704b0_answer",
         "label": "FAQ 1 — Answer",
         "type": "wysiwyg",
-        "menu_order": 36,
+        "menu_order": 30,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2040,7 +1935,7 @@
         "label": "FAQ 2 — Question",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 37,
+        "menu_order": 31,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2051,7 +1946,7 @@
         "name": "search_engine_marketing_1a8f0aa708c3_answer",
         "label": "FAQ 2 — Answer",
         "type": "wysiwyg",
-        "menu_order": 38,
+        "menu_order": 32,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2064,7 +1959,7 @@
         "label": "FAQ 3 — Question",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 39,
+        "menu_order": 33,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2075,7 +1970,7 @@
         "name": "search_engine_marketing_bb38e3397bbb_answer",
         "label": "FAQ 3 — Answer",
         "type": "wysiwyg",
-        "menu_order": 40,
+        "menu_order": 34,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2088,7 +1983,7 @@
         "label": "FAQ 4 — Question",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 41,
+        "menu_order": 35,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2099,7 +1994,7 @@
         "name": "search_engine_marketing_12d045c16ab7_answer",
         "label": "FAQ 4 — Answer",
         "type": "wysiwyg",
-        "menu_order": 42,
+        "menu_order": 36,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2112,7 +2007,7 @@
         "label": "FAQ 5 — Question",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 43,
+        "menu_order": 37,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2123,7 +2018,7 @@
         "name": "search_engine_marketing_49292f5e4eed_answer",
         "label": "FAQ 5 — Answer",
         "type": "wysiwyg",
-        "menu_order": 44,
+        "menu_order": 38,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2136,7 +2031,7 @@
         "label": "FAQ 6 — Question",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 45,
+        "menu_order": 39,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2147,7 +2042,7 @@
         "name": "search_engine_marketing_6e5798b9f4ea_answer",
         "label": "FAQ 6 — Answer",
         "type": "wysiwyg",
-        "menu_order": 46,
+        "menu_order": 40,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2160,7 +2055,7 @@
         "label": "Closing Call to Action — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 47,
+        "menu_order": 41,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2172,7 +2067,7 @@
         "label": "Closing Call to Action — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 48,
+        "menu_order": 42,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2184,7 +2079,7 @@
         "label": "Closing Call to Action — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 49,
+        "menu_order": 43,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2196,7 +2091,7 @@
         "label": "Closing Call to Action — Button URL",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 50
+        "menu_order": 44
       }
     ],
     "location": [
@@ -2229,19 +2124,12 @@
         "menu_order": 0
       },
       {
-        "key": "field_blog_image_a770b85be1_alt",
-        "name": "blog_image_a770b85be1_alt",
-        "label": "Hero — Image Alternative Text",
-        "type": "text",
-        "menu_order": 1
-      },
-      {
         "key": "field_blog_2f0c8cf2c985",
         "name": "blog_2f0c8cf2c985",
         "label": "Introduction — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 2,
+        "menu_order": 1,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2253,7 +2141,7 @@
         "label": "Introduction — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 3,
+        "menu_order": 2,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2265,7 +2153,7 @@
         "label": "Filters — View All Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 4,
+        "menu_order": 3,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2277,7 +2165,7 @@
         "label": "Filters — Digital Marketing Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 5,
+        "menu_order": 4,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2289,7 +2177,7 @@
         "label": "Filters — SEO Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 6,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2301,7 +2189,7 @@
         "label": "Filters — SEM Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2313,7 +2201,7 @@
         "label": "Filters — Wordpress Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 8,
+        "menu_order": 7,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2325,7 +2213,7 @@
         "label": "Filters — Papaya HQ Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 9,
+        "menu_order": 8,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2340,14 +2228,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 10
-      },
-      {
-        "key": "field_blog_image_fa29e64549_alt",
-        "name": "blog_image_fa29e64549_alt",
-        "label": "Card 1 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 11
+        "menu_order": 9
       },
       {
         "key": "field_blog_1249a2f105cc",
@@ -2355,7 +2236,7 @@
         "label": "Card 1 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2367,7 +2248,7 @@
         "label": "Card 1 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 13
+        "menu_order": 11
       },
       {
         "key": "field_blog_1249a2f105cc_category",
@@ -2382,7 +2263,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 14
+        "menu_order": 12
       },
       {
         "key": "field_blog_2c5657a9caa5",
@@ -2390,7 +2271,7 @@
         "label": "Card 1 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 15,
+        "menu_order": 13,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2405,14 +2286,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 16
-      },
-      {
-        "key": "field_blog_image_a1f7944375_alt",
-        "name": "blog_image_a1f7944375_alt",
-        "label": "Card 2 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 17
+        "menu_order": 14
       },
       {
         "key": "field_blog_f52e28904d6f",
@@ -2420,7 +2294,7 @@
         "label": "Card 2 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 18,
+        "menu_order": 15,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2432,7 +2306,7 @@
         "label": "Card 2 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 19
+        "menu_order": 16
       },
       {
         "key": "field_blog_f52e28904d6f_category",
@@ -2447,7 +2321,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 20
+        "menu_order": 17
       },
       {
         "key": "field_blog_a8e77dee2a51",
@@ -2455,7 +2329,7 @@
         "label": "Card 2 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 21,
+        "menu_order": 18,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2470,14 +2344,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 22
-      },
-      {
-        "key": "field_blog_image_1e16218537_alt",
-        "name": "blog_image_1e16218537_alt",
-        "label": "Card 3 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 23
+        "menu_order": 19
       },
       {
         "key": "field_blog_99693f626393",
@@ -2485,7 +2352,7 @@
         "label": "Card 3 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 24,
+        "menu_order": 20,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2497,7 +2364,7 @@
         "label": "Card 3 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 25
+        "menu_order": 21
       },
       {
         "key": "field_blog_99693f626393_category",
@@ -2512,7 +2379,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 26
+        "menu_order": 22
       },
       {
         "key": "field_blog_3daccb27a0a0",
@@ -2520,7 +2387,7 @@
         "label": "Card 3 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 27,
+        "menu_order": 23,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2535,14 +2402,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 28
-      },
-      {
-        "key": "field_blog_image_70787a206a_alt",
-        "name": "blog_image_70787a206a_alt",
-        "label": "Card 4 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 29
+        "menu_order": 24
       },
       {
         "key": "field_blog_4544074113f3",
@@ -2550,7 +2410,7 @@
         "label": "Card 4 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 30,
+        "menu_order": 25,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2562,7 +2422,7 @@
         "label": "Card 4 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 31
+        "menu_order": 26
       },
       {
         "key": "field_blog_4544074113f3_category",
@@ -2577,7 +2437,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 32
+        "menu_order": 27
       },
       {
         "key": "field_blog_cf0b8391a4e7",
@@ -2585,7 +2445,7 @@
         "label": "Card 4 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 33,
+        "menu_order": 28,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2600,14 +2460,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 34
-      },
-      {
-        "key": "field_blog_image_c43d00948a_alt",
-        "name": "blog_image_c43d00948a_alt",
-        "label": "Card 5 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 35
+        "menu_order": 29
       },
       {
         "key": "field_blog_077d3e00d0d6",
@@ -2615,7 +2468,7 @@
         "label": "Card 5 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 36,
+        "menu_order": 30,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2627,7 +2480,7 @@
         "label": "Card 5 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 37
+        "menu_order": 31
       },
       {
         "key": "field_blog_077d3e00d0d6_category",
@@ -2642,7 +2495,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 38
+        "menu_order": 32
       },
       {
         "key": "field_blog_cba7a4019382",
@@ -2650,7 +2503,7 @@
         "label": "Card 5 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 39,
+        "menu_order": 33,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2665,14 +2518,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 40
-      },
-      {
-        "key": "field_blog_image_509af40fcd_alt",
-        "name": "blog_image_509af40fcd_alt",
-        "label": "Card 6 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 41
+        "menu_order": 34
       },
       {
         "key": "field_blog_c5f77c3ce3f5",
@@ -2680,7 +2526,7 @@
         "label": "Card 6 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 42,
+        "menu_order": 35,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2692,7 +2538,7 @@
         "label": "Card 6 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 43
+        "menu_order": 36
       },
       {
         "key": "field_blog_c5f77c3ce3f5_category",
@@ -2707,7 +2553,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 44
+        "menu_order": 37
       },
       {
         "key": "field_blog_df6295346605",
@@ -2715,7 +2561,7 @@
         "label": "Card 6 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 45,
+        "menu_order": 38,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2730,14 +2576,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 46
-      },
-      {
-        "key": "field_blog_image_cc7f21f187_alt",
-        "name": "blog_image_cc7f21f187_alt",
-        "label": "Card 7 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 47
+        "menu_order": 39
       },
       {
         "key": "field_blog_4b9efd521840",
@@ -2745,7 +2584,7 @@
         "label": "Card 7 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 48,
+        "menu_order": 40,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2757,7 +2596,7 @@
         "label": "Card 7 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 49
+        "menu_order": 41
       },
       {
         "key": "field_blog_4b9efd521840_category",
@@ -2772,7 +2611,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 50
+        "menu_order": 42
       },
       {
         "key": "field_blog_ea9fcdeea6f4",
@@ -2780,7 +2619,7 @@
         "label": "Card 7 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 51,
+        "menu_order": 43,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2795,14 +2634,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 52
-      },
-      {
-        "key": "field_blog_image_8989ff6955_alt",
-        "name": "blog_image_8989ff6955_alt",
-        "label": "Card 8 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 53
+        "menu_order": 44
       },
       {
         "key": "field_blog_9545cdf5b05f",
@@ -2810,7 +2642,7 @@
         "label": "Card 8 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 54,
+        "menu_order": 45,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2822,7 +2654,7 @@
         "label": "Card 8 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 55
+        "menu_order": 46
       },
       {
         "key": "field_blog_9545cdf5b05f_category",
@@ -2837,7 +2669,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 56
+        "menu_order": 47
       },
       {
         "key": "field_blog_5c38a4f149da",
@@ -2845,7 +2677,7 @@
         "label": "Card 8 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 57,
+        "menu_order": 48,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2860,14 +2692,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 58
-      },
-      {
-        "key": "field_blog_image_4e3d7d5c57_alt",
-        "name": "blog_image_4e3d7d5c57_alt",
-        "label": "Card 9 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 59
+        "menu_order": 49
       },
       {
         "key": "field_blog_55b16823b966",
@@ -2875,7 +2700,7 @@
         "label": "Card 9 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 60,
+        "menu_order": 50,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2887,7 +2712,7 @@
         "label": "Card 9 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 61
+        "menu_order": 51
       },
       {
         "key": "field_blog_55b16823b966_category",
@@ -2902,7 +2727,7 @@
           "Papaya HQ": "Papaya HQ"
         },
         "default_value": "SEO",
-        "menu_order": 62
+        "menu_order": 52
       },
       {
         "key": "field_blog_b58b9119f729",
@@ -2910,7 +2735,7 @@
         "label": "Card 9 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 63,
+        "menu_order": 53,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2922,7 +2747,7 @@
         "label": "Pagination — Button Label",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 64,
+        "menu_order": 54,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -2983,19 +2808,12 @@
         "menu_order": 2
       },
       {
-        "key": "field_blog_detail_image_33017e3b40_alt",
-        "name": "blog_detail_image_33017e3b40_alt",
-        "label": "Article — Featured Image Alternative Text",
-        "type": "text",
-        "menu_order": 3
-      },
-      {
         "key": "field_blog_detail_3ec80043fb9f",
         "name": "blog_detail_3ec80043fb9f",
         "label": "Article — Introduction",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 4,
+        "menu_order": 3,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3007,7 +2825,7 @@
         "label": "Local SEO — Section Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 5,
+        "menu_order": 4,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3019,7 +2837,7 @@
         "label": "Local SEO — Section Body",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 6,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3031,7 +2849,7 @@
         "label": "Google Map Pack — Section Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3043,7 +2861,7 @@
         "label": "Google Map Pack — Section Body",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 8,
+        "menu_order": 7,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3055,7 +2873,7 @@
         "label": "Google Map Pack — Pro Tip",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 9,
+        "menu_order": 8,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3067,7 +2885,7 @@
         "label": "Local Rankings — Section Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 10,
+        "menu_order": 9,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3082,14 +2900,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 11
-      },
-      {
-        "key": "field_blog_detail_image_82ae55901c_alt",
-        "name": "blog_detail_image_82ae55901c_alt",
-        "label": "Local Rankings — Diagram — Alternative Text",
-        "type": "text",
-        "menu_order": 12
+        "menu_order": 10
       },
       {
         "key": "field_blog_detail_bcb4f48e1767",
@@ -3097,7 +2908,7 @@
         "label": "Local Rankings — Section Body",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 13,
+        "menu_order": 11,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3109,7 +2920,7 @@
         "label": "Related Posts — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 14,
+        "menu_order": 12,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3124,14 +2935,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 15
-      },
-      {
-        "key": "field_blog_detail_image_e66cb91b30_alt",
-        "name": "blog_detail_image_e66cb91b30_alt",
-        "label": "Related Post 1 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 16
+        "menu_order": 13
       },
       {
         "key": "field_blog_detail_4d181476ee16",
@@ -3139,7 +2943,7 @@
         "label": "Related Post 1 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 17,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3151,7 +2955,7 @@
         "label": "Related Post 1 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 18
+        "menu_order": 15
       },
       {
         "key": "field_blog_detail_image_e850bb0d10",
@@ -3162,14 +2966,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 19
-      },
-      {
-        "key": "field_blog_detail_image_e850bb0d10_alt",
-        "name": "blog_detail_image_e850bb0d10_alt",
-        "label": "Related Post 2 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 20
+        "menu_order": 16
       },
       {
         "key": "field_blog_detail_8c5ed5ef437b",
@@ -3177,7 +2974,7 @@
         "label": "Related Post 2 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 21,
+        "menu_order": 17,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3189,7 +2986,7 @@
         "label": "Related Post 2 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 22
+        "menu_order": 18
       },
       {
         "key": "field_blog_detail_image_e6018f7e64",
@@ -3200,14 +2997,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 23
-      },
-      {
-        "key": "field_blog_detail_image_e6018f7e64_alt",
-        "name": "blog_detail_image_e6018f7e64_alt",
-        "label": "Related Post 3 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 24
+        "menu_order": 19
       },
       {
         "key": "field_blog_detail_1fab6576ba8d",
@@ -3215,7 +3005,7 @@
         "label": "Related Post 3 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 25,
+        "menu_order": 20,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3227,7 +3017,7 @@
         "label": "Related Post 3 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 26
+        "menu_order": 21
       }
     ],
     "location": [
@@ -3316,19 +3106,12 @@
         "menu_order": 5
       },
       {
-        "key": "field_case_studies_image_8dd5e5fb58_alt",
-        "name": "case_studies_image_8dd5e5fb58_alt",
-        "label": "Card 1 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 6
-      },
-      {
         "key": "field_case_studies_13234451b10b",
         "name": "case_studies_13234451b10b",
         "label": "Card 1 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3340,7 +3123,7 @@
         "label": "Card 1 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 8
+        "menu_order": 7
       },
       {
         "key": "field_case_studies_aea86c447f03",
@@ -3348,7 +3131,7 @@
         "label": "Card 1 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 9,
+        "menu_order": 8,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3363,14 +3146,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 10
-      },
-      {
-        "key": "field_case_studies_image_14cb78ca6e_alt",
-        "name": "case_studies_image_14cb78ca6e_alt",
-        "label": "Card 2 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 11
+        "menu_order": 9
       },
       {
         "key": "field_case_studies_1c7050391843",
@@ -3378,7 +3154,7 @@
         "label": "Card 2 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3390,7 +3166,7 @@
         "label": "Card 2 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 13
+        "menu_order": 11
       },
       {
         "key": "field_case_studies_797e93346093",
@@ -3398,7 +3174,7 @@
         "label": "Card 2 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 14,
+        "menu_order": 12,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3413,14 +3189,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 15
-      },
-      {
-        "key": "field_case_studies_image_5ad8dd81b9_alt",
-        "name": "case_studies_image_5ad8dd81b9_alt",
-        "label": "Card 3 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 16
+        "menu_order": 13
       },
       {
         "key": "field_case_studies_0ecd54bcba1a",
@@ -3428,7 +3197,7 @@
         "label": "Card 3 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 17,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3440,7 +3209,7 @@
         "label": "Card 3 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 18
+        "menu_order": 15
       },
       {
         "key": "field_case_studies_c478f4605f8c",
@@ -3448,7 +3217,7 @@
         "label": "Card 3 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 19,
+        "menu_order": 16,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3463,14 +3232,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 20
-      },
-      {
-        "key": "field_case_studies_image_af8f78b46e_alt",
-        "name": "case_studies_image_af8f78b46e_alt",
-        "label": "Card 4 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 21
+        "menu_order": 17
       },
       {
         "key": "field_case_studies_0a7c3278aa61",
@@ -3478,7 +3240,7 @@
         "label": "Card 4 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 22,
+        "menu_order": 18,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3490,7 +3252,7 @@
         "label": "Card 4 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 23
+        "menu_order": 19
       },
       {
         "key": "field_case_studies_7ccd51309801",
@@ -3498,7 +3260,7 @@
         "label": "Card 4 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 24,
+        "menu_order": 20,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3513,14 +3275,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 25
-      },
-      {
-        "key": "field_case_studies_image_295549ea58_alt",
-        "name": "case_studies_image_295549ea58_alt",
-        "label": "Card 5 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 26
+        "menu_order": 21
       },
       {
         "key": "field_case_studies_716425e49fa2",
@@ -3528,7 +3283,7 @@
         "label": "Card 5 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 27,
+        "menu_order": 22,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3540,7 +3295,7 @@
         "label": "Card 5 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 28
+        "menu_order": 23
       },
       {
         "key": "field_case_studies_4c074436f397",
@@ -3548,7 +3303,7 @@
         "label": "Card 5 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 29,
+        "menu_order": 24,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3563,14 +3318,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 30
-      },
-      {
-        "key": "field_case_studies_image_b6a651e3c2_alt",
-        "name": "case_studies_image_b6a651e3c2_alt",
-        "label": "Card 6 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 31
+        "menu_order": 25
       },
       {
         "key": "field_case_studies_74f48e8c27a3",
@@ -3578,7 +3326,7 @@
         "label": "Card 6 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 32,
+        "menu_order": 26,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3590,7 +3338,7 @@
         "label": "Card 6 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 33
+        "menu_order": 27
       },
       {
         "key": "field_case_studies_938030bd0b43",
@@ -3598,7 +3346,7 @@
         "label": "Card 6 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 34,
+        "menu_order": 28,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3613,14 +3361,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 35
-      },
-      {
-        "key": "field_case_studies_image_540f75952e_alt",
-        "name": "case_studies_image_540f75952e_alt",
-        "label": "Card 7 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 36
+        "menu_order": 29
       },
       {
         "key": "field_case_studies_304856bee0cf",
@@ -3628,7 +3369,7 @@
         "label": "Card 7 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 37,
+        "menu_order": 30,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3640,7 +3381,7 @@
         "label": "Card 7 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 38
+        "menu_order": 31
       },
       {
         "key": "field_case_studies_c6058d1d5199",
@@ -3648,7 +3389,7 @@
         "label": "Card 7 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 39,
+        "menu_order": 32,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3663,14 +3404,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 40
-      },
-      {
-        "key": "field_case_studies_image_27fdb373ca_alt",
-        "name": "case_studies_image_27fdb373ca_alt",
-        "label": "Card 8 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 41
+        "menu_order": 33
       },
       {
         "key": "field_case_studies_79f1326abebe",
@@ -3678,7 +3412,7 @@
         "label": "Card 8 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 42,
+        "menu_order": 34,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3690,7 +3424,7 @@
         "label": "Card 8 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 43
+        "menu_order": 35
       },
       {
         "key": "field_case_studies_02b4fd4b7c29",
@@ -3698,7 +3432,7 @@
         "label": "Card 8 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 44,
+        "menu_order": 36,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3713,14 +3447,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 45
-      },
-      {
-        "key": "field_case_studies_image_340ebfd1f6_alt",
-        "name": "case_studies_image_340ebfd1f6_alt",
-        "label": "Card 9 — Image Alternative Text",
-        "type": "text",
-        "menu_order": 46
+        "menu_order": 37
       },
       {
         "key": "field_case_studies_689120d3d2e7",
@@ -3728,7 +3455,7 @@
         "label": "Card 9 — Title",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 47,
+        "menu_order": 38,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3740,7 +3467,7 @@
         "label": "Card 9 — Title — Link",
         "type": "text",
         "instructions": "Full URL, relative site URL, or tel: link. Leave blank to use the default destination.",
-        "menu_order": 48
+        "menu_order": 39
       },
       {
         "key": "field_case_studies_bf246d534c46",
@@ -3748,7 +3475,7 @@
         "label": "Card 9 — Excerpt",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 49,
+        "menu_order": 40,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3809,19 +3536,12 @@
         "menu_order": 2
       },
       {
-        "key": "field_case_study_detail_image_cf7d13020e_alt",
-        "name": "case_study_detail_image_cf7d13020e_alt",
-        "label": "Case Study — Featured Image Alternative Text",
-        "type": "text",
-        "menu_order": 3
-      },
-      {
         "key": "field_case_study_detail_7ad346f8413b",
         "name": "case_study_detail_7ad346f8413b",
         "label": "Case Study — Introduction",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 4,
+        "menu_order": 3,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3833,7 +3553,7 @@
         "label": "Result 1 — Search Visibility",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 5,
+        "menu_order": 4,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3845,7 +3565,7 @@
         "label": "Result 2 — Lead Generation",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 6,
+        "menu_order": 5,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3857,7 +3577,7 @@
         "label": "Result 3 — Local Engagement",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 7,
+        "menu_order": 6,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3869,7 +3589,7 @@
         "label": "Results — Summary",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 8,
+        "menu_order": 7,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3881,7 +3601,7 @@
         "label": "Testimonial — Quote Mark",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 9,
+        "menu_order": 8,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3893,7 +3613,7 @@
         "label": "Testimonial — Quote",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 10,
+        "menu_order": 9,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3905,7 +3625,7 @@
         "label": "Testimonial — Attribution",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 11,
+        "menu_order": 10,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3917,7 +3637,7 @@
         "label": "Challenge — Heading",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 12,
+        "menu_order": 11,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3932,14 +3652,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 13
-      },
-      {
-        "key": "field_case_study_detail_image_4d97ed1303_alt",
-        "name": "case_study_detail_image_4d97ed1303_alt",
-        "label": "Challenge — Image Alternative Text",
-        "type": "text",
-        "menu_order": 14
+        "menu_order": 12
       },
       {
         "key": "field_case_study_detail_1dcedfb52114",
@@ -3947,7 +3660,7 @@
         "label": "Challenge — Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 15,
+        "menu_order": 13,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3959,7 +3672,7 @@
         "label": "Challenge — Follow-up Description",
         "type": "wysiwyg",
         "instructions": "Edit this content with the visual editor. Headings and button labels support inline formatting; descriptions support paragraphs, lists, and links.",
-        "menu_order": 16,
+        "menu_order": 14,
         "tabs": "all",
         "toolbar": "full",
         "media_upload": 0,
@@ -3974,14 +3687,7 @@
         "preview_size": "medium",
         "library": "all",
         "instructions": "Choose a replacement image. The original design asset is used when empty.",
-        "menu_order": 17
-      },
-      {
-        "key": "field_case_study_detail_image_26a15581be_alt",
-        "name": "case_study_detail_image_26a15581be_alt",
-        "label": "Results — Search Performance Chart — Alternative Text",
-        "type": "text",
-        "menu_order": 18
+        "menu_order": 15
       }
     ],
     "location": [
