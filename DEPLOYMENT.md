@@ -44,4 +44,4 @@ Changes made to theme files through the production Theme File Editor can be over
 
 ## ACF field groups after deployment
 
-Visit the dashboard as an administrator after deploying version 1.0.8 to install the nine editable ACF database groups. Manage their definitions under ACF → Field Groups afterward. The shipped import does not override subsequent edits. Existing values and field keys are preserved. Export later group changes through ACF → Tools when migrating them between environments.
+Visit the dashboard as an administrator after deploying version 1.0.9 to install the nine editable ACF database groups. Manage their definitions under ACF → Field Groups afterward. The shipped import does not override subsequent edits. Existing values and field keys are preserved. Export later group changes through ACF → Tools when migrating them between environments.

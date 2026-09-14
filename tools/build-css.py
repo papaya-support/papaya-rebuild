@@ -39,8 +39,7 @@ for path in sorted((theme/'design').glob('*.json')):
     rules.append('\n/* '+slug+' */')
     rule(desktop,'--page-height:'+num(d['height'])+';--page-bg:'+d['background'])
     rule(desktop+' .xd-stage','height:'+px(d['height'])+';background:'+d['background'])
-    rule(desktop+' .ps-menu-footer_navigation,'+desktop+' .ps-menu-footer_services,'+desktop+' .ps-menu-footer_contact', 'top:'+px(d['footerY']+211.4521484375))
-    rule(desktop+' .ps-menu-footer_social','top:'+px(d['footerY']+381))
+    rule(desktop+' .ps-footer-columns','top:'+px(d['footerY']+123.542))
     for t in d['texts']:
         f=t['font']; field=f'[data-field="{t["key"]}"]'; sel=desktop+' '+field; msel=mobile+' '+field
         css='--text-anchor:'+f['align']+';font-family:'+f['family']+';font-weight:'+num(f['weight'])+';font-size:'+px(f['size'])+';color:'+f['color']+';letter-spacing:'+px(f['spacing'])

@@ -66,6 +66,21 @@ function ps_text_node($t, $slug, $mobile = false) {
         echo '<div class="faq-answer'.($mobile?' mobile-answer':'').'" id="'.($mobile?'mobile-':'').'answer-'.esc_attr($t['key']).'" hidden>'.($answer?nl2br(esc_html($answer)):'<a href="'.esc_url(ps_value('ps_booking_url','tel:+14044259775','shared')).'">Contact us to discuss this question.</a>').'</div>';
     }
 }
+function ps_footer_heading_keys() {
+    return ['footer_navigation'=>'shared_78f8d1b3d0a8','footer_services'=>'shared_63ce494a885e','footer_contact'=>'shared_4937e4e54c2c'];
+}
+function ps_render_footer_columns($design, $mobile=false) {
+    echo '<div class="ps-footer-columns">';
+    foreach(ps_footer_heading_keys() as $location=>$key) {
+        $fallback=['footer_navigation'=>'Navigation','footer_services'=>'Services','footer_contact'=>'Contact'][$location];
+        foreach($design['texts'] as $text) {if($text['key']===$key) {$fallback=$text['text'];break;}}
+        echo '<section class="ps-footer-column"><h2 class="ps-footer-heading">'.esc_html(ps_value($key,$fallback,'footer')).'</h2>';
+        ps_render_menu($location,$mobile);
+        if($location==='footer_contact') {ps_render_menu('footer_social',$mobile);}
+        echo '</section>';
+    }
+    echo '</div>';
+}
 function ps_render_page($slug) {
     $design=ps_design($slug); if (!$design) {return;}
     $svg=file_get_contents(__DIR__.'/../design/'.$slug.'.svg');
@@ -87,8 +102,8 @@ function ps_render_page($slug) {
         foreach(['search-engine-optimization'=>995,'website-analytics'=>1490,'wordpress-maintenance'=>1490] as $anchor=>$y) {echo '<span id="'.esc_attr($anchor).'" class="xd-anchor"></span>';}
     }
     echo '</main><footer class="xd-region" aria-label="Site footer">';
-    foreach($design['texts'] as $t) {if($t['scope']==='footer' && !ps_menu_field($t)) {ps_text_node($t,$slug);}}
-    foreach(['footer_navigation','footer_services','footer_contact','footer_social'] as $location) {ps_render_menu($location);}
+    foreach($design['texts'] as $t) {if($t['scope']==='footer' && !ps_menu_field($t) && !in_array($t['key'],ps_footer_heading_keys(),true)) {ps_text_node($t,$slug);}}
+    ps_render_footer_columns($design);
     echo '</footer></div></div>';
     ps_render_mobile($design);
     if($slug==='blog') {echo '<script type="application/json" id="papaya-blog-cards">'.wp_json_encode(ps_blog_cards(),JSON_HEX_TAG|JSON_HEX_AMP).'</script><div class="blog-status" role="status" aria-live="polite"></div>';}
@@ -137,10 +152,10 @@ function ps_render_mobile($design) {
         echo '</section>';
     }
     echo '</main><footer class="mobile-footer"><a href="'.esc_url(home_url('/')).'"><img src="'.esc_url(get_stylesheet_directory_uri().'/assets/brand.svg').'" alt="Papaya Search"></a>';
+    ps_render_footer_columns($design,true);
     foreach($design['texts'] as $t) {
         if($t['scope']!=='footer') {continue;}
-        $menu=['shared_819c8f0b4b41'=>'footer_navigation','shared_5f04f2b25bf0'=>'footer_services','shared_ed5745efb63b'=>'footer_contact'][$t['key']]??'';
-        if ($menu) {ps_render_menu($menu,true);if($menu==='footer_contact') {ps_render_menu('footer_social',true);}continue;}
+        if(ps_menu_field($t) || in_array($t['key'],ps_footer_heading_keys(),true)) {continue;}
         $value=(string)ps_value($t['key'],$t['text'],$t['scope']);
         if(str_contains($value,"\n")) {
             echo '<div class="mobile-footer-links">';foreach(explode("\n",$value) as $label) {$label=trim($label);if(!$label){continue;}$url=ps_link_for_label($label);echo $url?'<a href="'.esc_url($url).'">'.esc_html($label).'</a>':'<span>'.esc_html($label).'</span>';}echo '</div>';
