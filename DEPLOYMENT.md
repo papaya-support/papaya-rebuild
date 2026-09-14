@@ -41,3 +41,7 @@ python3 tools/build-css.py
 Commit the source edits and generated `assets/site.css` together. Pressable deploys the committed files without running a build. Its database retains page content, ACF values and native menu edits. New media uploaded through WordPress also remains outside Git.
 
 Changes made to theme files through the production Theme File Editor can be overwritten by the next deployment; make code changes through Git instead. To roll back a code change, revert the relevant commit and push the deployment branch. Code rollback does not roll back database changes.
+
+## ACF field groups after deployment
+
+Visit the dashboard as an administrator after deploying version 1.0.8 to install the nine editable ACF database groups. Manage their definitions under ACF → Field Groups afterward. The shipped import does not override subsequent edits. Existing values and field keys are preserved. Export later group changes through ACF → Tools when migrating them between environments.

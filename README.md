@@ -108,3 +108,13 @@ Use **Appearance → Menus** to edit the five assigned menu locations: Header Na
 Installation seeds these menus from existing shared content and destinations. On an existing installation, visit the dashboard once after updating the child theme to run the one-time migration. Existing assigned menus and legacy ACF data are preserved; migrated navigation fields are no longer exposed in ACF or used to render the menus. Future admin visits do not overwrite menu edits or reassign deliberately unassigned locations. Other page content, footer headings, copyright, and the Schedule a Call button remain in ACF.
 
 The contact menu contains the phone, address/map link, and Contact Us. Social destinations were checked against public metadata on https://papayasearch.com/. Icons use WordPress's bundled GPL Dashicons font. Menu styling remains in the single nested stylesheet. The XD desktop artboards retain their designed dimensions; extensive new content may require corresponding layout adjustments.
+
+## Editable ACF field groups
+
+From version 1.0.8, the eight page groups and one shared footer group are stored as ACF field-group and field posts in the WordPress database. They appear under **ACF → Field Groups** and can be edited there. The child theme no longer calls `acf_add_local_field_group` or loads overriding local JSON definitions.
+
+After deploying this update, open the WordPress dashboard as an administrator once. A one-time importer creates missing groups from `acf-import/field-groups.json`. Existing groups, saved content, and field keys/names are preserved. Later ACF edits are not reset by a refresh or deployment. The Papaya Setup importer also installs missing groups on a fresh site before importing content.
+
+Alternatively, use **ACF → Tools → Import Field Groups** and select the bundled `acf-import/field-groups.json`. Do not reimport over customized groups unless you intend to replace their definitions. Keep field names and keys unchanged to retain template connections. Page content remains editable under Pages; native menus remain under Appearance → Menus.
+
+Use ACF's export tools to back up subsequent field-definition changes or migrate them to another site. Those dashboard changes live in the database and are not automatically committed to Git. `tools/build-acf-import.py` only builds the initial distributable import file; it is not used to define frontend fields at runtime.

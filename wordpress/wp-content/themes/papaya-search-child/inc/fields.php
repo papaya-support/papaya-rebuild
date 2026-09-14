@@ -3,37 +3,39 @@ defined('ABSPATH') || exit;
 add_action('init', function () {
     register_post_type('ps_site_content', ['label'=>'Site Content','public'=>false,'show_ui'=>true,'show_in_menu'=>true,'menu_icon'=>'dashicons-admin-site-alt3','supports'=>['title'],'capability_type'=>'page','map_meta_cap'=>true]);
 });
-function ps_text_field($t) {
-    $label = preg_replace('/\s+/', ' ', $t['text']);
-    $label = mb_strlen($label) > 76 ? mb_substr($label,0,73).'…' : $label;
-    return ['key'=>'field_'.$t['key'],'name'=>$t['key'],'label'=>$label,'type'=>'textarea','rows'=>max(2,min(8,count($t['lines']))),'default_value'=>$t['text'],'new_lines'=>'','instructions'=>'Original XD content. Existing line breaks preserve the supplied layout.'];
-}
-add_action('acf/init', function () {
-    if (!function_exists('acf_add_local_field_group')) { return; }
-    $shared = [];
-    foreach (ps_pages() as $page) {
-        $design = ps_design($page['slug']); $fields = [];
-        foreach ($design['texts'] as $t) {
-            if (ps_menu_field($t)) {continue;}
-            $field = ps_text_field($t);
-            if ($t['scope'] !== 'page') { $shared[$t['key']] = $field; continue; }
-            $fields[] = $field;
-            if ($page['slug']==='blog' && str_starts_with($t['text'],'Lorem ipsum') && $t['font']['weight']>=700) {
-                $fields[]=['key'=>'field_'.$t['key'].'_category','name'=>$t['key'].'_category','label'=>'Card category','type'=>'select','choices'=>array_combine(['Digital Marketing','SEO','SEM','Wordpress','Papaya HQ'],['Digital Marketing','SEO','SEM','Wordpress','Papaya HQ']),'default_value'=>'SEO'];
-            }
-            if (ps_link_default($t, $page['slug'])) {
-                $fields[] = ['key'=>'field_'.$t['key'].'_url','name'=>$t['key'].'_url','label'=>$field['label'].' — link','type'=>'text','instructions'=>'Absolute URL, tel: link, or a relative site URL. Leave empty to use the default destination.'];
-            }
-            if (ps_is_faq($t, $page['slug'])) {
-                $fields[] = ['key'=>'field_'.$t['key'].'_answer','name'=>$t['key'].'_answer','label'=>$field['label'].' — answer','type'=>'textarea','rows'=>4,'instructions'=>'The XD supplies only the collapsed question. Add the approved answer here.'];
-            }
-        }
-        foreach ($design['images'] as $im) {
-            $fields[] = ['key'=>'field_'.$im['key'],'name'=>$im['key'],'label'=>'Image — '.($im['y'] < 700 ? 'Hero' : $im['label']).' ('.round($im['y']).'px)','type'=>'image','return_format'=>'id','preview_size'=>'medium','library'=>'all','instructions'=>'Original XD asset is used until you choose a replacement.'];
-            $fields[] = ['key'=>'field_'.$im['key'].'_alt','name'=>$im['key'].'_alt','label'=>'Image alternative text','type'=>'text'];
-        }
-        acf_add_local_field_group(['key'=>'group_ps_'.$page['slug'],'title'=>$page['name'].' — XD Content','fields'=>$fields,'location'=>[[['param'=>'page_template','operator'=>'==','value'=>'page-templates/'.$page['slug'].'.php']]],'style'=>'default','position'=>'normal']);
+/**
+ * One-time installation of real ACF field-group/field posts.
+ * Field definitions are subsequently managed in ACF's editor, not registered in PHP.
+ * The import lives outside acf-json, so it cannot override dashboard edits.
+ */
+function ps_install_acf_groups() {
+    if (get_option('ps_acf_database_groups_v1')) {return true;}
+    if (!function_exists('acf_import_field_group')) {return new WP_Error('acf_missing','Activate Advanced Custom Fields first.');}
+    if (!did_action('acf/init')) {acf_init();}
+    $groups=json_decode(file_get_contents(__DIR__.'/../acf-import/field-groups.json'),true);
+    if (!is_array($groups)) {return new WP_Error('acf_import_invalid','The ACF field group import could not be read.');}
+    foreach ($groups as $group) {
+        // Preserve existing groups, including disabled or trashed groups, by key.
+        $existing=get_posts(['post_type'=>'acf-field-group','post_status'=>['publish','draft','private','trash'],'name'=>$group['key'],'posts_per_page'=>1,'fields'=>'ids']);
+        if ($existing) {continue;}
+        $result=acf_import_field_group($group);
+        if (is_wp_error($result) || empty($result['ID'])) {return new WP_Error('acf_import_failed','Could not import '.$group['title'].'.');}
     }
-    $shared['booking']=['key'=>'field_ps_booking_url','name'=>'ps_booking_url','label'=>'Page buttons / Schedule a Call destination','type'=>'text','default_value'=>'tel:+14044259775'];
-    acf_add_local_field_group(['key'=>'group_ps_shared','title'=>'Shared Header, Footer & Links','fields'=>array_values($shared),'location'=>[[['param'=>'post_type','operator'=>'==','value'=>'ps_site_content']]]]);
+    update_option('ps_acf_database_groups_v1',1);
+    return true;
+}
+add_action('admin_init',function(){
+    if (!current_user_can('manage_options')) {return;}
+    $result=ps_install_acf_groups();
+    if (is_wp_error($result)) {
+        add_action('admin_notices',function() use ($result) {echo '<div class="notice notice-error"><p>'.esc_html($result->get_error_message()).'</p></div>';});
+    }
+},5);
+
+// Database groups are authoritative; disable theme-local JSON shadowing for them.
+add_filter('acf/json/save_paths',function($paths,$post){
+    return str_starts_with($post['key']??'', 'group_ps_') ? [] : $paths;
+},10,2);
+add_filter('acf/json/load_paths',function($paths){
+    return array_values(array_filter($paths,fn($path)=>untrailingslashit($path)!==get_stylesheet_directory().'/acf-json'));
 });

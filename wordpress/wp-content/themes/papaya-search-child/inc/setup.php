@@ -3,6 +3,8 @@ defined('ABSPATH') || exit;
 /** Idempotent installer: creates missing pages, never overwrites existing content. */
 function ps_import_design_content() {
     if (!function_exists('update_field')) { return new WP_Error('acf_missing', 'Activate Advanced Custom Fields before importing the design.'); }
+    $fields_result=ps_install_acf_groups();
+    if (is_wp_error($fields_result)) {return $fields_result;}
     $shared_id=ps_shared_id();
     if(!$shared_id || !get_post($shared_id)) {
         $shared_id=wp_insert_post(['post_type'=>'ps_site_content','post_status'=>'publish','post_title'=>'Header, Footer & Links'],true);
