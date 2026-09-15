@@ -6,9 +6,7 @@ $listing=$args['listing'];$blog_posts_query=$listing['query']; ?>
 <div class="container grid grid-three post-grid">
 <?php while ($blog_posts_query->have_posts()) : $blog_posts_query->the_post(); ?>
 <article class="post-card" data-post-id="<?php the_ID(); ?>">
-<?php if (has_post_thumbnail()) : ?>
-<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"><?php the_post_thumbnail('large', ['loading'=>'lazy']); ?></a>
-<?php endif; ?>
+<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"><?php ps_post_image(); ?></a>
 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 <div class="post-categories"><?php the_category(', '); ?></div>
 <div class="prose"><?php echo wp_kses_post(wpautop(get_the_excerpt())); ?></div>

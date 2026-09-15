@@ -7,7 +7,8 @@ for(const name of [...new Set(samples.map(s=>s[0]))]){
  const slug=name.toLowerCase().replaceAll(' ','-');
  await Promise.all([page.waitForURL('**/blog/?blog_category='+slug,{waitUntil:'domcontentloaded'}),page.locator('.filter-bar').getByRole('link',{name,exact:true}).click()]);
  await page.locator('footer').waitFor();
- const count=await page.locator('.post-card').count();if(count!==4)throw Error(`${name}: expected 4, got ${count}`);
+ const titles=await page.locator('.post-card h2').allTextContents();
+ for(const sample of samples.filter(s=>s[0]===name)){if(!titles.some(t=>t.trim()===sample[1]))throw Error(`${name}: missing ${sample[1]}`);}
 }
 await page.goto(base,{waitUntil:'networkidle'});if(await page.locator('.post-card').count()!==9)throw Error('First page');
 await page.screenshot({path:'verification/blog-sample-posts.png',fullPage:true});

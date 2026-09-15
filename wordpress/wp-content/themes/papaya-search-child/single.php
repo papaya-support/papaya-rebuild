@@ -7,7 +7,7 @@ get_header(); ?>
 <article class="article-body">
 <h1><?php the_title(); ?></h1>
 <div class="post-categories"><?php the_category(', '); ?></div>
-<?php if (has_post_thumbnail()) {the_post_thumbnail('large', ['class'=>'article-featured']);} ?>
+<?php ps_post_image('article-featured'); ?>
 <div class="prose"><?php the_content(); ?></div>
 </article>
 <?php endwhile; ?>

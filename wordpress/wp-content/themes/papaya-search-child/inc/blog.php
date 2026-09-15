@@ -6,7 +6,7 @@ function ps_blog_listing() {
     $slug = isset($_GET['blog_category']) && is_string($_GET['blog_category']) ? sanitize_title(wp_unslash($_GET['blog_category'])) : '';
     $category = $slug ? get_term_by('slug', $slug, 'category') : false;
     $page = isset($_GET['blog_page']) && is_scalar($_GET['blog_page']) ? max(1, absint($_GET['blog_page'])) : 1;
-    $query = ['post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>9, 'paged'=>$page, 'ignore_sticky_posts'=>true, 'orderby'=>['date'=>'DESC','ID'=>'DESC']];
+    $query = ['post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>9, 'paged'=>$page, 'ignore_sticky_posts'=>true, 'ps_blog_listing'=>true, 'orderby'=>['date'=>'DESC','ID'=>'DESC']];
     if ($category) {$query['tax_query'] = [['taxonomy'=>'category','field'=>'term_id','terms'=>[$category->term_id],'include_children'=>true]];}
     elseif ($slug) {$query['post__in'] = [0];}
     return ['query'=>new WP_Query($query), 'category'=>$category, 'slug'=>$slug, 'page'=>$page, 'url'=>get_permalink(get_queried_object_id())];
@@ -29,3 +29,21 @@ add_action('admin_init', function () {
     flush_rewrite_rules(false);
     update_option('ps_dynamic_blog_fields_v1', 1, false);
 }, 9);
+
+/** Pin native sticky posts in this listing without changing page size or duplicating them. */
+add_filter('posts_orderby', function ($orderby, $query) {
+    if (!$query->get('ps_blog_listing')) {return $orderby;}
+    $sticky = array_filter(array_map('absint', (array) get_option('sticky_posts', [])));
+    if (!$sticky) {return $orderby;}
+    global $wpdb;
+    return $wpdb->posts . '.ID IN (' . implode(',', $sticky) . ') DESC, ' . $orderby;
+}, 10, 2);
+
+/** Use the XD placeholder only when a post has no assigned featured image. */
+function ps_post_image($class = '') {
+    if (has_post_thumbnail()) {
+        the_post_thumbnail('large', ['class'=>$class, 'loading'=>'lazy']);
+        return;
+    }
+    echo '<img src="' . esc_url(ps_asset('35cc479761601be986b3f8891766eec2.png')) . '" class="' . esc_attr($class) . '" alt="" width="1920" height="1440" loading="lazy" decoding="async">';
+}
