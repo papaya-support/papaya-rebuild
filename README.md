@@ -106,3 +106,8 @@ Open WordPress admin once after deployment to retire the obsolete static Blog ca
 
 ### Blog error fix (2.4.1)
 The post-list section uses its own query variable instead of WordPress’s global `$posts`. This prevents the main page loop from failing after cards render. Browser checks now verify HTTP status and footer completion as well as visible content. No database migration is required for this fix.
+
+### Sample Blog content
+`tools/sample-blog-posts.mjs` contains 20 editorial samples, four each for Digital Marketing, SEO, SEM, Wordpress and Papaya HQ. They are created as native published Posts by the explicit `tools/seed-blog-posts.mjs` utility, not loaded by the theme. Set `PAPAYA_WP_USER` and `PAPAYA_WP_PASSWORD` in the process environment before running it. The default target is the local preview; `PAPAYA_WP_URL` selects another explicitly authorized target. Matching sample slugs are skipped, preserving existing edits.
+
+The import also writes `deliverables/papaya-sample-posts.xml`, which can be imported on Pressable using Tools → Import → WordPress. Each article is marked as sample editorial content for review. Git pushes do not copy the local WordPress database. The XML transfers article text and category assignments; it does not transfer featured-image attachments.
