@@ -1,15 +1,17 @@
 <?php
-/** Native WordPress articles linked from the dynamic Blog listing. */
+/** All native posts share the Blog Detail design, with each post's own content. */
 defined('ABSPATH') || exit;
-get_header(); ?>
-<main id="main-content" class="standard-content">
-<?php while (have_posts()) : the_post(); ?>
-<article class="article-body">
-<h1><?php the_title(); ?></h1>
-<div class="post-categories"><?php the_category(', '); ?></div>
-<?php ps_post_image('article-featured'); ?>
-<div class="prose"><?php the_content(); ?></div>
-</article>
-<?php endwhile; ?>
+get_header();
+while (have_posts()) : the_post(); ?>
+<main id="main-content" class="page-blog-detail">
+<?php get_template_part('template-parts/sections/article-heading'); ?>
+<section class="section-blog-detail-featured-image section section-tight">
+<div class="container"><?php ps_post_image('article-featured'); ?></div>
+</section>
+<section class="section-blog-detail-article-body section">
+<div class="container article-body prose"><?php the_content(); ?></div>
+</section>
+<?php get_template_part('template-parts/sections/related-posts'); ?>
 </main>
-<?php get_footer(); ?>
+<?php endwhile;
+get_footer();

@@ -3,24 +3,21 @@
 defined('ABSPATH') || exit;
 $listing=$args['listing'];$blog_posts_query=$listing['query']; ?>
 <section class="section-blog-cards section section-tight">
-<div class="container grid grid-three post-grid">
+<div class="container grid grid-three post-grid" data-blog-grid>
 <?php while ($blog_posts_query->have_posts()) : $blog_posts_query->the_post(); ?>
-<article class="post-card" data-post-id="<?php the_ID(); ?>">
-<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true"><?php ps_post_image(); ?></a>
-<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-<div class="post-categories"><?php the_category(', '); ?></div>
-<div class="prose"><?php echo wp_kses_post(wpautop(get_the_excerpt())); ?></div>
-</article>
+<?php get_template_part('template-parts/components/post-card'); ?>
 <?php endwhile; wp_reset_postdata(); ?>
 <?php if (!$blog_posts_query->post_count) : ?><p class="blog-empty"><?php esc_html_e('No posts found. Please choose another category or check back soon.', 'papaya-search-child'); ?></p><?php endif; ?>
 </div>
 </section>
-<?php if ($blog_posts_query->max_num_pages > 1) : ?>
-<nav class="container blog-pagination" aria-label="Blog pagination">
-<?php
-$base=$listing['url'];
-if ($listing['slug']) {$base=add_query_arg('blog_category',$listing['slug'],$base);}
-echo wp_kses_post(paginate_links(['base'=>add_query_arg('blog_page','%#%',$base),'format'=>'','current'=>$listing['page'],'total'=>$blog_posts_query->max_num_pages,'prev_text'=>'Previous','next_text'=>'Next','type'=>'list']));
+<section class="section-blog-more section compact-section">
+<div class="container center">
+<?php if ($listing['page'] < $blog_posts_query->max_num_pages) :
+$next_url=add_query_arg('blog_page',$listing['page']+1,$listing['url']);
+if ($listing['slug']) {$next_url=add_query_arg('blog_category',$listing['slug'],$next_url);}
 ?>
-</nav>
+<a class="button" data-view-more rel="next" href="<?php echo esc_url($next_url); ?>">View More</a>
 <?php endif; ?>
+<p class="blog-status" role="status" aria-live="polite"></p>
+</div>
+</section>

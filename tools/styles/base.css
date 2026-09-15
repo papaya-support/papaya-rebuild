@@ -206,4 +206,6 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 
 .post-categories { font-size: 14px; color: var(--papaya-teal); margin-bottom: 12px; }
 .blog-empty { grid-column: 1 / -1; text-align: center; }
-.blog-pagination { padding-bottom: var(--section-space); & ul { list-style: none; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; padding: 0; } & a, & span { display: block; padding: 10px 16px; border-radius: 8px; text-decoration: none; } & .current { background: var(--papaya-green); } }
+
+[data-view-more][aria-disabled="true"] { opacity: .65; cursor: wait; }
+.article-body.prose { & h2, & h3 { color: var(--papaya-teal); } }

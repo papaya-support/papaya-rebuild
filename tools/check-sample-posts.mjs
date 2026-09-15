@@ -12,8 +12,8 @@ for(const name of [...new Set(samples.map(s=>s[0]))]){
 }
 await page.goto(base,{waitUntil:'networkidle'});if(await page.locator('.post-card').count()!==9)throw Error('First page');
 await page.screenshot({path:'verification/blog-sample-posts.png',fullPage:true});
-await Promise.all([page.waitForURL('**blog_page=2',{waitUntil:'domcontentloaded'}),page.locator('.blog-pagination').getByRole('link',{name:'Next',exact:true}).click()]);
-if(await page.locator('.post-card').count()!==9)throw Error('Second page');
+await page.locator('[data-view-more]').click();
+await page.waitForFunction(()=>document.querySelectorAll('[data-blog-grid] .post-card').length===18);
 await page.setViewportSize({width:390,height:900});await page.goto(base,{waitUntil:'domcontentloaded'});
 if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow');
 console.log('Verified 20 sample posts: four per design category, working category links, pagination, and mobile layout.');

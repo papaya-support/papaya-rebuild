@@ -19,9 +19,9 @@ if(!await page.locator('.post-card').first().textContent().then(t=>t.includes('D
 if(await page.locator('.post-card').first().locator('img').count()!==1)throw Error('Featured image missing');
 if(!(await page.locator('.post-card').nth(1).locator('img').getAttribute('src')).includes('35cc479761601be986b3f8891766eec2.png'))throw Error('XD fallback image missing');
 if(await page.getByText('Hidden draft').count())throw Error('Draft leaked');
-await page.locator('.blog-pagination a').filter({hasText:'Next'}).click();if(await page.locator('.post-card').count()!==3)throw Error('Second page');
+await page.locator('[data-view-more]').click();if(await page.locator('.post-card').count()!==3)throw Error('Second page');
 await page.getByRole('link',{name:'Paid Search',exact:true}).first().click();if(await page.locator('.post-card').count()!==1||page.url().includes('blog_page'))throw Error('Filter/reset');
-await page.getByRole('link',{name:'SEO & Strategy',exact:true}).first().click();await page.locator('.blog-pagination a').filter({hasText:'Next'}).click();if(!page.url().includes('blog_category=qa-seo')||await page.locator('.post-card').count()!==3)throw Error('Filtered pagination/descendants');
+await page.getByRole('link',{name:'SEO & Strategy',exact:true}).first().click();await page.locator('[data-view-more]').click();if(!page.url().includes('blog_category=qa-seo')||await page.locator('.post-card').count()!==3)throw Error('Filtered pagination/descendants');
 await page.goto(url+'?blog_category=missing');if(await page.locator('.post-card').count()||!await page.locator('.blog-empty').isVisible())throw Error('Empty state');
 await page.goto(fixture.latest);if(!await page.locator('main').textContent().then(t=>t.includes('Native article content 12')))throw Error('Article link: '+fixture.latest+' '+await page.locator('main').textContent());
 await page.setViewportSize({width:390,height:900});await page.goto(url);if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow');
