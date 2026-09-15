@@ -2,6 +2,7 @@
 /** Initial XD copy and image fallbacks; saved ACF values take precedence. No layout data. */
 defined('ABSPATH') || exit;
 return [
+    'home_hero_emblem' => ['asset' => 'hero-emblem.png', 'scope' => 'page'],
     'shared_d8766ad7f130' => ['text' => 'Services', 'rich' => 'Services', 'scope' => 'header', 'uppercase' => '1'],
     'shared_784807ef809c' => ['text' => 'Case Studies', 'rich' => 'Case Studies', 'scope' => 'header', 'uppercase' => '1'],
     'shared_b087478731cd' => ['text' => 'About', 'rich' => 'About', 'scope' => 'header', 'uppercase' => '1'],

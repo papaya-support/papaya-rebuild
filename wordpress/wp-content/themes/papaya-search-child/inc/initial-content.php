@@ -1283,6 +1283,7 @@ Contact Us',
             ],
         ],
         'images' => [
+            ['key'=>'home_hero_emblem','asset'=>'hero-emblem.png','scope'=>'page','label'=>'Hero Emblem'],
             [
                 'key' => 'home_image_4b5fa21323',
                 'asset' => '357d00bc09a861c5ebde059738e3c4b1.jpg',

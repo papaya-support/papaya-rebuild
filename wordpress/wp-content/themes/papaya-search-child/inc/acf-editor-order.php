@@ -5,6 +5,7 @@ return [
     'group_ps_home' => [
         'home_image_4b5fa21323',
         'home_1d791eb121c5',
+        'home_hero_emblem',
         'home_8c4225c0ac7d',
         'home_image_d86e7be569',
         'home_2263b6f88209',

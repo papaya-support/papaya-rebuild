@@ -53,3 +53,5 @@ All eight existing template filenames and ACF keys are retained. Deploy the chil
 For version 2.1.0, visit WordPress admin once after deployment. The child theme reorders the existing ACF fields and converts textareas to WYSIWYG editors without changing saved page content. No manual field-group import is needed.
 
 For version 2.1.1, open WordPress admin once to remove the obsolete image-alt ACF fields. Edit alt text on the attachment in Media Library.
+
+For version 2.2.0, visit WordPress admin once after deployment to add the Hero — Emblem Image field and convert short rich-text fields to text inputs. The corrected emblem is imported into Media Library only when its page value is missing.

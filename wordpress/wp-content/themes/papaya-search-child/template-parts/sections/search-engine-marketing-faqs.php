@@ -4,10 +4,10 @@
 <?php /* ACF: FAQs — Heading */ ps_text('search_engine_marketing_de2d5ec0ff46', 'h2', 'section-title accent'); ?>
 </div>
 <div class="container split ">
-<div class="split-copy">
+<div class="split-media">
 <?php /* ACF: FAQs — Image */ ps_image('search_engine_marketing_image_ba13013ff2', '', false); ?>
 </div>
-<div class="split-media">
+<div class="split-copy">
 <details class="faq-item">
 <summary data-field="search_engine_marketing_e4c9a55704b0"><?php echo ps_inline_content('search_engine_marketing_e4c9a55704b0'); ?>
 </summary>

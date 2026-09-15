@@ -2,7 +2,7 @@
 import {chromium} from 'playwright';
 import fs from 'node:fs';
 const theme='wordpress/wp-content/themes/papaya-search-child';
-const regions={home:{'footer-logo':[95,5180,375,5440],'hero-emblem':[460,610,850,910],'service-seo':[160,1730,270,1815],'service-ppc':[440,1730,550,1815],'service-analytics':[715,1730,825,1815],'service-ai':[1000,1730,1110,1815],'testimonial-bird':[35,3510,210,3740]},about:{'papaya-tree':[825,4250,1200,4800]},'case-study-detail':{'result-visibility':[230,1100,350,1190],'result-leads':[570,1100,710,1190],'result-engagement':[930,1100,1050,1190]}};
+const regions={home:{'footer-logo':[95,5180,375,5440],'hero-emblem':[460,570,850,910],'service-seo':[160,1730,270,1815],'service-ppc':[440,1730,550,1815],'service-analytics':[715,1730,825,1815],'service-ai':[1000,1730,1110,1815],'testimonial-bird':[35,3510,210,3740]},about:{'papaya-tree':[825,4250,1200,4800]},'case-study-detail':{'result-visibility':[230,1100,350,1190],'result-leads':[570,1100,710,1190],'result-engagement':[930,1100,1050,1190]}};
 fs.mkdirSync(`${theme}/assets/illustrations`,{recursive:true});
 const b=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});const p=await b.newPage();
 for(const [slug,areas] of Object.entries(regions)){

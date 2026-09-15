@@ -104,3 +104,50 @@ add_action('admin_init',function(){
     $result=ps_remove_acf_image_alt_fields();
     if(is_wp_error($result)) {add_action('admin_notices',function() use($result){echo '<div class="notice notice-error"><p>'.esc_html($result->get_error_message()).'</p></div>';});}
 },7);
+
+/** Upgrade existing editable database fields once, preserving their keys and labels. */
+function ps_upgrade_short_fields_and_emblem() {
+    if(get_option('ps_short_fields_emblem_v1')) {return true;}
+    if(!function_exists('acf_update_field')) {return new WP_Error('acf_missing','Activate ACF first.');}
+    $groups=json_decode(file_get_contents(get_stylesheet_directory().'/acf-import/field-groups.json'),true);
+    $backup=[];
+    foreach($groups as $group) {
+        $stored=acf_get_field_group($group['key']);
+        if(empty($stored['ID'])) {continue;}
+        foreach($group['fields'] as $definition) {
+            $field=acf_get_field($definition['key']);
+            if($definition['name']==='home_hero_emblem' && !$field) {
+                foreach(acf_get_fields($stored) as $sibling) {
+                    if($sibling['menu_order'] >= $definition['menu_order']) {
+                        $sibling['menu_order']++;acf_update_field(wp_slash($sibling));
+                    }
+                }
+                $definition['parent']=$stored['ID'];
+                acf_update_field(wp_slash($definition));
+            } elseif($field && $definition['type']==='text' && in_array($field['type'],['wysiwyg','textarea'],true)) {
+                $backup[$field['key']]=$field;
+                $field['type']='text';$field['instructions']='Enter plain text.';
+                foreach(['tabs','toolbar','media_upload','delay','rows','new_lines'] as $setting) {unset($field[$setting]);}
+                acf_update_field(wp_slash($field));
+                // Keep readable content when an earlier rich editor saved paragraph markup.
+                $posts=get_posts(['post_type'=>['page','ps_site_content'],'post_status'=>'any','posts_per_page'=>-1,'meta_key'=>$field['name']]);
+                foreach($posts as $post) {
+                    $value=get_post_meta($post->ID,$field['name'],true);
+                    $plain=is_string($value) ? trim(html_entity_decode(wp_strip_all_tags(preg_replace('/<br\s*\/?>|<\/(?:p|div|li)>/i',' ',$value)),ENT_QUOTES,get_bloginfo('charset'))) : $value;
+                    if(is_string($value) && $value!==$plain) {
+                        add_post_meta($post->ID,'_ps_original_rich_'.$field['name'],$value,true);
+                        update_post_meta($post->ID,$field['name'],wp_slash($plain));
+                    }
+                }
+            }
+        }
+    }
+    add_option('ps_short_field_definitions_backup_v1',$backup,'',false);
+    $result=ps_import_design_content();
+    if(is_wp_error($result)) {return $result;}
+    update_option('ps_short_fields_emblem_v1',1,false);
+    return true;
+}
+add_action('admin_init',function(){
+    if(current_user_can('manage_options')) {ps_upgrade_short_fields_and_emblem();}
+},8);

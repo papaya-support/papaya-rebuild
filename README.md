@@ -66,7 +66,7 @@ python3 tools/package.py
 
 The preview opens at `http://127.0.0.1:9477/` and uses WordPress Playground/SQLite for local testing. The deployable installation uses MySQL/MariaDB. Its local database is recreated on preview restart, so migrate dashboard edits separately when needed.
 
-The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 318 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
+The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 319 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
 
 The ACF field-group JSON is a schema installer, not a page-content source. It is only needed to create missing groups on a fresh site. Existing installations use the database groups and skip the installer; do not reimport over customized groups. A database migration that already includes the ACF groups also removes the need for an import on the destination.
 
@@ -79,3 +79,6 @@ Descriptions support paragraphs, lists, links and emphasis. Headings and button 
 ## Media Library alt text (2.1.1)
 
 Image alt text is managed under **Media → Library → Alt Text**. The 42 separate page alt-text fields have been removed. The theme reads the selected attachment’s alt text directly, so Media Library edits apply wherever that image appears. An empty library alt stays empty. After deployment, open WordPress admin once to remove the old field definitions; existing page metadata is preserved but no longer used.
+
+### Version 2.2.0
+The Home hero emblem is an ACF Media Library image. Split image/text sections stack image-first at 1024px and below, using the same colors at every breakpoint. Short headings, button labels and step numbers use text inputs; body copy retains WYSIWYG editors. Open WordPress admin once after deployment to apply the existing-site field migration; no manual field import is required. Existing values are preserved, with original rich markup backed up when converted to plain text.
