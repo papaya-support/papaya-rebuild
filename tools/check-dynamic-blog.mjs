@@ -12,6 +12,7 @@ wp_insert_post(['post_type'=>'post','post_status'=>'draft','post_title'=>'Hidden
 set_post_thumbnail($ids[11],get_field('home_hero_emblem',get_option('ps_page_ids')['home'],false));
 echo json_encode(['ids'=>$ids,'latest'=>get_permalink($ids[11])]);`});const fixture=JSON.parse(seeded.text);
 browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});const page=await browser.newPage({javaScriptEnabled:false});
+const httpErrors=[];page.on('response', response=>{if(response.request().isNavigationRequest()&&response.status()>=400)httpErrors.push(`${response.status()} ${response.url()}`);});
 const url='http://127.0.0.1:9479/blog/';await page.goto(url);
 if(await page.locator('.post-card').count()!==9)throw Error('Initial page size');
 if(!await page.locator('.post-card').first().textContent().then(t=>t.includes('Dynamic article 12')&&t.includes('Custom excerpt 12')&&t.includes('SEO & Strategy')&&t.includes('Paid Search')))throw Error('Native post fields');
@@ -23,5 +24,7 @@ await page.getByRole('link',{name:'SEO & Strategy',exact:true}).first().click();
 await page.goto(url+'?blog_category=missing');if(await page.locator('.post-card').count()||!await page.locator('.blog-empty').isVisible())throw Error('Empty state');
 await page.goto(fixture.latest);if(!await page.locator('main').textContent().then(t=>t.includes('Native article content 12')))throw Error('Article link: '+fixture.latest+' '+await page.locator('main').textContent());
 await page.setViewportSize({width:390,height:900});await page.goto(url);if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow');
+if(httpErrors.length)throw Error('HTTP errors: '+httpErrors.join(', '));
+if(!await page.locator('footer').count())throw Error('Page did not finish rendering');
 console.log('Dynamic Blog passed: native post fields, featured image, multiple categories, parent categories, pagination, drafts, empty state, permalinks, mobile and JavaScript-disabled filtering.');
 } finally {await browser?.close();await instance[Symbol.asyncDispose]();}

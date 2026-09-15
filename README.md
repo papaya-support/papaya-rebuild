@@ -103,3 +103,6 @@ Use `image-text.php` for ordered media/copy columns, `post-grid.php` for linked 
 The Blog page keeps its ACF hero and introduction. Cards now come from published WordPress Posts, newest first, with featured images, titles, excerpts, permalinks and assigned Categories. Manage them under Posts → All Posts and Posts → Categories. Categories with published content appear automatically in the filter bar. Category links and nine-post pagination work without JavaScript; changing category resets pagination. Parent category filters include descendants. Posts without featured images omit the image, and empty filters show an empty-state message.
 
 Open WordPress admin once after deployment to retire the obsolete static Blog card/filter ACF editors. Their old metadata is retained; no sample articles are published or converted automatically. The native `single.php` template displays the linked post content. Run `node tools/check-dynamic-blog.mjs` to test with an isolated set of published/draft posts and multiple categories.
+
+### Blog error fix (2.4.1)
+The post-list section uses its own query variable instead of WordPress’s global `$posts`. This prevents the main page loop from failing after cards render. Browser checks now verify HTTP status and footer completion as well as visible content. No database migration is required for this fix.
