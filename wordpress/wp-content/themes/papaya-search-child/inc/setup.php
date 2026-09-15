@@ -25,11 +25,12 @@ function ps_import_design_content() {
         }
         $design=ps_initial_content($slug);
         foreach($design['texts'] as $t) {
-            if (ps_menu_field($t)) {continue;}
+            if (ps_menu_field($t) || ps_blog_legacy_field($t['key'])) {continue;}
             $target=$t['scope']==='page'?$id:$shared_id;
             if(!metadata_exists('post',$target,$t['key'])) {update_field('field_'.$t['key'],$t['text'],$target);}
         }
         foreach($design['images'] as $im) {
+            if (ps_blog_legacy_field($im['key'])) {continue;}
             if(metadata_exists('post',$id,$im['key'])) {continue;}
             $asset_key='ps_asset_'.md5($im['asset']);$attachment=(int)get_option($asset_key);
             if(!$attachment || !get_post($attachment)) {
@@ -46,7 +47,8 @@ function ps_import_design_content() {
     if(!get_option('ps_design_imported')) {
         update_option('show_on_front','page');update_option('page_on_front',$ids['home']);
         update_option('blogname','Papaya Search');update_option('blogdescription','Be seen. Stay ahead. Grow smarter.');
-        update_option('permalink_structure','/%postname%/');flush_rewrite_rules();
+        global $wp_rewrite;
+        $wp_rewrite->set_permalink_structure('/%postname%/');flush_rewrite_rules();
     }
     update_option('ps_design_imported','1.0.0');ps_install_menus();return $ids;
 }

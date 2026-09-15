@@ -221,7 +221,7 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 .certification-card { border: 1px solid var(--papaya-green); padding: 28px; max-width: 380px; margin-inline: auto; text-align: center; & img { max-height: 230px; object-fit: contain; margin-bottom: 24px; } & .prose { font-size: 16px; } }
 .faq-item { border-bottom: 1px solid var(--papaya-green); & summary { padding: 20px 32px 20px 0; position: relative; cursor: pointer; font-size: 20px; font-weight: 700; list-style: none; } & summary::-webkit-details-marker { display: none; } & summary::after { content: '+'; position: absolute; right: 0; top: 18px; color: var(--papaya-peach); font-size: 26px; font-weight: 400; } &[open] summary::after { content: '−'; } & .faq-answer { padding-bottom: 20px; } }
 .listing-hero { position: relative; padding-block: 120px; & .intro { position: relative; } }
-.filter-bar { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; & button { border: none; background: none; color: var(--papaya-teal); padding: 10px 16px; font-size: 16px; border-radius: 8px; } & [aria-pressed=true] { background: var(--papaya-green); } }
+.filter-bar { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; & button, & a { text-decoration: none; border: none; background: none; color: var(--papaya-teal); padding: 10px 16px; font-size: 16px; border-radius: 8px; } & [aria-pressed=true], & [aria-current=true] { background: var(--papaya-green); } }
 .post-grid { row-gap: 56px; }
 .post-card { min-width: 0; & img { width: 100%; aspect-ratio: 1.18; object-fit: cover; margin-bottom: 22px; } & h2, & h3 { font-size: 24px; margin-bottom: 16px; } & a { text-decoration: none; } & a:hover { text-decoration: underline; } & .prose { font-size: 17px; } }
 .blog-status { margin-top: 20px; min-height: 1.5em; }
@@ -300,3 +300,7 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 .rich-align-justify { text-align: justify; }
 .rich-underline { text-decoration: underline; }
 .rich-strike { text-decoration: line-through; }
+
+.post-categories { font-size: 14px; color: var(--papaya-teal); margin-bottom: 12px; }
+.blog-empty { grid-column: 1 / -1; text-align: center; }
+.blog-pagination { padding-bottom: var(--section-space); & ul { list-style: none; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; padding: 0; } & a, & span { display: block; padding: 10px 16px; border-radius: 8px; text-decoration: none; } & .current { background: var(--papaya-green); } }

@@ -66,7 +66,7 @@ python3 tools/package.py
 
 The preview opens at `http://127.0.0.1:9477/` and uses WordPress Playground/SQLite for local testing. The deployable installation uses MySQL/MariaDB. Its local database is recreated on preview restart, so migrate dashboard edits separately when needed.
 
-The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 319 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
+The browser check covers all eight pages at desktop and mobile sizes, field/image presence, native HTML rendering, overflow, JavaScript errors, menus, FAQ controls, and filters. The isolated installation check verifies all 267 ACF field definitions, PHP syntax, content preservation, and an ACF edit/render/restore round trip. Downloads are rebuilt in `deliverables/`.
 
 The ACF field-group JSON is a schema installer, not a page-content source. It is only needed to create missing groups on a fresh site. Existing installations use the database groups and skip the installer; do not reimport over customized groups. A database migration that already includes the ACF groups also removes the need for an import on the destination.
 
@@ -98,3 +98,8 @@ get_template_part('template-parts/sections/content', null, [
 ```
 
 Use `image-text.php` for ordered media/copy columns, `post-grid.php` for linked cards, and `service-grid.php` for service cards. The common `components/content-items.php` handles ACF text, image and button output through the existing escaping and formatting helpers. Styling stays in CSS. ACF field names, database groups and values are unchanged, so this refactor needs no database migration. The explicit `inc/acf-editor-order.php` map preserves field order independently of template argument order.
+
+### Dynamic Blog (2.4.0)
+The Blog page keeps its ACF hero and introduction. Cards now come from published WordPress Posts, newest first, with featured images, titles, excerpts, permalinks and assigned Categories. Manage them under Posts → All Posts and Posts → Categories. Categories with published content appear automatically in the filter bar. Category links and nine-post pagination work without JavaScript; changing category resets pagination. Parent category filters include descendants. Posts without featured images omit the image, and empty filters show an empty-state message.
+
+Open WordPress admin once after deployment to retire the obsolete static Blog card/filter ACF editors. Their old metadata is retained; no sample articles are published or converted automatically. The native `single.php` template displays the linked post content. Run `node tools/check-dynamic-blog.mjs` to test with an isolated set of published/draft posts and multiple categories.
