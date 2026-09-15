@@ -15,12 +15,11 @@ for group in groups:
  if slug=='shared':
   primary=['shared_7b3ca0dbb8c9','ps_booking_url','shared_78f8d1b3d0a8','shared_63ce494a885e','shared_4937e4e54c2c','shared_a8e4f9f45c81']
  else:
-  template=(theme/'page-templates'/f'{slug}.php').read_text()
-  parts=re.findall(r"get_template_part\('([^']+)'",template);primary=[]
-  for part in parts:
-   source=(theme/(part+'.php')).read_text()
-   for name in re.findall(r'''["']([a-z][a-z0-9_]+)["']''',source):
-    if name in fields and not name.endswith(('_url','_alt','_answer','_category')) and name not in primary:primary.append(name)
+  # Field editor order is independent of reusable template argument order.
+  # Keep the explicit visual order map, appending newly introduced fields below.
+  order_source=(theme/'inc/acf-editor-order.php').read_text()
+  match=re.search(r"'"+re.escape(group['key'])+r"' => \[(.*?)\]",order_source,re.S)
+  primary=re.findall(r"'([^']+)'",match.group(1)) if match else []
  for name in primary:
   for key in [name,name+'_url',name+'_alt',name+'_answer',name+'_category']:
    if key in fields and key not in ordered:ordered.append(key)

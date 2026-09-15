@@ -11,7 +11,7 @@ The XD colors, local fonts, section order, images, illustrations, menus, and CTA
 Inside `wordpress/wp-content/themes/papaya-search-child/`:
 
 - `page-templates/`: Home, About, Services, SEM, Blog, Blog Article, Case Studies, and Case Study Detail.
-- `template-parts/sections/`: named, editable PHP section files such as `home-hero.php`, `home-services.php`, and `about-process.php`.
+- `template-parts/sections/`: shared PHP sections: `hero.php`, `banner.php`, `content.php`, `image-text.php`, `testimonial.php`, `post-grid.php`, `service-grid.php`, and `statistics.php`. Unique layouts such as the team and process sections remain separate.
 - `template-parts/layout/`: shared HTML header and footer.
 - `inc/template-tags.php`: reads saved ACF values, escapes output, and renders text, links, and images.
 - `inc/default-content.php`: initial content fallbacks; no layout coordinates.
@@ -82,3 +82,19 @@ Image alt text is managed under **Media → Library → Alt Text**. The 42 separ
 
 ### Version 2.2.0
 The Home hero emblem is an ACF Media Library image. Split image/text sections stack image-first at 1024px and below, using the same colors at every breakpoint. Short headings, button labels and step numbers use text inputs; body copy retains WYSIWYG editors. Open WordPress admin once after deployment to apply the existing-site field migration; no manual field import is required. Existing values are preserved, with original rich markup backed up when converted to plain text.
+
+### Reusing sections (2.3.0)
+Each page calls shared sections through WordPress `get_template_part($path, null, $args)`. The arguments map that page’s existing ACF field names to the shared markup; they do not store content or inline styling. For example:
+
+```php
+get_template_part('template-parts/sections/content', null, [
+    'class' => 'section cream',
+    'container_class' => 'container intro center',
+    'items' => [
+        ['type' => 'text', 'field' => 'services_1d102d9577a4', 'tag' => 'h1'],
+        ['type' => 'text', 'field' => 'services_c0d7b44ec821', 'tag' => 'div', 'class' => 'prose'],
+    ],
+]);
+```
+
+Use `image-text.php` for ordered media/copy columns, `post-grid.php` for linked cards, and `service-grid.php` for service cards. The common `components/content-items.php` handles ACF text, image and button output through the existing escaping and formatting helpers. Styling stays in CSS. ACF field names, database groups and values are unchanged, so this refactor needs no database migration. The explicit `inc/acf-editor-order.php` map preserves field order independently of template argument order.
