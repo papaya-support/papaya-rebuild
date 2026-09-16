@@ -9,7 +9,7 @@ for(const [slug,areas] of Object.entries(regions)){
  await p.setContent(fs.readFileSync(`design-source/reference-artboards/${slug}.svg`,'utf8'));
  for(const [name,bounds] of Object.entries(areas)){
   const out=await p.evaluate(bounds=>{const [x,y,right,bottom]=bounds;const nodes=[...document.querySelector('svg').children].filter(e=>e.tagName==='g'&&!e.hasAttribute('data-image')).filter(e=>{const r=e.getBBox(),m=e.getCTM(),a=new DOMPoint(r.x,r.y).matrixTransform(m),b=new DOMPoint(r.x+r.width,r.y+r.height).matrixTransform(m);return a.x>=x&&a.y>=y&&b.x<=right&&b.y<=bottom&&r.width>0&&r.height>0;});if(!nodes.length)return null;let left=Infinity,top=Infinity,rgt=0,btm=0;for(const e of nodes){const r=e.getBBox(),m=e.getCTM(),a=new DOMPoint(r.x,r.y).matrixTransform(m),b=new DOMPoint(r.x+r.width,r.y+r.height).matrixTransform(m);left=Math.min(left,a.x);top=Math.min(top,a.y);rgt=Math.max(rgt,b.x);btm=Math.max(btm,b.y);}return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${left} ${top} ${rgt-left} ${btm-top}">${nodes.map(e=>e.outerHTML).join('')}</svg>`;},bounds);
-  if(!out)throw Error(`No artwork for ${name}`);fs.writeFileSync(`${theme}/assets/illustrations/${name}.svg`,out);console.log(name,out.length);
+  if(!out)throw Error(`No artwork for ${name}`);fs.writeFileSync(`${theme}/assets/illustrations/${name}.svg`,out.replaceAll('rgba(191,216,185,1)','rgba(191,217,186,1)').replaceAll('rgba(112,137,107,1)','rgba(113,138,107,1)'));console.log(name,out.length);
  }
 }
 await b.close();

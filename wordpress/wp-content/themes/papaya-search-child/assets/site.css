@@ -97,15 +97,17 @@
 
 :root {
   --papaya-teal: #003e3f;
-  --papaya-orange: #ff5b20;
+  --papaya-orange: #e76025;
   --papaya-peach: #de8d6d;
   --papaya-cream: #fbf2e6;
-  --papaya-green: #bfd8b9;
+  --papaya-green: #bfd9ba;
+  --papaya-sage: #718a6b;
+  --papaya-light-orange: #ec882d;
   --section-space: clamp(40px, 5vw, 72px);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body.papaya-site { margin: 0; background: #fff; color: var(--papaya-teal); font-family: Inter, Arial, sans-serif; font-size: 18px; line-height: 1.5; }
+body.papaya-site { margin: 0; background: var(--papaya-cream); color: var(--papaya-teal); font-family: Inter, Arial, sans-serif; font-size: 18px; line-height: 1.5; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 button { font: inherit; cursor: pointer; }
@@ -205,12 +207,12 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 .services-grid { column-gap: 100px; row-gap: 64px; & .service-card { max-width: 450px; justify-self: center; } & h2 { font-size: 25px; } & .prose { font-size: 18px; } }
 .testimonial { display: flex; align-items: center; gap: 40px; text-align: center; & blockquote { flex: 1; } & cite { display: block; font-size: 17px; font-style: normal; margin-top: 16px; } }
 .quote-illustration { width: 145px; }
-.quote-mark { display: block; color: #789576; font-size: 64px; font-family: Georgia, serif; line-height: 1; }
+.quote-mark { display: block; color: var(--papaya-sage); font-size: 64px; font-family: Georgia, serif; line-height: 1; }
 .stats { margin-block: 40px; gap: 24px; & .stat + .stat { border-left: 1px solid var(--papaya-peach); padding-left: 24px; } & h3 { margin-bottom: 14px; } }
 .page-home .stats h3 { text-transform: uppercase; }
 .page-home .center > .prose + p { margin-top: 20px; }
 .page-home .center > .button { margin-top: 24px; }
-.process-card { border: 1px solid #bfd8b94d; padding: 32px; & > * + * { margin-top: 20px; } }
+.process-card { border: 1px solid color-mix(in srgb, var(--papaya-green) 30%, transparent); padding: 32px; & > * + * { margin-top: 20px; } }
 .step-number { display: inline-flex; background: var(--papaya-green); color: var(--papaya-teal); font-size: 26px; font-weight: 700; width: 48px; height: 48px; border-radius: 50%; align-items: center; justify-content: center; }
 .page-about {
   & .teal .grid { margin-block: 32px; }
@@ -243,12 +245,12 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 .site-footer { padding: 56px 0 28px; background: var(--papaya-teal); color: var(--papaya-cream); }
 .footer-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) repeat(3, minmax(0, 1fr)); gap: 48px; }
 .footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; & img { width: 260px; height: auto; } & .button { font-size: 16px; } }
-.footer-heading { color: var(--papaya-green); text-transform: uppercase; font-size: 24px; padding-bottom: 24px; margin: 18px 0 24px; border-bottom: 2px solid #ec882d; }
+.footer-heading { color: var(--papaya-green); text-transform: uppercase; font-size: 24px; padding-bottom: 24px; margin: 18px 0 24px; border-bottom: 2px solid var(--papaya-light-orange); }
 .footer-column { min-width: 0; & .ps-menu-list { display: flex; flex-direction: column; gap: 16px; } & .ps-menu { font-size: 17px; font-weight: 500; } }
 .ps-menu-footer_social { margin-top: 28px; & .ps-menu-list { flex-direction: row; gap: 10px; flex-wrap: wrap; } & a { display: flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--papaya-cream); color: var(--papaya-orange); font-size: 0; } & a::before { content: '↗'; font-size: 15px; } & .social-facebook a::before { content: '\f305'; font-family: PapayaIcons; } & .social-twitter a::before { content: '\f301'; font-family: PapayaIcons; } & .social-linkedin a::before { content: '\f18d'; font-family: PapayaIcons; } }
-.footer-legal { border-top: 2px solid #ec882d; margin-top: 40px; padding-top: 24px; text-align: center; font-size: 15px; & a { text-decoration: none; } & a:hover { text-decoration: underline; } }
+.footer-legal { border-top: 2px solid var(--papaya-light-orange); margin-top: 40px; padding-top: 24px; text-align: center; font-size: 15px; & a { text-decoration: none; } & a:hover { text-decoration: underline; } }
 .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-.skip-link:focus { position: fixed; z-index: 100; top: 12px; left: 12px; background: white; color: var(--papaya-teal); padding: 12px; }
+.skip-link:focus { position: fixed; z-index: 100; top: 12px; left: 12px; background: var(--papaya-cream); color: var(--papaya-teal); padding: 12px; }
 .standard-content { width: min(1120px, calc(100% - 48px)); margin: 60px auto; }
 @font-face { font-family: PapayaIcons; src: url('fonts/dashicons.woff2') format('woff2'); font-display: block; }
 @media (max-width: 1100px) {
@@ -325,3 +327,19 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 .standard-content { & h1 { margin-bottom: 32px; } & .posts-navigation { margin-top: 32px; } }
 .prose { overflow-wrap: anywhere; & a { text-decoration: underline; } }
 @media (max-width: 800px) { .editor-heading-1 { font-size: 34px; } }
+
+/* Native editor palette classes also use the shared brand tokens. */
+.has-papaya-teal-color { color: var(--papaya-teal); }
+.has-papaya-teal-background-color { background-color: var(--papaya-teal); }
+.has-papaya-sage-color { color: var(--papaya-sage); }
+.has-papaya-sage-background-color { background-color: var(--papaya-sage); }
+.has-papaya-green-color { color: var(--papaya-green); }
+.has-papaya-green-background-color { background-color: var(--papaya-green); }
+.has-papaya-cream-color { color: var(--papaya-cream); }
+.has-papaya-cream-background-color { background-color: var(--papaya-cream); }
+.has-papaya-orange-color { color: var(--papaya-orange); }
+.has-papaya-orange-background-color { background-color: var(--papaya-orange); }
+.has-papaya-light-orange-color { color: var(--papaya-light-orange); }
+.has-papaya-light-orange-background-color { background-color: var(--papaya-light-orange); }
+.has-papaya-peach-color { color: var(--papaya-peach); }
+.has-papaya-peach-background-color { background-color: var(--papaya-peach); }
