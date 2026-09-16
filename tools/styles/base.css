@@ -86,7 +86,7 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
 }
 .ps-menu-primary {
   font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: .6px;
-  & .ps-menu-list { display: flex; gap: 24px; align-items: center; justify-content: space-between; }
+  & .ps-menu-list { display: flex; gap: 24px; align-items: center; justify-content: flex-end; }
   & .menu-cta > a { background: var(--papaya-peach); color: var(--papaya-teal); border-radius: 14px; padding: 16px 22px; font-weight: 800; }
   & .menu-item-has-children { position: relative; }
   & .sub-menu { display: none; position: absolute; z-index: 10; min-width: 210px; background: var(--papaya-teal); padding: 16px; margin: 0; box-shadow: 0 4px 12px #0002; }
