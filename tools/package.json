@@ -2,5 +2,8 @@
   "dependencies": {
     "@wp-playground/cli": "^3.1.53",
     "playwright": "^1.63.0"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0"
   }
 }

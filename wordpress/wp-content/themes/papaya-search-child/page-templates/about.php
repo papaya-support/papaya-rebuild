@@ -6,7 +6,7 @@
 defined('ABSPATH') || exit;
 get_header();
 while (have_posts()) : the_post(); ?>
-<main id="main-content" class="page-about">
+<main tabindex="-1" id="main-content" class="page-about">
 <?php get_template_part('template-parts/sections/banner', null, [
     'class' => 'section-about-banner page-banner',
     'items' => [[

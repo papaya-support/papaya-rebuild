@@ -2,6 +2,7 @@
   'use strict';
   const toggle = document.querySelector('.menu-toggle');
   const navigation = document.getElementById('primary-navigation');
+  if (toggle && navigation) { toggle.hidden = false; navigation.classList.add('is-collapsible'); }
   toggle?.addEventListener('click', () => {
     const open = toggle.getAttribute('aria-expanded') !== 'true';
     toggle.setAttribute('aria-expanded', String(open));
@@ -14,7 +15,7 @@
   document.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;
     document.querySelectorAll('.faq-item[open]').forEach(item => { item.open = false; });
-    if (toggle?.getAttribute('aria-expanded') === 'true') toggle.click();
+    if (toggle?.getAttribute('aria-expanded') === 'true') { toggle.click(); toggle.focus(); }
   });
   const more = document.querySelector('[data-view-more]');
   const grid = document.querySelector('[data-blog-grid]');

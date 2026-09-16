@@ -50,25 +50,27 @@ function ps_content_html($key) {
         $items=preg_split('/\s*•\s*/u',trim(esc_html($value)),-1,PREG_SPLIT_NO_EMPTY);
         return '<ul><li>'.implode('</li><li>',array_map('trim',$items)).'</li></ul>';
     }
-    return wpautop($html);
+    return ps_article_headings(wpautop($html));
 }
 function ps_text($key,$tag='p',$class='') {
     if(!in_array($tag,['h1','h2','h3','p','div','span','cite'],true)) {$tag='p';}
     $value=ps_field_value($key);
-    if($value==='') {return;}
+    if($value==='' && $tag!=='h1') {return;}
     if(!empty(ps_default_content($key)['uppercase'])) {$class.=' is-uppercase';}
     echo '<'.$tag.' class="'.esc_attr($class).'" data-field="'.esc_attr($key).'">';
     $text=ps_inline_content($key);
+    if($tag==='h1' && trim(wp_strip_all_tags($text))==='') {$text=esc_html(ps_accessible_title());}
     if(str_contains($class,'breadcrumb')) {$text=preg_replace('/^Home/', '<a href="'.esc_url(ps_route('home')).'">Home</a>', $text);}
     echo $tag==='div' ? wp_kses_post(ps_content_html($key)) : $text;
     echo '</'.$tag.'>';
 }
 function ps_booking_url() {return ps_value('ps_booking_url','tel:+14044259775','shared');}
-function ps_button($key,$default_url,$class='') {
+function ps_button($key,$default_url,$class='',$context='') {
     $default=ps_default_content($key);
     $url=ps_value($key.'_url','',$default['scope']??'page') ?: $default_url;
     if(ps_field_value($key)==='') {return;}
-    echo '<a class="button '.esc_attr($class).'" data-field="'.esc_attr($key).'" href="'.esc_url($url).'">'.ps_inline_content($key).'</a>';
+    $label=$context && preg_match('/^(read|learn) more$/i',ps_plain_field($key)) ? ' aria-label="'.esc_attr(ps_plain_field($key).' about '.$context).'"' : '';
+    echo '<a'.$label.' class="button '.esc_attr($class).'" data-field="'.esc_attr($key).'" href="'.esc_url($url).'">'.ps_inline_content($key).'</a>';
 }
 function ps_image($key,$class='',$eager=false) {
     $default=ps_default_content($key);
@@ -78,12 +80,20 @@ function ps_image($key,$class='',$eager=false) {
     if(!$value && !empty($default['asset'])) {$attachment_id=(int)get_option('ps_asset_'.md5($default['asset']));}
     $alt=$attachment_id ? get_post_meta($attachment_id,'_wp_attachment_image_alt',true) : '';
     $attributes=['class'=>$class,'data-image'=>$key,'alt'=>$alt,'loading'=>$eager?'eager':'lazy','decoding'=>'async'];
-    if($eager) {$attributes['fetchpriority']='high';}
+    if($eager && $class!=='hero-emblem') {$attributes['fetchpriority']='high';}
     $source=$attachment_id ? wp_get_attachment_image_src($attachment_id,'full') : false;
     if($source) {
         $url=$source[0];$attributes['width']=$source[1];$attributes['height']=$source[2];
+        $srcset=wp_get_attachment_image_srcset($attachment_id,'full');
+        if($srcset) {$attributes['srcset']=$srcset;$attributes['sizes']=str_contains($class,'hero-image')||str_contains($class,'banner-image')?'100vw':'(max-width: 800px) 100vw, 80vw';
+            if($class==='hero-emblem') {$attributes['sizes']='(max-width: 800px) 190px, 280px';}}
     } else {
         $url=is_string($value)&&preg_match('#^https?://#',$value) ? $value : ps_asset($default['asset']??'');
+    }
+    if(empty($attributes['width']) && !empty($default['asset']) && $url===ps_asset($default['asset'])) {
+        $local=get_stylesheet_directory().'/assets/images/'.$default['asset'];
+        $size=is_file($local)?wp_getimagesize($local):false;
+        if($size) {$attributes['width']=$size[0];$attributes['height']=$size[1];}
     }
     echo '<img src="'.esc_url($url).'"';
     foreach($attributes as $name=>$attribute) {echo ' '.esc_attr($name).'="'.esc_attr($attribute).'"';}
@@ -91,7 +101,7 @@ function ps_image($key,$class='',$eager=false) {
 }
 function ps_faq_answer($key) {
     $answer=ps_value($key.'_answer','');
-    if($answer) {echo wp_kses_post(wpautop(ps_sanitize_rich($answer)));}
+    if($answer) {echo wp_kses_post(ps_article_headings(wpautop(ps_sanitize_rich($answer))));}
     else {echo '<p><a href="'.esc_url(ps_booking_url()).'">Contact us to discuss this question.</a></p>';}
 }
 function ps_link_for_label($label) {

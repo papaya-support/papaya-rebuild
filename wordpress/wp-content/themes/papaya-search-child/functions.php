@@ -7,6 +7,7 @@ require_once __DIR__ . '/inc/template-tags.php';
 require_once __DIR__ . '/inc/menus.php';
 require_once __DIR__ . '/inc/setup.php';
 require_once __DIR__ . '/inc/blog.php';
+require_once __DIR__ . '/inc/accessibility.php';
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');

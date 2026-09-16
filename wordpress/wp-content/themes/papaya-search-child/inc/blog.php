@@ -40,10 +40,10 @@ add_filter('posts_orderby', function ($orderby, $query) {
 }, 10, 2);
 
 /** Use the XD placeholder only when a post has no assigned featured image. */
-function ps_post_image($class = '') {
+function ps_post_image($class = '', $eager = false) {
     if (has_post_thumbnail()) {
-        the_post_thumbnail('large', ['class'=>$class, 'loading'=>'lazy']);
+        the_post_thumbnail('large', ['class'=>$class, 'loading'=>$eager?'eager':'lazy', 'fetchpriority'=>$eager?'high':'auto']);
         return;
     }
-    echo '<img src="' . esc_url(ps_asset('35cc479761601be986b3f8891766eec2.png')) . '" class="' . esc_attr($class) . '" alt="" width="1920" height="1440" loading="lazy" decoding="async">';
+    echo '<img src="' . esc_url(ps_asset('35cc479761601be986b3f8891766eec2.png')) . '" class="' . esc_attr($class) . '" alt="" width="1920" height="1440" loading="' . ($eager?'eager':'lazy') . '" decoding="async">';
 }
