@@ -309,7 +309,7 @@ while (have_posts()) : the_post(); ?>
             'type' => 'button',
             'field' => 'home_b48f00ea5554',
             'url' => ps_booking_url(),
-            'class' => '',
+            'class' => 'button-text-cream',
         ]],
     ], [
         'class' => 'split-media',

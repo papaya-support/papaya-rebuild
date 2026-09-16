@@ -172,9 +172,10 @@ h3 { font-size: 22px; font-weight: 700; line-height: 1.3; }
   &:hover { filter: brightness(1.1); }
   &:hover, &:focus, &:visited { color: var(--button-text); }
 }
-.button-small { border-radius: 0; font-size: 14px; min-height: 40px; padding: 10px 22px; text-transform: none; }
+.button-small { --button-text: var(--papaya-cream); border-radius: 0; font-size: 14px; min-height: 40px; padding: 10px 22px; text-transform: none; }
 .button-green { --button-text: var(--papaya-teal); background: var(--papaya-green); color: var(--papaya-teal); }
-.button-peach { --button-text: var(--papaya-teal); background: var(--papaya-peach); color: var(--papaya-teal); }
+.button-peach { --button-text: #000; background: var(--papaya-peach); color: var(--button-text); }
+.button-text-cream { --button-text: var(--papaya-cream); }
 .site-header { background: var(--papaya-teal); color: var(--papaya-cream); padding-block: 30px; }
 .header-inner { display: flex; gap: 36px; align-items: center; justify-content: space-between; }
 .brand { flex: 0 1 330px; & img { width: 100%; height: auto; } }

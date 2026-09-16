@@ -29,7 +29,7 @@ while (have_posts()) : the_post(); ?>
         'type' => 'button',
         'field' => 'case_studies_5f8c3c80c990',
         'url' => ps_booking_url(),
-        'class' => '',
+        'class' => 'button-green',
     ]],
 ]); ?>
 <?php get_template_part('template-parts/sections/post-grid', null, [
