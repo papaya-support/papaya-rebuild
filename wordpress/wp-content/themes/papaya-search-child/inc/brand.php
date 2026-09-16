@@ -17,6 +17,8 @@ add_filter('astra_get_option_global-color-palette', function($value) {
     $value=is_array($value)?$value:[];
     $colors=array_column(ps_brand_palette(),'color','slug');
     $value['palette']=array_map(fn($slug)=>$colors['papaya-'.$slug], ['orange','light-orange','teal','teal','cream','cream','sage','green','peach']);
+    // Keep the base surface white; cream belongs to designated design sections.
+    $value['palette'][4]='#ffffff';
     return $value;
 });
 add_action('after_setup_theme', function() {add_theme_support('editor-color-palette', ps_brand_palette());}, 30);
