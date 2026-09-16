@@ -106,8 +106,9 @@
   --section-space: clamp(40px, 5vw, 72px);
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: #fff; }
 body.papaya-site { margin: 0; background: #fff; color: var(--papaya-teal); font-family: Inter, Arial, sans-serif; font-size: 18px; line-height: 1.5; }
+.papaya-site { & #page, & .site-content, & #main-content { background-color: #fff; } }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 button { font: inherit; cursor: pointer; }
