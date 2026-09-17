@@ -1,8 +1,9 @@
 <?php
 /** All native posts share the Blog Detail design, with each post's own content. */
-defined('ABSPATH') || exit;
+defined('ABSPATH') || exit();
 get_header();
-while (have_posts()) : the_post(); ?>
+while (have_posts()):
+    the_post(); ?>
 <main tabindex="-1" id="main-content" class="page-blog-detail">
 <?php get_template_part('template-parts/sections/article-heading'); ?>
 <section class="section-blog-detail-featured-image section section-tight">
@@ -13,5 +14,6 @@ while (have_posts()) : the_post(); ?>
 </section>
 <?php get_template_part('template-parts/sections/related-posts'); ?>
 </main>
-<?php endwhile;
+<?php
+endwhile;
 get_footer();

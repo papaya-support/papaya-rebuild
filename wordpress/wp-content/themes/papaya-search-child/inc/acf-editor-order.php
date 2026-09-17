@@ -1,6 +1,6 @@
 <?php
 /** One-time editor migration order, matching the PHP sections from top to bottom. */
-defined('ABSPATH') || exit;
+defined('ABSPATH') || exit();
 return [
     'group_ps_home' => [
         'home_image_4b5fa21323',
@@ -189,11 +189,7 @@ return [
         'search_engine_marketing_2263d859bf84',
         'search_engine_marketing_2263d859bf84_url',
     ],
-    'group_ps_blog' => [
-        'blog_image_a770b85be1',
-        'blog_2f0c8cf2c985',
-        'blog_37a359563ced',
-    ],
+    'group_ps_blog' => ['blog_image_a770b85be1', 'blog_2f0c8cf2c985', 'blog_37a359563ced'],
     'group_ps_blog-detail' => [
         'blog_detail_9c13381244a8',
         'blog_detail_8c780093d5a1',

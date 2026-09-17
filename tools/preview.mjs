@@ -1,13 +1,44 @@
 import { runCLI } from '@wp-playground/cli';
 import path from 'node:path';
 import fs from 'node:fs';
-const root=path.resolve(import.meta.dirname,'..');
-const content=path.join(root,'wordpress/wp-content');
-const mount=[['themes/astra','themes/astra'],['themes/papaya-search-child','themes/papaya-search-child'],['plugins/advanced-custom-fields','plugins/advanced-custom-fields'],['mu-plugins','mu-plugins']].map(([host,vfs])=>({hostPath:path.join(content,host),vfsPath:'/wordpress/wp-content/'+vfs}));
-const instance=await runCLI({command:'server',port:9477,php:'8.3',workers:1,'mount-before-install':mount,blueprint:{steps:[{step:'runPHP',code:'<?php require "/wordpress/wp-load.php"; if(!function_exists("ps_import_design_content") || !function_exists("update_field")) { throw new Exception("Fresh installation auto-activation failed"); } $result=ps_import_design_content(); if(is_wp_error($result)) { throw new Exception($result->get_error_message()); } echo json_encode($result);'}]}});
-console.log('PAPAYA_PREVIEW_READY '+instance.serverUrl);
-const test=await instance.playground.run({code:'<?php require "/wordpress/wp-load.php"; echo json_encode(["wordpress"=>get_bloginfo("version"),"theme"=>get_stylesheet(),"parent"=>get_template(),"acf"=>ACF_VERSION,"pages"=>get_option("ps_page_ids")]);'});
-fs.mkdirSync(path.join(root,'verification'),{recursive:true});fs.writeFileSync(path.join(root,'verification/runtime.json'),test.text);
-const check=await instance.playground.run({code:fs.readFileSync(path.join(root,'tools/verify-runtime.php'),'utf8')});
-fs.writeFileSync(path.join(root,'verification/runtime-checks.json'),check.text);console.log('PHP_ACF_CHECKS',check.text);
-process.on('SIGINT',async()=>{await instance[Symbol.asyncDispose]();process.exit();});
+const root = path.resolve(import.meta.dirname, '..');
+const content = path.join(root, 'wordpress/wp-content');
+const mount = [
+  ['themes/astra', 'themes/astra'],
+  ['themes/papaya-search-child', 'themes/papaya-search-child'],
+  ['plugins/advanced-custom-fields', 'plugins/advanced-custom-fields'],
+  ['mu-plugins', 'mu-plugins'],
+].map(([host, vfs]) => ({
+  hostPath: path.join(content, host),
+  vfsPath: '/wordpress/wp-content/' + vfs,
+}));
+const instance = await runCLI({
+  command: 'server',
+  port: 9477,
+  php: '8.3',
+  workers: 1,
+  'mount-before-install': mount,
+  blueprint: {
+    steps: [
+      {
+        step: 'runPHP',
+        code: '<?php require "/wordpress/wp-load.php"; if(!function_exists("ps_import_design_content") || !function_exists("update_field")) { throw new Exception("Fresh installation auto-activation failed"); } $result=ps_import_design_content(); if(is_wp_error($result)) { throw new Exception($result->get_error_message()); } echo json_encode($result);',
+      },
+    ],
+  },
+});
+console.log('PAPAYA_PREVIEW_READY ' + instance.serverUrl);
+const test = await instance.playground.run({
+  code: '<?php require "/wordpress/wp-load.php"; echo json_encode(["wordpress"=>get_bloginfo("version"),"theme"=>get_stylesheet(),"parent"=>get_template(),"acf"=>ACF_VERSION,"pages"=>get_option("ps_page_ids")]);',
+});
+fs.mkdirSync(path.join(root, 'verification'), { recursive: true });
+fs.writeFileSync(path.join(root, 'verification/runtime.json'), test.text);
+const check = await instance.playground.run({
+  code: fs.readFileSync(path.join(root, 'tools/verify-runtime.php'), 'utf8'),
+});
+fs.writeFileSync(path.join(root, 'verification/runtime-checks.json'), check.text);
+console.log('PHP_ACF_CHECKS', check.text);
+process.on('SIGINT', async () => {
+  await instance[Symbol.asyncDispose]();
+  process.exit();
+});

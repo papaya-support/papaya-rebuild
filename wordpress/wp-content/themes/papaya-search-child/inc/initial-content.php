@@ -1,6 +1,6 @@
 <?php
 /** One-time PHP page/content seed. Existing database values are never overwritten. */
-defined('ABSPATH') || exit;
+defined('ABSPATH') || exit();
 return [
     'blog-detail' => [
         'name' => 'Blog Detail',
@@ -225,7 +225,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
@@ -305,13 +306,15 @@ Contact Us',
             ],
             [
                 'key' => 'case_studies_b5430be964d4',
-                'text' => 'We’ve developed an excellent reputation for our committed approach, diligently applying expert search engine knowledge on behalf of our clients. ',
+                'text' =>
+                    'We’ve developed an excellent reputation for our committed approach, diligently applying expert search engine knowledge on behalf of our clients. ',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_8234b4aaee10',
-                'text' => ' Book your free consultation and let’s discuss what Papaya Search can do for you!',
+                'text' =>
+                    ' Book your free consultation and let’s discuss what Papaya Search can do for you!',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -341,19 +344,22 @@ Contact Us',
             ],
             [
                 'key' => 'case_studies_aea86c447f03',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_797e93346093',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_c478f4605f8c',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -377,19 +383,22 @@ Contact Us',
             ],
             [
                 'key' => 'case_studies_7ccd51309801',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_4c074436f397',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_938030bd0b43',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -413,19 +422,22 @@ Contact Us',
             ],
             [
                 'key' => 'case_studies_c6058d1d5199',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_02b4fd4b7c29',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'case_studies_bf246d534c46',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -503,7 +515,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
@@ -607,7 +620,8 @@ Contact Us',
             ],
             [
                 'key' => 'blog_37a359563ced',
-                'text' => 'Our Blog discusses on-page and off-page SEO, link building, technical SEO, SEM, how-to’s, complete guides, and more to help you grow your business.',
+                'text' =>
+                    'Our Blog discusses on-page and off-page SEO, link building, technical SEO, SEM, how-to’s, complete guides, and more to help you grow your business.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -667,19 +681,22 @@ Contact Us',
             ],
             [
                 'key' => 'blog_2c5657a9caa5',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'blog_a8e77dee2a51',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'blog_3daccb27a0a0',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -703,19 +720,22 @@ Contact Us',
             ],
             [
                 'key' => 'blog_cf0b8391a4e7',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'blog_cba7a4019382',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'blog_df6295346605',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -739,19 +759,22 @@ Contact Us',
             ],
             [
                 'key' => 'blog_ea9fcdeea6f4',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'blog_5c38a4f149da',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'blog_b58b9119f729',
-                'text' => 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
+                'text' =>
+                    'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia in deserunt mollit anim id est sint laborum.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -835,7 +858,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
@@ -1005,19 +1029,22 @@ Optimization',
             ],
             [
                 'key' => 'home_a2521eac95bf',
-                'text' => 'People use search engines to find products and answers to their problems. We fine-tune your site’s technical setup, build authority with content, and help you show up in both traditional rankings and Al-powered results so that more people can find and choose you.',
+                'text' =>
+                    'People use search engines to find products and answers to their problems. We fine-tune your site’s technical setup, build authority with content, and help you show up in both traditional rankings and Al-powered results so that more people can find and choose you.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'home_87d8101d772c',
-                'text' => 'Sometimes, you need to be at the top right now. We create and manage paid campaigns on Google Ads, Microsoft Advertising, and other platforms to put your business in front of ready-to-buy customers exactly when they’re searching for what you offer.',
+                'text' =>
+                    'Sometimes, you need to be at the top right now. We create and manage paid campaigns on Google Ads, Microsoft Advertising, and other platforms to put your business in front of ready-to-buy customers exactly when they’re searching for what you offer.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'home_87c29f9a637c',
-                'text' => 'It’s hard to improve what you can’t see. We track how people interact with your site and campaigns, from search to Al overviews, then show you exactly what’s working, what’s not, and where the biggest opportunities are to grow.',
+                'text' =>
+                    'It’s hard to improve what you can’t see. We track how people interact with your site and campaigns, from search to Al overviews, then show you exactly what’s working, what’s not, and where the biggest opportunities are to grow.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1103,7 +1130,8 @@ The Papaya Search team boasts more than 25 years of experience with an ever-chan
             ],
             [
                 'key' => 'home_71e8d5ebfb3e',
-                'text' => 'Papaya Search’s expertise, knowledge, and attention to detail were exactly what we needed to take our search marketing to the next level. He was attentive, dedicated and successful in meeting our goals in a timely manner.',
+                'text' =>
+                    'Papaya Search’s expertise, knowledge, and attention to detail were exactly what we needed to take our search marketing to the next level. He was attentive, dedicated and successful in meeting our goals in a timely manner.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1115,7 +1143,8 @@ The Papaya Search team boasts more than 25 years of experience with an ever-chan
             ],
             [
                 'key' => 'home_6666581aab96',
-                'text' => 'If your search presence is stuck in the past, you’re leaving opportunities on the table.',
+                'text' =>
+                    'If your search presence is stuck in the past, you’re leaving opportunities on the table.',
                 'scope' => 'page',
                 'tag' => 'h2',
             ],
@@ -1162,7 +1191,8 @@ our search expertise',
             ],
             [
                 'key' => 'home_2de7aecb8d76',
-                'text' => 'Stats are great, but you want results. With Papaya, you get measurable growth in leads, visibility, and market share, from strategies designed for today and tomorrow.',
+                'text' =>
+                    'Stats are great, but you want results. With Papaya, you get measurable growth in leads, visibility, and market share, from strategies designed for today and tomorrow.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1277,13 +1307,19 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
         ],
         'images' => [
-            ['key'=>'home_hero_emblem','asset'=>'hero-emblem.png','scope'=>'page','label'=>'Hero Emblem'],
+            [
+                'key' => 'home_hero_emblem',
+                'asset' => 'hero-emblem.png',
+                'scope' => 'page',
+                'label' => 'Hero Emblem',
+            ],
             [
                 'key' => 'home_image_4b5fa21323',
                 'asset' => '357d00bc09a861c5ebde059738e3c4b1.jpg',
@@ -1358,13 +1394,15 @@ Contact Us',
             ],
             [
                 'key' => 'case_study_detail_afcd2640f663',
-                'text' => 'DEUTZ Case Study: How A Unified Digital Strategy Improved Lead Generation',
+                'text' =>
+                    'DEUTZ Case Study: How A Unified Digital Strategy Improved Lead Generation',
                 'scope' => 'page',
                 'tag' => 'h1',
             ],
             [
                 'key' => 'case_study_detail_7ad346f8413b',
-                'text' => 'DEUTZ, a global leader in diesel engine manufacturing, partnered with Papaya Search to transform its digital presence. With a comprehensive strategy that integrated SEO, SEM, and Google Business Profile (GBP) optimization, DEUTZ achieved:',
+                'text' =>
+                    'DEUTZ, a global leader in diesel engine manufacturing, partnered with Papaya Search to transform its digital presence. With a comprehensive strategy that integrated SEO, SEM, and Google Business Profile (GBP) optimization, DEUTZ achieved:',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1393,7 +1431,8 @@ across local listings, driving calls, direction requests, and site visits from n
             ],
             [
                 'key' => 'case_study_detail_0e4af60dbfa0',
-                'text' => 'This full-funnel approach converted digital traffic into meaningful leads and measurable revenue.',
+                'text' =>
+                    'This full-funnel approach converted digital traffic into meaningful leads and measurable revenue.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1405,7 +1444,8 @@ across local listings, driving calls, direction requests, and site visits from n
             ],
             [
                 'key' => 'case_study_detail_3f5be18822e8',
-                'text' => 'Our work with Papaya Search proved essential in transforming product interest into a reliable source of revenue for DEUTZ.”',
+                'text' =>
+                    'Our work with Papaya Search proved essential in transforming product interest into a reliable source of revenue for DEUTZ.”',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1526,7 +1566,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
@@ -1594,7 +1635,8 @@ Contact Us',
             ],
             [
                 'key' => 'about_5364bb9bbe7f',
-                'text' => 'Papaya Search is a multi-skilled team of internationally-based SEO specialists, search engine marketers, copywriters, developers, and analysts.',
+                'text' =>
+                    'Papaya Search is a multi-skilled team of internationally-based SEO specialists, search engine marketers, copywriters, developers, and analysts.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1623,19 +1665,22 @@ target audience
             ],
             [
                 'key' => 'about_3fed862d01f7',
-                'text' => 'We implement proven SEO and SEM strategies to engage your target audience. ',
+                'text' =>
+                    'We implement proven SEO and SEM strategies to engage your target audience. ',
                 'scope' => 'page',
                 'tag' => 'h2',
             ],
             [
                 'key' => 'about_95d816dc41a8',
-                'text' => 'By combining proven methods with the latest tools, Papaya Search does more than just make your website easy to find. We make it stand out from the rest!',
+                'text' =>
+                    'By combining proven methods with the latest tools, Papaya Search does more than just make your website easy to find. We make it stand out from the rest!',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'about_073b5d613eba',
-                'text' => 'We will be part of your team from day one. Educating you through every step, Papaya Search takes a keen interest in your company and collaborates with your points of contact to get the best results.',
+                'text' =>
+                    'We will be part of your team from day one. Educating you through every step, Papaya Search takes a keen interest in your company and collaborates with your points of contact to get the best results.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1647,7 +1692,8 @@ target audience
             ],
             [
                 'key' => 'about_f46b98a005e8',
-                'text' => 'Every engagement is unique, but our proven four-step process keeps your marketing future-ready.',
+                'text' =>
+                    'Every engagement is unique, but our proven four-step process keeps your marketing future-ready.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1677,13 +1723,15 @@ target audience
             ],
             [
                 'key' => 'about_15ecab530a58',
-                'text' => 'We analyze your complete digital marketing presence, including search visibility, paid campaigns, and website performance, to pinpoint growth opportunities across all channels.',
+                'text' =>
+                    'We analyze your complete digital marketing presence, including search visibility, paid campaigns, and website performance, to pinpoint growth opportunities across all channels.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'about_ef99a48b3104',
-                'text' => 'A comprehensive review of your site and marketing performance — from technical SEO health and content quality to paid campaign tracking and analytics setup, giving you a clear picture of what’s working, what’s not, and where you can grow.',
+                'text' =>
+                    'A comprehensive review of your site and marketing performance — from technical SEO health and content quality to paid campaign tracking and analytics setup, giving you a clear picture of what’s working, what’s not, and where you can grow.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1714,13 +1762,15 @@ business grow',
             ],
             [
                 'key' => 'about_38dffd506cc7',
-                'text' => 'We monitor performance across SEO, PPC, content, analytics, and WordPress support, then turn insights into clear next steps. We test, tune, and report, so your strategy keeps pace with changing algorithms and customer behavior.',
+                'text' =>
+                    'We monitor performance across SEO, PPC, content, analytics, and WordPress support, then turn insights into clear next steps. We test, tune, and report, so your strategy keeps pace with changing algorithms and customer behavior.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'about_a62f88959455',
-                'text' => 'We bring together the right strategies, from SEO and PPC to content, analytics, and site performance, to deliver consistent growth in visibility, revenue, and brand authority.',
+                'text' =>
+                    'We bring together the right strategies, from SEO and PPC to content, analytics, and site performance, to deliver consistent growth in visibility, revenue, and brand authority.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1770,13 +1820,15 @@ Team?',
             ],
             [
                 'key' => 'about_14d648101a42',
-                'text' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
+                'text' =>
+                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'about_15160ce464b3',
-                'text' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
+                'text' =>
+                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -1914,7 +1966,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
@@ -1988,7 +2041,8 @@ Contact Us',
             ],
             [
                 'key' => 'services_c0d7b44ec821',
-                'text' => 'Papaya Search provides expert guidance and support in areas such as Search Engine Optimization (SEO), Search Engine Marketing (SEM), Analytics, and Maintenance.',
+                'text' =>
+                    'Papaya Search provides expert guidance and support in areas such as Search Engine Optimization (SEO), Search Engine Marketing (SEM), Analytics, and Maintenance.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2019,13 +2073,15 @@ search engine advertising',
             ],
             [
                 'key' => 'services_61a499cbf5ad',
-                'text' => 'Effective SEO is key to the organic traffic that drives your organization’s growth. With Papaya Search’s support, you can make a major impact on the search engine results page.',
+                'text' =>
+                    'Effective SEO is key to the organic traffic that drives your organization’s growth. With Papaya Search’s support, you can make a major impact on the search engine results page.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'services_1b7af68589dc',
-                'text' => 'Papaya Search specializes in search engine marketing. We use platforms like Google Ads to increase our clients’ visibility through search engine advertising.',
+                'text' =>
+                    'Papaya Search specializes in search engine marketing. We use platforms like Google Ads to increase our clients’ visibility through search engine advertising.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2068,13 +2124,15 @@ Configuration Services',
             ],
             [
                 'key' => 'services_ff171c150d31',
-                'text' => 'Once you’ve created your WordPress website, you need to perform regular maintenance to keep it up-to-date, safe, secure, and SEO-friendly. That sounds like a lot of work though, right?',
+                'text' =>
+                    'Once you’ve created your WordPress website, you need to perform regular maintenance to keep it up-to-date, safe, secure, and SEO-friendly. That sounds like a lot of work though, right?',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'services_00de51947158',
-                'text' => 'Here at Papaya Search, we extract valuable insights using sources like Google Analytics and Google Search Console. This data guides business strategies in an ongoing cycle of improvement.',
+                'text' =>
+                    'Here at Papaya Search, we extract valuable insights using sources like Google Analytics and Google Search Console. This data guides business strategies in an ongoing cycle of improvement.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2197,7 +2255,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],
@@ -2266,7 +2325,8 @@ We can take your business to the next level with SEM/PPC marketing campaigns tha
             ],
             [
                 'key' => 'search_engine_marketing_2a5d5198d572',
-                'text' => 'How will Papaya Search help you improve your website visibility and generate sales through SEM?',
+                'text' =>
+                    'How will Papaya Search help you improve your website visibility and generate sales through SEM?',
                 'scope' => 'page',
                 'tag' => 'h2',
             ],
@@ -2325,19 +2385,22 @@ We don’t leave you in the dark, either. We’ll provide you with detailed repo
             ],
             [
                 'key' => 'search_engine_marketing_57c1652a3574',
-                'text' => 'of the people using a search engine like Google only review the first 10 results',
+                'text' =>
+                    'of the people using a search engine like Google only review the first 10 results',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'search_engine_marketing_f063a20ed3bd',
-                'text' => 'Google Ads or Microsoft Advertising is a great way to improve your search engine visibility.',
+                'text' =>
+                    'Google Ads or Microsoft Advertising is a great way to improve your search engine visibility.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
             [
                 'key' => 'search_engine_marketing_b0fd5c696ade',
-                'text' => 'helps improve visibility above the organic search results and is also a quick way to appear on the search results pages.',
+                'text' =>
+                    'helps improve visibility above the organic search results and is also a quick way to appear on the search results pages.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2369,7 +2432,8 @@ With our Google Ads campaigns, you can:
             ],
             [
                 'key' => 'search_engine_marketing_c14dc679be7b',
-                'text' => 'Papaya Search isn’t just a regular partner. We’re a Google Partner, and we’ve been Google Ads certified since 2006. That means that Google recognizes us as experts in search engine advertising.',
+                'text' =>
+                    'Papaya Search isn’t just a regular partner. We’re a Google Partner, and we’ve been Google Ads certified since 2006. That means that Google recognizes us as experts in search engine advertising.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2389,7 +2453,8 @@ Although Microsoft Advertising are less visible when compared to Google Ads, the
             ],
             [
                 'key' => 'search_engine_marketing_9b5edf4fcb86',
-                'text' => 'As Microsoft Advertising Certified Professionals, you can trust that we’ll use our digital advertising expertise to serve your business best.',
+                'text' =>
+                    'As Microsoft Advertising Certified Professionals, you can trust that we’ll use our digital advertising expertise to serve your business best.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2445,7 +2510,8 @@ see results from SEM?',
             ],
             [
                 'key' => 'search_engine_marketing_ca67c83aae59',
-                'text' => 'We’d love to talk about your goals and share how our team can help you reach them.',
+                'text' =>
+                    'We’d love to talk about your goals and share how our team can help you reach them.',
                 'scope' => 'page',
                 'tag' => 'p',
             ],
@@ -2529,7 +2595,8 @@ Contact Us',
             ],
             [
                 'key' => 'shared_a8e4f9f45c81',
-                'text' => 'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
+                'text' =>
+                    'Copyright © 2026 · Papaya Internet Inc. | Privacy Policy | Terms & Conditions  |  Careers',
                 'scope' => 'footer',
                 'tag' => 'p',
             ],

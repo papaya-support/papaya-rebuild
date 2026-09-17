@@ -1,1 +1,13 @@
-import {chromium} from 'playwright';const b=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});const p=await b.newPage({viewport:{width:1920,height:1080}});await p.goto('http://127.0.0.1:9477/',{waitUntil:'networkidle'});await p.evaluate(async()=>{await document.fonts.ready;window.scrollTo({top:document.body.scrollHeight,behavior:"instant"});});await p.screenshot({path:'verification/footer-fixed.png'});await b.close();
+import { chromium } from 'playwright';
+const b = await chromium.launch({
+  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  headless: true,
+});
+const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
+await p.goto('http://127.0.0.1:9477/', { waitUntil: 'networkidle' });
+await p.evaluate(async () => {
+  await document.fonts.ready;
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+});
+await p.screenshot({ path: 'verification/footer-fixed.png' });
+await b.close();
