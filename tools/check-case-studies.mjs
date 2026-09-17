@@ -26,6 +26,17 @@ require '/wordpress/wp-load.php';
 ps_import_design_content();
 $result = ps_install_case_studies();
 if (is_wp_error($result)) throw new Exception($result->get_error_message());
+$seed = ps_seed_case_studies();
+if (is_wp_error($seed)) throw new Exception($seed->get_error_message());
+$samples = get_posts(['post_type'=>'case_study','posts_per_page'=>-1,'meta_key'=>'_ps_sample_case']);
+if (count($samples) !== 9) throw new Exception('Expected nine samples');
+foreach ($samples as $sample) {
+    if (!get_post_thumbnail_id($sample->ID)) throw new Exception('Missing sample image');
+}
+update_field('field_case_study_detail_7ad346f8413b','Preserved sample edit',$samples[0]->ID);
+ps_seed_case_studies();
+if (get_field('case_study_detail_7ad346f8413b',$samples[0]->ID,false) !== 'Preserved sample edit') throw new Exception('Sample overwritten');
+wp_insert_post(['post_type'=>'case_study','post_title'=>'Hidden draft','post_status'=>'draft']);
 $type = acf_get_post_type('post_type_ps_case_study');
 if (empty($type['ID']) || !post_type_exists('case_study')) throw new Exception('Missing native ACF post type');
 $group = acf_get_field_group('group_ps_case-study-detail');
@@ -72,8 +83,19 @@ echo json_encode(['url'=>get_permalink($id), 'fields'=>count($fields), 'acfPostT
     );
   }
   assert.equal((await page.goto('http://127.0.0.1:9479/case-studies/')).status(), 200);
+  assert.equal(await page.locator('.post-card').count(), 10);
+  assert.equal(await page.getByText('Hidden draft').count(), 0);
+  const links = await page
+    .locator('.post-card h2 a')
+    .evaluateAll((nodes) => nodes.map((node) => node.href));
+  assert.equal(new Set(links).size, 10);
+  for (const url of links) {
+    assert.equal((await page.goto(url)).status(), 200);
+    assert.equal(await page.locator('main.page-case-study-detail').count(), 1);
+    assert.equal(await page.locator('h1').count(), 1);
+  }
   console.log(
-    'Native ACF type, 16 fields, preserved edits, singular template, ACF values, one H1, responsive layout and existing landing page verified.',
+    'Nine samples, no duplicates, preserved sample edits, dynamic cards, draft exclusion and ten unique single pages verified. Native ACF type, 16 fields, preserved edits, singular template, ACF values, one H1, responsive layout and existing landing page verified.',
   );
 } finally {
   await browser?.close();
