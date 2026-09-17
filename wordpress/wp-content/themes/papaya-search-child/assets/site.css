@@ -1192,3 +1192,59 @@ h3 {
 .has-papaya-peach-background-color {
   background-color: var(--papaya-peach);
 }
+
+/* Enhanced navigation: parent links and submenu disclosures remain separate controls. */
+#primary-navigation.has-submenu-controls .ps-menu-primary {
+  & .menu-item-has-children {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    align-items: center;
+  }
+  & .submenu-toggle {
+    width: 44px;
+    min-height: 44px;
+    padding: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--papaya-cream);
+    font: inherit;
+    & span {
+      display: inline-block;
+    }
+    &[aria-expanded='true'] span {
+      transform: rotate(180deg);
+    }
+  }
+  & .menu-item-has-children > .sub-menu {
+    display: none;
+    grid-column: 1 / -1;
+    top: 100%;
+    right: 0;
+    max-width: calc(100vw - 40px);
+  }
+  & .submenu-open > .sub-menu {
+    display: grid;
+    gap: 12px;
+  }
+  & .sub-menu .sub-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 0 16px;
+    box-shadow: none;
+  }
+}
+@media (max-width: 800px) {
+  .ps-menu-primary {
+    & .menu-cta > a,
+    & .current-menu-item > a,
+    & .current-menu-ancestor > a,
+    & a[aria-current='page'] {
+      background: transparent;
+      color: var(--papaya-peach);
+      border-radius: 0;
+    }
+    & .menu-cta > a {
+      padding: 12px 0;
+    }
+  }
+}

@@ -6,11 +6,57 @@
     toggle.hidden = false;
     navigation.classList.add('is-collapsible');
   }
+  const submenuControls = [];
+  navigation?.querySelectorAll('.menu-item-has-children').forEach((item, index) => {
+    const link = item.querySelector(':scope > a');
+    const submenu = item.querySelector(':scope > .sub-menu');
+    if (!link || !submenu) return;
+
+    const button = document.createElement('button');
+    const label = link.textContent.trim();
+    submenu.id ||= `primary-submenu-${index + 1}`;
+    button.type = 'button';
+    button.className = 'submenu-toggle';
+    button.setAttribute('aria-controls', submenu.id);
+    button.innerHTML = '<span aria-hidden="true">⌄</span>';
+    const setOpen = (open) => {
+      item.classList.toggle('submenu-open', open);
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', `${open ? 'Close' : 'Open'} ${label} submenu`);
+      if (!open) {
+        submenuControls.forEach((control) => {
+          if (submenu.contains(control.button)) control.setOpen(false);
+        });
+      }
+    };
+    button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+    link.after(button);
+    setOpen(false);
+    submenuControls.push({ item, button, setOpen });
+    item.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || button.getAttribute('aria-expanded') !== 'true') return;
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(false);
+      button.focus();
+    });
+    item.addEventListener('focusout', (event) => {
+      if (!item.contains(event.relatedTarget)) setOpen(false);
+    });
+  });
+  navigation?.classList.add('has-submenu-controls');
+  document.addEventListener('click', (event) => {
+    if (navigation && !navigation.contains(event.target)) {
+      submenuControls.forEach((control) => control.setOpen(false));
+    }
+  });
+
   toggle?.addEventListener('click', () => {
     const open = toggle.getAttribute('aria-expanded') !== 'true';
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     navigation.classList.toggle('is-open', open);
+    if (!open) submenuControls.forEach((control) => control.setOpen(false));
   });
   document.querySelectorAll('.faq-item').forEach((item) =>
     item.addEventListener('toggle', () => {
