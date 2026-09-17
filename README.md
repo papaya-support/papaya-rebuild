@@ -145,3 +145,11 @@ After deploying, visit WordPress admin once to refresh the original imported her
 The eight page templates and `single.php` contain only the WordPress loop, main landmark, and ordered `get_template_part()` calls. A short `variant` identifies the section's page-specific ACF mapping; the reusable section file owns that mapping and its HTML layout. For example, Home calls the shared `image-text` section for its search strategy, search trends, and closing CTA. The field names, saved content, shared rendering helpers, CSS classes, and section order remain unchanged.
 
 `template-parts/sections/blog-listing.php` owns the Blog query and passes the same listing context to its filters and post grid. Native post featured-image and body markup live in `article-image.php` and `article-body.php`. Shared sections still accept explicit arguments for existing callers.
+
+### Case Studies in ACF
+
+After deploying, open the WordPress dashboard as an administrator. The theme installs a native, editable **ACF → Post Types → Case Studies** definition once. Manage entries under **Case Studies → Add New**. Their URLs use `/case-studies/example/`; the existing `/case-studies/` landing page stays in place.
+
+**ACF → Field Groups → Case Study Detail — Page Content** applies to both the existing detail page and the new Case Studies post type. Its 16 fields follow the design order: breadcrumb, title, featured image, introduction, three results, summary, testimonial, challenge, follow-up and performance chart. Short labels use text fields, paragraphs use WYSIWYG editors, and image alt text comes from the Media Library. The post title and featured image provide fallbacks when their corresponding ACF fields are empty. Unfilled case study fields do not display sample client claims.
+
+The post type and field group remain editable in ACF after installation; the installer does not overwrite later changes. Singular entries reuse the existing detail section templates. Landing-page cards remain managed through the existing landing-page fields.

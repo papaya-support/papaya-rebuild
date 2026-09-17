@@ -16,7 +16,17 @@ function ps_field_value($key)
         $value = function_exists('get_field')
             ? get_field($key, $post_id, false)
             : get_post_meta($post_id, $key, true);
+        if (
+            get_post_type($post_id) === 'case_study' &&
+            $key === 'case_study_detail_afcd2640f663' &&
+            !$value
+        ) {
+            return get_the_title($post_id);
+        }
         return is_scalar($value) ? (string) $value : '';
+    }
+    if (get_post_type($post_id) === 'case_study' && str_starts_with($key, 'case_study_detail_')) {
+        return $key === 'case_study_detail_afcd2640f663' ? get_the_title($post_id) : '';
     }
     return $default['text'] ?? '';
 }
@@ -143,6 +153,16 @@ function ps_image($key, $class = '', $eager = false)
 {
     $default = ps_default_content($key);
     $value = ps_value($key, '', $default['scope'] ?? 'page');
+    if (
+        get_post_type() === 'case_study' &&
+        str_starts_with($key, 'case_study_detail_image_') &&
+        !$value
+    ) {
+        $value = $key === 'case_study_detail_image_cf7d13020e' ? get_post_thumbnail_id() : 0;
+        if (!$value) {
+            return;
+        }
+    }
     if (is_array($value)) {
         $value = $value['ID'] ?? ($value['url'] ?? '');
     }
