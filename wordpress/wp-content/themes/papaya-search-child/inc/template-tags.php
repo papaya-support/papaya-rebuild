@@ -113,6 +113,13 @@ function ps_text($key, $tag = 'p', $class = '')
         $text = esc_html(ps_accessible_title());
     }
     if (str_contains($class, 'breadcrumb')) {
+        if ($key === 'case_study_detail_dac02921ffd6') {
+            $text = str_replace(
+                'Case Studies',
+                '<a href="' . esc_url(ps_route('case-studies')) . '">Case Studies</a>',
+                $text,
+            );
+        }
         $text = preg_replace(
             '/^Home/',
             '<a href="' . esc_url(ps_route('home')) . '">Home</a>',
