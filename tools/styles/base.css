@@ -633,7 +633,11 @@ h3 {
   font-weight: 600;
 }
 .related-posts {
-  border-top: 1px solid var(--papaya-green);
+  padding-top: 0;
+  & > .container {
+    border-top: 1px solid var(--papaya-orange);
+    padding-top: var(--section-space);
+  }
 }
 .result-icon {
   width: 64px;
