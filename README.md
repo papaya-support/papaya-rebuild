@@ -17,7 +17,7 @@ Inside `wordpress/wp-content/themes/papaya-search-child/`:
 - `inc/default-content.php`: initial content fallbacks; no layout coordinates.
 - `inc/fields.php` and `acf-import/field-groups.json`: one-time installation of editable ACF database groups.
 - `inc/setup.php`: preserves existing content when importing initial pages, media, and menus.
-- `assets/site.css`: one bundled stylesheet with native CSS nesting.
+- `assets/site.css`: one compiled Tailwind stylesheet with local fonts and the existing nested XD rules.
 - `assets/site.js`: mobile navigation, accessible FAQ interactions, and blog filtering.
 - `inc/initial-content.php`: one-time PHP seed for pages, original text, images, and menu setup. No initial-content JSON is loaded.
 
@@ -46,9 +46,10 @@ See `DEPLOYMENT.md` for the GitHub-to-Pressable paths. PHP 8.0+ is required; PHP
 
 ## Development and verification
 
-Edit section PHP files directly. Edit nested CSS in `tools/styles/base.css`, then bundle it with the local fonts:
+Edit section PHP files directly. Shared and page-specific rules in `tools/styles/base.css` use Tailwind `@apply` while retaining semantic template classes. Configure Tailwind in `tools/styles/tailwind.css`, then compile it with the local fonts:
 
 ```sh
+npm ci --prefix tools
 python3 tools/build-css.py
 ```
 
@@ -153,3 +154,11 @@ After deploying, open the WordPress dashboard as an administrator. The theme ins
 **ACF → Field Groups → Case Study Detail — Page Content** applies to both the existing detail page and the new Case Studies post type. Its 16 fields follow the design order: breadcrumb, title, featured image, introduction, three results, summary, testimonial, challenge, follow-up and performance chart. Short labels use text fields, paragraphs use WYSIWYG editors, and image alt text comes from the Media Library. The post title and featured image provide fallbacks when their corresponding ACF fields are empty. Unfilled case study fields do not display sample client claims.
 
 The post type and field group remain editable in ACF after installation; the installer does not overwrite later changes. Singular entries reuse the existing detail section templates. The landing-page grid automatically lists every published Case Study, newest first, using its detail title, featured image and excerpt. Drafts are excluded. Nine clearly labeled fictional samples are created once when an administrator opens the dashboard after deployment; edit or delete them in Case Studies. Subsequent setup runs preserve sample edits and do not recreate deleted entries.
+
+### Tailwind CSS build
+
+Tailwind CSS and its CLI are pinned to 4.3.3 in `tools/package-lock.json`. Run `npm ci --prefix tools` once, then `python3 tools/build-css.py` (or `npm run build:css --prefix tools`) after CSS changes. Commit the generated `assets/site.css` along with the source changes. Pressable serves the compiled CSS and requires no Node.js or CDN runtime.
+
+All front-end page templates, single posts, Case Studies, archives, search and fallback pages share the Tailwind-powered stylesheet. Existing semantic classes stay in the PHP templates; utility declarations are composed centrally with `@apply`. This preserves page structure, native nesting, exact XD dimensions, breakpoint values and responsive behavior. Tailwind Preflight is deliberately omitted. Utilities use the `tw:` prefix so Tailwind's container/grid names cannot collide with existing theme classes. The CSS entry scans only custom-theme PHP and JavaScript; write complete literal class names for future utilities. Brand color utilities, such as `tw:text-papaya-teal`, map to the approved CSS variables.
+
+For a visual regression check, save the previous generated stylesheet and run `node tools/check-tailwind.mjs /absolute/path/to/previous-site.css`. The check compares rendered geometry, computed design styles, image sources and screenshots (image pixels masked to avoid browser resampling noise) on all page types at desktop, tablet and mobile sizes, plus expanded mobile menus.

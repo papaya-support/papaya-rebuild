@@ -32,7 +32,7 @@ The importer seeds the bundled defaults. Current local dashboard edits need a se
 
 ## Ongoing updates
 
-Edit PHP or JavaScript directly in the child theme. For CSS, edit `tools/styles/base.css` and run:
+Edit PHP or JavaScript directly in the child theme. For CSS, edit `tools/styles/base.css` (Tailwind `@apply` and custom XD rules) or `tools/styles/tailwind.css` (framework configuration). Install build dependencies with `npm ci --prefix tools`, then run:
 
 ```sh
 python3 tools/build-css.py

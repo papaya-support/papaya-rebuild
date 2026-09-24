@@ -4,6 +4,11 @@
     "playwright": "^1.63.0"
   },
   "devDependencies": {
-    "axe-core": "^4.13.0"
+    "@tailwindcss/cli": "4.3.3",
+    "axe-core": "^4.13.0",
+    "tailwindcss": "4.3.3"
+  },
+  "scripts": {
+    "build:css": "python3 build-css.py"
   }
 }

@@ -1,0 +1,19 @@
+/* No Preflight: preserve the XD base styles and WordPress/plugin defaults. */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme) prefix(tw);
+@import 'tailwindcss/utilities.css' layer(utilities) prefix(tw) source(none);
+@import './base.css';
+
+/* Scan only the custom theme. The prefix avoids existing .container/.grid names. */
+@source '../../wordpress/wp-content/themes/papaya-search-child/**/*.php';
+@source '../../wordpress/wp-content/themes/papaya-search-child/assets/site.js';
+
+@theme inline {
+  --color-papaya-teal: var(--papaya-teal);
+  --color-papaya-orange: var(--papaya-orange);
+  --color-papaya-peach: var(--papaya-peach);
+  --color-papaya-cream: var(--papaya-cream);
+  --color-papaya-green: var(--papaya-green);
+  --color-papaya-sage: var(--papaya-sage);
+  --color-papaya-light-orange: var(--papaya-light-orange);
+}

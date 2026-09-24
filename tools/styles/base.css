@@ -18,7 +18,7 @@ html {
 body.papaya-site {
   margin: 0;
   background: #fff;
-  color: var(--papaya-teal);
+  @apply tw:text-papaya-teal;
   font-family: Inter, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.5;
@@ -31,9 +31,9 @@ body.papaya-site {
   }
 }
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  @apply tw:block;
+  @apply tw:max-w-full;
+  @apply tw:h-auto;
 }
 a {
   color: inherit;
@@ -42,7 +42,7 @@ a {
 }
 button {
   font: inherit;
-  cursor: pointer;
+  @apply tw:cursor-pointer;
 }
 [hidden] {
   display: none !important;
@@ -93,16 +93,16 @@ h3 {
   padding-block: 32px;
 }
 .center {
-  text-align: center;
+  @apply tw:text-center;
 }
 .narrow {
   max-width: 960px;
 }
 .is-uppercase {
-  text-transform: uppercase;
+  @apply tw:uppercase;
 }
 .accent {
-  color: var(--papaya-orange);
+  @apply tw:text-papaya-orange;
 }
 .cream {
   background: var(--papaya-cream);
@@ -112,11 +112,11 @@ h3 {
 }
 .teal {
   background: var(--papaya-teal);
-  color: var(--papaya-cream);
+  @apply tw:text-papaya-cream;
 }
 .section-title {
-  text-align: center;
-  text-transform: uppercase;
+  @apply tw:text-center;
+  @apply tw:uppercase;
   margin-bottom: 36px;
 }
 .prose {
@@ -145,16 +145,16 @@ h3 {
     margin-top: 24px;
   }
   & h2 {
-    text-transform: uppercase;
+    @apply tw:uppercase;
   }
 }
 .split {
-  display: grid;
+  @apply tw:grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 72px);
-  align-items: center;
+  @apply tw:items-center;
   & > * {
-    min-width: 0;
+    @apply tw:min-w-0;
   }
   & h2,
   & h3 {
@@ -169,11 +169,11 @@ h3 {
     margin-top: 24px;
   }
   & img:not(.brand-tree) {
-    width: 100%;
+    @apply tw:w-full;
   }
 }
 .grid {
-  display: grid;
+  @apply tw:grid;
   gap: 40px;
 }
 .grid-two {
@@ -188,9 +188,9 @@ h3 {
 }
 .button {
   --button-text: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @apply tw:inline-flex;
+  @apply tw:items-center;
+  @apply tw:justify-center;
   border: 0;
   border-radius: 14px;
   padding: 14px 26px;
@@ -201,8 +201,8 @@ h3 {
   font-weight: 700;
   line-height: 1.25;
   text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
+  @apply tw:text-center;
+  @apply tw:uppercase;
   transition: filter 0.15s ease;
   &:hover {
     filter: brightness(1.1);
@@ -224,7 +224,7 @@ h3 {
 .button-green {
   --button-text: var(--papaya-teal);
   background: var(--papaya-green);
-  color: var(--papaya-teal);
+  @apply tw:text-papaya-teal;
 }
 .button-peach {
   --button-text: #000;
@@ -236,24 +236,24 @@ h3 {
 }
 .site-header {
   background: var(--papaya-teal);
-  color: var(--papaya-cream);
+  @apply tw:text-papaya-cream;
   padding-block: 30px;
 }
 .header-inner {
-  display: flex;
+  @apply tw:flex;
   gap: 36px;
-  align-items: center;
-  justify-content: space-between;
+  @apply tw:items-center;
+  @apply tw:justify-between;
 }
 .brand {
   flex: 0 1 330px;
   & img {
-    width: 100%;
-    height: auto;
+    @apply tw:w-full;
+    @apply tw:h-auto;
   }
 }
 .menu-toggle {
-  display: none;
+  @apply tw:hidden;
 }
 #primary-navigation {
   flex: 1;
@@ -265,7 +265,7 @@ h3 {
     margin: 0;
   }
   & a {
-    display: block;
+    @apply tw:block;
     color: inherit;
     text-decoration: none;
     white-space: pre-line;
@@ -281,27 +281,27 @@ h3 {
 .ps-menu-primary {
   font-weight: 600;
   font-size: 16px;
-  text-transform: uppercase;
+  @apply tw:uppercase;
   letter-spacing: 0.6px;
   & .ps-menu-list {
-    display: flex;
+    @apply tw:flex;
     gap: 3rem;
-    align-items: center;
-    justify-content: flex-end;
+    @apply tw:items-center;
+    @apply tw:justify-end;
   }
   & .menu-cta > a {
     background: var(--papaya-peach);
-    color: var(--papaya-teal);
+    @apply tw:text-papaya-teal;
     border-radius: 14px;
     padding: 16px 22px;
     font-weight: 800;
   }
   & .menu-item-has-children {
-    position: relative;
+    @apply tw:relative;
   }
   & .sub-menu {
-    display: none;
-    position: absolute;
+    @apply tw:hidden;
+    @apply tw:absolute;
     z-index: 10;
     min-width: 210px;
     background: var(--papaya-teal);
@@ -311,44 +311,44 @@ h3 {
   }
   & .menu-item-has-children:hover > .sub-menu,
   & .menu-item-has-children:focus-within > .sub-menu {
-    display: grid;
+    @apply tw:grid;
     gap: 12px;
   }
 }
 .home-hero {
-  position: relative;
-  display: grid;
+  @apply tw:relative;
+  @apply tw:grid;
   place-items: center;
   min-height: clamp(430px, 48vw, 640px);
   margin-bottom: 100px;
   background: var(--papaya-teal);
 }
 .hero-image {
-  position: absolute;
+  @apply tw:absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  @apply tw:w-full;
+  @apply tw:h-full;
+  @apply tw:object-cover;
 }
 .home-hero::after {
   content: '';
-  position: absolute;
+  @apply tw:absolute;
   inset: 0;
   background: #0005;
 }
 .hero-copy {
-  position: relative;
+  @apply tw:relative;
   z-index: 1;
-  color: var(--papaya-cream);
-  text-align: center;
+  @apply tw:text-papaya-cream;
+  @apply tw:text-center;
   padding-block: 90px 180px;
   & h1 {
-    text-transform: uppercase;
+    @apply tw:uppercase;
     letter-spacing: 1.3px;
   }
 }
 .hero-emblem {
-  position: absolute;
+  @apply tw:absolute;
   z-index: 2;
   bottom: -110px;
   left: 50%;
@@ -357,15 +357,15 @@ h3 {
 }
 .page-banner {
   & .banner-image {
-    width: 100%;
+    @apply tw:w-full;
     height: clamp(240px, 34vw, 460px);
-    object-fit: cover;
+    @apply tw:object-cover;
   }
 }
 .service-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @apply tw:flex;
+  @apply tw:flex-col;
+  @apply tw:items-center;
   gap: 20px;
   & h3 {
     font-size: 21px;
@@ -380,7 +380,7 @@ h3 {
 .service-icon {
   width: 52px;
   height: 52px;
-  object-fit: contain;
+  @apply tw:object-contain;
   margin-bottom: 12px;
 }
 .services-grid {
@@ -398,15 +398,15 @@ h3 {
   }
 }
 .testimonial {
-  display: flex;
-  align-items: center;
+  @apply tw:flex;
+  @apply tw:items-center;
   gap: 40px;
-  text-align: center;
+  @apply tw:text-center;
   & blockquote {
     flex: 1;
   }
   & cite {
-    display: block;
+    @apply tw:block;
     font-size: 17px;
     font-style: normal;
     margin-top: 16px;
@@ -416,8 +416,8 @@ h3 {
   width: 145px;
 }
 .quote-mark {
-  display: block;
-  color: var(--papaya-sage);
+  @apply tw:block;
+  @apply tw:text-papaya-sage;
   font-size: 64px;
   font-family: Georgia, serif;
   line-height: 1;
@@ -434,7 +434,7 @@ h3 {
   }
 }
 .page-home .stats h3 {
-  text-transform: uppercase;
+  @apply tw:uppercase;
 }
 .page-home .center > .prose + p {
   margin-top: 20px;
@@ -450,25 +450,25 @@ h3 {
   }
 }
 .step-number {
-  display: inline-flex;
+  @apply tw:inline-flex;
   background: var(--papaya-green);
-  color: var(--papaya-teal);
+  @apply tw:text-papaya-teal;
   font-size: 26px;
   font-weight: 700;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  align-items: center;
-  justify-content: center;
+  @apply tw:items-center;
+  @apply tw:justify-center;
 }
 .page-about {
   & .teal .grid {
     margin-block: 32px;
   }
   & .team-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @apply tw:flex;
+    @apply tw:flex-col;
+    @apply tw:items-center;
     gap: 20px;
   }
   & .team-card .button {
@@ -480,7 +480,7 @@ h3 {
   & .careers-card {
     border: 1px solid var(--papaya-green);
     padding: 32px;
-    justify-content: center;
+    @apply tw:justify-center;
   }
   & .brand-tree {
     width: 260px;
@@ -502,10 +502,10 @@ h3 {
   padding: 28px;
   max-width: 380px;
   margin-inline: auto;
-  text-align: center;
+  @apply tw:text-center;
   & img {
     max-height: 230px;
-    object-fit: contain;
+    @apply tw:object-contain;
     margin-bottom: 24px;
   }
   & .prose {
@@ -516,21 +516,21 @@ h3 {
   border-bottom: 1px solid var(--papaya-green);
   & summary {
     padding: 20px 32px 20px 0;
-    position: relative;
-    cursor: pointer;
+    @apply tw:relative;
+    @apply tw:cursor-pointer;
     font-size: 20px;
     font-weight: 700;
     list-style: none;
   }
   & summary::-webkit-details-marker {
-    display: none;
+    @apply tw:hidden;
   }
   & summary::after {
     content: '+';
-    position: absolute;
+    @apply tw:absolute;
     right: 0;
     top: 18px;
-    color: var(--papaya-peach);
+    @apply tw:text-papaya-peach;
     font-size: 26px;
     font-weight: 400;
   }
@@ -542,23 +542,23 @@ h3 {
   }
 }
 .listing-hero {
-  position: relative;
+  @apply tw:relative;
   padding-block: 120px;
   & .intro {
-    position: relative;
+    @apply tw:relative;
   }
 }
 .filter-bar {
-  display: flex;
+  @apply tw:flex;
   gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
+  @apply tw:justify-center;
+  @apply tw:flex-wrap;
   & button,
   & a {
     text-decoration: none;
     border: none;
     background: none;
-    color: var(--papaya-teal);
+    @apply tw:text-papaya-teal;
     padding: 10px 16px;
     font-size: 16px;
     border-radius: 8px;
@@ -572,11 +572,11 @@ h3 {
   row-gap: 56px;
 }
 .post-card {
-  min-width: 0;
+  @apply tw:min-w-0;
   & img {
-    width: 100%;
+    @apply tw:w-full;
     aspect-ratio: 1.18;
-    object-fit: cover;
+    @apply tw:object-cover;
     margin-bottom: 22px;
   }
   & h2,
@@ -600,18 +600,18 @@ h3 {
 }
 .article-heading {
   & .breadcrumb {
-    color: var(--papaya-orange);
+    @apply tw:text-papaya-orange;
     font-size: 16px;
     margin-bottom: 28px;
   }
   & h1 {
-    max-width: 100%;
+    @apply tw:max-w-full;
   }
 }
 .article-featured {
-  width: 100%;
+  @apply tw:w-full;
   max-height: 500px;
-  object-fit: cover;
+  @apply tw:object-cover;
 }
 .section-blog-detail-featured-image {
   padding-bottom: 0;
@@ -649,49 +649,49 @@ h3 {
     padding: 40px;
   }
   & .results-chart {
-    width: 100%;
+    @apply tw:w-full;
     margin-top: 40px;
   }
   & .stat .prose strong {
-    color: var(--papaya-orange);
+    @apply tw:text-papaya-orange;
   }
 }
 .site-footer {
   padding: 56px 0 28px;
   background: var(--papaya-teal);
-  color: var(--papaya-cream);
+  @apply tw:text-papaya-cream;
 }
 .footer-grid {
-  display: grid;
+  @apply tw:grid;
   grid-template-columns: minmax(0, 1.45fr) repeat(3, minmax(0, 1fr));
   gap: 48px;
 }
 .footer-brand {
-  display: flex;
-  flex-direction: column;
+  @apply tw:flex;
+  @apply tw:flex-col;
   align-items: flex-start;
   gap: 32px;
   & img {
     width: 260px;
-    height: auto;
+    @apply tw:h-auto;
   }
   & .button {
     font-size: 16px;
   }
 }
 .footer-heading {
-  color: var(--papaya-green);
-  text-transform: uppercase;
+  @apply tw:text-papaya-green;
+  @apply tw:uppercase;
   font-size: 24px;
   padding-bottom: 24px;
   margin: 18px 0 24px;
   border-bottom: 2px solid var(--papaya-light-orange);
 }
 .footer-column {
-  min-width: 0;
+  @apply tw:min-w-0;
   & .ps-menu-list {
-    display: flex;
-    flex-direction: column;
+    @apply tw:flex;
+    @apply tw:flex-col;
     gap: 16px;
   }
   & .ps-menu {
@@ -702,19 +702,19 @@ h3 {
 .ps-menu-footer_social {
   margin-top: 28px;
   & .ps-menu-list {
-    flex-direction: row;
+    @apply tw:flex-row;
     gap: 10px;
-    flex-wrap: wrap;
+    @apply tw:flex-wrap;
   }
   & a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @apply tw:flex;
+    @apply tw:items-center;
+    @apply tw:justify-center;
     width: 28px;
     height: 28px;
     border-radius: 50%;
     background: var(--papaya-cream);
-    color: var(--papaya-orange);
+    @apply tw:text-papaya-orange;
     font-size: 0;
   }
   & a::before {
@@ -738,7 +738,7 @@ h3 {
   border-top: 2px solid var(--papaya-light-orange);
   margin-top: 40px;
   padding-top: 24px;
-  text-align: center;
+  @apply tw:text-center;
   font-size: 15px;
   & a {
     text-decoration: none;
@@ -748,19 +748,19 @@ h3 {
   }
 }
 .skip-link:not(:focus) {
-  position: absolute;
+  @apply tw:absolute;
   width: 1px;
   height: 1px;
-  overflow: hidden;
+  @apply tw:overflow-hidden;
   clip-path: inset(50%);
 }
 .skip-link:focus {
-  position: fixed;
+  @apply tw:fixed;
   z-index: 100;
   top: 12px;
   left: 12px;
   background: var(--papaya-cream);
-  color: var(--papaya-teal);
+  @apply tw:text-papaya-teal;
   padding: 12px;
 }
 .standard-content {
@@ -819,17 +819,17 @@ h3 {
     padding-block: 20px;
   }
   .header-inner {
-    flex-wrap: wrap;
+    @apply tw:flex-wrap;
   }
   .brand {
     flex: 0 1 270px;
     max-width: calc(100% - 64px);
   }
   .menu-toggle {
-    display: block;
+    @apply tw:block;
     border: 0;
     background: none;
-    color: var(--papaya-cream);
+    @apply tw:text-papaya-cream;
     font-size: 28px;
     padding: 4px;
     min-width: 44px;
@@ -838,22 +838,22 @@ h3 {
   #primary-navigation {
     flex: 0 0 100%;
     &.is-collapsible:not(.is-open) {
-      display: none;
+      @apply tw:hidden;
     }
   }
   .ps-menu-primary {
     font-size: 16px;
     & .ps-menu-list {
-      align-items: stretch;
-      flex-direction: column;
+      @apply tw:items-stretch;
+      @apply tw:flex-col;
       gap: 8px;
     }
     & a {
       padding: 12px 0;
     }
     & .sub-menu {
-      display: grid;
-      position: static;
+      @apply tw:grid;
+      @apply tw:static;
       box-shadow: none;
       padding: 0 0 0 20px;
     }
@@ -885,7 +885,7 @@ h3 {
     bottom: -75px;
   }
   .testimonial {
-    flex-direction: column;
+    @apply tw:flex-col;
     gap: 20px;
   }
   .quote-illustration {
@@ -913,7 +913,7 @@ h3 {
   }
   .footer-brand {
     grid-column: 1 / -1;
-    align-items: center;
+    @apply tw:items-center;
   }
   .footer-column:last-child {
     grid-column: 1 / -1;
@@ -947,43 +947,43 @@ h3 {
 }
 
 .teal .prose {
-  color: var(--papaya-cream);
+  @apply tw:text-papaya-cream;
 }
 
 /* Image proportions from the XD components; layout still follows normal flow. */
 .section-home-future-strategy [data-image] {
   aspect-ratio: 1;
-  object-fit: cover;
+  @apply tw:object-cover;
 }
 .section-search-engine-marketing-ppc-services [data-image] {
   aspect-ratio: 1;
-  object-fit: cover;
+  @apply tw:object-cover;
 }
 .section-search-engine-marketing-faqs [data-image] {
   aspect-ratio: 439 / 593;
-  object-fit: cover;
+  @apply tw:object-cover;
 }
 .section-about-audience-strategy [data-image] {
   aspect-ratio: 503 / 420;
-  object-fit: cover;
+  @apply tw:object-cover;
 }
 .section-about-partnership [data-image] {
   aspect-ratio: 439 / 390;
-  object-fit: cover;
+  @apply tw:object-cover;
 }
 
 /* Formatting supported by the ACF rich-text editors, without inline styles. */
 .rich-align-left {
-  text-align: left;
+  @apply tw:text-left;
 }
 .rich-align-center {
-  text-align: center;
+  @apply tw:text-center;
 }
 .rich-align-right {
-  text-align: right;
+  @apply tw:text-right;
 }
 .rich-align-justify {
-  text-align: justify;
+  @apply tw:text-justify;
 }
 .rich-underline {
   text-decoration: underline;
@@ -994,12 +994,12 @@ h3 {
 
 .post-categories {
   font-size: 14px;
-  color: var(--papaya-teal);
+  @apply tw:text-papaya-teal;
   margin-bottom: 12px;
 }
 .blog-empty {
   grid-column: 1 / -1;
-  text-align: center;
+  @apply tw:text-center;
 }
 
 [data-view-more][aria-disabled='true'] {
@@ -1009,7 +1009,7 @@ h3 {
 .article-body.prose {
   & h2,
   & h3 {
-    color: var(--papaya-teal);
+    @apply tw:text-papaya-teal;
   }
 }
 
@@ -1058,43 +1058,43 @@ h3 {
 
 /* Native editor palette classes also use the shared brand tokens. */
 .has-papaya-teal-color {
-  color: var(--papaya-teal);
+  @apply tw:text-papaya-teal;
 }
 .has-papaya-teal-background-color {
   background-color: var(--papaya-teal);
 }
 .has-papaya-sage-color {
-  color: var(--papaya-sage);
+  @apply tw:text-papaya-sage;
 }
 .has-papaya-sage-background-color {
   background-color: var(--papaya-sage);
 }
 .has-papaya-green-color {
-  color: var(--papaya-green);
+  @apply tw:text-papaya-green;
 }
 .has-papaya-green-background-color {
   background-color: var(--papaya-green);
 }
 .has-papaya-cream-color {
-  color: var(--papaya-cream);
+  @apply tw:text-papaya-cream;
 }
 .has-papaya-cream-background-color {
   background-color: var(--papaya-cream);
 }
 .has-papaya-orange-color {
-  color: var(--papaya-orange);
+  @apply tw:text-papaya-orange;
 }
 .has-papaya-orange-background-color {
   background-color: var(--papaya-orange);
 }
 .has-papaya-light-orange-color {
-  color: var(--papaya-light-orange);
+  @apply tw:text-papaya-light-orange;
 }
 .has-papaya-light-orange-background-color {
   background-color: var(--papaya-light-orange);
 }
 .has-papaya-peach-color {
-  color: var(--papaya-peach);
+  @apply tw:text-papaya-peach;
 }
 .has-papaya-peach-background-color {
   background-color: var(--papaya-peach);
@@ -1103,9 +1103,9 @@ h3 {
 /* Enhanced navigation: parent links and submenu disclosures remain separate controls. */
 #primary-navigation.has-submenu-controls .ps-menu-primary {
   & .menu-item-has-children {
-    display: grid;
+    @apply tw:grid;
     grid-template-columns: minmax(0, 1fr) 44px;
-    align-items: center;
+    @apply tw:items-center;
   }
   & .submenu-toggle {
     width: 44px;
@@ -1113,29 +1113,29 @@ h3 {
     padding: 8px;
     border: 0;
     background: transparent;
-    color: var(--papaya-cream);
+    @apply tw:text-papaya-cream;
     font: inherit;
     & span {
-      display: inline-block;
+      @apply tw:inline-block;
     }
     &[aria-expanded='true'] span {
       transform: rotate(180deg);
     }
   }
   & .menu-item-has-children > .sub-menu {
-    display: none;
+    @apply tw:hidden;
     grid-column: 1 / -1;
     top: 100%;
     right: 0;
     max-width: calc(100vw - 40px);
   }
   & .submenu-open > .sub-menu {
-    display: grid;
+    @apply tw:grid;
     gap: 12px;
   }
   & .sub-menu .sub-menu {
-    position: static;
-    min-width: 0;
+    @apply tw:static;
+    @apply tw:min-w-0;
     padding: 0 0 0 16px;
     box-shadow: none;
   }
@@ -1146,16 +1146,16 @@ h3 {
     & .current-menu-ancestor > a,
     & a[aria-current='page'] {
       background: transparent;
-      color: var(--papaya-peach);
+      @apply tw:text-papaya-peach;
       border-radius: 0;
     }
     & .menu-cta > a {
-      display: inline-flex;
+      @apply tw:inline-flex;
       width: fit-content;
-      max-width: 100%;
+      @apply tw:max-w-full;
       padding: 14px 18px;
       background: var(--papaya-peach);
-      color: var(--papaya-teal);
+      @apply tw:text-papaya-teal;
       border-radius: 14px;
     }
   }
