@@ -11,6 +11,13 @@ function ps_field_value($key)
 {
     $default = ps_default_content($key);
     $post_id = ($default['scope'] ?? 'page') === 'page' ? get_the_ID() : ps_shared_id();
+    $grouped = ps_grouped_field_value($key, $post_id, $found);
+    if ($found) {
+        if (get_post_type($post_id) === 'case_study' && $key === 'case_study_detail_afcd2640f663' && !$grouped) {
+            return get_the_title($post_id);
+        }
+        return is_scalar($grouped) ? (string) $grouped : '';
+    }
     // Keep the existing field names so all values edited in ACF survive the rebuild.
     if ($post_id && metadata_exists('post', $post_id, $key)) {
         $value = function_exists('get_field')

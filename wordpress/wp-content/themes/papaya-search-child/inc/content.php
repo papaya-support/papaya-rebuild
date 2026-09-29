@@ -22,6 +22,10 @@ function ps_shared_id()
 function ps_value($key, $default = '', $scope = 'page', $post_id = null)
 {
     $id = $scope === 'page' ? ($post_id ?: get_the_ID()) : ps_shared_id();
+    $grouped = ps_grouped_field_value($key, $id, $found);
+    if ($found) {
+        return $grouped;
+    }
     // Check existence to distinguish intentionally cleared content from an unset field.
     if ($id && metadata_exists('post', $id, $key)) {
         return function_exists('get_field')

@@ -2,44 +2,8 @@
 /** Blog, case-study and related-post cards share the same accessible link/image structure. */
 defined('ABSPATH') || exit();
 
-// Each variant owns its field mapping; the section markup remains shared.
-switch ($args['variant'] ?? '') {
-    case 'blog-detail-related-posts':
-        $args = [
-            'class' => 'section-blog-detail-related-posts section related-posts',
-            'cards' => [
-                [
-                    'image' => 'blog_detail_image_e66cb91b30',
-                    'title' => 'blog_detail_4d181476ee16',
-                    'tag' => 'h3',
-                    'url' => ps_route('blog-detail'),
-                ],
-                [
-                    'image' => 'blog_detail_image_e850bb0d10',
-                    'title' => 'blog_detail_8c5ed5ef437b',
-                    'tag' => 'h3',
-                    'url' => ps_route('blog-detail'),
-                ],
-                [
-                    'image' => 'blog_detail_image_e6018f7e64',
-                    'title' => 'blog_detail_1fab6576ba8d',
-                    'tag' => 'h3',
-                    'url' => ps_route('blog-detail'),
-                ],
-            ],
-            'heading' => [
-                [
-                    'type' => 'text',
-                    'field' => 'blog_detail_1624e4d9861e',
-                    'tag' => 'h2',
-                    'class' => 'section-title',
-                ],
-            ],
-            'grid_class' => 'grid grid-three',
-        ];
-        break;
+$args = ps_section_layout('post-grid', $args ?? []);
 
-}
 ?>
 <section class="<?php echo esc_attr($args['class']); ?>">
     <?php if (!empty($args['heading'])): ?><div class="container">

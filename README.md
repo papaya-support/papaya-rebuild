@@ -143,7 +143,7 @@ After deploying, visit WordPress admin once to refresh the original imported her
 
 ### Page and section responsibilities
 
-The eight page templates and `single.php` contain only the WordPress loop, main landmark, and ordered `get_template_part()` calls. A short `variant` identifies the section's page-specific ACF mapping; the reusable section file owns that mapping and its HTML layout. For example, Home calls the shared `image-text` section for its search strategy, search trends, and closing CTA. The field names, saved content, shared rendering helpers, CSS classes, and section order remain unchanged.
+The eight page templates and `single.php` contain only the WordPress loop, main landmark, and ordered `get_template_part()` calls. A short `variant` identifies the section's page-specific ACF mapping; the reusable section file owns its HTML layout, with presentation bindings centralized in `inc/section-layouts.php`. For example, Home calls the shared `image-text` section for its search strategy, search trends, and closing CTA. The field names, saved content, shared rendering helpers, CSS classes, and section order remain unchanged.
 
 `template-parts/sections/blog-listing.php` owns the Blog query and passes the same listing context to its filters and post grid. Native post featured-image and body markup live in `article-image.php` and `article-body.php`. Shared sections still accept explicit arguments for existing callers.
 
@@ -162,3 +162,15 @@ Tailwind CSS and its CLI are pinned to 4.3.3 in `tools/package-lock.json`. Run `
 All front-end page templates, single posts, Case Studies, archives, search and fallback pages share the Tailwind-powered stylesheet. Existing semantic classes stay in the PHP templates; utility declarations are composed centrally with `@apply`. This preserves page structure, native nesting, exact XD dimensions, breakpoint values and responsive behavior. Tailwind Preflight is deliberately omitted. Utilities use the `tw:` prefix so Tailwind's container/grid names cannot collide with existing theme classes. The CSS entry scans only custom-theme PHP and JavaScript; write complete literal class names for future utilities. Brand color utilities, such as `tw:text-papaya-teal`, map to the approved CSS variables.
 
 For a visual regression check, save the previous generated stylesheet and run `node tools/check-tailwind.mjs /absolute/path/to/previous-site.css`. The check compares rendered geometry, computed design styles, image sources and screenshots (image pixels masked to avoid browser resampling noise) on all page types at desktop, tablet and mobile sizes, plus expanded mobile menus.
+
+### Reusable ACF section Groups
+
+Open the WordPress dashboard as an administrator after deploying this update. A one-time migration organizes 231 existing fields into 45 native ACF Group fields, following each page’s section order. Matching sections use the shared hero, banner, image/text, content, statistics, testimonial and card-grid templates. Each page retains independent content; grouping does not make text or images global across pages.
+
+Edit section content on its page or Case Study edit screen. Group children have readable names such as `image`, `heading`, `description` and `button_url`. Existing field types, keys and descriptive labels are preserved, including plain text for short labels, WYSIWYG for body copy and Media Library images. Definitions remain editable under ACF → Field Groups after migration.
+
+`inc/section-groups-map.php` maps legacy field identifiers to Group children. Shared content/image helpers read the Group first and retain legacy fallbacks until migration has run. Intentionally cleared Group values stay empty. `inc/section-layouts.php` defines presentation variants without duplicating section markup or changing CSS. Keep Group/child names stable when editing definitions because templates use those bindings.
+
+The migration preserves original metadata and stores original definitions in the non-autoloaded `ps_section_groups_backup_v1` option. The 36 obsolete static Case Study card fields are retained in an inactive **Case Studies — Archived Static Cards** group; the live listing continues to query Case Study posts. The completion flag `ps_section_groups_v1` prevents subsequent dashboard visits from overwriting edits.
+
+Run `node tools/check-section-groups.mjs` to check migration, field edits and clearing, repeat-run behavior, and unchanged rendered markup/layout across nine page types at three viewport sizes in an isolated WordPress installation.
