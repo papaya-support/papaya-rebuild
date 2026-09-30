@@ -57,3 +57,13 @@ For version 2.1.1, open WordPress admin once to remove the obsolete image-alt AC
 For version 2.2.0, visit WordPress admin once after deployment to add the Hero — Emblem Image field and convert short rich-text fields to text inputs. The corrected emblem is imported into Media Library only when its page value is missing.
 
 Version 2.4.0: Blog cards and category filters use published Posts and Categories. Visit admin once to remove obsolete Blog card/filter fields. Publish articles under Posts; the ACF hero remains editable on the Blog page.
+
+## Original posts import (September 30 export)
+
+This commit includes the original WXR inside a PHP-guarded data file and all 428 referenced media files (90 attachments, saved image sizes and full-resolution originals). The source WXR SHA-256 is `ba3c23d2c4c2dae16866fec71aeced320ad6abfbe7e2256a7146c23c0cb24b9f`. Draft text and private metadata are not exposed as a downloadable XML file. Do not convert this payload to a public XML/JSON asset.
+
+After the theme deploys through Git, sign in to staging and open **Tools → Import Original Papaya Posts → Import / Resume**. Keep that page open until it reports completion. The importer copies the bundled media into WordPress uploads and creates the 27 posts, 90 media records, authors, categories and comments in the staging database. It preserves 24 published posts and three drafts. Git deployment alone does not update that database; the explicit administrator import is required. It does not remove existing sample posts or change pages, menus or ACF content.
+
+The process is resumable, uses one database transaction per record, and refuses to overwrite records with matching source GUIDs. Completed imports are not repeated. Media is isolated under `uploads/papaya-originals-20260930/` to avoid overwriting existing uploads. Known attachment/category IDs and parent/comment relationships are mapped to the destination records; the original WXR retains all source values. Article HTML, excerpts, dates, comments, and plugin metadata remain preserved. Imported articles use the existing XD Blog Detail template; uploaded-image URLs are resolved at render time without rewriting saved HTML. Plugin-specific metadata is retained even if the corresponding plugin is not installed.
+
+For local use, run `node tools/import-original-posts.mjs --serve`. The persistent database and uploads are kept in ignored `.local/original-posts/`; the site is served at `http://127.0.0.1:9481`. The script verifies imported records and media against the export, checks repeat-import behavior, and requests every published article. `tools/fetch-original-media.py /path/to/export.xml` can recreate the local download cache. Do not commit the local database or its backups.

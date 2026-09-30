@@ -84,3 +84,5 @@ add_filter('astra_get_option_scroll-to-top-enable', function ($enabled) {
         ? false
         : $enabled;
 });
+
+require_once __DIR__ . "/inc/original-post-import.php";
