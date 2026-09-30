@@ -1,6 +1,11 @@
 <?php
 defined('ABSPATH') || exit();
 
+/** Match the XD truncation marker without changing saved post content. */
+add_filter('excerpt_more', function () {
+    return '...';
+});
+
 /** Published posts, filtered by WordPress category and paginated on the Blog page. */
 function ps_blog_listing()
 {
