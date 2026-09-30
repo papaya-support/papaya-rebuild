@@ -75,3 +75,5 @@ Existing authors are matched by login first, then email. The importer reuses the
 After deploying this update, open WordPress admin once as an administrator. Site Content will contain separate **Header** and **Footer** entries, each with its own native ACF field group. Footer reuses the original record and saved values. Header provides an optional Media Library logo; leaving it empty preserves the existing design logo. Header links and its Get Started button remain managed through Appearance → Menus → Header Navigation.
 
 The migration runs once, retains menu assignments, and does not overwrite later editor changes. No manual ACF import is required.
+
+The Header logo update imports the existing bundled logo into Media Library and assigns it to Header → Header Content → Logo on the next administrator visit. It keeps the original image bytes and alt text, runs once, and preserves any logo already selected by an editor.

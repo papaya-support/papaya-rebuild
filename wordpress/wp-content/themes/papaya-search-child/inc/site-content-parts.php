@@ -85,6 +85,55 @@ function ps_install_site_content_parts()
     return true;
 }
 
+/** Assign the bundled design logo once without replacing an editor's selection. */
+function ps_install_header_logo()
+{
+    if (get_option('ps_header_logo_assigned_v1')) {
+        return true;
+    }
+    $header_id = (int) get_option('ps_header_content_id');
+    if (!$header_id || !function_exists('update_field')) {
+        return new WP_Error('header_missing', 'Create the Header Site Content entry first.');
+    }
+    if (!get_post_meta($header_id, 'section_header_logo', true)) {
+        $attachment = (int) get_option('ps_header_design_logo_id');
+        if (!$attachment || !get_post($attachment)) {
+            $source = get_stylesheet_directory() . '/assets/brand.svg';
+            $contents = file_get_contents($source);
+            if ($contents === false) {
+                return new WP_Error('header_logo_missing', 'Could not read the existing header logo.');
+            }
+            // Allow only this trusted bundled SVG during its import.
+            $allow_svg = function ($types) {
+                $types['svg'] = 'image/svg+xml';
+                return $types;
+            };
+            add_filter('upload_mimes', $allow_svg);
+            $upload = wp_upload_bits('papaya-header-logo.svg', null, $contents);
+            remove_filter('upload_mimes', $allow_svg);
+            if (!empty($upload['error'])) {
+                return new WP_Error('header_logo_upload', $upload['error']);
+            }
+            $attachment = wp_insert_attachment([
+                'post_title' => 'Papaya Search — Header Logo',
+                'post_mime_type' => 'image/svg+xml',
+                'post_status' => 'inherit',
+            ], $upload['file'], 0, true);
+            if (is_wp_error($attachment)) {
+                return $attachment;
+            }
+            update_post_meta($attachment, '_wp_attachment_image_alt', 'Papaya Search — Be seen. Stay ahead. Grow smarter.');
+            update_option('ps_header_design_logo_id', $attachment, false);
+        }
+        update_field('field_ps_section_header', ['logo' => $attachment], $header_id);
+        if ((int) get_post_meta($header_id, 'section_header_logo', true) !== $attachment) {
+            return new WP_Error('header_logo_assignment', 'Could not assign the Header logo field.');
+        }
+    }
+    update_option('ps_header_logo_assigned_v1', 1, false);
+    return true;
+}
+
 function ps_header_logo()
 {
     $logo = [
@@ -106,6 +155,9 @@ add_action('admin_init', function () {
         return;
     }
     $result = ps_install_site_content_parts();
+    if (!is_wp_error($result)) {
+        $result = ps_install_header_logo();
+    }
     if (is_wp_error($result)) {
         add_action('admin_notices', function () use ($result) {
             echo '<div class="notice notice-error"><p>' . esc_html($result->get_error_message()) . '</p></div>';
