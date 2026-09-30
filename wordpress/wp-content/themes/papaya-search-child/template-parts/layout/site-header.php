@@ -1,8 +1,11 @@
-<?php defined('ABSPATH') || exit(); ?>
+<?php
+defined('ABSPATH') || exit();
+$header_logo = ps_header_logo();
+?>
 <header class="site-header">
     <div class="container header-inner">
         <a class="brand" href="<?php echo esc_url(home_url('/')); ?>" aria-label="Papaya Search home">
-            <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/brand.svg'); ?>" alt="Papaya Search — Be seen. Stay ahead. Grow smarter." width="340"
+            <img src="<?php echo esc_url($header_logo['url']); ?>" alt="<?php echo esc_attr($header_logo['alt']); ?>" width="340"
                 height="66">
         </a>
         <button class="menu-toggle" hidden type="button" aria-controls="primary-navigation"

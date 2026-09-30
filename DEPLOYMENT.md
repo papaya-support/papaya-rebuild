@@ -69,3 +69,9 @@ The process is resumable, uses one database transaction per record, and refuses 
 For local use, run `node tools/import-original-posts.mjs --serve`. The persistent database and uploads are kept in ignored `.local/original-posts/`; the site is served at `http://127.0.0.1:9481`. The script verifies imported records and media against the export, checks repeat-import behavior, and requests every published article. `tools/fetch-original-media.py /path/to/export.xml` can recreate the local download cache. Do not commit the local database or its backups.
 
 Existing authors are matched by login first, then email. The importer reuses the account without modifying its profile, password or permissions. Original author details remain in the source export and the import state’s `source_authors` records. Profile differences do not block import; newly needed author accounts retain the exported details with Subscriber permissions.
+
+## Separate Header and Footer Site Content
+
+After deploying this update, open WordPress admin once as an administrator. Site Content will contain separate **Header** and **Footer** entries, each with its own native ACF field group. Footer reuses the original record and saved values. Header provides an optional Media Library logo; leaving it empty preserves the existing design logo. Header links and its Get Started button remain managed through Appearance → Menus → Header Navigation.
+
+The migration runs once, retains menu assignments, and does not overwrite later editor changes. No manual ACF import is required.
