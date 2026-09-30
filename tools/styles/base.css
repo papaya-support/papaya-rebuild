@@ -992,11 +992,6 @@ h3 {
   text-decoration: line-through;
 }
 
-.post-categories {
-  font-size: 14px;
-  @apply tw:text-papaya-teal;
-  margin-bottom: 12px;
-}
 .blog-empty {
   grid-column: 1 / -1;
   @apply tw:text-center;

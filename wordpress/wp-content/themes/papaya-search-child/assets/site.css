@@ -1055,11 +1055,6 @@ h3 {
 .rich-strike {
   text-decoration: line-through;
 }
-.post-categories {
-  font-size: 14px;
-  color: var(--papaya-teal);
-  margin-bottom: 12px;
-}
 .blog-empty {
   grid-column: 1 / -1;
   text-align: center;

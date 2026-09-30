@@ -18,9 +18,6 @@ $heading_tag = ($args['heading'] ?? 'h2') === 'h3' ? 'h3' : 'h2';
     </a>
     <<?php echo $heading_tag; ?>><a href="<?php the_permalink(); ?>"><?php echo esc_html($card_title); ?></a></<?php echo $heading_tag; ?>>
     <?php if (empty($args['compact'])): ?>
-        <?php if (!$is_case_study): ?>
-            <div class="post-categories"><?php the_category(', '); ?></div>
-        <?php endif; ?>
         <div class="prose"><?php echo wp_kses_post(wpautop(get_the_excerpt())); ?></div>
     <?php endif; ?>
 </article>
