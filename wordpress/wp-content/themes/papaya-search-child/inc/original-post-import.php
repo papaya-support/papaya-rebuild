@@ -44,6 +44,14 @@ class PS_Original_Post_Import
     {
         foreach (self::wp(self::source())->author as $author) {
             $login = (string) $author->author_login;
+            $state['source_authors'][$login] = [
+                'id' => (int) $author->author_id,
+                'login' => $login,
+                'email' => (string) $author->author_email,
+                'display_name' => (string) $author->author_display_name,
+                'first_name' => (string) $author->author_first_name,
+                'last_name' => (string) $author->author_last_name,
+            ];
             if (isset($state['authors'][$login])) {
                 continue;
             }
@@ -51,13 +59,8 @@ class PS_Original_Post_Import
             if (!$existing && (string) $author->author_email) {
                 $existing = get_user_by('email', (string) $author->author_email);
             }
-            if ($existing) {
-                foreach (['user_email' => 'author_email', 'display_name' => 'author_display_name', 'first_name' => 'author_first_name', 'last_name' => 'author_last_name'] as $saved => $source) {
-                    if ((string) $existing->$saved !== (string) $author->$source) {
-                        throw new RuntimeException('Author conflict for ' . $login . '. Resolve the existing user mapping before importing; no account has been changed.');
-                    }
-                }
-            }
+            // Existing accounts belong to this site. Reuse their identity without
+            // changing profile details, credentials, roles or capabilities.
             $id = $existing ? $existing->ID : wp_insert_user([
                 'user_login' => $login,
                 'user_email' => (string) $author->author_email,
