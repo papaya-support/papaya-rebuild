@@ -1070,7 +1070,7 @@ body.single-post .article-body .wp-block-group {
   background-color: var(--papaya-green);
   color: #161616;
   border-radius: 0;
-  padding: clamp(32px, 5vw, 64px);
+  padding: 1.88rem;
   gap: 24px;
   text-align: left;
   & > :first-child, & > .wp-block-group__inner-container > :first-child {
