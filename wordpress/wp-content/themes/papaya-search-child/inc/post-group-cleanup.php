@@ -84,11 +84,112 @@ function ps_cleanup_post_group_styles()
     return $report;
 }
 
+/** Identify previously cleaned Groups from the preserved original content. */
+function ps_cleaned_group_signatures($blocks)
+{
+    $signatures = [];
+    foreach ($blocks as $block) {
+        $original_children = $block['innerBlocks'];
+        $block['innerBlocks'] = [];
+        $count = 0;
+        ps_clean_gray_post_groups([$block], $count);
+        $block['innerBlocks'] = $original_children;
+        if ($count) {
+            $ignored = 0;
+            $cleaned = ps_clean_gray_post_groups([$block], $ignored);
+            $signatures[hash('sha256', serialize_block($cleaned[0]))] = true;
+        }
+        $signatures += ps_cleaned_group_signatures($original_children);
+    }
+    return $signatures;
+}
+
+function ps_label_post_groups($blocks, $cleaned, &$counts)
+{
+    foreach ($blocks as &$block) {
+        // Match before changing descendant classes, which are part of serialization.
+        if ($block['blockName'] === 'core/group') {
+            $existing_classes = preg_split('/\s+/', trim($block['attrs']['className'] ?? ''));
+            $class = in_array('green-post-block', $existing_classes, true) || isset($cleaned[hash('sha256', serialize_block($block))])
+                ? 'green-post-block'
+                : 'orange-post-block';
+            $classes = preg_split('/\s+/', trim($block['attrs']['className'] ?? ''), -1, PREG_SPLIT_NO_EMPTY);
+            $classes = array_diff($classes, ['green-post-block', 'orange-post-block']);
+            $classes[] = $class;
+            $block['attrs']['className'] = implode(' ', $classes);
+            $label_wrapper = function ($html) use ($class) {
+                $processor = new WP_HTML_Tag_Processor($html);
+                if ($processor->next_tag(['class_name' => 'wp-block-group'])) {
+                    $processor->remove_class('green-post-block');
+                    $processor->remove_class('orange-post-block');
+                    $processor->add_class($class);
+                }
+                return $processor->get_updated_html();
+            };
+            $block['innerHTML'] = $label_wrapper($block['innerHTML']);
+            foreach ($block['innerContent'] as &$fragment) {
+                if (is_string($fragment)) {
+                    $fragment = $label_wrapper($fragment);
+                    break;
+                }
+            }
+            unset($fragment);
+            $counts[$class]++;
+        }
+        $block['innerBlocks'] = ps_label_post_groups($block['innerBlocks'], $cleaned, $counts);
+    }
+    unset($block);
+    return $blocks;
+}
+
+function ps_install_post_group_classes()
+{
+    $done = get_option('ps_post_group_classes_v1');
+    if ($done) {
+        return $done;
+    }
+    $cleanup = ps_cleanup_post_group_styles();
+    if (is_wp_error($cleanup)) {
+        return $cleanup;
+    }
+    global $wpdb;
+    $report = ['posts' => 0, 'green-post-block' => 0, 'orange-post-block' => 0];
+    $posts = $wpdb->get_results("SELECT ID, post_content FROM {$wpdb->posts} WHERE post_type = 'post'");
+    foreach ($posts as $post) {
+        $original = get_post_meta($post->ID, '_ps_before_group_style_cleanup_v1', true);
+        $cleaned = ps_cleaned_group_signatures(parse_blocks($original));
+        $counts = ['green-post-block' => 0, 'orange-post-block' => 0];
+        $blocks = ps_label_post_groups(parse_blocks($post->post_content), $cleaned, $counts);
+        if (!array_sum($counts)) {
+            continue;
+        }
+        $backup_key = '_ps_before_group_classes_v1';
+        if (!metadata_exists('post', $post->ID, $backup_key) &&
+            !add_post_meta($post->ID, $backup_key, wp_slash($post->post_content), true)) {
+            return new WP_Error('group_classes_backup', 'Could not back up post ' . $post->ID . '.');
+        }
+        $content = serialize_blocks($blocks);
+        if ($content !== $post->post_content) {
+            $updated = $wpdb->update($wpdb->posts, ['post_content' => $content],
+                ['ID' => $post->ID, 'post_content' => $post->post_content], ['%s'], ['%d', '%s']);
+            if ($updated !== 1) {
+                return new WP_Error('group_classes_failed', 'Could not label Groups in post ' . $post->ID . '.');
+            }
+            clean_post_cache($post->ID);
+        }
+        $report['posts']++;
+        $report['green-post-block'] += $counts['green-post-block'];
+        $report['orange-post-block'] += $counts['orange-post-block'];
+    }
+    update_option('ps_post_group_classes_v1', $report, false);
+    return $report;
+}
+
 add_action('admin_init', function () {
     if (!current_user_can('manage_options')) {
         return;
     }
-    $result = ps_cleanup_post_group_styles();
+    $result = ps_install_post_group_classes();
     if (is_wp_error($result)) {
         add_action('admin_notices', function () use ($result) {
             echo '<div class="notice notice-error"><p>' . esc_html($result->get_error_message()) . '</p></div>';

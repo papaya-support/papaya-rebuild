@@ -44,7 +44,17 @@ if(get_post($post)->post_content!==$saved)throw new Exception('Repeat cleanup ch
 $nested=parse_blocks('<!-- wp:group --><div class="wp-block-group">'.$gray.'</div><!-- /wp:group -->');
 $count=0;$nested=ps_clean_gray_post_groups($nested,$count);
 if($count!==1||isset($nested[0]['innerBlocks'][0]['attrs']['style']))throw new Exception('Nested Group cleanup failed');
-echo 'PASS: matching Group styles removed; child styles, other groups, pages, post fields preserved; backup exact; nested and repeat cleanup verified.';
+$labels=ps_install_post_group_classes();
+if(is_wp_error($labels))throw new Exception($labels->get_error_message());
+$labeled=parse_blocks(get_post($post)->post_content);
+if($labeled[0]['attrs']['className']!=='green-post-block'||$labeled[1]['attrs']['className']!=='orange-post-block')throw new Exception('Wrong Group classes');
+if(strpos($labeled[0]['innerHTML'],'green-post-block')===false||strpos($labeled[1]['innerHTML'],'orange-post-block')===false)throw new Exception('Wrapper classes missing');
+if($labeled[1]['attrs']['style']!==parse_blocks($other)[0]['attrs']['style'])throw new Exception('Orange styles changed');
+if(get_post($page)->post_content!==$gray)throw new Exception('Page class changed');
+$saved=get_post($post)->post_content;
+ps_install_post_group_classes();
+if(get_post($post)->post_content!==$saved)throw new Exception('Repeated labels changed content');
+echo 'PASS: Group cleanup and green/orange classes; content, child styles, other Group styles, pages, backups and repeat migration preserved.';
 
 `,
   });

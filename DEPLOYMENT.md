@@ -81,3 +81,5 @@ The Header logo update imports the existing bundled logo into Media Library and 
 ## Gray Group inline-style cleanup
 
 After deployment, open WordPress admin once as an administrator. The one-time cleanup scans Posts and removes the saved inline style attribute and Gutenberg `style` settings only from Group blocks with a `#f5f5f5` background. Nested Groups are included. Other blocks, child styles, pages, text, links, dates, and post statuses are preserved. Each changed post's original content is retained in `_ps_before_group_style_cleanup_v1` post metadata. The bundled source export is unchanged.
+
+The Group class update runs once on an administrator visit after deployment. Groups identified from the prior cleanup backups receive `green-post-block`; remaining Groups in Posts receive `orange-post-block`. Classes are stored in Gutenberg attributes and wrapper HTML. Existing styles and content are preserved, with pre-label content backed up in `_ps_before_group_classes_v1`. No CSS rules are changed by this update.
