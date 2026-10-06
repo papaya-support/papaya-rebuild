@@ -1136,6 +1136,12 @@ body.single-post .article-body .wp-block-group.orange-post-block {
   padding-bottom: 1.88rem;
   padding-left: 1.88rem;
 }
+body.single-post #main-content h2 {
+  color: var(--papaya-orange) !important;
+}
+body.single-post #main-content h3 {
+  color: var(--papaya-sage) !important;
+}
 .editor-heading-1 {
   font-family: Rubik, Inter, sans-serif;
   font-size: clamp(36px, 4.2vw, 56px);

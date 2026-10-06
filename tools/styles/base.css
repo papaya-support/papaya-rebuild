@@ -1096,6 +1096,14 @@ body.single-post .article-body .wp-block-group.orange-post-block {
   padding-left: 1.88rem;
 }
 
+/* Single-post heading colors, including headings inside styled Groups. */
+body.single-post #main-content h2 {
+  color: var(--papaya-orange) !important;
+}
+body.single-post #main-content h3 {
+  color: var(--papaya-sage) !important;
+}
+
 /* Editorial heading semantics do not alter their chosen visual hierarchy. */
 .editor-heading-1 {
   font-family: Rubik, Inter, sans-serif;
