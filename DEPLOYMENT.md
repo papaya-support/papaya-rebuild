@@ -77,3 +77,7 @@ After deploying this update, open WordPress admin once as an administrator. Site
 The migration runs once, retains menu assignments, and does not overwrite later editor changes. No manual ACF import is required.
 
 The Header logo update imports the existing bundled logo into Media Library and assigns it to Header → Header Content → Logo on the next administrator visit. It keeps the original image bytes and alt text, runs once, and preserves any logo already selected by an editor.
+
+## Gray Group inline-style cleanup
+
+After deployment, open WordPress admin once as an administrator. The one-time cleanup scans Posts and removes the saved inline style attribute and Gutenberg `style` settings only from Group blocks with a `#f5f5f5` background. Nested Groups are included. Other blocks, child styles, pages, text, links, dates, and post statuses are preserved. Each changed post's original content is retained in `_ps_before_group_style_cleanup_v1` post metadata. The bundled source export is unchanged.
