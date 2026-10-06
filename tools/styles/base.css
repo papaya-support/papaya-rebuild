@@ -1074,6 +1074,24 @@ body.single-post .article-body .wp-block-group {
   }
 }
 
+/* Orange callouts use CSS instead of saved inline block styles. */
+body.single-post .article-body .wp-block-group.orange-post-block {
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0.63rem;
+  border-bottom-left-radius: 0rem;
+  border-bottom-right-radius: 0.63rem;
+  border-left-style: solid;
+  border-left-color: #f48133;
+  border-left-width: 3px;
+  background-color: #feedda;
+  margin-top: var(--wp--preset--spacing--50);
+  margin-bottom: var(--wp--preset--spacing--50);
+  padding-top: 1.88rem;
+  padding-right: 1.88rem;
+  padding-bottom: 1.88rem;
+  padding-left: 1.88rem;
+}
+
 /* Editorial heading semantics do not alter their chosen visual hierarchy. */
 .editor-heading-1 {
   font-family: Rubik, Inter, sans-serif;

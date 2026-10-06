@@ -54,7 +54,19 @@ if(get_post($page)->post_content!==$gray)throw new Exception('Page class changed
 $saved=get_post($post)->post_content;
 ps_install_post_group_classes();
 if(get_post($post)->post_content!==$saved)throw new Exception('Repeated labels changed content');
-echo 'PASS: Group cleanup and green/orange classes; content, child styles, other Group styles, pages, backups and repeat migration preserved.';
+$orange_before=get_post($post)->post_content;
+$green_before=serialize_block(parse_blocks($orange_before)[0]);
+$orange_result=ps_install_orange_post_group_styles();
+if(is_wp_error($orange_result))throw new Exception($orange_result->get_error_message());
+$orange_after=parse_blocks(get_post($post)->post_content);
+if(isset($orange_after[1]['attrs']['style'])||strpos($orange_after[1]['innerHTML'],'background-color')!==false)throw new Exception('Orange style remains');
+if(serialize_block($orange_after[0])!==$green_before)throw new Exception('Green Group changed');
+if(strpos(serialize_block($orange_after[1]),'<p style="color:red">')===false)throw new Exception('Orange child style changed');
+if(get_post_meta($post,'_ps_before_orange_group_cleanup_v1',true)!==$orange_before)throw new Exception('Orange backup mismatch');
+if(get_post($page)->post_content!==$gray)throw new Exception('Page changed');
+$saved=get_post($post)->post_content;ps_install_orange_post_group_styles();
+if(get_post($post)->post_content!==$saved)throw new Exception('Orange repeat changed content');
+echo 'PASS: gray cleanup, Group classification, orange inline-style cleanup, backups, child styles, green Groups, pages, repeat runs.';
 
 `,
   });
