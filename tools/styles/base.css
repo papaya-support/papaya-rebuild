@@ -1037,6 +1037,10 @@ body.single-post .article-body .wp-block-group {
     margin-top: 24px;
   }
 
+}
+
+/* Shared button treatment inside and outside single-post Group blocks. */
+body.single-post .article-body {
   & .wp-block-buttons {
     justify-content: flex-start;
     gap: 16px;
