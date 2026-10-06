@@ -1008,13 +1008,12 @@ h3 {
   }
 }
 
-/* Single-post Group callouts follow the XD CTA treatment.
-   Important declarations override the imported blocks' saved inline styles. */
+/* Single-post Group callouts follow the XD CTA treatment. */
 body.single-post .article-body .wp-block-group {
-  background-color: var(--papaya-green) !important;
+  background-color: var(--papaya-green);
   color: #161616;
-  border-radius: 0 !important;
-  padding: clamp(32px, 5vw, 64px) !important;
+  border-radius: 0;
+  padding: clamp(32px, 5vw, 64px);
   gap: 24px;
   text-align: left;
 
