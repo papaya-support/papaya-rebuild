@@ -3,6 +3,9 @@
 defined('ABSPATH') || exit();
 
 $args = ps_section_layout('statistics', $args ?? []);
+if (!empty($args['skip'])) {
+    return;
+}
 
 ?>
 <section class="<?php echo esc_attr($args['class']); ?>">
@@ -10,6 +13,7 @@ $args = ps_section_layout('statistics', $args ?? []);
         <?php get_template_part('template-parts/components/content-items', null, [
             'items' => $args['before'],
         ]); ?>
+        <?php if (!empty($args['stats'])): ?>
         <div class="grid grid-three stats">
             <?php foreach ($args['stats'] as $stat): ?>
             <div class="stat">
@@ -17,6 +21,7 @@ $args = ps_section_layout('statistics', $args ?? []);
             </div>
             <?php endforeach; ?>
         </div>
+        <?php endif; ?>
         <?php get_template_part('template-parts/components/content-items', null, [
             'items' => $args['after'],
         ]); ?>

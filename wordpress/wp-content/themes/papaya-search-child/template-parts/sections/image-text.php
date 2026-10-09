@@ -3,6 +3,9 @@
 defined('ABSPATH') || exit();
 
 $args = ps_section_layout('image-text', $args ?? []);
+if (!empty($args['skip'])) {
+    return;
+}
 
 ?>
 <section class="<?php echo esc_attr($args['class'] ?? 'section'); ?>">
@@ -13,7 +16,7 @@ $args = ps_section_layout('image-text', $args ?? []);
         ]); ?>
     </div>
     <?php endif; ?>
-    <div class="container split ">
+    <div class="container<?php echo count($args['columns']) > 1 ? ' split' : ''; ?>">
         <?php foreach ($args['columns'] ?? [] as $column): ?>
         <div class="<?php echo esc_attr($column['class']); ?>">
             <?php if (!empty($column['wrapper'])): ?><div class="<?php echo esc_attr($column['wrapper']); ?>"><?php endif; ?>

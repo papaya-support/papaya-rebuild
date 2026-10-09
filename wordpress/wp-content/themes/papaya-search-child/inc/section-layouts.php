@@ -1347,5 +1347,5 @@ function ps_section_layout($type, $args)
             }
             break;
     }
-    return $args;
+    return ps_live_service_section_args($args, $type);
 }

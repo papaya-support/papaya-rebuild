@@ -3,6 +3,9 @@
 defined('ABSPATH') || exit();
 
 $args = ps_section_layout('content', $args ?? []);
+if (!empty($args['skip'])) {
+    return;
+}
 
 ?>
 <section class="<?php echo esc_attr($args['class'] ?? 'section'); ?>">

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" style="enable-background:new 0 0 288 288;" xml:space="preserve" viewBox="24 66.5 232.4 155">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#F58233;}
+</style>
+<g id="Page-1">
+	<g id="Core" transform="translate(-126.000000, -46.000000)">
+		<g id="backup" transform="translate(126.000000, 46.000000)">
+			<path id="Shape" class="st0" d="M211.9,124.6c-6.8-32.9-35.8-58.1-71.7-58.1c-28.1,0-52.3,15.5-63.9,38.8     c-30,3.9-52.3,28.1-52.3,58.1c0,32,26.2,58.1,58.1,58.1H208c27.1,0,48.4-21.3,48.4-48.4C256.4,147.9,236.1,126.6,211.9,124.6     L211.9,124.6z M159.5,153.7v38.8h-38.8v-38.8H91.7l48.4-48.4l48.4,48.4H159.5L159.5,153.7z"></path>
+		</g>
+	</g>
+</g>
+</svg>

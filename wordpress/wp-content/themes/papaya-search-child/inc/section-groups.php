@@ -88,6 +88,16 @@ function ps_install_section_groups()
             $sub_position = 0;
             foreach ($section['fields'] as $legacy_name => $name) {
                 $field = acf_get_field('field_' . $legacy_name);
+                // Additional live-service FAQs were introduced after the original schema.
+                if (!$field && preg_match('/^search_engine_marketing_faq_(question|answer)_([7-9])$/', $legacy_name, $match)) {
+                    $field = acf_update_field([
+                        'key' => 'field_' . $legacy_name,
+                        'name' => $name,
+                        'label' => ucfirst($match[1]) . ' ' . $match[2],
+                        'type' => $match[1] === 'question' ? 'text' : 'wysiwyg',
+                        'parent' => $parent['ID'],
+                    ]);
+                }
                 if (!$field) {
                     return new WP_Error('section_field_missing', 'Missing field ' . $legacy_name);
                 }

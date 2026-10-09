@@ -336,6 +336,12 @@ return [
                 'search_engine_marketing_49292f5e4eed_answer' => 'answer_5',
                 'search_engine_marketing_6e5798b9f4ea' => 'question_6',
                 'search_engine_marketing_6e5798b9f4ea_answer' => 'answer_6',
+                'search_engine_marketing_faq_question_7' => 'question_7',
+                'search_engine_marketing_faq_answer_7' => 'answer_7',
+                'search_engine_marketing_faq_question_8' => 'question_8',
+                'search_engine_marketing_faq_answer_8' => 'answer_8',
+                'search_engine_marketing_faq_question_9' => 'question_9',
+                'search_engine_marketing_faq_answer_9' => 'answer_9',
             ],
         ],
         [
