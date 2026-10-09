@@ -30,6 +30,8 @@ try {
 require '/wordpress/wp-load.php';
 wp_set_current_user(1);
 ps_install_section_groups();
+$updated=ps_update_service_template_content();
+if(is_wp_error($updated))throw new Exception($updated->get_error_message());
 for($i=0;$i<9;$i++){
 $result=ps_service_import_step();
 if(is_wp_error($result))throw new Exception($result->get_error_message());
@@ -84,6 +86,18 @@ echo wp_json_encode($result);
     )
       throw Error(`Render failed: ${route}`);
     if (html.includes("Fatal error")) throw Error(`PHP error: ${route}`);
+    for (const section of ["benefits", "google-ads", "closing-cta"]) {
+      if (!html.includes(`section-search-engine-marketing-${section}`))
+        throw Error(`Missing XD section ${section}: ${route}`);
+    }
+    const banner =
+      html.match(
+        /<section class="section-search-engine-marketing-banner[\s\S]*?<\/section>/,
+      )?.[0] || "";
+    if (!banner.includes("df292e83c9c5368e3616147b1df1019d"))
+      throw Error(`Banner is not the XD placeholder: ${route}`);
+    if (html.includes("section-search-engine-marketing-microsoft-ads"))
+      throw Error(`Removed section returned: ${route}`);
   }
   console.log(
     "PASS: 9 local Services pages, ACF values, media, all FAQs, template assignment, repeat import, and HTTP rendering.",

@@ -17,7 +17,7 @@ foreach (ps_section_groups()['search-engine-marketing'] as $section) {
 if (!$questions) {
     return;
 }
-$has_image = ps_value('search_engine_marketing_image_ba13013ff2') || !get_post_meta(get_the_ID(), '_ps_live_service_source', true);
+$has_image = true; // Preserve the XD image column, using its placeholder until an image is selected.
 ?>
 <section class="section-search-engine-marketing-faqs section">
     <div class="container">

@@ -5,7 +5,11 @@ defined('ABSPATH') || exit();
 function ps_service_import_data()
 {
     static $data;
-    return $data ??= require get_stylesheet_directory() . '/import-data/service-pages.php';
+    if (!isset($data)) {
+        $data = require get_stylesheet_directory() . '/import-data/service-pages.php';
+        $data['pages'] = array_map('ps_service_template_content', $data['pages']);
+    }
+    return $data;
 }
 
 function ps_service_import_media($url)
@@ -135,28 +139,13 @@ function ps_service_import_step()
             continue;
         }
         $id = $state['ids'][$page['path']];
-        foreach (ps_section_groups()['search-engine-marketing'] as $section) {
-            $values = [];
-            foreach ($section['fields'] as $legacy => $name) {
-                $value = $page['groups'][$section['name']][$name] ?? '';
-                if ($section['name'] === 'section_faqs' && preg_match('/^(question|answer)(?:_(\d+))?$/', $name, $match)) {
-                    $index = isset($match[2]) ? (int) $match[2] - 1 : 0;
-                    $value = $page['faqs'][$index][$match[1]] ?? '';
-                }
-                if ($name === 'image' && $value) {
-                    $value = ps_service_import_media($value);
-                } elseif (is_string($value) && str_contains($value, '<')) {
-                    $value = ps_service_import_html($value, $state['ids']);
-                }
-                if (is_wp_error($value)) {
-                    return $value;
-                }
-                $values['field_' . $legacy] = $value;
-            }
-            update_field('field_ps_section_search_engine_marketing_' . $section['name'], $values, $id);
+        $saved = ps_save_service_fields($page, $id, $state['ids']);
+        if (is_wp_error($saved)) {
+            return $saved;
         }
         update_post_meta($id, '_wp_page_template', 'page-templates/search-engine-marketing.php');
         update_post_meta($id, '_ps_live_service_source', $page['source']);
+        update_post_meta($id, '_ps_service_xd_template_v2', 1);
         $result = wp_update_post(['ID' => $id, 'post_status' => 'publish'], true);
         if (is_wp_error($result)) {
             return $result;
@@ -220,7 +209,10 @@ function ps_live_service_section_args($args, $type)
     }
     $filter = function ($items) {
         return array_values(array_filter($items, function ($item) {
-            return !empty($item['field']) && ps_field_value($item['field']) !== '';
+            return !empty($item['field']) && (
+                ps_field_value($item['field']) !== '' ||
+                (($item['type'] ?? '') === 'image' && !empty(ps_default_content($item['field'])['asset']))
+            );
         }));
     };
     foreach (['items', 'before', 'after', 'heading'] as $key) {
@@ -235,9 +227,45 @@ function ps_live_service_section_args($args, $type)
         unset($column);
         $args['columns'] = array_values(array_filter($args['columns'], fn($column) => !empty($column['items'])));
     }
+    if ($type === 'image-text' && !empty($args['columns'])) {
+        $has_copy = false;
+        foreach ($args['columns'] as $column) {
+            foreach ($column['items'] as $item) {
+                $has_copy = $has_copy || ($item['type'] ?? '') !== 'image';
+            }
+        }
+        if (!$has_copy) {
+            $args['columns'] = [];
+        }
+    }
     if (isset($args['stats'])) {
         $args['stats'] = array_values(array_filter(array_map($filter, $args['stats'])));
     }
     $args['skip'] = !array_filter(array_intersect_key($args, array_flip(['items', 'before', 'after', 'heading', 'columns', 'stats'])));
     return $args;
+}
+
+function ps_save_service_fields($page, $id, $ids)
+{
+    foreach (ps_section_groups()['search-engine-marketing'] as $section) {
+        $values = [];
+        foreach ($section['fields'] as $legacy => $name) {
+            $value = $page['groups'][$section['name']][$name] ?? '';
+            if ($section['name'] === 'section_faqs' && preg_match('/^(question|answer)(?:_(\d+))?$/', $name, $match)) {
+                $index = isset($match[2]) ? (int) $match[2] - 1 : 0;
+                $value = $page['faqs'][$index][$match[1]] ?? '';
+            }
+            if ($name === 'image' && $value) {
+                $value = ps_service_import_media($value);
+            } elseif (is_string($value) && str_contains($value, '<')) {
+                $value = ps_service_import_html($value, $ids);
+            }
+            if (is_wp_error($value)) {
+                return $value;
+            }
+            $values['field_' . $legacy] = $value;
+        }
+        update_field('field_ps_section_search_engine_marketing_' . $section['name'], $values, $id);
+    }
+    return true;
 }

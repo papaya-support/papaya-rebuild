@@ -354,7 +354,7 @@ h3 {
   white-space: pre-line;
 }
 .ps-menu a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .ps-menu .sub-menu {
   padding-left: 16px;
@@ -511,6 +511,10 @@ h3 {
   & h3 {
     margin-bottom: 14px;
   }
+}
+.section-search-engine-marketing-benefits .stat + .stat {
+  border-left: 0;
+  padding-left: 0;
 }
 .page-home .stats h3 {
   text-transform: uppercase;
