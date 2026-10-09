@@ -48,7 +48,7 @@ function ps_route($slug)
 }
 function ps_destinations()
 {
-    return [
+    return array_map('ps_local_service_url', [
         'Home' => ps_route('home'),
         'Services' => ps_route('services'),
         'Case Studies' => ps_route('case-studies'),
@@ -65,5 +65,5 @@ function ps_destinations()
         'Contact Us' => ps_value('ps_contact_url', 'tel:+14044259775', 'shared'),
         'Privacy Policy' => 'https://papayasearch.com/privacy-policy/',
         'Terms & Conditions' => 'https://papayasearch.com/terms-and-conditions/',
-    ];
+    ]);
 }

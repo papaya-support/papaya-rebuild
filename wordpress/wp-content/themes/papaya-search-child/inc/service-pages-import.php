@@ -166,6 +166,7 @@ function ps_service_import_step()
         clean_post_cache($id);
         if (count($state['completed']) === count($data['pages'])) {
             flush_rewrite_rules(false);
+            ps_install_service_navigation();
         }
         return $state;
     }

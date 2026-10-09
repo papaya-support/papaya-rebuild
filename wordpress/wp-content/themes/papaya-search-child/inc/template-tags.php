@@ -100,7 +100,7 @@ function ps_content_html($key)
         $items = preg_split('/\s*•\s*/u', trim(esc_html($value)), -1, PREG_SPLIT_NO_EMPTY);
         return '<ul><li>' . implode('</li><li>', array_map('trim', $items)) . '</li></ul>';
     }
-    return ps_article_headings(wpautop($html));
+    return ps_local_service_links(ps_article_headings(wpautop($html)));
 }
 function ps_text($key, $tag = 'p', $class = '')
 {
@@ -143,7 +143,7 @@ function ps_booking_url()
 function ps_button($key, $default_url, $class = '', $context = '')
 {
     $default = ps_default_content($key);
-    $url = ps_value($key . '_url', '', $default['scope'] ?? 'page') ?: $default_url;
+    $url = ps_local_service_url(ps_value($key . '_url', '', $default['scope'] ?? 'page') ?: $default_url);
     if (ps_field_value($key) === '') {
         return;
     }

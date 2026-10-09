@@ -142,6 +142,20 @@ function ps_render_menu($location, $mobile = false)
         '" aria-label="' .
         esc_attr($labels[$location]) .
         '">';
+    // This header has its own accessible submenu controls in site.js.
+    // Temporarily exclude Astra's controls while rendering our custom navigation.
+    $astra_filters = ['nav_menu_item_title' => 'astra_dropdown_icon_to_menu_link'];
+    if (class_exists('Astra_Mobile_Header')) {
+        $astra_filters['walker_nav_menu_start_el'] = [Astra_Mobile_Header::get_instance(), 'toggle_button'];
+    }
+    $removed = [];
+    foreach ($astra_filters as $hook => $callback) {
+        $priority = has_filter($hook, $callback);
+        if ($priority !== false) {
+            remove_filter($hook, $callback, $priority);
+            $removed[] = [$hook, $callback, $priority];
+        }
+    }
     wp_nav_menu([
         'theme_location' => $location,
         'container' => false,
@@ -150,6 +164,9 @@ function ps_render_menu($location, $mobile = false)
         'fallback_cb' => false,
         'depth' => 0,
     ]);
+    foreach ($removed as [$hook, $callback, $priority]) {
+        add_filter($hook, $callback, $priority, 4);
+    }
     echo '</nav>';
 }
 // Social labels remain available to assistive technology; CSS supplies the compact symbols.

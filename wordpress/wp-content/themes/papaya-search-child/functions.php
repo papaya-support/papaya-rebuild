@@ -92,3 +92,5 @@ require_once __DIR__ . '/inc/site-content-parts.php';
 require_once __DIR__ . '/inc/post-group-cleanup.php';
 
 require_once __DIR__ . '/inc/service-pages-import.php';
+
+require_once __DIR__ . '/inc/service-navigation.php';
