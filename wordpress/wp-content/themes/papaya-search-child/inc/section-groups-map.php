@@ -138,6 +138,7 @@ return [
             'template' => 'content',
             'fields' => [
                 'home_8c4225c0ac7d' => 'heading',
+                'home_introduction_description' => 'description',
             ],
         ],
         [

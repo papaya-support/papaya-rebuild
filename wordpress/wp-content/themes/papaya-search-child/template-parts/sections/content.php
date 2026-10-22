@@ -59,6 +59,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
 <?php if ($variant === 'home-introduction'):
     $section_introduction = function_exists('get_field') ? (get_field('section_introduction', get_the_ID(), false) ?: []) : [];
     $heading = ps_section_value($section_introduction, 'heading', 'home_8c4225c0ac7d');
+    $description = metadata_exists('post', get_the_ID(), 'section_introduction_description')
+        ? ps_section_value($section_introduction, 'description', 'home_introduction_description')
+        : ps_field_value('home_d92c033cd119');
     ?>
     <!-- Home Introduction -->
     <?php if (!$is_imported_service || ($heading !== '')): ?>
@@ -66,6 +69,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
             <div class="container center narrow">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="home_8c4225c0ac7d"><?php echo ps_section_text($heading, 'home_8c4225c0ac7d', 'h2', ' is-uppercase'); ?></h2>
+                <?php endif; ?>
+                <?php if ($description !== ''): ?>
+                    <div class="prose home-introduction-copy" data-field="home_introduction_description"><?php echo wp_kses_post(ps_content_html('home_d92c033cd119', $description)); ?></div>
                 <?php endif; ?>
             </div>
         </section>

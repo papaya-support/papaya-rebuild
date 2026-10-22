@@ -148,6 +148,11 @@ h3 {
     @apply tw:uppercase;
   }
 }
+.home-introduction-copy {
+  max-width: 80ch;
+  margin: 24px auto 0;
+  text-align: left;
+}
 .split {
   @apply tw:grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
