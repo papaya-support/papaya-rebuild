@@ -59,9 +59,9 @@ function ps_sanitize_rich($html)
     return $processor->get_updated_html();
 }
 /** Safe phrasing content for headings, labels and buttons (no nested block markup). */
-function ps_inline_content($key)
+function ps_inline_content($key, $value = null)
 {
-    $value = ps_field_value($key);
+    $value ??= ps_field_value($key);
     $value = preg_replace('/<\/(?:p|div|h[1-6]|li)>|<br\s*\/?>/i', ' ', $value);
     $value = wp_kses($value, [
         'strong' => [],
@@ -86,9 +86,9 @@ function ps_plain_field($key)
         get_bloginfo('charset'),
     );
 }
-function ps_content_html($key)
+function ps_content_html($key, $value = null)
 {
-    $value = str_replace(["\r\n", "\r"], "\n", ps_field_value($key));
+    $value = str_replace(["\r\n", "\r"], "\n", $value ?? ps_field_value($key));
     $default = ps_default_content($key);
     $html =
         $value === str_replace(["\r\n", "\r"], "\n", $default['text'] ?? '')
@@ -163,10 +163,10 @@ function ps_button($key, $default_url, $class = '', $context = '')
         ps_inline_content($key) .
         '</a>';
 }
-function ps_image($key, $class = '', $eager = false)
+function ps_image($key, $class = '', $eager = false, $value = null)
 {
     $default = ps_default_content($key);
-    $value = ps_value($key, '', $default['scope'] ?? 'page');
+    $value ??= ps_value($key, '', $default['scope'] ?? 'page');
     if (
         get_post_type() === 'case_study' &&
         str_starts_with($key, 'case_study_detail_image_') &&

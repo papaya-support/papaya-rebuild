@@ -98,7 +98,7 @@ get_template_part('template-parts/sections/content', null, [
 ]);
 ```
 
-Use `image-text.php` for ordered media/copy columns, `post-grid.php` for linked cards, and `service-grid.php` for service cards. The common `components/content-items.php` handles ACF text, image and button output through the existing escaping and formatting helpers. Styling stays in CSS. ACF field names, database groups and values are unchanged, so this refactor needs no database migration. The explicit `inc/acf-editor-order.php` map preserves field order independently of template argument order.
+Use `image-text.php` for ordered media/copy columns, `post-grid.php` for linked cards, and `service-grid.php` for service cards. Each section reads its ACF Group with `get_field()` and renders explicit HTML in the same file. Shared templates keep their presentation variants locally; there is no central layout map or item-type renderer. `inc/section-content.php` contains only value compatibility, safe formatting, and accessible-label helpers. Styling stays in CSS. ACF field names, database groups and values are unchanged, so this refactor needs no database migration. The explicit `inc/acf-editor-order.php` map preserves field order independently of template argument order.
 
 ### Dynamic Blog (2.4.0)
 The Blog page keeps its ACF hero and introduction. Cards now come from published WordPress Posts, newest first, with featured images, titles, excerpts, permalinks and assigned Categories. Manage them under Posts → All Posts and Posts → Categories. Categories with published content appear automatically in the filter bar. Category links and nine-post pagination work without JavaScript; changing category resets pagination. Parent category filters include descendants. Posts without featured images omit the image, and empty filters show an empty-state message.
@@ -143,7 +143,7 @@ After deploying, visit WordPress admin once to refresh the original imported her
 
 ### Page and section responsibilities
 
-The eight page templates and `single.php` contain only the WordPress loop, main landmark, and ordered `get_template_part()` calls. A short `variant` identifies the section's page-specific ACF mapping; the reusable section file owns its HTML layout, with presentation bindings centralized in `inc/section-layouts.php`. For example, Home calls the shared `image-text` section for its search strategy, search trends, and closing CTA. The field names, saved content, shared rendering helpers, CSS classes, and section order remain unchanged.
+The eight page templates and `single.php` contain only the WordPress loop, main landmark, and ordered `get_template_part()` calls. A short `variant` identifies the section's page-specific ACF mapping; the reusable section file owns its HTML layout, with its ACF Group reads, named variables, conditions, and explicit HTML together in that section file. For example, Home calls the shared `image-text` section for its search strategy, search trends, and closing CTA. The field names, saved content, shared rendering helpers, CSS classes, and section order remain unchanged.
 
 `template-parts/sections/blog-listing.php` owns the Blog query and passes the same listing context to its filters and post grid. Native post featured-image and body markup live in `article-image.php` and `article-body.php`. Shared sections still accept explicit arguments for existing callers.
 
@@ -169,7 +169,7 @@ Open the WordPress dashboard as an administrator after deploying this update. A 
 
 Edit section content on its page or Case Study edit screen. Group children have readable names such as `image`, `heading`, `description` and `button_url`. Existing field types, keys and descriptive labels are preserved, including plain text for short labels, WYSIWYG for body copy and Media Library images. Definitions remain editable under ACF → Field Groups after migration.
 
-`inc/section-groups-map.php` maps legacy field identifiers to Group children. Shared content/image helpers read the Group first and retain legacy fallbacks until migration has run. Intentionally cleared Group values stay empty. `inc/section-layouts.php` defines presentation variants without duplicating section markup or changing CSS. Keep Group/child names stable when editing definitions because templates use those bindings.
+`inc/section-groups-map.php` maps legacy field identifiers to Group children. Shared content/image helpers read the Group first and retain legacy fallbacks until migration has run. Intentionally cleared Group values stay empty. Shared section templates select their variants locally and render explicit HTML; `inc/section-content.php` provides formatting and legacy-value compatibility, not layout configuration. Keep Group/child names stable when editing definitions because templates use those bindings.
 
 The migration preserves original metadata and stores original definitions in the non-autoloaded `ps_section_groups_backup_v1` option. The 36 obsolete static Case Study card fields are retained in an inactive **Case Studies — Archived Static Cards** group; the live listing continues to query Case Study posts. The completion flag `ps_section_groups_v1` prevents subsequent dashboard visits from overwriting edits.
 

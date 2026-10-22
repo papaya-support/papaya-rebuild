@@ -201,50 +201,7 @@ add_action('wp_ajax_ps_import_service_page', function () {
     wp_send_json_success($result);
 });
 
-/** Empty source sections should not display SEM demo copy or placeholder columns. */
-function ps_live_service_section_args($args, $type)
-{
-    if (!get_post_meta(get_the_ID(), '_ps_live_service_source', true)) {
-        return $args;
-    }
-    $filter = function ($items) {
-        return array_values(array_filter($items, function ($item) {
-            return !empty($item['field']) && (
-                ps_field_value($item['field']) !== '' ||
-                (($item['type'] ?? '') === 'image' && !empty(ps_default_content($item['field'])['asset']))
-            );
-        }));
-    };
-    foreach (['items', 'before', 'after', 'heading'] as $key) {
-        if (isset($args[$key])) {
-            $args[$key] = $filter($args[$key]);
-        }
-    }
-    if (isset($args['columns'])) {
-        foreach ($args['columns'] as &$column) {
-            $column['items'] = $filter($column['items']);
-        }
-        unset($column);
-        $args['columns'] = array_values(array_filter($args['columns'], fn($column) => !empty($column['items'])));
-    }
-    if ($type === 'image-text' && !empty($args['columns'])) {
-        $has_copy = false;
-        foreach ($args['columns'] as $column) {
-            foreach ($column['items'] as $item) {
-                $has_copy = $has_copy || ($item['type'] ?? '') !== 'image';
-            }
-        }
-        if (!$has_copy) {
-            $args['columns'] = [];
-        }
-    }
-    if (isset($args['stats'])) {
-        $args['stats'] = array_values(array_filter(array_map($filter, $args['stats'])));
-    }
-    $args['skip'] = !array_filter(array_intersect_key($args, array_flip(['items', 'before', 'after', 'heading', 'columns', 'stats'])));
-    return $args;
-}
-
+/** Save imported copy into the existing section Groups, including intentionally empty fields. */
 function ps_save_service_fields($page, $id, $ids)
 {
     foreach (ps_section_groups()['search-engine-marketing'] as $section) {

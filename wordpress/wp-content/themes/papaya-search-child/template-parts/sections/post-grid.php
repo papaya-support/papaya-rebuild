@@ -1,32 +1,44 @@
 <?php
-/** Blog, case-study and related-post cards share the same accessible link/image structure. */
+/** Shared post-grid sections: read ACF groups here and keep their markup together. */
 defined('ABSPATH') || exit();
-
-$args = ps_section_layout('post-grid', $args ?? []);
-
+$variant = $args['variant'] ?? '';
 ?>
-<section class="<?php echo esc_attr($args['class']); ?>">
-    <?php if (!empty($args['heading'])): ?><div class="container">
-        <?php get_template_part('template-parts/components/content-items', null, [
-            'items' => $args['heading'],
-        ]); ?>
-        <?php endif; ?>
-        <div class="<?php echo esc_attr($args['grid_class']); ?>">
-            <?php foreach ($args['cards'] as $card):
-                $tag = ($card['tag'] ?? '') === 'h3' ? 'h3' : 'h2'; ?>
-            <article class="post-card" <?php if (
-    !empty($card['category'])
-): ?> data-category="<?php echo esc_attr(ps_value($card['category'], 'SEO')); ?>" <?php endif; ?>>
-                <?php ps_image($card['image']); ?>
-                <<?php echo $tag; ?>><a data-field="<?php echo esc_attr($card['title']); ?>" href="<?php echo esc_url(ps_value($card['title'] . '_url', '') ?: $card['url']); ?>"><?php echo ps_inline_content($card['title']); ?></a></<?php echo $tag; ?>>
-                <?php if (!empty($card['excerpt'])) {
-                    ps_text($card['excerpt'], 'div', 'prose ');
-                } ?>
-            </article>
-            <?php
-            endforeach; ?>
+<?php if ($variant === 'blog-detail-related-posts'):
+    $section_related_posts = function_exists('get_field') ? (get_field('section_related_posts', get_the_ID(), false) ?: []) : [];
+    $description = ps_section_value($section_related_posts, 'description', 'blog_detail_4d181476ee16');
+    $button_url = ps_section_value($section_related_posts, 'button_url', 'blog_detail_4d181476ee16_url');
+    $image = ps_section_value($section_related_posts, 'image', 'blog_detail_image_e66cb91b30');
+    $description_2 = ps_section_value($section_related_posts, 'description_2', 'blog_detail_8c5ed5ef437b');
+    $button_url_2 = ps_section_value($section_related_posts, 'button_url_2', 'blog_detail_8c5ed5ef437b_url');
+    $image_2 = ps_section_value($section_related_posts, 'image_2', 'blog_detail_image_e850bb0d10');
+    $description_3 = ps_section_value($section_related_posts, 'description_3', 'blog_detail_1fab6576ba8d');
+    $button_url_3 = ps_section_value($section_related_posts, 'button_url_3', 'blog_detail_1fab6576ba8d_url');
+    $image_3 = ps_section_value($section_related_posts, 'image_3', 'blog_detail_image_e6018f7e64');
+    $heading = ps_section_value($section_related_posts, 'heading', 'blog_detail_1624e4d9861e');
+    ?>
+    <!-- Blog Detail Related Posts -->
+    <section class="section-blog-detail-related-posts section related-posts">
+        <div class="container">
+            <?php if ($heading !== ''): ?>
+                <h2 class="section-title" data-field="blog_detail_1624e4d9861e"><?php echo ps_section_text($heading, 'blog_detail_1624e4d9861e', 'h2', 'section-title'); ?></h2>
+            <?php endif; ?>
+            <div class="grid grid-three">
+                <article class="post-card">
+                    <?php ps_image('blog_detail_image_e66cb91b30', '', false, $image); ?>
+                    <h3><a data-field="blog_detail_4d181476ee16" href="<?php echo esc_url($button_url ?: ps_route('blog-detail')); ?>"><?php echo ps_inline_content('blog_detail_4d181476ee16', $description); ?></a></h3>
+
+                </article>
+                <article class="post-card">
+                    <?php ps_image('blog_detail_image_e850bb0d10', '', false, $image_2); ?>
+                    <h3><a data-field="blog_detail_8c5ed5ef437b" href="<?php echo esc_url($button_url_2 ?: ps_route('blog-detail')); ?>"><?php echo ps_inline_content('blog_detail_8c5ed5ef437b', $description_2); ?></a></h3>
+
+                </article>
+                <article class="post-card">
+                    <?php ps_image('blog_detail_image_e6018f7e64', '', false, $image_3); ?>
+                    <h3><a data-field="blog_detail_1fab6576ba8d" href="<?php echo esc_url($button_url_3 ?: ps_route('blog-detail')); ?>"><?php echo ps_inline_content('blog_detail_1fab6576ba8d', $description_3); ?></a></h3>
+
+                </article>
+            </div>
         </div>
-        <?php if (!empty($args['heading'])): ?>
-    </div>
-    <?php endif; ?>
-</section>
+    </section>
+<?php endif; ?>
