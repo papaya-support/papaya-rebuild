@@ -113,3 +113,5 @@ require_once __DIR__ . '/inc/seo-approach.php';
 require_once __DIR__ . '/inc/testimonial-fields.php';
 
 require_once __DIR__ . '/inc/service-slugs.php';
+
+require_once __DIR__ . '/inc/seo-editor.php';
