@@ -29,17 +29,19 @@ $button = $data['button'] ?? [];
 $show_button = is_array($button) && !empty($button['url']) && !empty($button['title']);
 if ($heading === '' && $intro === '' && $quote === '' && !$show_button) return;
 ?>
-<section class="section-<?php echo esc_attr($variant); ?> section <?php echo $case ? 'section-tight' : 'green'; ?>">
-    <div class="container <?php echo $case ? 'cream testimonial-panel' : ''; ?>">
+<section class="section-<?php echo esc_attr($variant); ?>">
         <?php if ($heading !== '' || $intro !== ''): ?>
-            <div class="testimonial-intro center">
+            <div class="container testimonial-intro center">
                 <?php if ($heading !== ''): ?><h2><?php echo esc_html($heading); ?></h2><?php endif; ?>
                 <?php if ($intro !== ''): ?><div class="prose"><?php echo wp_kses_post(wpautop($intro)); ?></div><?php endif; ?>
             </div>
         <?php endif; ?>
-        <?php if ($quote !== ''): ?>
-            <div class="testimonial">
-                <?php if (!$case): ?><img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true"><?php endif; ?>
+        <?php if ($quote !== '' || $show_button): ?>
+        <div class="section <?php echo $case ? 'section-tight' : 'green'; ?>">
+            <div class="container testimonial <?php echo $case ? 'cream testimonial-panel' : ''; ?>">
+                <?php if (!$case && $quote !== ''): ?><img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true"><?php endif; ?>
+                <div class="testimonial-content">
+                <?php if ($quote !== ''): ?>
                 <blockquote>
                     <?php if ($mark !== ''): ?><span class="quote-mark" aria-hidden="true"><?php echo esc_html($mark); ?></span><?php endif; ?>
                     <div class="prose"><?php echo wp_kses_post(wpautop($quote)); ?></div>
@@ -47,10 +49,12 @@ if ($heading === '' && $intro === '' && $quote === '' && !$show_button) return;
                         <cite class="is-uppercase"><?php echo esc_html(($seo ? '– ' : '') . implode(', ', array_filter([$client, $business], static fn($value) => $value !== ''))); ?></cite>
                     <?php endif; ?>
                 </blockquote>
-            </div>
-        <?php endif; ?>
+                <?php endif; ?>
         <?php if ($show_button): ?>
             <div class="testimonial-action center"><a class="button" href="<?php echo esc_url($button['url']); ?>"<?php if (($button['target'] ?? '') === '_blank'): ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php echo esc_html($button['title']); ?></a></div>
         <?php endif; ?>
-    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
 </section>

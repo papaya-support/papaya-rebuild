@@ -1381,7 +1381,7 @@ body.single-post #main-content h3 {
 .testimonial-intro {
   max-width: 960px;
   margin-inline: auto;
-  margin-bottom: 48px;
+  margin-bottom: var(--section-space);
   & .prose { margin-top: 24px; }
 }
 .section-seo-testimonial + .section-tight { padding-top: var(--section-space); }
@@ -1423,3 +1423,5 @@ body.single-post #main-content h3 {
 }
 
 .testimonial-action { margin-top: 32px; }
+
+.testimonial-content { flex: 1; min-width: 0; }
