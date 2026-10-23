@@ -1,86 +1,56 @@
 <?php
-/** Shared testimonial sections: read ACF groups here and keep their markup together. */
+/** Shared testimonial layout with optional introduction and button. */
 defined('ABSPATH') || exit();
 $variant = $args['variant'] ?? '';
+$seo = $variant === 'seo-testimonial';
+$case = $variant === 'case-study-detail-testimonial';
+if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($seo && !is_page('seo'))) return;
+$data = function_exists('get_field') ? (get_field($seo ? 'field_ps_seo_testimonial' : ($case ? 'field_ps_section_case_study_detail_section_testimonial' : 'field_ps_section_home_section_testimonial')) ?: []) : [];
+$prefix = $seo ? 'ps_seo_testimonial_' : ($case ? 'case_study_detail_testimonial_' : 'home_testimonial_');
+$keys = [
+    'heading' => $prefix . 'heading',
+    $seo ? 'description' : 'intro_description' => $prefix . ($seo ? 'description' : 'intro_description'),
+    'quote_mark' => $seo ? $prefix . 'quote_mark' : ($case ? 'case_study_detail_7e19b95f2be4' : 'home_c71150b00266'),
+    $seo ? 'quote' : 'description' => $seo ? $prefix . 'quote' : ($case ? 'case_study_detail_3f5be18822e8' : 'home_71e8d5ebfb3e'),
+    $seo ? 'client_name' : 'attribution' => $seo ? $prefix . 'client_name' : ($case ? 'case_study_detail_74dd8a1b256d' : 'home_7393b65da373'),
+    'business_name' => $prefix . 'business_name',
+    'button' => ($seo ? 'seo_testimonial_' : $prefix) . 'button',
+];
+foreach ($keys as $name => $key) {
+    if (array_key_exists('field_' . $key, $data)) $data[$name] = $data['field_' . $key];
+}
+$heading = trim($data['heading'] ?? '');
+$intro = trim($data[$seo ? 'description' : 'intro_description'] ?? '');
+$quote = trim($data[$seo ? 'quote' : 'description'] ?? '');
+$client = trim($data[$seo ? 'client_name' : 'attribution'] ?? '');
+$business = trim($data['business_name'] ?? '');
+$mark = $data['quote_mark'] ?? '“';
+$button = $data['button'] ?? [];
+$show_button = is_array($button) && !empty($button['url']) && !empty($button['title']);
+if ($heading === '' && $intro === '' && $quote === '' && !$show_button) return;
 ?>
-<?php if ($variant === 'home-testimonial'):
-    $section_testimonial = function_exists('get_field') ? (get_field('section_testimonial', get_the_ID(), false) ?: []) : [];
-    $business_name = trim(ps_section_value($section_testimonial, 'business_name', 'home_testimonial_business_name'));
-    $quote_mark = ps_section_value($section_testimonial, 'quote_mark', 'home_c71150b00266');
-    $description = ps_section_value($section_testimonial, 'description', 'home_71e8d5ebfb3e');
-    $attribution = ps_section_value($section_testimonial, 'attribution', 'home_7393b65da373');
-    ?>
-    <!-- Home Testimonial -->
-    <section class="section-home-testimonial section green">
-        <div class="container testimonial">
-            <img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true">
-            <blockquote>
-                <?php if ($quote_mark !== ''): ?>
-                    <span class="quote-mark" data-field="home_c71150b00266"><?php echo ps_section_text($quote_mark, 'home_c71150b00266', 'span', 'quote-mark'); ?></span>
-                <?php endif; ?>
-                <?php if ($description !== ''): ?>
-                    <div class="prose " data-field="home_71e8d5ebfb3e"><?php echo ps_section_text($description, 'home_71e8d5ebfb3e', 'div', 'prose '); ?></div>
-                <?php endif; ?>
-                <?php if ($attribution !== ''): ?>
-                    <cite class=" is-uppercase" data-field="home_7393b65da373"><?php echo ps_section_text($attribution, 'home_7393b65da373', 'cite', ' is-uppercase'); ?><?php if ($business_name !== ''): ?>, <span class="testimonial-business"><?php echo esc_html($business_name); ?></span><?php endif; ?></cite>
-                <?php endif; ?>
-            </blockquote>
-        </div>
-    </section>
-<?php endif; ?>
-
-<?php if ($variant === 'case-study-detail-testimonial'):
-    $section_testimonial = function_exists('get_field') ? (get_field('section_testimonial', get_the_ID(), false) ?: []) : [];
-    $business_name = trim(ps_section_value($section_testimonial, 'business_name', 'case_study_detail_testimonial_business_name'));
-    $quote_mark = ps_section_value($section_testimonial, 'quote_mark', 'case_study_detail_7e19b95f2be4');
-    $description = ps_section_value($section_testimonial, 'description', 'case_study_detail_3f5be18822e8');
-    $attribution = ps_section_value($section_testimonial, 'attribution', 'case_study_detail_74dd8a1b256d');
-    ?>
-    <!-- Case Study Detail Testimonial -->
-    <section class="section-case-study-detail-testimonial section section-tight">
-        <div class="container testimonial cream">
-
-            <blockquote>
-                <?php if ($quote_mark !== ''): ?>
-                    <span class="quote-mark" data-field="case_study_detail_7e19b95f2be4"><?php echo ps_section_text($quote_mark, 'case_study_detail_7e19b95f2be4', 'span', 'quote-mark'); ?></span>
-                <?php endif; ?>
-                <?php if ($description !== ''): ?>
-                    <div class="prose " data-field="case_study_detail_3f5be18822e8"><?php echo ps_section_text($description, 'case_study_detail_3f5be18822e8', 'div', 'prose '); ?></div>
-                <?php endif; ?>
-                <?php if ($attribution !== ''): ?>
-                    <cite class=" is-uppercase" data-field="case_study_detail_74dd8a1b256d"><?php echo ps_section_text($attribution, 'case_study_detail_74dd8a1b256d', 'cite', ' is-uppercase'); ?><?php if ($business_name !== ''): ?>, <span class="testimonial-business"><?php echo esc_html($business_name); ?></span><?php endif; ?></cite>
-                <?php endif; ?>
-            </blockquote>
-        </div>
-    </section>
-<?php endif; ?>
-
-<?php if ($variant === 'seo-testimonial' && is_page('seo')):
-    $testimonial = function_exists('get_field') ? (get_field('section_seo_testimonial') ?: []) : [];
-    $testimonial = array_merge(ps_seo_testimonial_defaults(), $testimonial);
-    ?>
-    <section class="section-seo-testimonial">
-        <div class="container center seo-testimonial-intro">
-            <?php if ($testimonial['heading'] !== ''): ?>
-                <h2><?php echo esc_html($testimonial['heading']); ?></h2>
-            <?php endif; ?>
-            <?php if ($testimonial['description'] !== ''): ?>
-                <div class="prose"><?php echo wp_kses_post(wpautop($testimonial['description'])); ?></div>
-            <?php endif; ?>
-        </div>
-        <?php if ($testimonial['quote'] !== ''): ?>
-            <div class="section green">
-                <div class="container testimonial">
-                    <img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true">
-                    <blockquote>
-                        <span class="quote-mark" aria-hidden="true">“</span>
-                        <div class="prose"><?php echo wp_kses_post(wpautop($testimonial['quote'])); ?></div>
-                        <?php if ($testimonial['client_name'] !== '' || $testimonial['business_name'] !== ''): ?>
-                            <cite class="is-uppercase">– <?php echo esc_html(implode(', ', array_filter([$testimonial['client_name'], $testimonial['business_name']], static fn($name) => $name !== ''))); ?></cite>
-                        <?php endif; ?>
-                    </blockquote>
-                </div>
+<section class="section-<?php echo esc_attr($variant); ?> section <?php echo $case ? 'section-tight' : 'green'; ?>">
+    <div class="container <?php echo $case ? 'cream testimonial-panel' : ''; ?>">
+        <?php if ($heading !== '' || $intro !== ''): ?>
+            <div class="testimonial-intro center">
+                <?php if ($heading !== ''): ?><h2><?php echo esc_html($heading); ?></h2><?php endif; ?>
+                <?php if ($intro !== ''): ?><div class="prose"><?php echo wp_kses_post(wpautop($intro)); ?></div><?php endif; ?>
             </div>
         <?php endif; ?>
-    </section>
-<?php endif; ?>
+        <?php if ($quote !== ''): ?>
+            <div class="testimonial">
+                <?php if (!$case): ?><img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true"><?php endif; ?>
+                <blockquote>
+                    <?php if ($mark !== ''): ?><span class="quote-mark" aria-hidden="true"><?php echo esc_html($mark); ?></span><?php endif; ?>
+                    <div class="prose"><?php echo wp_kses_post(wpautop($quote)); ?></div>
+                    <?php if ($client !== '' || $business !== ''): ?>
+                        <cite class="is-uppercase"><?php echo esc_html(($seo ? '– ' : '') . implode(', ', array_filter([$client, $business], static fn($value) => $value !== ''))); ?></cite>
+                    <?php endif; ?>
+                </blockquote>
+            </div>
+        <?php endif; ?>
+        <?php if ($show_button): ?>
+            <div class="testimonial-action center"><a class="button" href="<?php echo esc_url($button['url']); ?>"<?php if (($button['target'] ?? '') === '_blank'): ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php echo esc_html($button['title']); ?></a></div>
+        <?php endif; ?>
+    </div>
+</section>

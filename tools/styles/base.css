@@ -1378,9 +1378,10 @@ body.single-post #main-content h3 {
   .seo-service-card { padding: 24px; }
 }
 
-.seo-testimonial-intro {
+.testimonial-intro {
   max-width: 960px;
-  padding-bottom: var(--section-space);
+  margin-inline: auto;
+  margin-bottom: 48px;
   & .prose { margin-top: 24px; }
 }
 .section-seo-testimonial + .section-tight { padding-top: var(--section-space); }
@@ -1420,3 +1421,5 @@ body.single-post #main-content h3 {
     }
   }
 }
+
+.testimonial-action { margin-top: 32px; }
