@@ -102,3 +102,5 @@ require_once __DIR__ . '/inc/home-introduction.php';
 require_once __DIR__ . '/inc/testimonial-business.php';
 
 require_once __DIR__ . '/inc/home-results.php';
+
+require_once __DIR__ . '/inc/seo-benefits.php';

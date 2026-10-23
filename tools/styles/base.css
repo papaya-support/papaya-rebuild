@@ -1329,3 +1329,23 @@ body.single-post #main-content h3 {
 .seo-introduction-button {
   margin-top: 24px;
 }
+
+.seo-benefits-intro {
+  max-width: 960px;
+  margin-inline: auto;
+  & .prose { margin-top: 24px; }
+}
+.seo-benefits-grid { margin-top: 48px; }
+.seo-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  & h3 { margin-bottom: 16px; }
+}
+.seo-benefit-number {
+  color: var(--papaya-sage);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+}
+.section-seo-benefits + .section-tight { padding-top: var(--section-space); }
