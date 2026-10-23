@@ -95,6 +95,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if ($description !== ''): ?>
                     <div class="prose " data-field="search_engine_marketing_8f8d05ce486c"><?php echo ps_section_text($description, 'search_engine_marketing_8f8d05ce486c', 'div', 'prose '); ?></div>
                 <?php endif; ?>
+                <?php if (is_page('seo')): ?>
+                    <a class="button seo-introduction-button" href="<?php echo esc_url(ps_booking_url()); ?>">Let's Talk SEO</a>
+                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
