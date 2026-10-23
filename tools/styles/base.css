@@ -1262,7 +1262,7 @@ body.single-post #main-content h3 {
 }
 
 .section-home-services .home-services-eyebrow {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.12em;
@@ -1425,3 +1425,20 @@ body.single-post #main-content h3 {
 .testimonial-action { margin-top: 32px; }
 
 .testimonial-content { flex: 1; min-width: 0; }
+
+.home-service-card {
+  position: relative;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid transparent;
+  transition: border-color 160ms ease;
+  &:hover { border-color: var(--papaya-sage); }
+  &:focus-within { outline: 2px solid var(--papaya-teal, #003e3f); outline-offset: 4px; }
+}
+.home-service-link {
+  color: inherit;
+  text-decoration: none;
+  &::after { content: ''; position: absolute; inset: 0; }
+  &:hover { text-decoration: none; }
+  &:focus-visible { outline: none; }
+}

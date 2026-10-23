@@ -97,20 +97,12 @@ $variant = $args['variant'] ?? '';
     $section_services = function_exists('get_field') ? (get_field('section_services', get_the_ID(), false) ?: []) : [];
     $heading = ps_section_value($section_services, 'heading', 'home_536fe4a39b43');
     $description = ps_section_value($section_services, 'description', 'home_a2521eac95bf');
-    $button_label = ps_section_value($section_services, 'button_label', 'home_c04f66011766');
-    $button_url = ps_section_value($section_services, 'button_url', 'home_c04f66011766_url');
     $heading_2 = ps_section_value($section_services, 'heading_2', 'home_3416c7bfdc6a');
     $description_2 = ps_section_value($section_services, 'description_2', 'home_87d8101d772c');
-    $button_label_2 = ps_section_value($section_services, 'button_label_2', 'home_fadcbf34d7f6');
-    $button_url_2 = ps_section_value($section_services, 'button_url_2', 'home_fadcbf34d7f6_url');
     $heading_3 = ps_section_value($section_services, 'heading_3', 'home_ef6e013268e4');
     $description_3 = ps_section_value($section_services, 'description_3', 'home_87c29f9a637c');
-    $button_label_3 = ps_section_value($section_services, 'button_label_3', 'home_01079a482a16');
-    $button_url_3 = ps_section_value($section_services, 'button_url_3', 'home_01079a482a16_url');
     $heading_4 = ps_section_value($section_services, 'heading_4', 'home_9e841ae19a6e');
     $description_4 = ps_section_value($section_services, 'description_4', 'home_c6db28f931d0');
-    $button_label_4 = ps_section_value($section_services, 'button_label_4', 'home_4dbc82586a2a');
-    $button_url_4 = ps_section_value($section_services, 'button_url_4', 'home_4dbc82586a2a_url');
     $heading_5 = ps_section_value($section_services, 'heading_5', 'home_473db858b064');
     ?>
     <!-- Home Services -->
@@ -120,52 +112,40 @@ $variant = $args['variant'] ?? '';
                 <h2 class="section-title home-services-eyebrow is-uppercase" data-field="home_473db858b064"><?php echo ps_section_text($heading_5, 'home_473db858b064', 'h2', 'section-title home-services-eyebrow is-uppercase'); ?></h2>
             <?php endif; ?>
             <div class="grid grid-four">
-                <div class="service-card">
+                <div class="service-card home-service-card">
                     <img class="service-icon" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/service-seo.svg'); ?>" alt="" aria-hidden="true">
                     <?php if ($heading !== ''): ?>
-                        <h3 class="" data-field="home_536fe4a39b43"><?php echo ps_section_text($heading, 'home_536fe4a39b43', 'h3', ''); ?></h3>
+                        <h3 class="" data-field="home_536fe4a39b43"><a class="home-service-link" href="<?php $service_page = get_page_by_path('services/seo'); echo esc_url($service_page ? get_permalink($service_page) : home_url('/services/seo/')); ?>"><?php echo ps_section_text($heading, 'home_536fe4a39b43', 'h3', ''); ?></a></h3>
                     <?php endif; ?>
                     <?php if ($description !== ''): ?>
                         <div class="prose " data-field="home_a2521eac95bf"><?php echo ps_section_text($description, 'home_a2521eac95bf', 'div', 'prose '); ?></div>
                     <?php endif; ?>
-                    <?php if ($button_label !== ''): ?>
-                        <a<?php echo ps_section_button_label($button_label, wp_strip_all_tags(ps_inline_content('home_536fe4a39b43', $heading))); ?> class="button button-small" data-field="home_c04f66011766" href="<?php echo esc_url(ps_local_service_url($button_url ?: ps_route('services') . '#search-engine-optimization')); ?>"><?php echo ps_inline_content('home_c04f66011766', $button_label); ?></a>
-                    <?php endif; ?>
                 </div>
-                <div class="service-card">
+                <div class="service-card home-service-card">
                     <img class="service-icon" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/service-ppc.svg'); ?>" alt="" aria-hidden="true">
                     <?php if ($heading_2 !== ''): ?>
-                        <h3 class="" data-field="home_3416c7bfdc6a"><?php echo ps_section_text($heading_2, 'home_3416c7bfdc6a', 'h3', ''); ?></h3>
+                        <h3 class="" data-field="home_3416c7bfdc6a"><a class="home-service-link" href="<?php $service_page = get_page_by_path('services/search-engine-marketing'); echo esc_url($service_page ? get_permalink($service_page) : home_url('/services/search-engine-marketing/')); ?>"><?php echo ps_section_text($heading_2, 'home_3416c7bfdc6a', 'h3', ''); ?></a></h3>
                     <?php endif; ?>
                     <?php if ($description_2 !== ''): ?>
                         <div class="prose " data-field="home_87d8101d772c"><?php echo ps_section_text($description_2, 'home_87d8101d772c', 'div', 'prose '); ?></div>
                     <?php endif; ?>
-                    <?php if ($button_label_2 !== ''): ?>
-                        <a<?php echo ps_section_button_label($button_label_2, wp_strip_all_tags(ps_inline_content('home_3416c7bfdc6a', $heading_2))); ?> class="button button-small" data-field="home_fadcbf34d7f6" href="<?php echo esc_url(ps_local_service_url($button_url_2 ?: ps_route('search-engine-marketing'))); ?>"><?php echo ps_inline_content('home_fadcbf34d7f6', $button_label_2); ?></a>
-                    <?php endif; ?>
                 </div>
-                <div class="service-card">
+                <div class="service-card home-service-card">
                     <img class="service-icon" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/service-analytics.svg'); ?>" alt="" aria-hidden="true">
                     <?php if ($heading_3 !== ''): ?>
-                        <h3 class="" data-field="home_ef6e013268e4"><?php echo ps_section_text($heading_3, 'home_ef6e013268e4', 'h3', ''); ?></h3>
+                        <h3 class="" data-field="home_ef6e013268e4"><a class="home-service-link" href="<?php $service_page = get_page_by_path('services/website-analytics'); echo esc_url($service_page ? get_permalink($service_page) : home_url('/services/website-analytics/')); ?>"><?php echo ps_section_text($heading_3, 'home_ef6e013268e4', 'h3', ''); ?></a></h3>
                     <?php endif; ?>
                     <?php if ($description_3 !== ''): ?>
                         <div class="prose " data-field="home_87c29f9a637c"><?php echo ps_section_text($description_3, 'home_87c29f9a637c', 'div', 'prose '); ?></div>
                     <?php endif; ?>
-                    <?php if ($button_label_3 !== ''): ?>
-                        <a<?php echo ps_section_button_label($button_label_3, wp_strip_all_tags(ps_inline_content('home_ef6e013268e4', $heading_3))); ?> class="button button-small" data-field="home_01079a482a16" href="<?php echo esc_url(ps_local_service_url($button_url_3 ?: ps_route('services') . '#website-analytics')); ?>"><?php echo ps_inline_content('home_01079a482a16', $button_label_3); ?></a>
-                    <?php endif; ?>
                 </div>
-                <div class="service-card">
+                <div class="service-card home-service-card">
                     <img class="service-icon" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/service-ai.svg'); ?>" alt="" aria-hidden="true">
                     <?php if ($heading_4 !== ''): ?>
-                        <h3 class="" data-field="home_9e841ae19a6e"><?php echo ps_section_text($heading_4, 'home_9e841ae19a6e', 'h3', ''); ?></h3>
+                        <h3 class="" data-field="home_9e841ae19a6e"><a class="home-service-link" href="<?php $service_page = get_page_by_path('services/ai-seo-aeo-services'); echo esc_url($service_page ? get_permalink($service_page) : home_url('/services/ai-seo-aeo-services/')); ?>"><?php echo ps_section_text($heading_4, 'home_9e841ae19a6e', 'h3', ''); ?></a></h3>
                     <?php endif; ?>
                     <?php if ($description_4 !== ''): ?>
                         <div class="prose " data-field="home_c6db28f931d0"><?php echo ps_section_text($description_4, 'home_c6db28f931d0', 'div', 'prose '); ?></div>
-                    <?php endif; ?>
-                    <?php if ($button_label_4 !== ''): ?>
-                        <a<?php echo ps_section_button_label($button_label_4, wp_strip_all_tags(ps_inline_content('home_9e841ae19a6e', $heading_4))); ?> class="button button-small" data-field="home_4dbc82586a2a" href="<?php echo esc_url(ps_local_service_url($button_url_4 ?: ps_destinations()['AI SEO'])); ?>"><?php echo ps_inline_content('home_4dbc82586a2a', $button_label_4); ?></a>
                     <?php endif; ?>
                 </div>
             </div>
