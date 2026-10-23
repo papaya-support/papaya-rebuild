@@ -1260,3 +1260,10 @@ body.single-post #main-content h3 {
     }
   }
 }
+
+.section-home-services .home-services-eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
