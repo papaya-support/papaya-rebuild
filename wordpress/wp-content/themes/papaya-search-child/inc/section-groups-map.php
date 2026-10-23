@@ -208,6 +208,7 @@ return [
                 'home_c71150b00266' => 'quote_mark',
                 'home_71e8d5ebfb3e' => 'description',
                 'home_7393b65da373' => 'attribution',
+                'home_testimonial_business_name' => 'business_name',
             ],
         ],
         [
@@ -536,6 +537,7 @@ return [
                 'case_study_detail_7e19b95f2be4' => 'quote_mark',
                 'case_study_detail_3f5be18822e8' => 'description',
                 'case_study_detail_74dd8a1b256d' => 'attribution',
+                'case_study_detail_testimonial_business_name' => 'business_name',
             ],
         ],
         [
