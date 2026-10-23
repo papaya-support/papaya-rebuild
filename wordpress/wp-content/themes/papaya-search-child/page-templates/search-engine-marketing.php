@@ -16,10 +16,12 @@ while (have_posts()):
         <?php get_template_part('template-parts/sections/seo-services'); ?>
         <?php get_template_part('template-parts/sections/seo-approach'); ?>
         <?php get_template_part('template-parts/sections/testimonial', null, ['variant' => 'seo-testimonial']); ?>
-        <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-visibility']); ?>
-        <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-ppc-services']); ?>
-        <?php get_template_part('template-parts/sections/statistics', null, ['variant' => 'search-engine-marketing-benefits']); ?>
-        <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-google-ads']); ?>
+        <?php if (!is_page('seo')): ?>
+            <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-visibility']); ?>
+            <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-ppc-services']); ?>
+            <?php get_template_part('template-parts/sections/statistics', null, ['variant' => 'search-engine-marketing-benefits']); ?>
+            <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-google-ads']); ?>
+        <?php endif; ?>
         <?php get_template_part('template-parts/sections/search-engine-marketing-faqs'); ?>
         <?php get_template_part('template-parts/sections/content', null, ['variant' => 'search-engine-marketing-closing-cta']); ?>
     </main>
