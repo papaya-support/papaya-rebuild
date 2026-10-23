@@ -1499,3 +1499,39 @@ body.single-post #main-content h3 {
     outline: none;
   }
 }
+.home-strategy-intro {
+  max-width: 960px;
+  margin-inline: auto;
+  & .prose {
+    margin-top: 24px;
+  }
+}
+.home-strategy-cards {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.home-strategy-card {
+  padding: 32px;
+  background: var(--papaya-cream);
+  & h3 {
+    margin-block: 16px 20px;
+  }
+}
+.home-strategy-number {
+  color: var(--papaya-sage);
+  font-size: 32px;
+  font-weight: 700;
+}
+.home-strategy-action {
+  margin-top: 32px;
+}
+@media (max-width: 800px) {
+  .home-strategy-cards {
+    grid-template-columns: 1fr;
+  }
+  .home-strategy-card {
+    padding: 24px;
+  }
+}
