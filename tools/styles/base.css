@@ -1267,3 +1267,20 @@ body.single-post #main-content h3 {
   line-height: 1.5;
   letter-spacing: 0.12em;
 }
+
+/* Let adjacent copy determine image height in two-column content sections. */
+@media (min-width: 1025px) {
+  .split > .split-media:has(> img[data-image]) {
+    position: relative;
+    align-self: stretch;
+    min-height: 240px;
+  }
+  .split > .split-media > img[data-image] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+}
