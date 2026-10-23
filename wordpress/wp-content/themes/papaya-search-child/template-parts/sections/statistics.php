@@ -54,6 +54,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
 <?php endif; ?>
 
 <?php if ($variant === 'home-results'):
+    $introduction = ps_field_value('home_results_introduction');
     $section_results = function_exists('get_field') ? (get_field('section_results', get_the_ID(), false) ?: []) : [];
     $years_statistic = ps_section_value($section_results, 'years_statistic', 'home_840918b075ea');
     $description = ps_section_value($section_results, 'description', 'home_d17566645c30');
@@ -62,17 +63,18 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     $statistic = ps_section_value($section_results, 'statistic', 'home_95726762e92f');
     $description_3 = ps_section_value($section_results, 'description_3', 'home_6b3533e29b8d');
     $heading = ps_section_value($section_results, 'heading', 'home_6666581aab96');
-    $description_4 = ps_section_value($section_results, 'description_4', 'home_2de7aecb8d76');
-    $link_introduction = ps_section_value($section_results, 'link_introduction', 'home_5697044bab17');
     $button_label = ps_section_value($section_results, 'button_label', 'home_d4db261ea551');
     $button_url = ps_section_value($section_results, 'button_url', 'home_d4db261ea551_url');
     ?>
     <!-- Home Results -->
-    <?php if (!$is_imported_service || ($heading !== '' || $description_4 !== '' || $link_introduction !== '' || $button_label !== '' || $years_statistic !== '' || $description !== '' || $years_statistic_2 !== '' || $description_2 !== '' || $statistic !== '' || $description_3 !== '')): ?>
+    <?php if (!$is_imported_service || ($heading !== '' || $introduction !== '' || $button_label !== '' || $years_statistic !== '' || $description !== '' || $years_statistic_2 !== '' || $description_2 !== '' || $statistic !== '' || $description_3 !== '')): ?>
         <section class="section-home-results section">
             <div class="container center narrow">
                 <?php if ($heading !== ''): ?>
                     <h2 class="accent" data-field="home_6666581aab96"><?php echo ps_section_text($heading, 'home_6666581aab96', 'h2', 'accent'); ?></h2>
+                <?php endif; ?>
+                <?php if ($introduction !== ''): ?>
+                    <div class="prose home-results-introduction"><?php echo wp_kses_post(wpautop($introduction)); ?></div>
                 <?php endif; ?>
                 <?php if (!$is_imported_service || ($years_statistic !== '' || $description !== '' || $years_statistic_2 !== '' || $description_2 !== '' || $statistic !== '' || $description_3 !== '')): ?>
                     <div class="grid grid-three stats">
@@ -107,12 +109,6 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                             </div>
                         <?php endif; ?>
                     </div>
-                <?php endif; ?>
-                <?php if ($description_4 !== ''): ?>
-                    <div class="prose " data-field="home_2de7aecb8d76"><?php echo ps_section_text($description_4, 'home_2de7aecb8d76', 'div', 'prose '); ?></div>
-                <?php endif; ?>
-                <?php if ($link_introduction !== ''): ?>
-                    <p class=" is-uppercase" data-field="home_5697044bab17"><?php echo ps_section_text($link_introduction, 'home_5697044bab17', 'p', ' is-uppercase'); ?></p>
                 <?php endif; ?>
                 <?php if ($button_label !== ''): ?>
                     <a<?php echo ps_section_button_label($button_label, ''); ?> class="button " data-field="home_d4db261ea551" href="<?php echo esc_url(ps_local_service_url($button_url ?: ps_route('case-studies'))); ?>"><?php echo ps_inline_content('home_d4db261ea551', $button_label); ?></a>

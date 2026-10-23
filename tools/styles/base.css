@@ -1321,3 +1321,7 @@ body.single-post #main-content h3 {
     --split-image-min-height: 593px;
   }
 }
+
+.home-results-introduction {
+  margin-top: 24px;
+}
