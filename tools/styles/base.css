@@ -1384,3 +1384,39 @@ body.single-post #main-content h3 {
   & .prose { margin-top: 24px; }
 }
 .section-seo-testimonial + .section-tight { padding-top: var(--section-space); }
+
+.section-seo-approach { padding-top: 0; }
+.seo-approach-intro {
+  max-width: 960px;
+  margin-inline: auto;
+  & .prose { margin-top: 24px; }
+}
+.seo-approach-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+}
+.seo-approach-step {
+  min-width: 0;
+  padding-inline: 32px;
+  & + & { border-left: 1px solid var(--papaya-green); }
+  & h3 { margin-block: 20px 16px; }
+}
+.seo-approach-number {
+  color: var(--papaya-sage);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+}
+@media (max-width: 800px) {
+  .seo-approach-steps { grid-template-columns: 1fr; }
+  .seo-approach-step {
+    padding: 24px 0;
+    & + & {
+      border-left: 0;
+      border-top: 1px solid var(--papaya-green);
+    }
+  }
+}

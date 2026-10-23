@@ -108,3 +108,4 @@ require_once __DIR__ . '/inc/seo-benefits.php';
 require_once __DIR__ . '/inc/seo-services.php';
 
 require_once __DIR__ . '/inc/seo-testimonial.php';
+require_once __DIR__ . '/inc/seo-approach.php';

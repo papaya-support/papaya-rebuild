@@ -14,6 +14,7 @@ while (have_posts()):
         <?php get_template_part('template-parts/sections/content', null, ['variant' => 'search-engine-marketing-introduction']); ?>
         <?php get_template_part('template-parts/sections/seo-benefits'); ?>
         <?php get_template_part('template-parts/sections/seo-services'); ?>
+        <?php get_template_part('template-parts/sections/seo-approach'); ?>
         <?php get_template_part('template-parts/sections/testimonial', null, ['variant' => 'seo-testimonial']); ?>
         <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-visibility']); ?>
         <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-ppc-services']); ?>
