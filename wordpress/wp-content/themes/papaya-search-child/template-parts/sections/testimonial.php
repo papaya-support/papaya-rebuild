@@ -54,3 +54,33 @@ $variant = $args['variant'] ?? '';
         </div>
     </section>
 <?php endif; ?>
+
+<?php if ($variant === 'seo-testimonial' && is_page('seo')):
+    $testimonial = function_exists('get_field') ? (get_field('section_seo_testimonial') ?: []) : [];
+    $testimonial = array_merge(ps_seo_testimonial_defaults(), $testimonial);
+    ?>
+    <section class="section-seo-testimonial">
+        <div class="container center seo-testimonial-intro">
+            <?php if ($testimonial['heading'] !== ''): ?>
+                <h2><?php echo esc_html($testimonial['heading']); ?></h2>
+            <?php endif; ?>
+            <?php if ($testimonial['description'] !== ''): ?>
+                <div class="prose"><?php echo wp_kses_post(wpautop($testimonial['description'])); ?></div>
+            <?php endif; ?>
+        </div>
+        <?php if ($testimonial['quote'] !== ''): ?>
+            <div class="section green">
+                <div class="container testimonial">
+                    <img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true">
+                    <blockquote>
+                        <span class="quote-mark" aria-hidden="true">“</span>
+                        <div class="prose"><?php echo wp_kses_post(wpautop($testimonial['quote'])); ?></div>
+                        <?php if ($testimonial['client_name'] !== '' || $testimonial['business_name'] !== ''): ?>
+                            <cite class="is-uppercase">– <?php echo esc_html(implode(', ', array_filter([$testimonial['client_name'], $testimonial['business_name']], static fn($name) => $name !== ''))); ?></cite>
+                        <?php endif; ?>
+                    </blockquote>
+                </div>
+            </div>
+        <?php endif; ?>
+    </section>
+<?php endif; ?>

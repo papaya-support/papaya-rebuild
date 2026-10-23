@@ -1407,3 +1407,13 @@ body.single-post #main-content h3 {
     padding: 24px;
   }
 }
+.seo-testimonial-intro {
+  max-width: 960px;
+  padding-bottom: var(--section-space);
+  & .prose {
+    margin-top: 24px;
+  }
+}
+.section-seo-testimonial + .section-tight {
+  padding-top: var(--section-space);
+}

@@ -106,3 +106,5 @@ require_once __DIR__ . '/inc/home-results.php';
 require_once __DIR__ . '/inc/seo-benefits.php';
 
 require_once __DIR__ . '/inc/seo-services.php';
+
+require_once __DIR__ . '/inc/seo-testimonial.php';
