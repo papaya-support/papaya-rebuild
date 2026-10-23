@@ -13,6 +13,7 @@ while (have_posts()):
         <?php get_template_part('template-parts/sections/banner', null, ['variant' => 'search-engine-marketing-banner']); ?>
         <?php get_template_part('template-parts/sections/content', null, ['variant' => 'search-engine-marketing-introduction']); ?>
         <?php get_template_part('template-parts/sections/seo-benefits'); ?>
+        <?php get_template_part('template-parts/sections/seo-services'); ?>
         <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-visibility']); ?>
         <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-ppc-services']); ?>
         <?php get_template_part('template-parts/sections/statistics', null, ['variant' => 'search-engine-marketing-benefits']); ?>

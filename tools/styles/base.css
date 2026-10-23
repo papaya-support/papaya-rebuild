@@ -1349,3 +1349,31 @@ body.single-post #main-content h3 {
   line-height: 1;
 }
 .section-seo-benefits + .section-tight { padding-top: var(--section-space); }
+
+.seo-services-intro {
+  max-width: 960px;
+  margin-inline: auto;
+  & .prose { margin-top: 24px; }
+}
+.seo-services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.seo-service-card {
+  min-width: 0;
+  padding: 32px;
+  background-color: var(--papaya-cream);
+  & h3 { margin-bottom: 20px; }
+}
+@media (max-width: 1024px) {
+  .seo-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .seo-services-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .seo-service-card { padding: 24px; }
+}
