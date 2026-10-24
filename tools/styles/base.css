@@ -1449,3 +1449,6 @@ body.single-post #main-content h3 {
 .home-strategy-number { color: var(--papaya-sage); font-size: 32px; font-weight: 700; }
 .home-strategy-action { margin-top: 32px; }
 @media (max-width: 800px) { .home-strategy-cards { grid-template-columns: 1fr; } .home-strategy-card { padding: 24px; } }
+
+/* Preserve split-section typography and spacing when no image is selected. */
+.split.split-without-media { grid-template-columns: minmax(0, 1fr); }

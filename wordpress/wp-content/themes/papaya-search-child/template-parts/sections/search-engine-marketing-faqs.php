@@ -73,10 +73,12 @@ if (!$questions) {
             <h2 class="section-title accent is-uppercase" data-field="search_engine_marketing_de2d5ec0ff46"><?php echo ps_inline_content('search_engine_marketing_de2d5ec0ff46', $heading); ?></h2>
         <?php endif; ?>
     </div>
-    <div class="container split">
+    <div class="container split<?php echo ps_has_section_image($image) ? '' : ' split-without-media'; ?>">
+        <?php if (ps_has_section_image($image)): ?>
         <div class="split-media">
             <?php ps_image('search_engine_marketing_image_ba13013ff2', '', false, $image); ?>
         </div>
+        <?php endif; ?>
         <div class="split-copy">
             <?php foreach ($questions as $question): ?>
                 <details class="faq-item">

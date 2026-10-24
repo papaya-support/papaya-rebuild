@@ -60,3 +60,12 @@ function ps_section_button_label($value, $context)
     $context = html_entity_decode($context, ENT_QUOTES, get_bloginfo('charset'));
     return ' aria-label="' . esc_attr(trim($label) . ' about ' . $context) . '"';
 }
+
+/** Whether an optional ACF image has a selected attachment or URL. */
+function ps_has_section_image($image)
+{
+    if (is_array($image)) {
+        $image = $image['ID'] ?? $image['id'] ?? $image['url'] ?? '';
+    }
+    return is_numeric($image) ? (int) $image > 0 : (is_string($image) && trim($image) !== '');
+}
