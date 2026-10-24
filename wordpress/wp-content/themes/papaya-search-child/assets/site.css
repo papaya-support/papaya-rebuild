@@ -1535,6 +1535,6 @@ body.single-post #main-content h3 {
     padding: 24px;
   }
 }
-.split.split-without-media {
+.section-cta .split.split-without-media {
   grid-template-columns: minmax(0, 1fr);
 }

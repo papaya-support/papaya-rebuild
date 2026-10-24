@@ -15,7 +15,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     ?>
     <!-- Services Closing Cta -->
     <?php if (!$is_imported_service || ($heading !== '' || $button_label !== '' || $text !== '' || $text_2 !== '' || $text_3 !== '')): ?>
-        <section class="section-services-closing-cta section green">
+        <section class="section-services-closing-cta section section-cta green">
             <div class="container center">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="services_94024e830fa2"><?php echo ps_section_text($heading, 'services_94024e830fa2', 'h2', ' is-uppercase'); ?></h2>

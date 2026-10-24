@@ -113,7 +113,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     ?>
     <!-- Search Engine Marketing Closing Cta -->
     <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
-        <section class="section-search-engine-marketing-closing-cta section green">
+        <section class="section-search-engine-marketing-closing-cta section section-cta green">
             <div class="container">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="search_engine_marketing_b1060e1729d0"><?php echo ps_section_text($heading, 'search_engine_marketing_b1060e1729d0', 'h2', ' is-uppercase'); ?></h2>
@@ -199,7 +199,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     ?>
     <!-- About Closing Cta -->
     <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
-        <section class="section-about-closing-cta section green">
+        <section class="section-about-closing-cta section section-cta green">
             <div class="container">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="about_8ccc8c3f77e1"><?php echo ps_section_text($heading, 'about_8ccc8c3f77e1', 'h2', ' is-uppercase'); ?></h2>

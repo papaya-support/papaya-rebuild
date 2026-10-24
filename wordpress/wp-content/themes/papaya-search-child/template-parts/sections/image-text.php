@@ -18,12 +18,10 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                     <h2 class="section-title" data-field="blog_detail_2c021570ce1c"><?php echo ps_section_text($heading, 'blog_detail_2c021570ce1c', 'h2', 'section-title'); ?></h2>
                 <?php endif; ?>
             </div>
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($description !== '')) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if (ps_has_section_image($image)): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($description !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <?php ps_image('blog_detail_image_82ae55901c', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($description !== ''): ?>
@@ -47,12 +45,10 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Home Search Strategy -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== '' || $button_label !== ''))): ?>
         <section class="section-home-search-strategy section section-tight">
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description !== '' || $button_label !== '')) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if (ps_has_section_image($image)): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description !== '' || $button_label !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <?php ps_image('home_image_d86e7be569', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -80,7 +76,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Home Search Trends -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== ''))): ?>
         <section class="section-home-search-trends section">
-            <div class="container<?php echo !$is_imported_service || ((int) ($heading !== '' || $description !== '') + (int) (true)) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
+            <div class="container<?php echo !$is_imported_service || ((int) ($heading !== '' || $description !== '') + (int) (true)) > 1 ? ' split' : ''; ?>">
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -91,11 +87,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <?php if (ps_has_section_image($image)): ?>
                 <div class="split-media">
                     <?php ps_image('home_image_d3f8f036db', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
@@ -113,12 +107,10 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Home Future Strategy -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== '' || $heading_2 !== '' || $button_label !== ''))): ?>
         <section class="section-home-future-strategy section section-tight">
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description !== '' || $heading_2 !== '' || $button_label !== '')) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if (ps_has_section_image($image)): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description !== '' || $heading_2 !== '' || $button_label !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <?php ps_image('home_image_9c76895b7c', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $heading_2 !== '' || $button_label !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -150,7 +142,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     ?>
     <!-- Home Closing Cta -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== '' || $button_label !== ''))): ?>
-        <section class="section-home-closing-cta section cream">
+        <section class="section-home-closing-cta section section-cta cream">
             <div class="container<?php echo !$is_imported_service || ((int) ($heading !== '' || $description !== '' || $button_label !== '') + (int) (true)) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
                     <div class="split-copy">
@@ -184,12 +176,10 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Search Engine Marketing Visibility -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== ''))): ?>
         <section class="section-search-engine-marketing-visibility section section-tight">
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description !== '')) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if (ps_has_section_image($image)): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <?php ps_image('search_engine_marketing_image_2e8b60cfe5', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -213,7 +203,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Search Engine Marketing Ppc Services -->
     <?php if (!$is_imported_service || (($description !== ''))): ?>
         <section class="section-search-engine-marketing-ppc-services section">
-            <div class="container<?php echo !$is_imported_service || ((int) ($description !== '') + (int) (true)) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
+            <div class="container<?php echo !$is_imported_service || ((int) ($description !== '') + (int) (true)) > 1 ? ' split' : ''; ?>">
                 <?php if (!$is_imported_service || ($description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($description !== ''): ?>
@@ -221,11 +211,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <?php if (ps_has_section_image($image)): ?>
                 <div class="split-media">
                     <?php ps_image('search_engine_marketing_image_de24625b12', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
@@ -241,7 +229,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Search Engine Marketing Google Ads -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== '' || $description_2 !== ''))): ?>
         <section class="section-search-engine-marketing-google-ads section">
-            <div class="container<?php echo !$is_imported_service || ((int) ($heading !== '' || $description !== '') + (int) (true)) > 1 ? ((ps_has_section_image($image) || $description_2 !== '') ? ' split' : ' split split-without-media') : ''; ?>">
+            <div class="container<?php echo !$is_imported_service || ((int) ($heading !== '' || $description !== '') + (int) (true)) > 1 ? ' split' : ''; ?>">
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -252,18 +240,14 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <?php if ((ps_has_section_image($image) || $description_2 !== '')): ?>
                 <div class="split-media">
                     <div class="certification-card">
-                        <?php if (ps_has_section_image($image)): ?>
                         <?php ps_image('search_engine_marketing_image_f953878ff0', '', false, $image); ?>
-                        <?php endif; ?>
                         <?php if ($description_2 !== ''): ?>
                             <div class="prose " data-field="search_engine_marketing_c14dc679be7b"><?php echo ps_section_text($description_2, 'search_engine_marketing_c14dc679be7b', 'div', 'prose '); ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
-                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
@@ -279,19 +263,15 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Search Engine Marketing Microsoft Ads -->
     <?php if (!$is_imported_service || (($description !== '' || $heading !== '' || $description_2 !== ''))): ?>
         <section class="section-search-engine-marketing-microsoft-ads section section-tight">
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description_2 !== '')) > 1 ? ((ps_has_section_image($image) || $description !== '') ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if ((ps_has_section_image($image) || $description !== '')): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($heading !== '' || $description_2 !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <div class="certification-card">
-                        <?php if (ps_has_section_image($image)): ?>
                         <?php ps_image('search_engine_marketing_image_843cfc6b8d', '', false, $image); ?>
-                        <?php endif; ?>
                         <?php if ($description !== ''): ?>
                             <div class="prose " data-field="search_engine_marketing_9b5edf4fcb86"><?php echo ps_section_text($description, 'search_engine_marketing_9b5edf4fcb86', 'div', 'prose '); ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($heading !== '' || $description_2 !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -317,7 +297,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- About Audience Strategy -->
     <?php if (!$is_imported_service || (($description !== '' || $heading !== '' || $description_2 !== ''))): ?>
         <section class="section-about-audience-strategy section section-tight">
-            <div class="container<?php echo !$is_imported_service || ((int) ($description !== '' || $heading !== '' || $description_2 !== '') + (int) (true)) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
+            <div class="container<?php echo !$is_imported_service || ((int) ($description !== '' || $heading !== '' || $description_2 !== '') + (int) (true)) > 1 ? ' split' : ''; ?>">
                 <?php if (!$is_imported_service || ($description !== '' || $heading !== '' || $description_2 !== '')): ?>
                     <div class="split-copy">
                         <?php if ($description !== ''): ?>
@@ -331,11 +311,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <?php if (ps_has_section_image($image)): ?>
                 <div class="split-media">
                     <?php ps_image('about_image_fabff0a2d1', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
             </div>
         </section>
     <?php endif; ?>
@@ -350,12 +328,10 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- About Partnership -->
     <?php if (!$is_imported_service || (($description !== '' || $description_2 !== ''))): ?>
         <section class="section-about-partnership section">
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($description !== '' || $description_2 !== '')) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if (ps_has_section_image($image)): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($description !== '' || $description_2 !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <?php ps_image('about_image_3f841022dd', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($description !== '' || $description_2 !== '')): ?>
                     <div class="split-copy">
                         <?php if ($description !== ''): ?>
@@ -414,12 +390,10 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                     <h2 class="section-title" data-field="case_study_detail_e27663e17aca"><?php echo ps_section_text($heading, 'case_study_detail_e27663e17aca', 'h2', 'section-title'); ?></h2>
                 <?php endif; ?>
             </div>
-            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($description !== '')) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
-                <?php if (ps_has_section_image($image)): ?>
+            <div class="container<?php echo !$is_imported_service || ((int) (true) + (int) ($description !== '')) > 1 ? ' split' : ''; ?>">
                 <div class="split-media">
                     <?php ps_image('case_study_detail_image_4d97ed1303', '', false, $image); ?>
                 </div>
-                <?php endif; ?>
                 <?php if (!$is_imported_service || ($description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($description !== ''): ?>
