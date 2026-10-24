@@ -117,3 +117,5 @@ require_once __DIR__ . '/inc/service-slugs.php';
 require_once __DIR__ . '/inc/seo-editor.php';
 
 require_once __DIR__ . '/inc/home-strategy-cards.php';
+
+require_once __DIR__ . '/inc/button-fields.php';

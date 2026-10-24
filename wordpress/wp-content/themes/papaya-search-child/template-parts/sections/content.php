@@ -95,8 +95,9 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if ($description !== ''): ?>
                     <div class="prose " data-field="search_engine_marketing_8f8d05ce486c"><?php echo ps_section_text($description, 'search_engine_marketing_8f8d05ce486c', 'div', 'prose '); ?></div>
                 <?php endif; ?>
-                <?php if (is_page('seo')): ?>
-                    <a class="button seo-introduction-button" href="<?php echo esc_url(ps_booking_url()); ?>">Let's Talk SEO</a>
+                <?php $intro_button = ps_editable_button('section_introduction', 'button', is_page('seo') ? "Let's Talk SEO" : '', ps_booking_url()); ?>
+                <?php if ($intro_button['title'] !== '' && $intro_button['url'] !== ''): ?>
+                    <a class="button seo-introduction-button" href="<?php echo esc_url(ps_local_service_url($intro_button['url'])); ?>"><?php echo esc_html($intro_button['title']); ?></a>
                 <?php endif; ?>
             </div>
         </section>

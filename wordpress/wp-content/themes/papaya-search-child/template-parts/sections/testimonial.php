@@ -26,6 +26,9 @@ $client = trim($data[$seo ? 'client_name' : 'attribution'] ?? '');
 $business = trim($data['business_name'] ?? '');
 $mark = $data['quote_mark'] ?? '“';
 $button = $data['button'] ?? [];
+$old_target = is_array($button) ? ($button['target'] ?? '') : '';
+$button = ps_editable_button($seo ? 'section_seo_testimonial' : 'section_testimonial', 'button', is_array($button) ? ($button['title'] ?? '') : '', is_array($button) ? ($button['url'] ?? '') : '');
+$button['target'] = $old_target;
 $show_button = is_array($button) && !empty($button['url']) && !empty($button['title']);
 if ($heading === '' && $intro === '' && $quote === '' && !$show_button) return;
 ?>

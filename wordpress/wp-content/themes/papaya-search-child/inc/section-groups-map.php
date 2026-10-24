@@ -566,6 +566,7 @@ return [
             'template' => 'layout/site-footer',
             'fields' => [
                 'shared_7b3ca0dbb8c9' => 'call_button_label',
+                'shared_7b3ca0dbb8c9_url' => 'call_button_url',
                 'ps_booking_url' => 'default_page_button_and_footer_call_url',
                 'shared_78f8d1b3d0a8' => 'navigation_heading',
                 'shared_63ce494a885e' => 'services_heading',

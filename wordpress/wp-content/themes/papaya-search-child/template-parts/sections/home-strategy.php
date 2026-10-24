@@ -7,7 +7,7 @@ $url = ps_section_value($group,'button_url','home_58c8c372efdf_url');
 $label = ps_section_value($group,'button_label','home_58c8c372efdf');
 $content = ps_home_strategy_content($group, $intro);
 $intro = $content['intro'];
-if (!get_option('ps_home_strategy_cards_v1') || strcasecmp(trim(wp_strip_all_tags($label)), 'Get Started') === 0) {
+if (!get_option('ps_home_strategy_cards_v1') && $label === '') {
     $label = 'Let’s Talk Strategy';
 }
 ?>
