@@ -5,6 +5,11 @@ $heading = ps_section_value($group,'heading','home_c03395a13124');
 $intro = ps_section_value($group,'description','home_1260983635dc');
 $url = ps_section_value($group,'button_url','home_58c8c372efdf_url');
 $label = ps_section_value($group,'button_label','home_58c8c372efdf');
+$content = ps_home_strategy_content($group, $intro);
+$intro = $content['intro'];
+if (!get_option('ps_home_strategy_cards_v1') || strcasecmp(trim(wp_strip_all_tags($label)), 'Get Started') === 0) {
+    $label = 'Let’s Talk Strategy';
+}
 ?>
 <section class="section-home-future-strategy section section-tight">
     <div class="container">
@@ -14,8 +19,8 @@ $label = ps_section_value($group,'button_label','home_58c8c372efdf');
         </div>
         <div class="home-strategy-cards">
             <?php for($i=1;$i<=3;$i++):
-                $title = $group['field_home_strategy_card_heading_' . $i] ?? $group['card_heading_' . $i] ?? '';
-                $text = $group['field_home_strategy_card_description_' . $i] ?? $group['card_description_' . $i] ?? '';
+                $title = $content['cards']['heading_' . $i];
+                $text = $content['cards']['description_' . $i];
                 if ($title === '' && $text === '') continue;
             ?>
                 <article class="home-strategy-card">

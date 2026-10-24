@@ -50,3 +50,31 @@ add_filter('acf/prepare_field',function($field){
     if (in_array($field['key'],['field_home_image_9c76895b7c','field_home_20f80fb1ab2f'],true)) return false;
     return $field;
 });
+
+/** Read both the original combined description and the editable card fields. */
+function ps_home_strategy_content($group, $intro) {
+    $cards = ps_home_strategy_cards_defaults();
+    // Older pages stored the three cards in the introduction's rich text.
+    $plain = trim(preg_replace('/\s+/u', ' ', html_entity_decode(wp_strip_all_tags(preg_replace('/<[^>]+>/', ' ', $intro)), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+    $positions = [];
+    for ($i = 1; $i <= 3; $i++) {
+        $positions[$i] = strpos($plain, $cards['heading_' . $i]);
+    }
+    if ($positions[1] !== false && $positions[2] > $positions[1] && $positions[3] > $positions[2]) {
+        $intro = trim(substr($plain, 0, $positions[1]));
+        for ($i = 1; $i <= 3; $i++) {
+            $start = $positions[$i] + strlen($cards['heading_' . $i]);
+            $end = $i < 3 ? $positions[$i + 1] : strlen($plain);
+            $cards['description_' . $i] = trim(substr($plain, $start, $end - $start));
+        }
+    }
+    foreach ($cards as $name => $fallback) {
+        foreach (['field_home_strategy_card_' . $name, 'card_' . $name] as $key) {
+            if (array_key_exists($key, $group)) {
+                $cards[$name] = (string) $group[$key];
+                break;
+            }
+        }
+    }
+    return ['intro' => $intro, 'cards' => $cards];
+}
