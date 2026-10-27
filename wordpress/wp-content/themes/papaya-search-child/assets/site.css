@@ -1355,19 +1355,8 @@ body.single-post #main-content h3 {
 .seo-benefits-grid {
   margin-top: 48px;
 }
-.seo-benefit {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  & h3 {
-    margin-bottom: 16px;
-  }
-}
-.seo-benefit-number {
-  color: var(--papaya-sage);
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 700;
-  line-height: 1;
+.seo-benefit h3 {
+  margin-bottom: 16px;
 }
 .section-seo-benefits + .section-tight {
   padding-top: var(--section-space);

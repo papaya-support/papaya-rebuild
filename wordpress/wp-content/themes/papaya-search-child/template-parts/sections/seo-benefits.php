@@ -21,7 +21,6 @@ $benefits = array_merge(ps_seo_benefits_defaults(), $benefits);
             <?php for ($i = 1; $i <= 4; $i++): ?>
                 <?php if ($benefits['heading_' . $i] !== '' || $benefits['description_' . $i] !== ''): ?>
                     <article class="seo-benefit">
-                        <span class="seo-benefit-number" aria-hidden="true"><?php echo esc_html(sprintf('%02d', $i)); ?></span>
                         <div>
                             <?php if ($benefits['heading_' . $i] !== ''): ?>
                                 <h3><?php echo esc_html($benefits['heading_' . $i]); ?></h3>
