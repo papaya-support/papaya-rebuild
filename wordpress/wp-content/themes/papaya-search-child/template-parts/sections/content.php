@@ -114,7 +114,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Search Engine Marketing Closing Cta -->
     <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
         <section class="section-search-engine-marketing-closing-cta section section-cta green">
-            <div class="container">
+            <div class="container cta-with-team"><div class="cta-copy">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="search_engine_marketing_b1060e1729d0"><?php echo ps_section_text($heading, 'search_engine_marketing_b1060e1729d0', 'h2', ' is-uppercase'); ?></h2>
                 <?php endif; ?>
@@ -124,7 +124,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if ($button_label !== ''): ?>
                     <a<?php echo ps_section_button_label($button_label, wp_strip_all_tags(ps_inline_content('search_engine_marketing_b1060e1729d0', $heading))); ?> class="button button-peach" data-field="search_engine_marketing_2263d859bf84" href="<?php echo esc_url(ps_local_service_url($button_url ?: ps_booking_url())); ?>"><?php echo ps_inline_content('search_engine_marketing_2263d859bf84', $button_label); ?></a>
                 <?php endif; ?>
-            </div>
+            </div><?php get_template_part('template-parts/sections/cta-image'); ?></div>
         </section>
     <?php endif; ?>
 <?php endif; ?>
@@ -200,7 +200,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- About Closing Cta -->
     <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
         <section class="section-about-closing-cta section section-cta green">
-            <div class="container">
+            <div class="container cta-with-team"><div class="cta-copy">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="about_8ccc8c3f77e1"><?php echo ps_section_text($heading, 'about_8ccc8c3f77e1', 'h2', ' is-uppercase'); ?></h2>
                 <?php endif; ?>
@@ -210,7 +210,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if ($button_label !== ''): ?>
                     <a<?php echo ps_section_button_label($button_label, wp_strip_all_tags(ps_inline_content('about_8ccc8c3f77e1', $heading))); ?> class="button button-peach" data-field="about_718abc37e0eb" href="<?php echo esc_url(ps_local_service_url($button_url_2 ?: ps_booking_url())); ?>"><?php echo ps_inline_content('about_718abc37e0eb', $button_label); ?></a>
                 <?php endif; ?>
-            </div>
+            </div><?php get_template_part('template-parts/sections/cta-image'); ?></div>
         </section>
     <?php endif; ?>
 <?php endif; ?>

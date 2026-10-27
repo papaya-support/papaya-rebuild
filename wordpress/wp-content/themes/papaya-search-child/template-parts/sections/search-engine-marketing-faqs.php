@@ -3,7 +3,6 @@
 defined('ABSPATH') || exit();
 $faqs = function_exists('get_field') ? (get_field('section_faqs', get_the_ID(), false) ?: []) : [];
 $heading = ps_section_value($faqs, 'heading', 'search_engine_marketing_de2d5ec0ff46');
-$image = ps_section_value($faqs, 'image', 'search_engine_marketing_image_ba13013ff2');
 $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_source', true);
 $questions = [
     [
@@ -73,11 +72,8 @@ if (!$questions) {
             <h2 class="section-title accent is-uppercase" data-field="search_engine_marketing_de2d5ec0ff46"><?php echo ps_inline_content('search_engine_marketing_de2d5ec0ff46', $heading); ?></h2>
         <?php endif; ?>
     </div>
-    <div class="container split">
-        <div class="split-media">
-            <?php ps_image('search_engine_marketing_image_ba13013ff2', '', false, $image); ?>
-        </div>
-        <div class="split-copy">
+    <div class="container faq-full-width">
+        <div class="faq-list">
             <?php foreach ($questions as $question): ?>
                 <details class="faq-item">
                     <summary data-field="<?php echo esc_attr($question['question_key']); ?>"><?php echo ps_inline_content($question['question_key'], $question['question']); ?></summary>

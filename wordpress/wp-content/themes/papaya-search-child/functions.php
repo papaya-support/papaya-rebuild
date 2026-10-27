@@ -120,3 +120,5 @@ require_once __DIR__ . '/inc/seo-editor.php';
 require_once __DIR__ . '/inc/home-strategy-cards.php';
 
 require_once __DIR__ . '/inc/button-fields.php';
+
+require_once __DIR__ . '/inc/section-photos.php';

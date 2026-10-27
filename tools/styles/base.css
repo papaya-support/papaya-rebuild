@@ -503,7 +503,8 @@ h3 {
   border-radius: 50%;
   background: #3c3c3c;
 }
-.green > .container > .prose {
+.green > .container > .prose,
+.green .cta-copy > .prose {
   margin-block: 24px;
 }
 .certification-card {
@@ -1451,3 +1452,13 @@ body.single-post #main-content h3 {
 
 /* Only CTA sections collapse the image column when no image is selected. */
 .section-cta .split.split-without-media { grid-template-columns: minmax(0, 1fr); }
+
+/* Final CTA portraits keep existing colors, typography and buttons. */
+.cta-with-team { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); align-items: center; gap: clamp(32px, 5vw, 72px); }
+.cta-team-media img { display: block; width: 100%; height: auto; }
+.cta-with-team:not(:has(.cta-team-media)) { grid-template-columns: minmax(0, 1fr); }
+.testimonial-portrait { width: 145px; height: 145px; flex: 0 0 145px; object-fit: cover; border-radius: 50%; }
+@media (max-width: 767px) {
+  .cta-with-team { grid-template-columns: minmax(0, 1fr); }
+  .testimonial-portrait { width: 110px; height: 110px; flex-basis: auto; }
+}

@@ -16,7 +16,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     <!-- Services Closing Cta -->
     <?php if (!$is_imported_service || ($heading !== '' || $button_label !== '' || $text !== '' || $text_2 !== '' || $text_3 !== '')): ?>
         <section class="section-services-closing-cta section section-cta green">
-            <div class="container center">
+            <div class="container cta-with-team"><div class="cta-copy center">
                 <?php if ($heading !== ''): ?>
                     <h2 class=" is-uppercase" data-field="services_94024e830fa2"><?php echo ps_section_text($heading, 'services_94024e830fa2', 'h2', ' is-uppercase'); ?></h2>
                 <?php endif; ?>
@@ -48,7 +48,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if ($button_label !== ''): ?>
                     <a<?php echo ps_section_button_label($button_label, ''); ?> class="button button-peach" data-field="services_4b4ceb001243" href="<?php echo esc_url(ps_local_service_url($button_url ?: ps_booking_url())); ?>"><?php echo ps_inline_content('services_4b4ceb001243', $button_label); ?></a>
                 <?php endif; ?>
-            </div>
+            </div><?php get_template_part('template-parts/sections/cta-image'); ?></div>
         </section>
     <?php endif; ?>
 <?php endif; ?>

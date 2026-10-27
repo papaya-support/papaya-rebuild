@@ -138,12 +138,11 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
     $description = ps_section_value($section_closing_cta, 'description', 'home_26e26ba9efb2');
     $button_label = ps_section_value($section_closing_cta, 'button_label', 'home_b48f00ea5554');
     $button_url = ps_section_value($section_closing_cta, 'button_url', 'home_b48f00ea5554_url');
-    $image = ps_section_value($section_closing_cta, 'image', 'home_image_0aad8a4a0f');
     ?>
     <!-- Home Closing Cta -->
     <?php if (!$is_imported_service || (($heading !== '' || $description !== '' || $button_label !== ''))): ?>
         <section class="section-home-closing-cta section section-cta cream">
-            <div class="container<?php echo !$is_imported_service || ((int) ($heading !== '' || $description !== '' || $button_label !== '') + (int) (true)) > 1 ? (ps_has_section_image($image) ? ' split' : ' split split-without-media') : ''; ?>">
+            <div class="container split cta-with-team">
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '' || $button_label !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
@@ -157,11 +156,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
-                <?php if (ps_has_section_image($image)): ?>
-                <div class="split-media">
-                    <?php ps_image('home_image_0aad8a4a0f', '', false, $image); ?>
-                </div>
-                <?php endif; ?>
+                <?php get_template_part('template-parts/sections/cta-image'); ?>
             </div>
         </section>
     <?php endif; ?>

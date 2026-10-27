@@ -24,6 +24,15 @@ $intro = trim($data[$seo ? 'description' : 'intro_description'] ?? '');
 $quote = trim($data[$seo ? 'quote' : 'description'] ?? '');
 $client = trim($data[$seo ? 'client_name' : 'attribution'] ?? '');
 $business = trim($data['business_name'] ?? '');
+$image_meta = ($seo ? 'section_seo_testimonial' : 'section_testimonial') . '_image';
+$image_id = (int) get_post_meta(get_the_ID(), $image_meta, true);
+$image_url = $image_id ? wp_get_attachment_url($image_id) : '';
+$image_alt = $image_id ? get_post_meta($image_id, '_wp_attachment_image_alt', true) : '';
+if (!$image_url && !metadata_exists('post', get_the_ID(), $image_meta) && stripos($client, 'Shmuel') !== false) {
+    $image_url = get_stylesheet_directory_uri() . '/assets/images/shmuel-pearl-ceo-of-pearl-solutions.png';
+    $image_alt = 'Pearl Solutions logo';
+}
+
 $mark = $data['quote_mark'] ?? '“';
 $button = $data['button'] ?? [];
 $old_target = is_array($button) ? ($button['target'] ?? '') : '';
@@ -42,7 +51,7 @@ if ($heading === '' && $intro === '' && $quote === '' && !$show_button) return;
         <?php if ($quote !== '' || $show_button): ?>
         <div class="section <?php echo $case ? 'section-tight' : 'green'; ?>">
             <div class="container testimonial <?php echo $case ? 'cream testimonial-panel' : ''; ?>">
-                <?php if (!$case && $quote !== ''): ?><img class="quote-illustration" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/illustrations/testimonial-bird.svg'); ?>" alt="" aria-hidden="true"><?php endif; ?>
+                <?php if ($quote !== '' && $image_url): ?><img class="testimonial-portrait" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="145" height="145" loading="lazy"><?php endif; ?>
                 <div class="testimonial-content">
                 <?php if ($quote !== ''): ?>
                 <blockquote>
