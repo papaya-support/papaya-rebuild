@@ -21,6 +21,10 @@ $services = array_merge(ps_seo_services_defaults(), $services);
             <?php for ($i = 1; $i <= 6; $i++): ?>
                 <?php if ($services['heading_' . $i] !== '' || $services['description_' . $i] !== ''): ?>
                     <article class="seo-service-card">
+                        <?php $icon_url = ps_seo_service_icon_url($i); ?>
+                        <?php if ($icon_url): ?>
+                            <img class="seo-service-icon" src="<?php echo esc_url($icon_url); ?>" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async">
+                        <?php endif; ?>
                         <?php if ($services['heading_' . $i] !== ''): ?>
                             <h3><?php echo esc_html($services['heading_' . $i]); ?></h3>
                         <?php endif; ?>

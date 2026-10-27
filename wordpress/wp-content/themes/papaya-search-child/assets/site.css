@@ -1382,6 +1382,14 @@ body.single-post #main-content h3 {
     margin-bottom: 20px;
   }
 }
+.seo-service-card .seo-service-icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 24px;
+}
 @media (max-width: 1024px) {
   .seo-services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
