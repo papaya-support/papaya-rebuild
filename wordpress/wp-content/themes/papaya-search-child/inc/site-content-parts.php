@@ -141,7 +141,8 @@ function ps_header_logo()
         'alt' => 'Papaya Search — Be seen. Stay ahead. Grow smarter.',
     ];
     $header_id = (int) get_option('ps_header_content_id');
-    $image_id = $header_id ? (int) get_post_meta($header_id, 'section_header_logo', true) : 0;
+    $option_image = function_exists('ps_option_meta') ? ps_option_meta('header', 'section_header_logo') : null;
+    $image_id = $option_image !== null ? (int) $option_image : ($header_id ? (int) get_post_meta($header_id, 'section_header_logo', true) : 0);
     $url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : false;
     if ($url) {
         $logo['url'] = $url;

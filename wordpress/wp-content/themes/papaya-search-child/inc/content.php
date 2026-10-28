@@ -21,6 +21,10 @@ function ps_shared_id()
 }
 function ps_value($key, $default = '', $scope = 'page', $post_id = null)
 {
+    if ($scope !== 'page' && function_exists('ps_footer_option_value')) {
+        $option = ps_footer_option_value($key);
+        if ($option !== null) return $option;
+    }
     $id = $scope === 'page' ? ($post_id ?: get_the_ID()) : ps_shared_id();
     $grouped = ps_grouped_field_value($key, $id, $found);
     if ($found) {

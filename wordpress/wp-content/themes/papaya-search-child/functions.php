@@ -89,6 +89,8 @@ require_once __DIR__ . "/inc/original-post-import.php";
 
 require_once __DIR__ . '/inc/site-content-parts.php';
 require_once __DIR__ . '/inc/shared-testimonials.php';
+require_once __DIR__ . '/inc/acf-options.php';
+require_once __DIR__ . '/inc/faq-repeater.php';
 
 require_once __DIR__ . '/inc/post-group-cleanup.php';
 

@@ -5,7 +5,20 @@ $variant = $args['variant'] ?? '';
 if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($variant === 'seo-testimonial' && !is_page('seo'))) return;
 $case = $variant === 'case-study-detail-testimonial';
 $settings = ps_testimonial_settings($variant);
-$testimonials = ps_shared_testimonial_ids();
+$testimonials = ps_testimonial_rows();
+if (!get_option('ps_acf_options_v1')) {
+    foreach (ps_shared_testimonial_ids() as $id) {
+        $testimonials[] = [
+            'quote' => get_post_meta($id, 'quote', true),
+            'client_name' => get_post_meta($id, 'client_name', true),
+            'business_name' => get_post_meta($id, 'business_name', true),
+            'client_role' => get_post_meta($id, 'client_role', true),
+            'image' => get_post_meta($id, 'image', true),
+            'image_url' => '',
+            'quote_mark' => get_post_meta($id, 'quote_mark', true),
+        ];
+    }
+}
 $has_button = $settings['button_label'] !== '' && $settings['button_url'] !== '';
 if (!$testimonials && $settings['heading'] === '' && $settings['description'] === '' && !$has_button) return;
 ?>
@@ -20,15 +33,14 @@ if (!$testimonials && $settings['heading'] === '' && $settings['description'] ==
         <div class="section <?php echo $case ? 'section-tight' : 'green'; ?>">
             <?php if ($testimonials): ?>
                 <div class="testimonial-slider container" data-testimonial-slider aria-roledescription="carousel" aria-label="Client testimonials">
-                    <?php foreach ($testimonials as $index => $testimonial_id):
-                        $quote = trim((string) get_post_meta($testimonial_id, 'quote', true));
-                        if ($quote === '') continue;
-                        $client = trim((string) get_post_meta($testimonial_id, 'client_name', true));
-                        $business = trim((string) get_post_meta($testimonial_id, 'business_name', true));
-                        $role = trim((string) get_post_meta($testimonial_id, 'client_role', true));
-                        $mark = (string) get_post_meta($testimonial_id, 'quote_mark', true);
-                        $image_id = (int) get_post_meta($testimonial_id, 'image', true);
-                        $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : '';
+                    <?php foreach ($testimonials as $index => $testimonial):
+                        $quote = trim((string) $testimonial['quote']);
+                        $client = trim((string) $testimonial['client_name']);
+                        $business = trim((string) $testimonial['business_name']);
+                        $role = trim((string) $testimonial['client_role']);
+                        $mark = (string) $testimonial['quote_mark'];
+                        $image_id = (int) $testimonial['image'];
+                        $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : esc_url((string) $testimonial['image_url']);
                         $image_alt = $image_id ? get_post_meta($image_id, '_wp_attachment_image_alt', true) : '';
                     ?>
                     <article class="testimonial-slide testimonial <?php echo $case ? 'cream testimonial-panel' : ''; ?> <?php echo $index === 0 ? 'is-active' : ''; ?>" aria-roledescription="slide" aria-label="Testimonial <?php echo esc_attr($index + 1); ?> of <?php echo esc_attr(count($testimonials)); ?>"<?php if ($index !== 0): ?> aria-hidden="true" inert<?php endif; ?>>

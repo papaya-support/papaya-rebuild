@@ -60,6 +60,22 @@ $questions = [
         'answer' => ps_section_value($faqs, 'answer_9', 'search_engine_marketing_faq_answer_9'),
     ],
     ];
+if (metadata_exists('post', get_the_ID(), 'section_faqs_items')) {
+    $questions = [];
+    $count = (int) get_post_meta(get_the_ID(), 'section_faqs_items', true);
+    for ($index = 0; $index < $count; $index++) {
+        $base = 'section_faqs_items_' . $index . '_';
+        $question = (string) get_post_meta(get_the_ID(), $base . 'question', true);
+        if (trim($question) === '') continue;
+        $questions[] = [
+            'question_key' => $base . 'question',
+            'answer_key' => $base . 'answer',
+            'question' => $question,
+            'answer' => (string) get_post_meta(get_the_ID(), $base . 'answer', true),
+            'is_repeater' => true,
+        ];
+    }
+}
 $questions = array_filter($questions, fn($question) => $question['question'] !== '');
 if (!$questions) {
     return;
@@ -78,7 +94,7 @@ if (!$questions) {
                 <details class="faq-item">
                     <summary data-field="<?php echo esc_attr($question['question_key']); ?>"><?php echo ps_inline_content($question['question_key'], $question['question']); ?></summary>
                     <div class="faq-answer">
-                        <?php if ($question['answer'] === '' && !$is_imported_service): ?>
+                        <?php if ($question['answer'] === '' && !$is_imported_service && empty($question['is_repeater'])): ?>
                             <?php ps_faq_answer($question['question_key']); ?>
                         <?php elseif ($question['answer'] !== ''): ?>
                             <div class="prose" data-field="<?php echo esc_attr($question['answer_key']); ?>"><?php echo wp_kses_post(ps_content_html($question['answer_key'], $question['answer'])); ?></div>

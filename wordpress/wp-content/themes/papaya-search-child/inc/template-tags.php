@@ -10,6 +10,10 @@ function ps_default_content($key)
 function ps_field_value($key)
 {
     $default = ps_default_content($key);
+    if (($default['scope'] ?? 'page') !== 'page' && function_exists('ps_footer_option_value')) {
+        $option = ps_footer_option_value($key);
+        if ($option !== null) return is_scalar($option) ? (string) $option : '';
+    }
     $post_id = ($default['scope'] ?? 'page') === 'page' ? get_the_ID() : ps_shared_id();
     $grouped = ps_grouped_field_value($key, $post_id, $found);
     if ($found) {

@@ -5,7 +5,7 @@ defined('ABSPATH') || exit();
 add_action('init', function () {
     register_post_type('ps_testimonial', [
         'labels' => ['name' => 'Testimonials', 'singular_name' => 'Testimonial', 'add_new_item' => 'Add Testimonial'],
-        'public' => false, 'show_ui' => true, 'show_in_menu' => true,
+        'public' => false, 'show_ui' => false, 'show_in_menu' => false,
         'menu_icon' => 'dashicons-format-quote', 'supports' => ['title'],
         'capability_type' => 'page', 'map_meta_cap' => true,
     ]);
@@ -20,9 +20,25 @@ function ps_testimonial_settings($variant) {
     $prefix = $variant === 'seo-testimonial' ? 'seo' : ($variant === 'case-study-detail-testimonial' ? 'case' : 'home');
     $values = [];
     foreach (['heading', 'description', 'button_label', 'button_url'] as $name) {
-        $values[$name] = $id ? (string) get_post_meta($id, 'section_testimonials_' . $prefix . '_' . $name, true) : '';
+        $meta = 'section_testimonials_' . $prefix . '_' . $name;
+        $option = function_exists('ps_option_meta') ? ps_option_meta('testimonials', $meta) : null;
+        $values[$name] = $option !== null ? (string) $option : ($id ? (string) get_post_meta($id, $meta, true) : '');
     }
     return $values;
+}
+
+function ps_testimonial_rows() {
+    if (!get_option('ps_acf_options_v1')) return [];
+    $count = (int) get_option('ps_testimonials_section_testimonials_items', 0);
+    $rows = [];
+    for ($index = 0; $index < $count; $index++) {
+        $row = [];
+        foreach (['quote', 'client_name', 'business_name', 'client_role', 'image', 'image_url', 'quote_mark'] as $name) {
+            $row[$name] = get_option('ps_testimonials_section_testimonials_items_' . $index . '_' . $name, '');
+        }
+        if (trim((string) $row['quote']) !== '') $rows[] = $row;
+    }
+    return $rows;
 }
 
 function ps_shared_testimonial_ids() {
