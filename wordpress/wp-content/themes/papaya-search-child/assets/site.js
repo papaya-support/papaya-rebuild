@@ -44,6 +44,7 @@
     navigation.classList.add('is-collapsible');
   }
   const submenuControls = [];
+  const desktopHover = window.matchMedia('(min-width: 801px) and (hover: hover)');
   navigation?.querySelectorAll('.menu-item-has-children').forEach((item, index) => {
     const link = item.querySelector(':scope > a');
     const submenu = item.querySelector(':scope > .sub-menu');
@@ -70,6 +71,12 @@
     link.after(button);
     setOpen(false);
     submenuControls.push({ item, button, setOpen });
+    item.addEventListener('mouseenter', () => {
+      if (desktopHover.matches) setOpen(true);
+    });
+    item.addEventListener('mouseleave', () => {
+      if (desktopHover.matches && !item.contains(document.activeElement)) setOpen(false);
+    });
     item.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape' || button.getAttribute('aria-expanded') !== 'true') return;
       event.preventDefault();
