@@ -139,3 +139,29 @@ function ps_install_shared_testimonials() {
 add_action('init', function () {
     if (!get_option('ps_shared_testimonials_v1') && function_exists('acf_update_field_group') && get_option('ps_section_groups_v1')) ps_install_shared_testimonials();
 }, 120);
+
+/** Restore the SEO testimonial CTA after the page fields moved to Site Content. */
+add_action('init', function () {
+    if (get_option('ps_seo_testimonial_button_restored_v1')) return;
+    $entry = ps_testimonial_site_id();
+    if (!$entry || !get_post($entry)) return;
+
+    $seo_page = get_page_by_path('services/seo') ?: get_page_by_path('seo');
+    $legacy_button = $seo_page ? get_post_meta($seo_page->ID, 'section_seo_testimonial_button', true) : [];
+    $defaults = [
+        'button_label' => $seo_page ? (string) get_post_meta($seo_page->ID, 'section_seo_testimonial_button_label', true) : '',
+        'button_url' => $seo_page ? (string) get_post_meta($seo_page->ID, 'section_seo_testimonial_button_url', true) : '',
+    ];
+    if ($defaults['button_label'] === '') $defaults['button_label'] = is_array($legacy_button) ? (string) ($legacy_button['title'] ?? '') : '';
+    if ($defaults['button_url'] === '') $defaults['button_url'] = is_array($legacy_button) ? (string) ($legacy_button['url'] ?? '') : '';
+    if ($defaults['button_label'] === '') $defaults['button_label'] = 'Explore Our SEO Case Studies';
+    if ($defaults['button_url'] === '') $defaults['button_url'] = home_url('/case-studies/');
+
+    foreach ($defaults as $name => $value) {
+        $meta = 'section_testimonials_seo_' . $name;
+        if (trim((string) get_post_meta($entry, $meta, true)) !== '') continue;
+        update_post_meta($entry, $meta, wp_slash($value));
+        update_post_meta($entry, '_' . $meta, 'field_ps_shared_testimonials_seo_' . $name);
+    }
+    update_option('ps_seo_testimonial_button_restored_v1', 1, false);
+}, 130);
