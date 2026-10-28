@@ -1266,6 +1266,9 @@ body.single-post #main-content h3 {
   gap: 12px;
 }
 @media (min-width: 801px) {
+  #primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu > .menu-item-has-children > .submenu-toggle span {
+    transform: rotate(-90deg);
+  }
   #primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu .sub-menu {
     top: 0;
     right: auto;
