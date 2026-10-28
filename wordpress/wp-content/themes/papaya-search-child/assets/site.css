@@ -1265,13 +1265,23 @@ body.single-post #main-content h3 {
   display: grid;
   gap: 12px;
 }
-#primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu .sub-menu {
-  position: static;
-  min-width: 0px;
-  padding: 0 0 0 16px;
-  box-shadow: none;
+@media (min-width: 801px) {
+  #primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu .sub-menu {
+    top: 0;
+    right: auto;
+    left: 100%;
+    min-width: 210px;
+    padding: 16px;
+    box-shadow: 0 4px 12px #0002;
+  }
 }
 @media (max-width: 800px) {
+  #primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu .sub-menu {
+    position: static;
+    min-width: 0px;
+    padding: 0 0 0 16px;
+    box-shadow: none;
+  }
   .ps-menu-primary .current-menu-item > a, .ps-menu-primary .current-menu-ancestor > a, .ps-menu-primary a[aria-current='page'] {
     background: transparent;
     color: var(--papaya-peach);

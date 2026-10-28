@@ -1237,14 +1237,24 @@ body.single-post #main-content h3 {
     @apply tw:grid;
     gap: 12px;
   }
-  & .sub-menu .sub-menu {
+}
+@media (min-width: 801px) {
+  #primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu .sub-menu {
+    top: 0;
+    right: auto;
+    left: 100%;
+    min-width: 210px;
+    padding: 16px;
+    box-shadow: 0 4px 12px #0002;
+  }
+}
+@media (max-width: 800px) {
+  #primary-navigation.has-submenu-controls .ps-menu-primary .sub-menu .sub-menu {
     @apply tw:static;
     @apply tw:min-w-0;
     padding: 0 0 0 16px;
     box-shadow: none;
   }
-}
-@media (max-width: 800px) {
   .ps-menu-primary {
     & .current-menu-item > a,
     & .current-menu-ancestor > a,
