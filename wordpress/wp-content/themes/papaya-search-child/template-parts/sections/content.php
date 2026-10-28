@@ -46,7 +46,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
             <div class="container intro center">
                 <h1 class="" data-field="services_1d102d9577a4"><?php echo ps_section_text($heading, 'services_1d102d9577a4', 'h1', ''); ?></h1>
                 <?php if ($heading_2 !== ''): ?>
-                    <h2 class="accent is-uppercase" data-field="services_c540653f6d16"><?php echo ps_section_text($heading_2, 'services_c540653f6d16', 'h2', 'accent is-uppercase'); ?></h2>
+                    <h2 class="accent" data-field="services_c540653f6d16"><?php echo ps_section_text($heading_2, 'services_c540653f6d16', 'h2', 'accent'); ?></h2>
                 <?php endif; ?>
                 <?php if ($description !== ''): ?>
                     <div class="prose " data-field="services_c0d7b44ec821"><?php echo ps_section_text($description, 'services_c0d7b44ec821', 'div', 'prose '); ?></div>
@@ -68,7 +68,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
         <section class="section-home-introduction section">
             <div class="container center narrow">
                 <?php if ($heading !== ''): ?>
-                    <h2 class=" is-uppercase" data-field="home_8c4225c0ac7d"><?php echo ps_section_text($heading, 'home_8c4225c0ac7d', 'h2', ' is-uppercase'); ?></h2>
+                    <h2 class="" data-field="home_8c4225c0ac7d"><?php echo ps_section_text($heading, 'home_8c4225c0ac7d', 'h2', ''); ?></h2>
                 <?php endif; ?>
                 <?php if ($description !== ''): ?>
                     <div class="prose home-introduction-copy" data-field="home_introduction_description"><?php echo wp_kses_post(ps_content_html('home_d92c033cd119', $description)); ?></div>
@@ -90,7 +90,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
             <div class="container intro center">
                 <h1 class="" data-field="search_engine_marketing_f6246eab32c5"><?php echo ps_section_text($heading, 'search_engine_marketing_f6246eab32c5', 'h1', ''); ?></h1>
                 <?php if ($subtitle !== ''): ?>
-                    <h2 class="accent is-uppercase" data-field="search_engine_marketing_4daf58fc05bf"><?php echo ps_section_text($subtitle, 'search_engine_marketing_4daf58fc05bf', 'h2', 'accent is-uppercase'); ?></h2>
+                    <h2 class="accent" data-field="search_engine_marketing_4daf58fc05bf"><?php echo ps_section_text($subtitle, 'search_engine_marketing_4daf58fc05bf', 'h2', 'accent'); ?></h2>
                 <?php endif; ?>
                 <?php if ($description !== ''): ?>
                     <div class="prose " data-field="search_engine_marketing_8f8d05ce486c"><?php echo ps_section_text($description, 'search_engine_marketing_8f8d05ce486c', 'div', 'prose '); ?></div>
@@ -116,7 +116,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
         <section class="section-search-engine-marketing-closing-cta section section-cta green">
             <div class="container cta-with-team"><div class="cta-copy">
                 <?php if ($heading !== ''): ?>
-                    <h2 class=" is-uppercase" data-field="search_engine_marketing_b1060e1729d0"><?php echo ps_section_text($heading, 'search_engine_marketing_b1060e1729d0', 'h2', ' is-uppercase'); ?></h2>
+                    <h2 class="" data-field="search_engine_marketing_b1060e1729d0"><?php echo ps_section_text($heading, 'search_engine_marketing_b1060e1729d0', 'h2', ''); ?></h2>
                 <?php endif; ?>
                 <?php if ($description !== ''): ?>
                     <div class="prose " data-field="search_engine_marketing_ca67c83aae59"><?php echo ps_section_text($description, 'search_engine_marketing_ca67c83aae59', 'div', 'prose '); ?></div>
@@ -202,7 +202,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
         <section class="section-about-closing-cta section section-cta green">
             <div class="container cta-with-team"><div class="cta-copy">
                 <?php if ($heading !== ''): ?>
-                    <h2 class=" is-uppercase" data-field="about_8ccc8c3f77e1"><?php echo ps_section_text($heading, 'about_8ccc8c3f77e1', 'h2', ' is-uppercase'); ?></h2>
+                    <h2 class="" data-field="about_8ccc8c3f77e1"><?php echo ps_section_text($heading, 'about_8ccc8c3f77e1', 'h2', ''); ?></h2>
                 <?php endif; ?>
                 <?php if ($description !== ''): ?>
                     <div class="prose " data-field="about_d48d9c392e5c"><?php echo ps_section_text($description, 'about_d48d9c392e5c', 'div', 'prose '); ?></div>

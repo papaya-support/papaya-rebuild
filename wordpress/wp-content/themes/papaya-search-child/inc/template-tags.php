@@ -111,7 +111,7 @@ function ps_text($key, $tag = 'p', $class = '')
     if ($value === '' && $tag !== 'h1') {
         return;
     }
-    if (!empty(ps_default_content($key)['uppercase'])) {
+    if (!in_array($tag, ['h1', 'h2', 'h3'], true) && !empty(ps_default_content($key)['uppercase'])) {
         $class .= ' is-uppercase';
     }
     echo '<' . $tag . ' class="' . esc_attr($class) . '" data-field="' . esc_attr($key) . '">';

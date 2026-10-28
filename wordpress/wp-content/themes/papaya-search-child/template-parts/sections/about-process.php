@@ -22,7 +22,7 @@ $button_url_2 = ps_section_value($section_process, 'button_url_2', 'about_984990
 <section class="section-about-process section teal">
     <div class="container center">
         <?php if ($heading !== ''): ?>
-            <h2 class="section-title is-uppercase" data-field="about_da4d2d3bcd37"><?php echo ps_section_text($heading, 'about_da4d2d3bcd37', 'h2', 'section-title is-uppercase'); ?></h2>
+            <h2 class="section-title" data-field="about_da4d2d3bcd37"><?php echo ps_section_text($heading, 'about_da4d2d3bcd37', 'h2', 'section-title'); ?></h2>
         <?php endif; ?>
         <?php if ($description !== ''): ?>
             <div class="prose " data-field="about_f46b98a005e8"><?php echo ps_section_text($description, 'about_f46b98a005e8', 'div', 'prose '); ?></div>

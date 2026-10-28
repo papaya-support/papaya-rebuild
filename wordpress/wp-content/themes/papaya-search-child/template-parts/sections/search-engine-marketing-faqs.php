@@ -69,7 +69,7 @@ if (!$questions) {
 <section class="section-search-engine-marketing-faqs section">
     <div class="container">
         <?php if ($heading !== ''): ?>
-            <h2 class="section-title accent is-uppercase" data-field="search_engine_marketing_de2d5ec0ff46"><?php echo ps_inline_content('search_engine_marketing_de2d5ec0ff46', $heading); ?></h2>
+            <h2 class="section-title accent" data-field="search_engine_marketing_de2d5ec0ff46"><?php echo ps_inline_content('search_engine_marketing_de2d5ec0ff46', $heading); ?></h2>
         <?php endif; ?>
     </div>
     <div class="container faq-full-width">

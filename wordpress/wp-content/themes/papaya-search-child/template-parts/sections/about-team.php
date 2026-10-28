@@ -21,7 +21,7 @@ $button_url_3 = ps_section_value($section_team, 'button_url_3', 'about_5d0d58023
 <section class="section-about-team section center">
     <div class="container">
         <?php if ($heading !== ''): ?>
-            <h2 class="section-title accent is-uppercase" data-field="about_5182134bb65f"><?php echo ps_section_text($heading, 'about_5182134bb65f', 'h2', 'section-title accent is-uppercase'); ?></h2>
+            <h2 class="section-title accent" data-field="about_5182134bb65f"><?php echo ps_section_text($heading, 'about_5182134bb65f', 'h2', 'section-title accent'); ?></h2>
         <?php endif; ?>
         <div class="grid grid-three">
             <div class="team-card">

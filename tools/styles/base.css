@@ -116,7 +116,7 @@ h3 {
 }
 .section-title {
   @apply tw:text-center;
-  @apply tw:uppercase;
+  text-transform: capitalize;
   margin-bottom: 36px;
 }
 .prose {
@@ -145,7 +145,7 @@ h3 {
     margin-top: 24px;
   }
   & h2 {
-    @apply tw:uppercase;
+    text-transform: capitalize;
   }
 }
 .home-introduction-copy {
@@ -348,7 +348,7 @@ h3 {
   @apply tw:text-center;
   padding-block: 90px 180px;
   & h1 {
-    @apply tw:uppercase;
+    text-transform: capitalize;
     letter-spacing: 1.3px;
   }
 }
@@ -443,7 +443,7 @@ h3 {
   padding-left: 0;
 }
 .page-home .stats h3 {
-  @apply tw:uppercase;
+  text-transform: capitalize;
 }
 .page-home .center > .prose + p {
   margin-top: 20px;
@@ -691,7 +691,7 @@ h3 {
 }
 .footer-heading {
   @apply tw:text-papaya-green;
-  @apply tw:uppercase;
+  text-transform: capitalize;
   font-size: 24px;
   padding-bottom: 24px;
   margin: 18px 0 24px;
@@ -1039,8 +1039,11 @@ body.single-post .article-body .wp-block-group {
     font-size: clamp(24px, 2.4vw, 34px);
     font-weight: 700;
     line-height: 1.25;
-    text-transform: uppercase;
     margin-bottom: 0;
+  }
+
+  & p:has(> strong:only-child) {
+    text-transform: uppercase;
   }
 
   & .wp-block-group__inner-container > * + * {
@@ -1461,4 +1464,10 @@ body.single-post #main-content h3 {
 @media (max-width: 767px) {
   .cta-with-team { grid-template-columns: minmax(0, 1fr); }
   .testimonial-portrait { width: 110px; height: 110px; flex-basis: auto; }
+}
+
+/* Consistent title casing for every heading, including linked/rich-text headings. */
+body :is(h1, h2, h3, h4, h5, h6),
+body :is(h1, h2, h3, h4, h5, h6) :where(*) {
+  text-transform: capitalize;
 }

@@ -13,7 +13,7 @@ $variant = $args['variant'] ?? '';
     <section class="section-home-hero home-hero">
         <?php ps_image('home_image_4b5fa21323', 'hero-image', true, $image); ?>
         <div class="container hero-copy">
-            <h1 class=" is-uppercase" data-field="home_1d791eb121c5"><?php echo ps_section_text($heading, 'home_1d791eb121c5', 'h1', ' is-uppercase'); ?></h1>
+            <h1 class="" data-field="home_1d791eb121c5"><?php echo ps_section_text($heading, 'home_1d791eb121c5', 'h1', ''); ?></h1>
         </div>
         <?php ps_image('home_hero_emblem', 'hero-emblem', true, $image_2); ?>
     </section>

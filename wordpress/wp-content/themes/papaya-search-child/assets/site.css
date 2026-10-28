@@ -206,7 +206,7 @@ h3 {
 }
 .section-title {
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 36px;
 }
 .prose {
@@ -234,7 +234,7 @@ h3 {
     margin-top: 24px;
   }
   & h2 {
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 }
 .home-introduction-copy {
@@ -429,7 +429,7 @@ h3 {
   text-align: center;
   padding-block: 90px 180px;
   & h1 {
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1.3px;
   }
 }
@@ -522,7 +522,7 @@ h3 {
   padding-left: 0;
 }
 .page-home .stats h3 {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .page-home .center > .prose + p {
   margin-top: 20px;
@@ -761,7 +761,7 @@ h3 {
 }
 .footer-heading {
   color: var(--papaya-green);
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 24px;
   padding-bottom: 24px;
   margin: 18px 0 24px;
@@ -1091,8 +1091,10 @@ body.single-post .article-body .wp-block-group {
     font-size: clamp(24px, 2.4vw, 34px);
     font-weight: 700;
     line-height: 1.25;
-    text-transform: uppercase;
     margin-bottom: 0;
+  }
+  & p:has(> strong:only-child) {
+    text-transform: uppercase;
   }
   & .wp-block-group__inner-container > * + * {
     margin-top: 24px;
@@ -1565,4 +1567,7 @@ body.single-post #main-content h3 {
     height: 110px;
     flex-basis: auto;
   }
+}
+body :is(h1, h2, h3, h4, h5, h6), body :is(h1, h2, h3, h4, h5, h6) :where(*) {
+  text-transform: capitalize;
 }

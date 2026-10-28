@@ -228,7 +228,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
-                            <h2 class=" is-uppercase" data-field="search_engine_marketing_5da4f91cb7c5"><?php echo ps_section_text($heading, 'search_engine_marketing_5da4f91cb7c5', 'h2', ' is-uppercase'); ?></h2>
+                            <h2 class="" data-field="search_engine_marketing_5da4f91cb7c5"><?php echo ps_section_text($heading, 'search_engine_marketing_5da4f91cb7c5', 'h2', ''); ?></h2>
                         <?php endif; ?>
                         <?php if ($description !== ''): ?>
                             <div class="prose " data-field="search_engine_marketing_c4ab9d94a0db"><?php echo ps_section_text($description, 'search_engine_marketing_c4ab9d94a0db', 'div', 'prose '); ?></div>
@@ -270,7 +270,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if (!$is_imported_service || ($heading !== '' || $description_2 !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
-                            <h2 class=" is-uppercase" data-field="search_engine_marketing_9a4e6a600a10"><?php echo ps_section_text($heading, 'search_engine_marketing_9a4e6a600a10', 'h2', ' is-uppercase'); ?></h2>
+                            <h2 class="" data-field="search_engine_marketing_9a4e6a600a10"><?php echo ps_section_text($heading, 'search_engine_marketing_9a4e6a600a10', 'h2', ''); ?></h2>
                         <?php endif; ?>
                         <?php if ($description_2 !== ''): ?>
                             <div class="prose " data-field="search_engine_marketing_e7514b17f1f3"><?php echo ps_section_text($description_2, 'search_engine_marketing_e7514b17f1f3', 'div', 'prose '); ?></div>
@@ -354,7 +354,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                 <?php if (!$is_imported_service || ($heading !== '' || $description !== '')): ?>
                     <div class="split-copy">
                         <?php if ($heading !== ''): ?>
-                            <h2 class="accent is-uppercase" data-field="about_cc11b96d229a"><?php echo ps_section_text($heading, 'about_cc11b96d229a', 'h2', 'accent is-uppercase'); ?></h2>
+                            <h2 class="accent" data-field="about_cc11b96d229a"><?php echo ps_section_text($heading, 'about_cc11b96d229a', 'h2', 'accent'); ?></h2>
                         <?php endif; ?>
                         <?php if ($description !== ''): ?>
                             <div class="prose " data-field="about_e6c42fc4a3fa"><?php echo ps_section_text($description, 'about_e6c42fc4a3fa', 'div', 'prose '); ?></div>

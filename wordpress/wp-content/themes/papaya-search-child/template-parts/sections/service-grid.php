@@ -109,7 +109,7 @@ $variant = $args['variant'] ?? '';
     <section class="section-home-services section cream center">
         <div class="container">
             <?php if ($heading_5 !== ''): ?>
-                <h2 class="section-title home-services-eyebrow is-uppercase" data-field="home_473db858b064"><?php echo ps_section_text($heading_5, 'home_473db858b064', 'h2', 'section-title home-services-eyebrow is-uppercase'); ?></h2>
+                <h2 class="section-title home-services-eyebrow" data-field="home_473db858b064"><?php echo ps_section_text($heading_5, 'home_473db858b064', 'h2', 'section-title home-services-eyebrow'); ?></h2>
             <?php endif; ?>
             <div class="grid grid-four">
                 <div class="service-card home-service-card">

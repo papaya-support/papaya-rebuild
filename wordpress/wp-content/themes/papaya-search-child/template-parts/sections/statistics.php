@@ -18,7 +18,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
         <section class="section-services-closing-cta section section-cta green">
             <div class="container cta-with-team"><div class="cta-copy center">
                 <?php if ($heading !== ''): ?>
-                    <h2 class=" is-uppercase" data-field="services_94024e830fa2"><?php echo ps_section_text($heading, 'services_94024e830fa2', 'h2', ' is-uppercase'); ?></h2>
+                    <h2 class="" data-field="services_94024e830fa2"><?php echo ps_section_text($heading, 'services_94024e830fa2', 'h2', ''); ?></h2>
                 <?php endif; ?>
                 <?php if (!$is_imported_service || ($text !== '' || $text_2 !== '' || $text_3 !== '')): ?>
                     <div class="grid grid-three stats">
@@ -81,7 +81,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php if (!$is_imported_service || ($years_statistic !== '' || $description !== '')): ?>
                             <div class="stat">
                                 <?php if ($years_statistic !== ''): ?>
-                                    <h3 class=" is-uppercase" data-field="home_840918b075ea"><?php echo ps_section_text($years_statistic, 'home_840918b075ea', 'h3', ' is-uppercase'); ?></h3>
+                                    <h3 class="" data-field="home_840918b075ea"><?php echo ps_section_text($years_statistic, 'home_840918b075ea', 'h3', ''); ?></h3>
                                 <?php endif; ?>
                                 <?php if ($description !== ''): ?>
                                     <div class="prose " data-field="home_d17566645c30"><?php echo ps_section_text($description, 'home_d17566645c30', 'div', 'prose '); ?></div>
@@ -91,7 +91,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php if (!$is_imported_service || ($years_statistic_2 !== '' || $description_2 !== '')): ?>
                             <div class="stat">
                                 <?php if ($years_statistic_2 !== ''): ?>
-                                    <h3 class=" is-uppercase" data-field="home_4973267b1258"><?php echo ps_section_text($years_statistic_2, 'home_4973267b1258', 'h3', ' is-uppercase'); ?></h3>
+                                    <h3 class="" data-field="home_4973267b1258"><?php echo ps_section_text($years_statistic_2, 'home_4973267b1258', 'h3', ''); ?></h3>
                                 <?php endif; ?>
                                 <?php if ($description_2 !== ''): ?>
                                     <div class="prose " data-field="home_ea2e588e1e39"><?php echo ps_section_text($description_2, 'home_ea2e588e1e39', 'div', 'prose '); ?></div>
@@ -101,7 +101,7 @@ $is_imported_service = (bool) get_post_meta(get_the_ID(), '_ps_live_service_sour
                         <?php if (!$is_imported_service || ($statistic !== '' || $description_3 !== '')): ?>
                             <div class="stat">
                                 <?php if ($statistic !== ''): ?>
-                                    <h3 class=" is-uppercase" data-field="home_95726762e92f"><?php echo ps_section_text($statistic, 'home_95726762e92f', 'h3', ' is-uppercase'); ?></h3>
+                                    <h3 class="" data-field="home_95726762e92f"><?php echo ps_section_text($statistic, 'home_95726762e92f', 'h3', ''); ?></h3>
                                 <?php endif; ?>
                                 <?php if ($description_3 !== ''): ?>
                                     <div class="prose " data-field="home_6b3533e29b8d"><?php echo ps_section_text($description_3, 'home_6b3533e29b8d', 'div', 'prose '); ?></div>
