@@ -1,72 +1,55 @@
 <?php
-/** Shared testimonial layout with optional introduction and button. */
+/** Shared testimonial carousel, populated from the Testimonials library. */
 defined('ABSPATH') || exit();
 $variant = $args['variant'] ?? '';
-$seo = $variant === 'seo-testimonial';
+if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($variant === 'seo-testimonial' && !is_page('seo'))) return;
 $case = $variant === 'case-study-detail-testimonial';
-if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($seo && !is_page('seo'))) return;
-$data = function_exists('get_field') ? (get_field($seo ? 'field_ps_seo_testimonial' : ($case ? 'field_ps_section_case_study_detail_section_testimonial' : 'field_ps_section_home_section_testimonial')) ?: []) : [];
-$prefix = $seo ? 'ps_seo_testimonial_' : ($case ? 'case_study_detail_testimonial_' : 'home_testimonial_');
-$keys = [
-    'heading' => $prefix . 'heading',
-    $seo ? 'description' : 'intro_description' => $prefix . ($seo ? 'description' : 'intro_description'),
-    'quote_mark' => $seo ? $prefix . 'quote_mark' : ($case ? 'case_study_detail_7e19b95f2be4' : 'home_c71150b00266'),
-    $seo ? 'quote' : 'description' => $seo ? $prefix . 'quote' : ($case ? 'case_study_detail_3f5be18822e8' : 'home_71e8d5ebfb3e'),
-    $seo ? 'client_name' : 'attribution' => $seo ? $prefix . 'client_name' : ($case ? 'case_study_detail_74dd8a1b256d' : 'home_7393b65da373'),
-    'business_name' => $prefix . 'business_name',
-    'button' => ($seo ? 'seo_testimonial_' : $prefix) . 'button',
-];
-foreach ($keys as $name => $key) {
-    if (array_key_exists('field_' . $key, $data)) $data[$name] = $data['field_' . $key];
-}
-$heading = trim($data['heading'] ?? '');
-$intro = trim($data[$seo ? 'description' : 'intro_description'] ?? '');
-$quote = trim($data[$seo ? 'quote' : 'description'] ?? '');
-$client = trim($data[$seo ? 'client_name' : 'attribution'] ?? '');
-$business = trim($data['business_name'] ?? '');
-$image_meta = ($seo ? 'section_seo_testimonial' : 'section_testimonial') . '_image';
-$image_id = (int) get_post_meta(get_the_ID(), $image_meta, true);
-$image_url = $image_id ? wp_get_attachment_url($image_id) : '';
-$image_alt = $image_id ? get_post_meta($image_id, '_wp_attachment_image_alt', true) : '';
-if (!$image_url && !metadata_exists('post', get_the_ID(), $image_meta) && stripos($client, 'Shmuel') !== false) {
-    $image_url = get_stylesheet_directory_uri() . '/assets/images/shmuel-pearl-ceo-of-pearl-solutions.png';
-    $image_alt = 'Pearl Solutions logo';
-}
-
-$mark = $data['quote_mark'] ?? '“';
-$button = $data['button'] ?? [];
-$old_target = is_array($button) ? ($button['target'] ?? '') : '';
-$button = ps_editable_button($seo ? 'section_seo_testimonial' : 'section_testimonial', 'button', is_array($button) ? ($button['title'] ?? '') : '', is_array($button) ? ($button['url'] ?? '') : '');
-$button['target'] = $old_target;
-$show_button = is_array($button) && !empty($button['url']) && !empty($button['title']);
-if ($heading === '' && $intro === '' && $quote === '' && !$show_button) return;
+$settings = ps_testimonial_settings($variant);
+$testimonials = ps_shared_testimonial_ids();
+$has_button = $settings['button_label'] !== '' && $settings['button_url'] !== '';
+if (!$testimonials && $settings['heading'] === '' && $settings['description'] === '' && !$has_button) return;
 ?>
 <section class="section-<?php echo esc_attr($variant); ?>">
-        <?php if ($heading !== '' || $intro !== ''): ?>
-            <div class="container testimonial-intro center">
-                <?php if ($heading !== ''): ?><h2><?php echo esc_html($heading); ?></h2><?php endif; ?>
-                <?php if ($intro !== ''): ?><div class="prose"><?php echo wp_kses_post(wpautop($intro)); ?></div><?php endif; ?>
-            </div>
-        <?php endif; ?>
-        <?php if ($quote !== '' || $show_button): ?>
-        <div class="section <?php echo $case ? 'section-tight' : 'green'; ?>">
-            <div class="container testimonial <?php echo $case ? 'cream testimonial-panel' : ''; ?>">
-                <?php if ($quote !== '' && $image_url): ?><img class="testimonial-portrait" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" width="145" height="145" loading="lazy"><?php endif; ?>
-                <div class="testimonial-content">
-                <?php if ($quote !== ''): ?>
-                <blockquote>
-                    <?php if ($mark !== ''): ?><span class="quote-mark" aria-hidden="true"><?php echo esc_html($mark); ?></span><?php endif; ?>
-                    <div class="prose"><?php echo wp_kses_post(wpautop($quote)); ?></div>
-                    <?php if ($client !== '' || $business !== ''): ?>
-                        <cite class="is-uppercase"><?php echo esc_html(($seo ? '– ' : '') . implode(', ', array_filter([$client, $business], static fn($value) => $value !== ''))); ?></cite>
-                    <?php endif; ?>
-                </blockquote>
-                <?php endif; ?>
-        <?php if ($show_button): ?>
-            <div class="testimonial-action center"><a class="button" href="<?php echo esc_url($button['url']); ?>"<?php if (($button['target'] ?? '') === '_blank'): ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php echo esc_html($button['title']); ?></a></div>
-        <?php endif; ?>
-                </div>
-            </div>
+    <?php if ($settings['heading'] !== '' || $settings['description'] !== ''): ?>
+        <div class="container testimonial-intro center">
+            <?php if ($settings['heading'] !== ''): ?><h2><?php echo esc_html($settings['heading']); ?></h2><?php endif; ?>
+            <?php if ($settings['description'] !== ''): ?><div class="prose"><?php echo wp_kses_post(wpautop($settings['description'])); ?></div><?php endif; ?>
         </div>
-        <?php endif; ?>
+    <?php endif; ?>
+    <?php if ($testimonials || $has_button): ?>
+        <div class="section <?php echo $case ? 'section-tight' : 'green'; ?>">
+            <?php if ($testimonials): ?>
+                <div class="testimonial-slider container" data-testimonial-slider aria-roledescription="carousel" aria-label="Client testimonials">
+                    <?php foreach ($testimonials as $index => $testimonial_id):
+                        $quote = trim((string) get_post_meta($testimonial_id, 'quote', true));
+                        if ($quote === '') continue;
+                        $client = trim((string) get_post_meta($testimonial_id, 'client_name', true));
+                        $business = trim((string) get_post_meta($testimonial_id, 'business_name', true));
+                        $role = trim((string) get_post_meta($testimonial_id, 'client_role', true));
+                        $mark = (string) get_post_meta($testimonial_id, 'quote_mark', true);
+                        $image_id = (int) get_post_meta($testimonial_id, 'image', true);
+                        $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : '';
+                        $image_alt = $image_id ? get_post_meta($image_id, '_wp_attachment_image_alt', true) : '';
+                    ?>
+                    <article class="testimonial-slide testimonial <?php echo $case ? 'cream testimonial-panel' : ''; ?> <?php echo $index === 0 ? 'is-active' : ''; ?>" aria-roledescription="slide" aria-label="Testimonial <?php echo esc_attr($index + 1); ?> of <?php echo esc_attr(count($testimonials)); ?>"<?php if ($index !== 0): ?> aria-hidden="true" inert<?php endif; ?>>
+                        <?php if ($image_url): ?><img class="testimonial-portrait" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt ?: $client); ?>" width="145" height="145" loading="lazy"><?php endif; ?>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <?php if ($mark !== ''): ?><span class="quote-mark" aria-hidden="true"><?php echo esc_html($mark); ?></span><?php endif; ?>
+                                <div class="prose"><?php echo wp_kses_post(wpautop($quote)); ?></div>
+                                <?php if ($client !== '' || $business !== '' || $role !== ''): ?><cite class="is-uppercase"><?php echo esc_html('– ' . implode(', ', array_filter([$client, $role, $business]))); ?></cite><?php endif; ?>
+                            </blockquote>
+                        </div>
+                    </article>
+                    <?php endforeach; ?>
+                </div>
+                <?php if (count($testimonials) > 1): ?>
+                    <div class="testimonial-controls" data-testimonial-controls aria-label="Choose a testimonial">
+                        <?php foreach ($testimonials as $index => $_): ?><button type="button" class="testimonial-dot <?php echo $index === 0 ? 'is-active' : ''; ?>" data-testimonial-dot="<?php echo esc_attr($index); ?>" aria-label="Show testimonial <?php echo esc_attr($index + 1); ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>"></button><?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+            <?php if ($has_button): ?><div class="container testimonial-action center"><a class="button" href="<?php echo esc_url($settings['button_url']); ?>"><?php echo esc_html($settings['button_label']); ?></a></div><?php endif; ?>
+        </div>
+    <?php endif; ?>
 </section>

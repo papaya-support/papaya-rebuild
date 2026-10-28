@@ -1,5 +1,42 @@
 (() => {
   'use strict';
+  document.querySelectorAll('[data-testimonial-slider]').forEach((slider) => {
+    const slides = [...slider.querySelectorAll('.testimonial-slide')];
+    if (slides.length < 2) return;
+    const controls = slider.parentElement.querySelector('[data-testimonial-controls]');
+    const dots = [...(controls?.querySelectorAll('[data-testimonial-dot]') || [])];
+    let active = 0;
+    let timer;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const show = (index) => {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, position) => {
+        const current = position === active;
+        slide.classList.toggle('is-active', current);
+        slide.setAttribute('aria-hidden', String(!current));
+        slide.inert = !current;
+      });
+      dots.forEach((dot, position) => {
+        dot.classList.toggle('is-active', position === active);
+        dot.setAttribute('aria-current', String(position === active));
+      });
+    };
+    const stop = () => { if (timer) window.clearInterval(timer); timer = undefined; };
+    const start = () => {
+      stop();
+      if (!reducedMotion.matches && !document.hidden && !slider.parentElement.contains(document.activeElement)) timer = window.setInterval(() => show(active + 1), 5000);
+    };
+    dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); start(); }));
+    slider.parentElement.addEventListener('mouseenter', stop);
+    slider.parentElement.addEventListener('mouseleave', start);
+    slider.parentElement.addEventListener('focusin', stop);
+    slider.parentElement.addEventListener('focusout', (event) => {
+      if (!slider.parentElement.contains(event.relatedTarget)) start();
+    });
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    reducedMotion.addEventListener('change', start);
+    start();
+  });
   const toggle = document.querySelector('.menu-toggle');
   const navigation = document.getElementById('primary-navigation');
   if (toggle && navigation) {
