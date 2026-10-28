@@ -1458,7 +1458,7 @@ body.single-post #main-content h3 {
 
 /* Final CTA portraits keep existing colors, typography and buttons. */
 .cta-with-team { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); align-items: center; gap: clamp(32px, 5vw, 72px); }
-.cta-team-media img { display: block; width: auto; max-width: 100%; height: auto; max-height: 320px; margin-inline: auto; }
+.cta-with-team .cta-team-media img { display: block; width: auto; max-width: 100%; height: auto; max-height: 320px; aspect-ratio: auto; object-fit: contain; margin-inline: auto; }
 .cta-with-team:not(:has(.cta-team-media)) { grid-template-columns: minmax(0, 1fr); }
 .testimonial-portrait { width: 145px; height: 145px; flex: 0 0 145px; object-fit: cover; border-radius: 50%; }
 @media (max-width: 767px) {

@@ -1543,12 +1543,14 @@ body.single-post #main-content h3 {
   align-items: center;
   gap: clamp(32px, 5vw, 72px);
 }
-.cta-team-media img {
+.cta-with-team .cta-team-media img {
   display: block;
   width: auto;
   max-width: 100%;
   height: auto;
   max-height: 320px;
+  aspect-ratio: auto;
+  object-fit: contain;
   margin-inline: auto;
 }
 .cta-with-team:not(:has(.cta-team-media)) {
