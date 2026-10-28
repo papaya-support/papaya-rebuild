@@ -132,7 +132,6 @@ function ps_install_acf_options() {
         'business_name' => ['Business Name', 'text'],
         'client_role' => ['Client Role', 'text'],
         'image' => ['Image', 'image'],
-        'image_url' => ['Existing Image URL', 'url'],
         'quote_mark' => ['Quote Mark', 'text'],
     ] as $index => $field) {
         acf_update_field([
@@ -245,3 +244,60 @@ add_action('init', function () {
     }
     update_option('ps_acf_testimonial_seed_deduplicated_v1', 1, false);
 }, 220);
+
+/** Copy the supplied photos into the Media Library and replace URL-only rows. */
+add_action('init', function () {
+    if (!get_option('ps_acf_options_v1') || get_option('ps_testimonial_media_v1')) return;
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    global $wpdb;
+    $rows = ps_testimonial_rows();
+    $complete = true;
+    foreach ($rows as $index => $row) {
+        if ((int) ($row['image'] ?? 0) || empty($row['image_url'])) continue;
+        $filename = basename((string) wp_parse_url($row['image_url'], PHP_URL_PATH));
+        $source = get_stylesheet_directory() . '/assets/testimonials/' . $filename;
+        if (!$filename || !is_file($source) || !getimagesize($source)) {
+            $complete = false;
+            continue;
+        }
+        $checksum = md5_file($source);
+        $asset_key = 'ps_testimonial_media_' . $checksum;
+        $attachment = (int) get_option($asset_key);
+        if (!$attachment || !wp_attachment_is_image($attachment)) {
+            $matches = $wpdb->get_col($wpdb->prepare(
+                "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = '_wp_attached_file' AND meta_value LIKE %s",
+                '%' . $wpdb->esc_like($filename)
+            ));
+            foreach ($matches as $match) {
+                $path = get_attached_file((int) $match);
+                if (wp_attachment_is_image((int) $match) && $path && is_file($path) && md5_file($path) === $checksum) {
+                    $attachment = (int) $match;
+                    break;
+                }
+            }
+        }
+        if (!$attachment) {
+            $bytes = file_get_contents($source);
+            $upload = wp_upload_bits('papaya-testimonial-' . $filename, null, $bytes);
+            if (!empty($upload['error'])) { $complete = false; continue; }
+            $attachment = wp_insert_attachment([
+                'post_title' => $row['client_name'] . ' testimonial image',
+                'post_mime_type' => wp_check_filetype($upload['file'])['type'],
+                'post_status' => 'inherit',
+            ], $upload['file'], 0, true);
+            if (is_wp_error($attachment)) { $complete = false; continue; }
+            wp_update_attachment_metadata($attachment, wp_generate_attachment_metadata($attachment, $upload['file']));
+        }
+        if (!get_post_meta($attachment, '_wp_attachment_image_alt', true)) {
+            update_post_meta($attachment, '_wp_attachment_image_alt', $row['client_name']);
+        }
+        update_option($asset_key, $attachment, false);
+        $key = 'ps_testimonials_section_testimonials_items_' . $index . '_image';
+        update_option($key, $attachment, false);
+        update_option('_' . $key, 'field_ps_testimonial_option_image', false);
+    }
+    if (!$complete) return;
+    $url_field = acf_get_field('field_ps_testimonial_option_image_url');
+    if (!empty($url_field['ID'])) wp_delete_post((int) $url_field['ID'], true);
+    update_option('ps_testimonial_media_v1', 1, false);
+}, 230);
