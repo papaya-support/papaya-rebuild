@@ -3,8 +3,6 @@
   document.querySelectorAll('[data-testimonial-slider]').forEach((slider) => {
     const slides = [...slider.querySelectorAll('.testimonial-slide')];
     if (slides.length < 2) return;
-    const controls = slider.parentElement.querySelector('[data-testimonial-controls]');
-    const dots = [...(controls?.querySelectorAll('[data-testimonial-dot]') || [])];
     let active = 0;
     let timer;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -16,17 +14,12 @@
         slide.setAttribute('aria-hidden', String(!current));
         slide.inert = !current;
       });
-      dots.forEach((dot, position) => {
-        dot.classList.toggle('is-active', position === active);
-        dot.setAttribute('aria-current', String(position === active));
-      });
     };
     const stop = () => { if (timer) window.clearInterval(timer); timer = undefined; };
     const start = () => {
       stop();
       if (!reducedMotion.matches && !document.hidden && !slider.parentElement.contains(document.activeElement)) timer = window.setInterval(() => show(active + 1), 5000);
     };
-    dots.forEach((dot, index) => dot.addEventListener('click', () => { show(index); start(); }));
     slider.parentElement.addEventListener('mouseenter', stop);
     slider.parentElement.addEventListener('mouseleave', start);
     slider.parentElement.addEventListener('focusin', stop);

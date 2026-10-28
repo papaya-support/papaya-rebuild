@@ -55,11 +55,6 @@ if (!$testimonials && $settings['heading'] === '' && $settings['description'] ==
                     </article>
                     <?php endforeach; ?>
                 </div>
-                <?php if (count($testimonials) > 1): ?>
-                    <div class="testimonial-controls" data-testimonial-controls aria-label="Choose a testimonial">
-                        <?php foreach ($testimonials as $index => $_): ?><button type="button" class="testimonial-dot <?php echo $index === 0 ? 'is-active' : ''; ?>" data-testimonial-dot="<?php echo esc_attr($index); ?>" aria-label="Show testimonial <?php echo esc_attr($index + 1); ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>"></button><?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
             <?php endif; ?>
             <?php if ($has_button): ?><div class="container testimonial-action center"><a class="button" href="<?php echo esc_url($settings['button_url']); ?>"><?php echo esc_html($settings['button_label']); ?></a></div><?php endif; ?>
         </div>

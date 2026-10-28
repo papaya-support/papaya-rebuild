@@ -1503,29 +1503,6 @@ body.single-post #main-content h3 {
   pointer-events: auto;
   transition: opacity 600ms ease, visibility 0s;
 }
-.testimonial-controls {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
-}
-.testimonial-dot {
-  width: 11px;
-  height: 11px;
-  padding: 0;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  background: transparent;
-  color: var(--papaya-teal);
-  cursor: pointer;
-}
-.testimonial-dot.is-active {
-  background: currentColor;
-}
-.testimonial-dot:focus-visible {
-  outline: 2px solid var(--papaya-orange);
-  outline-offset: 3px;
-}
 @media (prefers-reduced-motion: reduce) {
   .testimonial-slide {
     transition: none;
