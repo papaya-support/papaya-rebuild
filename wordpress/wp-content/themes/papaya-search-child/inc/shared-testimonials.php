@@ -29,12 +29,12 @@ function ps_testimonial_settings($variant) {
 
 function ps_testimonial_rows() {
     if (!get_option('ps_acf_options_v1')) return [];
-    $count = (int) get_option('ps_testimonials_section_testimonials_items', 0);
+    $count = (int) (ps_option_meta('testimonials', 'section_testimonials_items') ?? 0);
     $rows = [];
     for ($index = 0; $index < $count; $index++) {
         $row = [];
         foreach (['quote', 'client_name', 'business_name', 'client_role', 'image', 'image_url', 'quote_mark'] as $name) {
-            $row[$name] = get_option('ps_testimonials_section_testimonials_items_' . $index . '_' . $name, '');
+            $row[$name] = ps_option_meta('testimonials', 'section_testimonials_items_' . $index . '_' . $name) ?? '';
         }
         if (trim((string) $row['quote']) !== '') $rows[] = $row;
     }

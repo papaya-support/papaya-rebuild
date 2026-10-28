@@ -4,6 +4,14 @@ defined('ABSPATH') || exit();
 
 add_action('acf/init', function () {
     if (!function_exists('acf_add_options_page')) return;
+    if (get_option('ps_site_options_tabs_v1')) {
+        acf_add_options_page([
+            'page_title' => 'Site Options', 'menu_title' => 'Site Options',
+            'menu_slug' => 'papaya-header-options', 'post_id' => 'ps_site_options',
+            'capability' => 'manage_options', 'redirect' => false,
+        ]);
+        return;
+    }
     acf_add_options_page([
         'page_title' => 'Header', 'menu_title' => 'Site Options',
         'menu_slug' => 'papaya-header-options', 'post_id' => 'ps_header',
@@ -23,6 +31,10 @@ add_action('acf/init', function () {
 
 function ps_option_meta($scope, $name) {
     if (!get_option('ps_acf_options_v1')) return null;
+    if (get_option('ps_site_options_tabs_v1')) {
+        $value = get_option('ps_site_options_' . $name, null);
+        if ($value !== null) return $value;
+    }
     return get_option('ps_' . $scope . '_' . $name, null);
 }
 
@@ -161,7 +173,7 @@ add_action('init', function () {
 // ACF may create a new options group when moving the former post-specific group.
 // Keep its existing subfields attached to the group that owns the options editor.
 add_action('init', function () {
-    if (!get_option('ps_acf_options_v1')) return;
+    if (!get_option('ps_acf_options_v1') || get_option('ps_site_options_tabs_v1')) return;
     if (get_option('_ps_testimonials_section_testimonials', null) === null) {
         update_option('ps_testimonials_section_testimonials', '', false);
         update_option('_ps_testimonials_section_testimonials', 'field_ps_shared_testimonials', false);
