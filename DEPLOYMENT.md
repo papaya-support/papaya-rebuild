@@ -107,3 +107,11 @@ Service card buttons, ACF rich text, post content and rendered navigation links 
 This supersedes the original service import's overflow mapping. New imports retain only the introduction, compatible image/text sections and FAQs. Pricing plans, testimonials and overflow sections are excluded. The XD benefits/statistics, Google Ads certification section and closing CTA are populated on every imported service page. Banners remain empty in ACF and render the XD placeholder until an editor selects an image. The Microsoft Advertising section stays removed.
 
 After deployment, an administrator visit applies the correction once to existing imported service pages. Previous metadata is retained in `_ps_before_service_xd_template_v2`; `_ps_service_xd_template_v2` prevents later editor changes being overwritten. Native navigation hover links, including the header CTA, no longer use underlines. Run `node tools/import-service-pages.mjs --serve` locally or `node tools/check-service-pages.mjs` in isolated WordPress to verify required sections, placeholders, ACF data and page rendering.
+
+## Content editor cleanup (October 28, 2026)
+
+After deployment, visit WordPress admin once. The one-time cleanup orders page sections and their subfields to match the frontend, including strategy cards, results, testimonial images, button label/URL pairs, and closing CTA images. SEO retains its context-specific section order; other service pages retain their own sections.
+
+Retired homepage splits/buttons, Microsoft Ads section, FAQ image, and unused About link controls move to the inactive **Archived — Retired layout fields** group. Original definitions/parents are backed up in `ps_editor_cleanup_backup_v1`; page values are not deleted or rewritten. Optional fields still supported by the frontend remain editable even when currently empty. Unknown custom fields are preserved. Legacy testimonial link fields remain hidden for backward compatibility with saved link targets.
+
+Verify using `node tools/check-editor-cleanup.mjs` with the local database available. The check creates an isolated SQLite snapshot, verifies ordering, retirement, metadata preservation, repeat-run safety, and unchanged frontend HTML across seven routes.

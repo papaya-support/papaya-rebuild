@@ -3,7 +3,7 @@
 defined('ABSPATH') || exit();
 
 function ps_is_seo_editor() {
-    if (!is_admin()) return false;
+    if (!is_admin() || !empty($GLOBALS['ps_editor_cleanup_running'])) return false;
     $post_id = function_exists('acf_get_form_data') ? acf_get_form_data('post_id') : 0;
     if (!$post_id) $post_id = absint($_GET['post'] ?? $_POST['post_ID'] ?? $_POST['_acf_post_id'] ?? 0);
     $post = get_post($post_id);

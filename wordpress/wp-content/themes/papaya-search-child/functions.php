@@ -122,3 +122,5 @@ require_once __DIR__ . '/inc/home-strategy-cards.php';
 require_once __DIR__ . '/inc/button-fields.php';
 
 require_once __DIR__ . '/inc/section-photos.php';
+
+require_once __DIR__ . '/inc/editor-cleanup.php';
