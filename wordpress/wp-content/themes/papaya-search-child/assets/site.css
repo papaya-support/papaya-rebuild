@@ -240,7 +240,7 @@ h3 {
 .home-introduction-copy {
   max-width: 80ch;
   margin: 24px auto 0;
-  text-align: left;
+  text-align: center;
 }
 .split {
   display: grid;
@@ -1305,6 +1305,7 @@ body.single-post #main-content h3 {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 @media (min-width: 1025px) {
   .split > .split-media:has(> img[data-image]) {
