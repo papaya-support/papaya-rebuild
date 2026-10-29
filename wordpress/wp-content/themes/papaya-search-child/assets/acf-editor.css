@@ -1,0 +1,74 @@
+/* ACF editor presentation only. No styles in this file load on the site. */
+.acf-postbox > .inside.acf-fields {
+    counter-reset: papaya-acf-section;
+    background: #f5f8f6;
+    padding: 18px;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group {
+    counter-increment: papaya-acf-section;
+    border: 1px solid #c8d9cf;
+    border-radius: 6px;
+    background: #fff;
+    margin: 0 0 18px;
+    overflow: hidden;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group:last-child {
+    margin-bottom: 0;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group > .acf-label {
+    border-left: 5px solid #0b514c;
+    background: #e8f0e9;
+    margin: 0;
+    padding: 15px 19px;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group > .acf-label::before {
+    content: "SECTION " counter(papaya-acf-section, decimal-leading-zero);
+    display: block;
+    color: #496b57;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+#acf-group_ps_site_options > .inside.acf-fields > .acf-field-group > .acf-label::before {
+    content: "SITE OPTION";
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group > .acf-label > label {
+    color: #003d3a;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group > .acf-label > .description {
+    color: #496056;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group > .acf-input > .acf-fields {
+    border: 0;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field > .acf-label > label {
+    color: #173b37;
+    font-weight: 600;
+}
+
+.acf-postbox > .inside.acf-fields > .acf-field-group:focus-within {
+    border-color: #729a7d;
+    box-shadow: 0 0 0 1px #729a7d;
+}
+
+@media (max-width: 782px) {
+    .acf-postbox > .inside.acf-fields { padding: 10px; }
+    .acf-postbox > .inside.acf-fields > .acf-field-group > .acf-label { padding: 13px 15px; }
+}
