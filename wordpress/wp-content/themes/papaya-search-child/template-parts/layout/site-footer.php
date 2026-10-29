@@ -9,17 +9,17 @@
         </div>
         <section class="footer-column">
             <?php /* ACF: Footer — Navigation Heading */
-                        ps_text('shared_78f8d1b3d0a8', 'h2', 'footer-heading'); ?>
+                        ps_text('shared_78f8d1b3d0a8', 'p', 'footer-heading'); ?>
             <?php ps_render_menu('footer_navigation'); ?>
         </section>
         <section class="footer-column">
             <?php /* ACF: Footer — Services Heading */
-                        ps_text('shared_63ce494a885e', 'h2', 'footer-heading'); ?>
+                        ps_text('shared_63ce494a885e', 'p', 'footer-heading'); ?>
             <?php ps_render_menu('footer_services'); ?>
         </section>
         <section class="footer-column">
             <?php /* ACF: Footer — Contact Heading */
-                        ps_text('shared_4937e4e54c2c', 'h2', 'footer-heading'); ?>
+                        ps_text('shared_4937e4e54c2c', 'p', 'footer-heading'); ?>
             <?php ps_render_menu('footer_contact'); ?>
             <?php ps_render_menu('footer_social'); ?>
         </section>
