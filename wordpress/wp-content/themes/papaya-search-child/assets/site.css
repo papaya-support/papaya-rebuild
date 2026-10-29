@@ -1252,9 +1252,6 @@ body.single-post #main-content h3 {
   & span {
     display: inline-block;
   }
-  &[aria-expanded='true'] span {
-    transform: rotate(180deg);
-  }
 }
 #primary-navigation.has-submenu-controls .ps-menu-primary .menu-item-has-children > .sub-menu {
   display: none;
