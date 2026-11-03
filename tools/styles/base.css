@@ -200,7 +200,7 @@ h3 {
   border-radius: 14px;
   padding: 14px 26px;
   min-height: 48px;
-  background: var(--papaya-orange);
+  background: var(--papaya-light-orange);
   color: var(--button-text);
   font-size: 17px;
   font-weight: 700;
@@ -281,11 +281,11 @@ h3 {
     @apply tw:justify-end;
   }
   & .menu-cta > a {
-    background: var(--papaya-orange);
+    background: var(--papaya-light-orange);
     color: #fff;
     border-radius: 14px;
     padding: 16px 22px;
-    font-weight: 800;
+    font-weight: 700;
   }
   & .menu-item-has-children {
     @apply tw:relative;
@@ -1043,7 +1043,7 @@ body.single-post .article-body .wp-block-group {
 /* Override saved block colors so content CTAs share the site's button palette. */
 .papaya-site .wp-block-button__link,
 .papaya-site .wp-block-button__link:is(:hover, :focus, :visited) {
-  background: var(--papaya-orange) !important;
+  background: var(--papaya-light-orange) !important;
   color: #fff !important;
 }
 
@@ -1261,7 +1261,7 @@ body.single-post #main-content h3 {
       width: fit-content;
       @apply tw:max-w-full;
       padding: 14px 18px;
-      background: var(--papaya-orange);
+      background: var(--papaya-light-orange);
       color: #fff;
       border-radius: 14px;
     }
