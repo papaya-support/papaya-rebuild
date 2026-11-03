@@ -151,7 +151,7 @@ h3 {
 .home-introduction-copy {
   max-width: 80ch;
   margin: 24px auto 0;
-  text-align: left;
+  text-align: center;
 }
 .split {
   @apply tw:grid;
@@ -693,6 +693,8 @@ h3 {
   @apply tw:text-papaya-green;
   text-transform: capitalize;
   font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
   padding-bottom: 24px;
   margin: 18px 0 24px;
   border-bottom: 2px solid var(--papaya-light-orange);
@@ -1222,9 +1224,6 @@ body.single-post #main-content h3 {
     & span {
       @apply tw:inline-block;
     }
-    &[aria-expanded='true'] span {
-      transform: rotate(180deg);
-    }
   }
   & .menu-item-has-children > .sub-menu {
     @apply tw:hidden;
@@ -1283,6 +1282,7 @@ body.single-post #main-content h3 {
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* Let adjacent copy determine image height in two-column content sections. */
@@ -1345,6 +1345,17 @@ body.single-post #main-content h3 {
 
 .seo-introduction-button {
   margin-top: 24px;
+}
+
+.papaya-seo-page .button,
+.papaya-seo-page .ps-menu-primary .menu-cta > a {
+  --button-text: #000;
+  background: var(--papaya-orange);
+  color: var(--button-text);
+}
+
+.section-seo-benefits {
+  border-block: 1px solid var(--papaya-sage);
 }
 
 .seo-benefits-intro {
@@ -1448,10 +1459,6 @@ body.single-post #main-content h3 {
 .testimonial-slider { display: grid; }
 .testimonial-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 600ms ease, visibility 0s linear 600ms; }
 .testimonial-slide.is-active { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 600ms ease, visibility 0s; }
-.testimonial-controls { display: flex; justify-content: center; gap: 12px; margin-top: 24px; }
-.testimonial-dot { width: 11px; height: 11px; padding: 0; border: 1px solid currentColor; border-radius: 50%; background: transparent; color: var(--papaya-teal); cursor: pointer; }
-.testimonial-dot.is-active { background: currentColor; }
-.testimonial-dot:focus-visible { outline: 2px solid var(--papaya-orange); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   .testimonial-slide { transition: none; }
 }
