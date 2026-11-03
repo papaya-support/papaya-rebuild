@@ -74,9 +74,6 @@ add_action(
 );
 add_filter('body_class', function ($classes) {
     $classes[] = 'papaya-site';
-    if (is_page('seo')) {
-        $classes[] = 'papaya-seo-page';
-    }
     return $classes;
 });
 // Keep Astra's script state consistent with the custom templates' omitted control.
