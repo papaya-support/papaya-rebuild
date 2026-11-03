@@ -4,7 +4,9 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/favicon.svg'); ?>" type="image/svg+xml">
+    <?php if (!has_site_icon()): ?>
+        <link rel="icon" href="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/favicon.jpeg'); ?>" type="image/jpeg" sizes="512x512">
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
