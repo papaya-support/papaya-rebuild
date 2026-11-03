@@ -20,8 +20,6 @@
       stop();
       if (!reducedMotion.matches && !document.hidden && !slider.parentElement.contains(document.activeElement)) timer = window.setInterval(() => show(active + 1), 5000);
     };
-    slider.parentElement.addEventListener('mouseenter', stop);
-    slider.parentElement.addEventListener('mouseleave', start);
     slider.parentElement.addEventListener('focusin', stop);
     slider.parentElement.addEventListener('focusout', (event) => {
       if (!slider.parentElement.contains(event.relatedTarget)) start();
