@@ -1385,7 +1385,7 @@ body.single-post #main-content h3 {
   }
   & .seo-benefit {
     padding: 28px;
-    background: var(--papaya-green);
+    background: rgba(255, 255, 255, 0.55);
     border-left: 2px solid var(--papaya-sage);
   }
 }
