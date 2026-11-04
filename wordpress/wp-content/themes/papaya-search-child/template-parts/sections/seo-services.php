@@ -1,5 +1,5 @@
 <?php
-/** Six equally weighted SEO service cards. */
+/** Editable SEO service cards from the ACF repeater. */
 defined('ABSPATH') || exit();
 if (!is_page('seo')) {
     return;
@@ -18,20 +18,20 @@ $services = array_merge(ps_seo_services_defaults(), $services);
             <?php endif; ?>
         </div>
         <div class="grid seo-services-grid">
-            <?php for ($i = 1; $i <= 6; $i++): ?>
-                <?php if ($services['heading_' . $i] !== '' || $services['description_' . $i] !== ''): ?>
+            <?php foreach (ps_seo_services_cards($services) as $card): ?>
+                <?php if (($card['heading'] ?? '') !== '' || ($card['description'] ?? '') !== ''): ?>
                     <article class="seo-service-card">
-                        <?php $icon_url = ps_seo_service_icon_url($i); ?>
+                        <?php $icon_url = !empty($card['icon']) ? wp_get_attachment_url((int) $card['icon']) : ($card['legacy_icon_url'] ?? ''); ?>
                         <?php if ($icon_url): ?>
                             <img class="seo-service-icon" src="<?php echo esc_url($icon_url); ?>" alt="" aria-hidden="true" width="64" height="64" loading="lazy" decoding="async">
                         <?php endif; ?>
-                        <?php if ($services['heading_' . $i] !== ''): ?>
-                            <h3><?php echo esc_html($services['heading_' . $i]); ?></h3>
+                        <?php if (($card['heading'] ?? '') !== ''): ?>
+                            <h3><?php echo esc_html(($card['heading'] ?? '')); ?></h3>
                         <?php endif; ?>
-                        <div class="prose"><?php echo wp_kses_post(wpautop($services['description_' . $i])); ?></div>
+                        <div class="prose"><?php echo wp_kses_post(wpautop(($card['description'] ?? ''))); ?></div>
                     </article>
                 <?php endif; ?>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

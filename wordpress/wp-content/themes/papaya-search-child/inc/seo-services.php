@@ -64,3 +64,66 @@ add_action('admin_init', function () {
         ps_install_seo_services();
     }
 }, 86);
+
+/** Upgrade the fixed cards without overwriting saved repeater rows or legacy content. */
+function ps_install_seo_services_repeater() {
+    if (get_option('ps_seo_services_repeater_v1') || !function_exists('acf_is_pro') || !acf_is_pro()) return;
+    $parent = acf_get_field('field_ps_seo_services');
+    if (!$parent) return;
+    $repeater = acf_update_field([
+        'key' => 'field_ps_seo_services_cards', 'name' => 'cards', 'label' => 'Service Cards',
+        'type' => 'repeater', 'parent' => $parent['ID'], 'menu_order' => 2,
+        'layout' => 'block', 'min' => 0, 'max' => 0, 'button_label' => 'Add Service Card',
+        'collapsed' => 'field_ps_seo_services_card_heading',
+    ]);
+    if (empty($repeater['ID'])) return;
+    foreach (['icon' => 'image', 'heading' => 'text', 'description' => 'textarea'] as $name => $type) {
+        $field = acf_update_field([
+            'key' => 'field_ps_seo_services_card_' . $name, 'name' => $name,
+            'label' => ucfirst($name), 'type' => $type, 'parent' => $repeater['ID'],
+            'menu_order' => array_search($name, ['icon', 'heading', 'description']),
+            'return_format' => 'id', 'preview_size' => 'thumbnail', 'rows' => 4,
+        ]);
+        if (empty($field['ID'])) return;
+    }
+    $defaults = ps_seo_services_defaults();
+    foreach (get_posts(['post_type' => 'page', 'post_status' => 'any', 'name' => 'seo', 'numberposts' => -1]) as $page) {
+        $prefix = 'section_seo_services_cards';
+        if (metadata_exists('post', $page->ID, $prefix)) continue;
+        for ($i = 1; $i <= 6; $i++) {
+            foreach (['icon', 'heading', 'description'] as $name) {
+                $old = 'section_seo_services_' . $name . '_' . $i;
+                $value = metadata_exists('post', $page->ID, $old)
+                    ? get_post_meta($page->ID, $old, true)
+                    : ($name === 'icon' ? get_option('ps_seo_service_icon_' . $i, '') : $defaults[$name . '_' . $i]);
+                $meta = $prefix . '_' . ($i - 1) . '_' . $name;
+                update_post_meta($page->ID, $meta, $value);
+                update_post_meta($page->ID, '_' . $meta, 'field_ps_seo_services_card_' . $name);
+            }
+        }
+        update_post_meta($page->ID, $prefix, 6);
+        update_post_meta($page->ID, '_' . $prefix, 'field_ps_seo_services_cards');
+    }
+    // Remove the obsolete editor fields; retain their post metadata as a backup.
+    for ($i = 1; $i <= 6; $i++) {
+        foreach (['icon', 'heading', 'description'] as $name) {
+            acf_delete_field('field_ps_seo_services_' . $name . '_' . $i);
+        }
+    }
+    update_option('ps_seo_services_repeater_v1', 1, false);
+}
+add_action('admin_init', function () {
+    if (current_user_can('manage_options')) ps_install_seo_services_repeater();
+}, 120);
+
+function ps_seo_services_cards($services) {
+    if (metadata_exists('post', get_the_ID(), 'section_seo_services_cards')) {
+        return get_field('section_seo_services_cards') ?: [];
+    }
+    // Preserve the frontend until an administrator opens the updated backend.
+    $cards = [];
+    for ($i = 1; $i <= 6; $i++) {
+        $cards[] = ['heading' => $services['heading_' . $i], 'description' => $services['description_' . $i], 'legacy_icon_url' => ps_seo_service_icon_url($i)];
+    }
+    return $cards;
+}
