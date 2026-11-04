@@ -1380,28 +1380,17 @@ body.single-post #main-content h3 {
   & .seo-benefits-grid {
     gap: 24px;
   }
+  & .prose {
+    color: var(--papaya-teal);
+  }
   & .seo-benefit {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
     padding: 28px;
-    background: rgba(255, 255, 255, 0.55);
+    background: var(--papaya-green);
     border-left: 2px solid var(--papaya-sage);
-  }
-  & .seo-benefit-icon {
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
-  & .seo-benefit > div {
-    min-width: 0;
   }
 }
 @media (max-width: 600px) {
   .seo-benefits-accented .seo-benefit {
-    flex-direction: column;
-    gap: 20px;
     padding: 24px;
   }
 }

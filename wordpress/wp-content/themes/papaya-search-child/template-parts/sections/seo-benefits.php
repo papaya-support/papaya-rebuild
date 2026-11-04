@@ -7,7 +7,6 @@ if (!is_page('seo')) {
 $benefits = function_exists('get_field') ? (get_field('section_seo_benefits') ?: []) : [];
 $benefits = array_merge(ps_seo_benefits_defaults(), $benefits);
 $accented = ($args['variant'] ?? '') === 'accented';
-$benefit_icons = ['arrow', 'seeds', 'papaya-half', 'tree'];
 ?>
 <section class="section-seo-benefits section cream<?php echo $accented ? ' seo-benefits-accented' : ''; ?>">
     <div class="container">
@@ -23,9 +22,6 @@ $benefit_icons = ['arrow', 'seeds', 'papaya-half', 'tree'];
             <?php for ($i = 1; $i <= 4; $i++): ?>
                 <?php if ($benefits['heading_' . $i] !== '' || $benefits['description_' . $i] !== ''): ?>
                     <article class="seo-benefit">
-                        <?php if ($accented): ?>
-                            <img class="seo-benefit-icon" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/icons/seo-services/' . $benefit_icons[$i - 1] . '.svg'); ?>" width="40" height="40" alt="" aria-hidden="true" loading="lazy">
-                        <?php endif; ?>
                         <div>
                             <?php if ($benefits['heading_' . $i] !== ''): ?>
                                 <h3><?php echo esc_html($benefits['heading_' . $i]); ?></h3>
