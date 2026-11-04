@@ -70,7 +70,9 @@ function ps_install_seo_services_repeater() {
     if (get_option('ps_seo_services_repeater_v1') || !function_exists('acf_is_pro') || !acf_is_pro()) return;
     $parent = acf_get_field('field_ps_seo_services');
     if (!$parent) return;
+    $existing_repeater = acf_get_field('field_ps_seo_services_cards');
     $repeater = acf_update_field([
+        'ID' => $existing_repeater['ID'] ?? 0,
         'key' => 'field_ps_seo_services_cards', 'name' => 'cards', 'label' => 'Service Cards',
         'type' => 'repeater', 'parent' => $parent['ID'], 'menu_order' => 2,
         'layout' => 'block', 'min' => 0, 'max' => 0, 'button_label' => 'Add Service Card',
@@ -78,7 +80,9 @@ function ps_install_seo_services_repeater() {
     ]);
     if (empty($repeater['ID'])) return;
     foreach (['icon' => 'image', 'heading' => 'text', 'description' => 'textarea'] as $name => $type) {
+        $existing_field = acf_get_field('field_ps_seo_services_card_' . $name);
         $field = acf_update_field([
+            'ID' => $existing_field['ID'] ?? 0,
             'key' => 'field_ps_seo_services_card_' . $name, 'name' => $name,
             'label' => ucfirst($name), 'type' => $type, 'parent' => $repeater['ID'],
             'menu_order' => array_search($name, ['icon', 'heading', 'description']),
@@ -128,3 +132,17 @@ function ps_seo_services_cards($services) {
     }
     return $cards;
 }
+
+// Duplicate definitions share the same metadata name. Render only one input for
+// each name so repeated migration definitions cannot compete during page saves.
+add_filter('acf/load_fields', function ($fields, $parent) {
+    if (($parent['key'] ?? '') !== 'field_ps_seo_services') return $fields;
+    $unique = [];
+    foreach ($fields as $field) {
+        $name = $field['name'] ?? $field['key'];
+        if (!isset($unique[$name]) || ($name === 'cards' && $field['key'] === 'field_ps_seo_services_cards')) {
+            $unique[$name] = $field;
+        }
+    }
+    return array_values($unique);
+}, 30, 2);
