@@ -1,11 +1,12 @@
 <?php
 /** Three-stage SEO process. */
 defined('ABSPATH') || exit();
-if (!is_page('seo')) {
+if (!ps_is_service_detail()) {
     return;
 }
 $approach = function_exists('get_field') ? (get_field('section_seo_approach') ?: []) : [];
-$approach = array_merge(ps_seo_approach_defaults(), $approach);
+$approach = array_merge(is_page('seo') ? ps_seo_approach_defaults() : array_fill_keys(array_keys(ps_seo_approach_defaults()), ''), $approach);
+if (!array_filter($approach)) return;
 ?>
 <section class="section-seo-approach section">
     <div class="container">

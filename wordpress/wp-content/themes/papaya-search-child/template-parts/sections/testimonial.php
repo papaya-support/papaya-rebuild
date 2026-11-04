@@ -2,9 +2,9 @@
 /** Shared testimonial carousel, populated from the Testimonials library. */
 defined('ABSPATH') || exit();
 $variant = $args['variant'] ?? '';
-if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($variant === 'seo-testimonial' && !is_page('seo'))) return;
+if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($variant === 'seo-testimonial' && !ps_is_service_detail())) return;
 $case = $variant === 'case-study-detail-testimonial';
-$settings = ps_testimonial_settings($variant);
+$settings = ps_testimonial_settings($variant === 'seo-testimonial' && !is_page('seo') ? 'home-testimonial' : $variant);
 $testimonials = ps_testimonial_rows();
 if (!get_option('ps_acf_options_v1')) {
     foreach (ps_shared_testimonial_ids() as $id) {

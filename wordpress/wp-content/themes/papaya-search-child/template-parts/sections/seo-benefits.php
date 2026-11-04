@@ -1,11 +1,12 @@
 <?php
 /** SEO benefits, using the shared service-card layout and brand colors. */
 defined('ABSPATH') || exit();
-if (!is_page('seo')) {
+if (!ps_is_service_detail()) {
     return;
 }
 $benefits = function_exists('get_field') ? (get_field('section_seo_benefits') ?: []) : [];
-$benefits = array_merge(ps_seo_benefits_defaults(), $benefits);
+$benefits = array_merge(is_page('seo') ? ps_seo_benefits_defaults() : array_fill_keys(array_keys(ps_seo_benefits_defaults()), ''), $benefits);
+if (!array_filter($benefits)) return;
 $accented = ($args['variant'] ?? '') === 'accented';
 ?>
 <section class="section-seo-benefits section cream<?php echo $accented ? ' seo-benefits-accented' : ''; ?>">

@@ -1,11 +1,12 @@
 <?php
 /** Editable SEO service cards from the ACF repeater. */
 defined('ABSPATH') || exit();
-if (!is_page('seo')) {
+if (!ps_is_service_detail()) {
     return;
 }
 $services = function_exists('get_field') ? (get_field('section_seo_services') ?: []) : [];
-$services = array_merge(ps_seo_services_defaults(), $services);
+$services = array_merge(is_page('seo') ? ps_seo_services_defaults() : array_fill_keys(array_keys(ps_seo_services_defaults()), ''), $services);
+if (!array_filter($services)) return;
 ?>
 <section class="section-seo-services section">
     <div class="container">

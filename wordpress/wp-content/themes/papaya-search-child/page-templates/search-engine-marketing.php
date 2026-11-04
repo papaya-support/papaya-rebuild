@@ -17,7 +17,7 @@ while (have_posts()):
         <?php get_template_part('template-parts/sections/seo-services'); ?>
         <?php get_template_part('template-parts/sections/seo-approach'); ?>
         <?php get_template_part('template-parts/sections/testimonial', null, ['variant' => 'seo-testimonial']); ?>
-        <?php if (!is_page('seo')): ?>
+        <?php if (metadata_exists('post', get_the_ID(), 'ps_service_additional_content') ? get_post_meta(get_the_ID(), 'ps_service_additional_content', true) : !is_page('seo')): ?>
             <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-visibility']); ?>
             <?php get_template_part('template-parts/sections/image-text', null, ['variant' => 'search-engine-marketing-ppc-services']); ?>
             <?php get_template_part('template-parts/sections/statistics', null, ['variant' => 'search-engine-marketing-benefits']); ?>

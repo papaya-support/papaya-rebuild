@@ -120,7 +120,8 @@ function ps_seo_services_cards($services) {
     if (metadata_exists('post', get_the_ID(), 'section_seo_services_cards')) {
         return get_field('section_seo_services_cards') ?: [];
     }
-    // Preserve the frontend until an administrator opens the updated backend.
+    // Preserve the SEO frontend until an administrator opens the updated backend.
+    if (!is_page('seo')) return [];
     $cards = [];
     for ($i = 1; $i <= 6; $i++) {
         $cards[] = ['heading' => $services['heading_' . $i], 'description' => $services['description_' . $i], 'legacy_icon_url' => ps_seo_service_icon_url($i)];
