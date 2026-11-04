@@ -31,6 +31,7 @@ add_filter('acf/load_fields', function ($fields, $parent) {
         'field_ps_seo_benefits',
         'field_ps_seo_services',
         'field_ps_seo_approach',
+        'field_ps_service_testimonial_intro',
         'field_ps_service_additional_content',
         'field_ps_section_search_engine_marketing_section_visibility',
         'field_ps_section_search_engine_marketing_section_ppc_services',
