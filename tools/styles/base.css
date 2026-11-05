@@ -1338,10 +1338,6 @@ body.single-post #main-content h3 {
   margin-top: 24px;
 }
 
-.section-seo-benefits {
-  border-block: 1px solid var(--papaya-sage);
-}
-
 .seo-benefits-intro {
   max-width: 960px;
   margin-inline: auto;
@@ -1353,7 +1349,7 @@ body.single-post #main-content h3 {
 }
 .section-seo-benefits + .section-tight { padding-top: var(--section-space); }
 
-/* A second benefits treatment, sharing the original section's ACF content. */
+/* Card treatment for the service-page benefits section. */
 .seo-benefits-accented {
   margin-top: var(--section-space);
   & .seo-benefits-intro::before {

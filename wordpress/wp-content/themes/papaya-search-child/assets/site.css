@@ -1348,9 +1348,6 @@ body.single-post #main-content h3 {
 .seo-introduction-button {
   margin-top: 24px;
 }
-.section-seo-benefits {
-  border-block: 1px solid var(--papaya-sage);
-}
 .seo-benefits-intro {
   max-width: 960px;
   margin-inline: auto;

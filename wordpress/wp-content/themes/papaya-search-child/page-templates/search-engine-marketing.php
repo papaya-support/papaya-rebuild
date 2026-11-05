@@ -12,7 +12,6 @@ while (have_posts()):
     <main tabindex="-1" id="main-content" class="page-search-engine-marketing">
         <?php get_template_part('template-parts/sections/banner', null, ['variant' => 'search-engine-marketing-banner']); ?>
         <?php get_template_part('template-parts/sections/content', null, ['variant' => 'search-engine-marketing-introduction']); ?>
-        <?php get_template_part('template-parts/sections/seo-benefits'); ?>
         <?php get_template_part('template-parts/sections/seo-benefits', null, ['variant' => 'accented']); ?>
         <?php get_template_part('template-parts/sections/seo-services'); ?>
         <?php get_template_part('template-parts/sections/seo-approach'); ?>
