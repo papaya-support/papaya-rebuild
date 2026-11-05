@@ -1364,27 +1364,24 @@ body.single-post #main-content h3 {
 .section-seo-benefits + .section-tight {
   padding-top: var(--section-space);
 }
-.seo-benefits-accented {
-  margin-top: var(--section-space);
-  & .seo-benefits-intro::before {
-    content: '';
-    display: block;
-    width: 48px;
-    height: 3px;
-    margin: 0 auto 24px;
-    background: var(--papaya-light-orange);
-  }
-  & .seo-benefits-grid {
-    gap: 24px;
-  }
-  & .prose {
-    color: var(--papaya-teal);
-  }
-  & .seo-benefit {
-    padding: 28px;
-    background: rgba(255, 255, 255, 0.55);
-    border-left: 2px solid var(--papaya-sage);
-  }
+.seo-benefits-accented .seo-benefits-intro::before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0 auto 24px;
+  background: var(--papaya-light-orange);
+}
+.seo-benefits-accented .seo-benefits-grid {
+  gap: 24px;
+}
+.seo-benefits-accented .prose {
+  color: var(--papaya-teal);
+}
+.seo-benefits-accented .seo-benefit {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.55);
+  border-left: 2px solid var(--papaya-sage);
 }
 @media (max-width: 600px) {
   .seo-benefits-accented .seo-benefit {

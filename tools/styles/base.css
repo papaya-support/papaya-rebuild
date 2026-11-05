@@ -1351,7 +1351,6 @@ body.single-post #main-content h3 {
 
 /* Card treatment for the service-page benefits section. */
 .seo-benefits-accented {
-  margin-top: var(--section-space);
   & .seo-benefits-intro::before {
     content: '';
     display: block;
