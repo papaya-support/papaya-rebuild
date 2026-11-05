@@ -4,16 +4,7 @@ defined('ABSPATH') || exit();
 $variant = $args['variant'] ?? '';
 if (!in_array($variant, ['home-testimonial', 'case-study-detail-testimonial', 'seo-testimonial'], true) || ($variant === 'seo-testimonial' && !ps_is_service_detail())) return;
 $case = $variant === 'case-study-detail-testimonial';
-$settings = ps_testimonial_settings($variant === 'seo-testimonial' && !is_page('seo') ? 'home-testimonial' : $variant);
-if ($variant === 'seo-testimonial') {
-    $intro = get_field('section_service_testimonial_intro') ?: [];
-    foreach (['heading', 'description'] as $name) {
-        // Preserve the existing output until the one-time content migration runs.
-        if (get_option('ps_service_testimonial_intro_v1') || metadata_exists('post', get_the_ID(), 'section_service_testimonial_intro_' . $name)) {
-            $settings[$name] = (string) ($intro[$name] ?? '');
-        }
-    }
-}
+$settings = ps_page_testimonial_settings($variant);
 $testimonials = ps_testimonial_rows();
 if (!get_option('ps_acf_options_v1')) {
     foreach (ps_shared_testimonial_ids() as $id) {

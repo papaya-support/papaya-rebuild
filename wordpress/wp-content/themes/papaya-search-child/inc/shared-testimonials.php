@@ -1,5 +1,5 @@
 <?php
-/** Shared testimonial library and display settings. Existing page values stay archived. */
+/** Shared testimonial library and legacy settings used for one-time page migration. */
 defined('ABSPATH') || exit();
 
 add_action('init', function () {
@@ -76,14 +76,7 @@ function ps_install_shared_testimonials() {
     $settings_group = acf_update_field_group(['key' => 'group_ps_shared_testimonials', 'title' => 'Testimonials — Site Content', 'active' => true, 'location' => [[['param' => 'post', 'operator' => '==', 'value' => (string) $entry]]]]);
     $parent = acf_update_field(['key' => 'field_ps_shared_testimonials', 'name' => 'section_testimonials', 'label' => 'Testimonial Sections', 'type' => 'group', 'layout' => 'block', 'parent' => $settings_group['ID']]);
     if (empty($parent['ID'])) return new WP_Error('testimonial_settings', 'Unable to create shared testimonial settings.');
-    $position = 0;
-    foreach (['home' => 'Home', 'seo' => 'SEO', 'case' => 'Case Study'] as $prefix => $label) {
-        foreach (['heading' => 'Heading', 'description' => 'Description', 'button_label' => 'Button Label', 'button_url' => 'Button URL'] as $name => $field_label) {
-            $field = acf_update_field(['key' => 'field_ps_shared_testimonials_' . $prefix . '_' . $name, 'name' => $prefix . '_' . $name, 'label' => $label . ' — ' . $field_label, 'type' => $name === 'description' ? 'textarea' : 'text', 'parent' => $parent['ID'], 'menu_order' => $position++, 'required' => 0]);
-            if (empty($field['ID'])) return new WP_Error('testimonial_settings_field', 'Unable to create ' . $field_label . '.');
-        }
-    }
-    $selected_field = acf_update_field(['key' => 'field_ps_shared_testimonials_selected', 'name' => 'selected', 'label' => 'Testimonials to Display', 'instructions' => 'Select multiple testimonials and arrange them in the order they should appear. Leave empty to show every published testimonial.', 'type' => 'post_object', 'post_type' => ['ps_testimonial'], 'multiple' => 1, 'return_format' => 'id', 'parent' => $parent['ID'], 'menu_order' => $position]);
+    $selected_field = acf_update_field(['key' => 'field_ps_shared_testimonials_selected', 'name' => 'selected', 'label' => 'Testimonials to Display', 'instructions' => 'Select multiple testimonials and arrange them in the order they should appear. Leave empty to show every published testimonial.', 'type' => 'post_object', 'post_type' => ['ps_testimonial'], 'multiple' => 1, 'return_format' => 'id', 'parent' => $parent['ID'], 'menu_order' => 0]);
     if (empty($selected_field['ID'])) return new WP_Error('testimonial_selection', 'Unable to create testimonial selection field.');
 
     $source = [

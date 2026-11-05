@@ -136,7 +136,7 @@ function ps_install_acf_options() {
         'key' => 'field_ps_testimonial_option_items', 'name' => 'items',
         'label' => 'Testimonials', 'type' => 'repeater', 'layout' => 'block',
         'button_label' => 'Add Testimonial', 'parent' => $parent['ID'],
-        'menu_order' => 12,
+        'menu_order' => 0,
     ]);
     foreach ([
         'quote' => ['Quote', 'textarea'],

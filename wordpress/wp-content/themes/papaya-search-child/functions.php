@@ -131,3 +131,4 @@ require_once __DIR__ . '/inc/editor-cleanup.php';
 require_once __DIR__ . '/inc/acf-editor-presentation.php';
 
 require_once __DIR__ . '/inc/shared-service-template.php';
+require_once __DIR__ . '/inc/page-testimonial-settings.php';

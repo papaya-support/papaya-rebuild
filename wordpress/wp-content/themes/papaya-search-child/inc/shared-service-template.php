@@ -35,17 +35,19 @@ add_action('acf/init', function () {
     ]);
 });
 
-/** Page-owned introduction; testimonial entries and buttons remain shared. */
+/** Page-owned testimonial heading, description, and button. */
 add_action('acf/init', function () {
     acf_add_local_field([
         'key' => 'field_ps_service_testimonial_intro',
         'name' => 'section_service_testimonial_intro',
-        'label' => 'Testimonial Introduction', 'type' => 'group', 'layout' => 'block',
-        'instructions' => 'Heading and description above the testimonial band on this page. Leave either blank to hide it.',
+        'label' => 'Testimonial Section', 'type' => 'group', 'layout' => 'block',
+        'instructions' => 'Edit the introduction and button for this page’s testimonial section. Shared testimonials are managed in Site Options.',
         'parent' => 'group_ps_search-engine-marketing',
         'sub_fields' => [
             ['key' => 'field_ps_service_testimonial_intro_heading', 'name' => 'heading', 'label' => 'Heading', 'type' => 'text'],
             ['key' => 'field_ps_service_testimonial_intro_description', 'name' => 'description', 'label' => 'Description', 'type' => 'textarea', 'rows' => 4],
+            ['key' => 'field_ps_service_testimonial_intro_button_label', 'name' => 'button_label', 'label' => 'Button Label', 'type' => 'text'],
+            ['key' => 'field_ps_service_testimonial_intro_button_url', 'name' => 'button_url', 'label' => 'Button URL', 'type' => 'text'],
         ],
     ]);
 });
@@ -67,8 +69,3 @@ add_action('admin_init', function () {
     }
     update_option('ps_service_testimonial_intro_v1', 1, false);
 }, 140);
-
-// Retain the old option values for migration, but remove their obsolete editor controls.
-foreach (['heading', 'description'] as $name) {
-    add_filter('acf/prepare_field/key=field_ps_shared_testimonials_seo_' . $name, '__return_false');
-}
